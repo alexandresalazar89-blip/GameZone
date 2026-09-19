@@ -1,74 +1,77 @@
 # A1 Acceptance Gate
 
-Status: **OPEN. The final single-threaded Web build is live and desktop-verified. A1 closes only after the physical-phone and physical-gamepad reports are returned PASS. A2 must not start before that.**
+Status: **FECHADO COM RESSALVA.** A implementação A1 está aceite para avançar para A2. A validação em gamepad físico fica obrigatoriamente aberta em `BL-001` e tem de ser concluída antes de qualquer release pública.
 
-## Final automated evidence — 2026-09-19
+## Estado do gate
+
+- Implementação: ✅
+- Export Web real: ✅
+- Single-threaded: ✅
+- Sem COOP/COEP: ✅
+- Desktop live HTTPS: ✅
+- Telefone físico: ✅
+- Gamepad físico: ⏸️ **DIFERIDO — BL-001**
+
+O código de gamepad está implementado, cobre deteção/hot-swap, prompts e ações via InputMap, e foi validado por testes automatizados/emulação. Falta apenas confirmação com hardware físico real.
+
+## Teste A — telefone físico
+
+**Resultado reportado pelo utilizador: PASS em toda a linha.**
+
+- Phone: **modelo não fornecido**
+- OS/version: **Android — versão não fornecida**
+- Browser/version: **não fornecido**
+- Boot: **PASS**
+- Touch controls auto-visible: **PASS**
+- Runtime: Web: **PASS**
+- Touch capability: true: **PASS**
+- First-touch Audio unlocked false -> true: **PASS**
+- D-pad movement + Actions [X]: **PASS**
+- A/B/PAUSE/BACK counters: **PASS**
+- Fullscreen: **PASS**
+- Portrait responsive: **PASS**
+- Landscape responsive: **PASS**
+- Notes: **tudo funcionou à primeira; áudio desbloqueou ao toque em A.**
+
+Este resultado é aceite como evidência do teste físico A. Os campos de modelo/versão ficaram registados como não fornecidos; não foram inferidos.
+
+## Evidência automatizada final
 
 Public build:
 
 https://alexandresalazar89-blip.github.io/GameZone/
 
-Final candidate commit:
+A1 final candidate:
 
 `a469454e6aa2ca1e5edaf49e24e31566a05ecc8a`
 
-Final GitHub Actions run:
+GitHub Actions:
 
 https://github.com/alexandresalazar89-blip/GameZone/actions/runs/35446087718
 
-Results:
+Resultados:
 
-- Build: **PASS**
-- Godot: **4.7.2-stable official**
-- Web export: **PASS**
-- Export mode: **single-threaded**
-- Headless A1 smoke: **PASS**
-- Local Chromium Web boot: **PASS**
-- Local Pixel 7 emulation: **PASS** — supporting evidence only, not the physical-phone gate
-- GitHub Pages deploy: **PASS**
-- Live HTTPS Chromium smoke: **PASS**
-- Live browser console: `[A1] A1_BOOT_OK`
-- Live runtime log: `Emscripten 4.0.20, single-threaded, no GDExtension support.`
-- Live `index.html`: **HTTP 200 over HTTPS**
-- Live `index.pck`: **HTTP 200 over HTTPS**
-- Live `index.wasm`: **HTTP 200 over HTTPS**
-- COOP header: **absent**
-- COEP header: **absent**
-- Browser page errors: **none**
+- Godot 4.7.2-stable official
+- Export Web: **PASS**
+- `Emscripten 4.0.20, single-threaded`
+- `[A1] A1_BOOT_OK` no site Pages live
+- `index.html`: **HTTP 200 / HTTPS**
+- `index.pck`: **HTTP 200 / HTTPS**
+- `index.wasm`: **HTTP 200 / HTTPS**
+- COOP: **ausente**
+- COEP: **ausente**
+- Desktop Chromium live: **PASS**
 
-Final live resource evidence:
+## Gamepad físico — diferido
 
-```text
-[A1_WEB_TEST] RESOURCE_OK index.html 200 https://alexandresalazar89-blip.github.io/GameZone/index.html
-[A1_WEB_TEST] RESOURCE_OK index.pck 200 https://alexandresalazar89-blip.github.io/GameZone/index.pck
-[A1_WEB_TEST] RESOURCE_OK index.wasm 200 https://alexandresalazar89-blip.github.io/GameZone/index.wasm
-[A1_WEB_TEST] HTTPS_RESOURCES_OK
-[A1_WEB_TEST] COOP_COEP_ABSENT
-[A1_WEB_TEST] DESKTOP_BOOT_OK {"width":1440,"height":900,"clientWidth":1440,"clientHeight":900}
-```
+Ver `BACKLOG.md`:
 
-The live screenshot and JSON evidence are stored in the workflow artifact `a1-live-desktop-evidence`.
+`BL-001 — Gamepad físico: hot-swap connect/disconnect, deteção, prompts e ações mapeadas.`
 
-## Definition of done
-
-| Target | Required evidence | Current status |
-|---|---|---|
-| Desktop browser | Live HTTPS URL, `A1_BOOT_OK`, screenshot, no page errors | **PASS** |
-| Real phone browser | Physical phone boot, touch controls, first-touch audio unlock, fullscreen gesture, portrait/landscape responsive proof | **PENDING USER PHYSICAL TEST** |
-| Actual connected gamepad | Connect after boot, prompt/device detection, all InputMap actions, disconnect/reconnect hot-swap proof | **PENDING USER PHYSICAL TEST** |
-
-## Hot-swap correction included in final candidate
-
-The final A1 candidate explicitly falls back from `gamepad` to `keyboard_mouse` or `touch` when the last connected gamepad is removed, so prompts do not remain stale after disconnect.
-
-## Manual physical-device procedure
-
-Use:
-
-`A1_MANUAL_TEST.md`
-
-It contains copy/paste PASS/FAIL forms tied to the exact values displayed by `a1_diagnostics.gd`.
+O guião permanece em `A1_MANUAL_TEST.md` (Teste B). Este item não é FAIL e não deve ser apagado, contornado ou marcado como concluído sem teste em hardware real.
 
 ## Gate rule
 
-Do **not** begin A2 because CI and desktop are green. A1 closes only after both physical reports are returned PASS.
+A1 está **fechado-com-ressalva** exclusivamente para permitir o avanço técnico para A2.
+
+**BL-001 continua a bloquear qualquer release pública final.**
