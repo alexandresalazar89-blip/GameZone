@@ -1,0 +1,230 @@
+name: Pac-Man B2 Ruffle Probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pacman-b2-probe.yml"
+      - "tools/pacman_b2/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  SWF_PATH: "games/pacman/original/pacman.swf"
+  EXPECTED_SWF_SHA256: "e0a61ed23375aaacf92dcac91c24e6d0111612b420024756f0872f56fd59cb26"
+  RUFFLE_TAG: "nightly-2026-09-19"
+  RUFFLE_ASSET: "ruffle-nightly-2026_09_19-linux-x86_64.tar.gz"
+  DISPLAY: ":99"
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install X11, capture and audio dependencies
+        shell: bash
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y \
+            xvfb xdotool x11-utils ffmpeg pulseaudio pulseaudio-utils \
+            libgtk-3-0 libasound2t64 libudev1 libfontconfig1 libfreetype6
+          mkdir -p .b2/tools/ruffle .b2/probe/frames .b2/logs
+
+      - name: Verify authoritative SWF
+        shell: bash
+        run: |
+          set -euxo pipefail
+          ACTUAL="$(sha256sum "$SWF_PATH" | awk '{print $1}')"
+          test "$ACTUAL" = "$EXPECTED_SWF_SHA256"
+
+      - name: Install pinned Ruffle desktop
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euxo pipefail
+          API="https://api.github.com/repos/ruffle-rs/ruffle/releases/tags/$RUFFLE_TAG"
+          curl -fsSL --retry 4 \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "$API" -o .b2/ruffle-release.json
+          URL="$(python3 - <<'PY'
+          import json, os
+          d=json.load(open('.b2/ruffle-release.json'))
+          target=os.environ['RUFFLE_ASSET']
+          for a in d.get('assets', []):
+              if a['name']==target:
+                  print(a['browser_download_url'])
+                  break
+          else:
+              raise SystemExit('Pinned Ruffle asset missing')
+          PY
+          )"
+          curl -fsSL --retry 4 "$URL" -o .b2/tools/ruffle.tar.gz
+          tar -xzf .b2/tools/ruffle.tar.gz -C .b2/tools/ruffle
+          RUFFLE_BIN="$(find .b2/tools/ruffle -type f -name ruffle -print -quit)"
+          test -n "$RUFFLE_BIN"
+          chmod +x "$RUFFLE_BIN"
+          echo "RUFFLE_BIN=$RUFFLE_BIN" >> "$GITHUB_ENV"
+          "$RUFFLE_BIN" --version | tee .b2/probe/ruffle-version.txt
+          "$RUFFLE_BIN" --help > .b2/probe/ruffle-help.txt
+          grep -q -- "--frame-rate" .b2/probe/ruffle-help.txt
+          grep -q -- "--no-gui" .b2/probe/ruffle-help.txt
+          grep -q -- "--width" .b2/probe/ruffle-help.txt
+          grep -q -- "--height" .b2/probe/ruffle-help.txt
+
+      - name: Write sanity replay schedule
+        shell: bash
+        run: |
+          cat > .b2/probe/sanity-replay.json <<'JSON'
+          {
+            "name": "b2_sanity_play",
+            "fps": 21,
+            "notes": "Frame numbers are relative to replay t0. Frame 21 clicks the source Play button at SWF stage px 180,276. Arrow taps begin after the NewGame timeline has had time to reach gameplay.",
+            "events": [
+              {"frame": 21,  "order": 0, "type": "mouse_click", "x": 180, "y": 276, "button": 1},
+              {"frame": 126, "order": 0, "type": "key_down", "key": "Left"},
+              {"frame": 127, "order": 0, "type": "key_up",   "key": "Left"},
+              {"frame": 154, "order": 0, "type": "key_down", "key": "Up"},
+              {"frame": 155, "order": 0, "type": "key_up",   "key": "Up"},
+              {"frame": 196, "order": 0, "type": "key_down", "key": "Right"},
+              {"frame": 197, "order": 0, "type": "key_up",   "key": "Right"},
+              {"frame": 238, "order": 0, "type": "key_down", "key": "Down"},
+              {"frame": 239, "order": 0, "type": "key_up",   "key": "Down"}
+            ]
+          }
+          JSON
+
+      - name: Start Xvfb and PulseAudio null sink
+        shell: bash
+        run: |
+          set -euxo pipefail
+          Xvfb "$DISPLAY" -screen 0 800x600x24 -nolisten tcp > .b2/logs/xvfb.log 2>&1 &
+          echo $! > .b2/xvfb.pid
+          sleep 1
+          xdpyinfo -display "$DISPLAY" >/dev/null
+
+          pulseaudio --start --exit-idle-time=-1
+          pactl load-module module-null-sink sink_name=oracle sink_properties=device.description=PacmanOracle > .b2/probe/pulse-module-id.txt
+          pactl set-default-sink oracle
+          pactl set-default-source oracle.monitor
+          pactl list short sinks | tee .b2/probe/pulse-sinks.txt
+          pactl list short sources | tee .b2/probe/pulse-sources.txt
+
+      - name: Launch Ruffle and locate game window
+        shell: bash
+        run: |
+          set -euxo pipefail
+          export WGPU_BACKEND=gl
+          export LIBGL_ALWAYS_SOFTWARE=1
+          export PULSE_SINK=oracle
+          "$RUFFLE_BIN" \
+            --width 360 \
+            --height 420 \
+            --no-gui \
+            --frame-rate 21 \
+            --volume 1 \
+            --open-url-mode deny \
+            "$SWF_PATH" \
+            > .b2/logs/ruffle.log 2>&1 &
+          echo $! > .b2/ruffle.pid
+          PID="$(cat .b2/ruffle.pid)"
+
+          WIN=""
+          for _ in $(seq 1 100); do
+            WIN="$(xdotool search --onlyvisible --pid "$PID" 2>/dev/null | head -n 1 || true)"
+            if [ -n "$WIN" ]; then break; fi
+            sleep 0.1
+          done
+          test -n "$WIN"
+          echo "$WIN" > .b2/probe/window-id.txt
+          xdotool windowactivate --sync "$WIN"
+          xdotool windowmove "$WIN" 0 0
+          xdotool windowsize "$WIN" 360 420
+          sleep 0.5
+          xwininfo -id "$WIN" | tee .b2/probe/window-info.txt
+
+      - name: Capture observable sanity session and replay fixed input frames
+        shell: bash
+        run: |
+          set -euxo pipefail
+          WIN="$(cat .b2/probe/window-id.txt)"
+          eval "$(xwininfo -id "$WIN" | awk '
+            /Absolute upper-left X:/ {print "WX="$4}
+            /Absolute upper-left Y:/ {print "WY="$4}
+            /^  Width:/ {print "WW="$2}
+            /^  Height:/ {print "WH="$2}
+          ')"
+          test "$WW" -gt 0
+          test "$WH" -gt 0
+          echo "capture=${WW}x${WH}+${WX},${WY}" | tee .b2/probe/capture-geometry.txt
+
+          ffmpeg -hide_banner -loglevel warning -y \
+            -f x11grab -draw_mouse 0 -framerate 21 \
+            -video_size "${WW}x${WH}" -i "${DISPLAY}+${WX},${WY}" \
+            -t 15 -c:v libx264 -preset veryfast -crf 16 -pix_fmt yuv420p \
+            .b2/probe/sanity.mp4 \
+            > .b2/logs/ffmpeg-video.log 2>&1 &
+          VIDPID=$!
+
+          timeout 15s parec --device=oracle.monitor --file-format=wav .b2/probe/sanity-audio.wav \
+            > .b2/logs/parec.log 2>&1 &
+          AUDPID=$!
+
+          python3 tools/pacman_b2/replay_x11.py \
+            --window "$WIN" \
+            --schedule .b2/probe/sanity-replay.json \
+            --audit .b2/probe/sanity-replay-audit.json \
+            --start-delay 0.75
+
+          wait "$VIDPID"
+          wait "$AUDPID" || true
+
+          kill "$(cat .b2/ruffle.pid)" 2>/dev/null || true
+          wait "$(cat .b2/ruffle.pid)" 2>/dev/null || true
+
+      - name: Extract observable reference frames and validate audio activity
+        shell: bash
+        run: |
+          set -euxo pipefail
+          test -s .b2/probe/sanity.mp4
+          test -s .b2/probe/sanity-audio.wav
+
+          for SPEC in "01:1" "03:3" "06:6" "08:8" "10:10" "12:12" "14:14"; do
+            NAME="${SPEC%%:*}"
+            SEC="${SPEC##*:}"
+            ffmpeg -hide_banner -loglevel error -y -ss "$SEC" -i .b2/probe/sanity.mp4 -frames:v 1 ".b2/probe/frames/t${NAME}.png"
+          done
+
+          sha256sum .b2/probe/frames/*.png | tee .b2/probe/frame-sha256.txt
+          ffmpeg -hide_banner -i .b2/probe/sanity-audio.wav -af volumedetect -f null - \
+            > .b2/probe/audio-volumedetect.txt 2>&1 || true
+          cat .b2/probe/audio-volumedetect.txt
+          if grep -q "max_volume: -inf" .b2/probe/audio-volumedetect.txt; then
+            echo "Captured Ruffle audio is silent" >&2
+            exit 1
+          fi
+
+          python3 - <<'PY'
+          import json
+          a=json.load(open('.b2/probe/sanity-replay-audit.json'))
+          late=max(abs(float(x['lateness_ms'])) for x in a['events'])
+          print(f"max_replay_dispatch_lateness_ms={late:.3f}")
+          if late > 25:
+              raise SystemExit("Replay dispatch jitter exceeded 25 ms")
+          PY
+
+      - name: Upload B2 probe evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: pacman-b2-ruffle-probe
+          path: |
+            .b2/probe/
+            .b2/logs/
+          if-no-files-found: error
