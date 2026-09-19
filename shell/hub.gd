@@ -65,6 +65,7 @@ func _ready() -> void:
 	resized.connect(_update_grid_columns)
 	_update_grid_columns()
 	call_deferred("_focus_first_card")
+	call_deferred("_log_card_hitboxes")
 
 	print("[A3] A3_BOOT_OK games=", GameManager.get_installed_games().size(), " cards=", _card_controls.size())
 	print("[A4] A4_BOOT_OK games=", GameManager.get_installed_games().size(), " packs=", GameManager.get_loaded_pack_count(), " cards=", _card_controls.size())
@@ -99,7 +100,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed(&"move_down") and focus_index >= 0:
 		_move_card_focus(0, 1, "move_down")
 		handled = true
-	elif event.is_action_pressed(&"action_a") and focus_index >= 0:
+	elif _is_focus_activation_event(event) and event.is_action_pressed(&"action_a") and focus_index >= 0:
 		_launch_game(_card_ids[focus_index])
 		handled = true
 	elif event.is_action_pressed(&"back") and _settings_panel.visible:
@@ -109,6 +110,10 @@ func _input(event: InputEvent) -> void:
 
 	if handled:
 		get_viewport().set_input_as_handled()
+
+
+func _is_focus_activation_event(event: InputEvent) -> bool:
+	return event is InputEventKey or event is InputEventJoypadButton
 
 
 func _on_touch_action_pressed(action: StringName) -> void:
@@ -448,6 +453,20 @@ func _focus_card_index(index: int, source: String) -> void:
 	_card_controls[index].grab_focus()
 	_last_card_id = _card_ids[index]
 	print("[A3] FOCUS game=", _last_card_id, " index=", index, " via=", source)
+
+
+func _log_card_hitboxes() -> void:
+	await get_tree().process_frame
+	for index in range(_card_controls.size()):
+		var rect := _card_controls[index].get_global_rect()
+		var center := rect.get_center()
+		print(
+			"[A4] CARD_HITBOX id=", _card_ids[index],
+			" center_x=", int(round(center.x)),
+			" center_y=", int(round(center.y)),
+			" width=", int(round(rect.size.x)),
+			" height=", int(round(rect.size.y))
+		)
 
 
 func _focus_first_card() -> void:
