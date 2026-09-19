@@ -32,7 +32,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             xvfb xdotool x11-utils ffmpeg pulseaudio pulseaudio-utils \
-            libgtk-3-0 libasound2t64 libudev1 libfontconfig1 libfreetype6
+            libgtk-3-0 libasound2t64 libudev1 libfontconfig1 libfreetype6 \
+            mesa-vulkan-drivers vulkan-tools
           mkdir -p .b2/tools/ruffle .b2/probe/frames .b2/logs
 
       - name: Verify authoritative SWF
@@ -121,10 +122,12 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
-          export WGPU_BACKEND=gl
-          export LIBGL_ALWAYS_SOFTWARE=1
           export PULSE_SINK=oracle
+          export VK_LOADER_DEBUG=error
+          vulkaninfo --summary | tee .b2/probe/vulkan-summary.txt
           "$RUFFLE_BIN" \
+            --graphics vulkan \
+            --power low \
             --width 360 \
             --height 420 \
             --no-gui \
@@ -142,7 +145,12 @@ jobs:
             if [ -n "$WIN" ]; then break; fi
             sleep 0.1
           done
-          test -n "$WIN"
+          if [ -z "$WIN" ]; then
+            echo "Ruffle window did not appear." >&2
+            cat .b2/logs/ruffle.log >&2 || true
+            wait "$PID" || true
+            exit 1
+          fi
           echo "$WIN" > .b2/probe/window-id.txt
           xdotool windowactivate --sync "$WIN"
           xdotool windowmove "$WIN" 0 0
