@@ -152,7 +152,6 @@ jobs:
             exit 1
           fi
           echo "$WIN" > .b2/probe/window-id.txt
-          xdotool windowactivate --sync "$WIN"
           xdotool windowmove "$WIN" 0 0
           xdotool windowsize "$WIN" 360 420
           sleep 0.5
