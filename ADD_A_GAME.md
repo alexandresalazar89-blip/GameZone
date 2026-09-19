@@ -132,14 +132,15 @@ godot --headless --path . --script res://tools/build_runtime_packs.gd
 
 The builder reads the registry, packs every `source: "pack"` entry and writes its `local_path`.
 
-For the Web artifact, copy each PCK to the path represented by `pack_url`. A4 does this automatically for the validated stub:
+For the Web artifact, stage every built pack automatically from the registry:
 
 ```bash
-mkdir -p build/web/packs
-cp build/runtime-packs/stub_packed.pck build/web/packs/stub_packed.pck
+godot --headless --path . --script res://tools/stage_runtime_packs.gd
 ```
 
-For additional packs, extend the staging step or generate the copy list from the registry in a future build-system refinement. The runtime shell itself still requires no changes.
+The staging tool reads every `source: "pack"` entry, copies `local_path` to the relative `pack_url` location under `build/web`, and verifies the byte count.
+
+Adding another runtime game therefore does **not** require editing shell code or hardcoding another copy command in the workflow.
 
 ### 4. What happens in Web at runtime
 
@@ -147,8 +148,8 @@ For each pack registry entry:
 
 1. the hub loads the base registry;
 2. `GameManager` resolves `pack_url` relative to the current Web page;
-3. `HTTPRequest` fetches the PCK bytes over HTTP(S);
-4. the file is written to `user://gamezone_packs/<id>.pck`;
+3. the Web runtime uses `window.fetch(pack_url)` and `response.arrayBuffer()` through `JavaScriptBridge`;
+4. the resulting bytes are copied into a `PackedByteArray` and written to `user://gamezone_packs/<id>.pck`;
 5. only after the download completes, `ProjectSettings.load_resource_pack(..., false)` mounts the PCK;
 6. `metadata` is loaded from its mounted `res://games/<id>/...` path;
 7. the game is added to `get_installed_games()`;
