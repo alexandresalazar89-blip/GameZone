@@ -4,13 +4,14 @@ const NATIVE_SIZE := Vector2(320, 180)
 var score := 0
 var pause_presses := 0
 var _tone: AudioStreamWAV
-
-@onready var marker: ColorRect = $Marker
-@onready var status: Label = $Status
+var marker: ColorRect
+var status: Label
 
 
 func start(game_context: GameContext) -> void:
 	super.start(game_context)
+	marker = get_node("Marker") as ColorRect
+	status = get_node("Status") as Label
 	_tone = _make_tone(440.0)
 	var saved: Variant = context.saves.load_slot(&"contract_probe", {})
 	if saved is Dictionary:
@@ -19,7 +20,7 @@ func start(game_context: GameContext) -> void:
 
 
 func _process(delta: float) -> void:
-	if context == null:
+	if context == null or marker == null:
 		return
 
 	var direction := Input.get_vector(
@@ -52,9 +53,13 @@ func _process(delta: float) -> void:
 
 func teardown() -> void:
 	super.teardown()
+	marker = null
+	status = null
 
 
 func _update_status(event: String) -> void:
+	if status == null:
+		return
 	status.text = "score=%d  pause=%d  last=%s\nB saves slot 'contract_probe' in stub_wide namespace" % [
 		score,
 		pause_presses,

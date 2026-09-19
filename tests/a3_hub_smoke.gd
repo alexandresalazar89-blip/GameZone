@@ -38,7 +38,7 @@ func _run() -> void:
 		return
 	print("[A3_TEST] GRID_REGISTRY_OK ids=", ids)
 
-	var first := _hub.get_focused_game_id()
+	var first: StringName = _hub.get_focused_game_id()
 	if first.is_empty():
 		_fail("no initial Godot focus owner on game cards")
 		return
@@ -48,7 +48,7 @@ func _run() -> void:
 	Input.action_release(&"move_right")
 	await process_frame
 
-	var second := _hub.get_focused_game_id()
+	var second: StringName = _hub.get_focused_game_id()
 	if second.is_empty() or second == first:
 		_fail("move_right did not change card focus: first=%s second=%s" % [first, second])
 		return
@@ -93,7 +93,7 @@ func _run() -> void:
 	await process_frame
 	Input.action_release(&"move_left")
 	await process_frame
-	var returned_first := _hub.get_focused_game_id()
+	var returned_first: StringName = _hub.get_focused_game_id()
 	if returned_first != first:
 		_fail("focus did not navigate back to first card")
 		return
