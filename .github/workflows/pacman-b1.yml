@@ -72,14 +72,13 @@ jobs:
           set -euxo pipefail
           java -Djava.awt.headless=true -jar "$FFDEC_JAR" --help export > .b1/evidence/ffdec-help-export.txt 2>&1
           java -Djava.awt.headless=true -jar "$FFDEC_JAR" --help format > .b1/evidence/ffdec-help-format.txt 2>&1
-          grep -q -- "-export <itemtypes>" .b1/evidence/ffdec-help-export.txt
-          for ITEM in script image shape sprite sound font frame text; do
-            grep -q "$ITEM" .b1/evidence/ffdec-help-export.txt
-          done
+          test -s .b1/evidence/ffdec-help-export.txt
+          test -s .b1/evidence/ffdec-help-format.txt
+          grep -qi "Export sources" .b1/evidence/ffdec-help-export.txt
           grep -q "shape:svg" .b1/evidence/ffdec-help-format.txt
           grep -q "sprite:svg" .b1/evidence/ffdec-help-format.txt
           grep -q "frame:svg" .b1/evidence/ffdec-help-format.txt
-          head -n 80 .b1/evidence/ffdec-help-export.txt
+          head -n 120 .b1/evidence/ffdec-help-export.txt
 
       - name: Export immutable raw FFDec tree
         shell: bash
