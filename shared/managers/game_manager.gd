@@ -239,7 +239,7 @@ func _create_render_surface(native_size: Vector2i) -> void:
 
 
 func _on_context_exit() -> void:
-	unload_current_game()
+	request_current_game_exit()
 
 
 func _on_module_exit() -> void:
