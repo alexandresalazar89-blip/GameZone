@@ -307,6 +307,7 @@ func _download_pack_for_web(game_id: StringName, relative_url: String) -> String
 	var user_path := PACK_USER_DIR.path_join(str(game_id) + ".pck")
 	var request := HTTPRequest.new()
 	request.name = "PackDownload_" + str(game_id)
+	request.accept_gzip = false
 	add_child(request)
 
 	print("[A4] PACK_HTTP_BEGIN id=", game_id, " url=", resolved_url, " target=", user_path)
