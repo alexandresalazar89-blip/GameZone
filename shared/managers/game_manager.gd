@@ -48,7 +48,7 @@ func load_registry(path: String = DEFAULT_REGISTRY) -> bool:
 		push_error("[A2][GameManager] registry missing: " + path)
 		return false
 
-	var parsed := JSON.parse_string(FileAccess.get_file_as_string(path))
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
 	if typeof(parsed) != TYPE_DICTIONARY:
 		push_error("[A2][GameManager] invalid registry JSON")
 		return false
