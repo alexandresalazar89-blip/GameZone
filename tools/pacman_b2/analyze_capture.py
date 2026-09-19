@@ -38,6 +38,58 @@ def centroid_for_color(im: Image.Image, target, tolerance=16, bounds=(0, 0, 360,
     return {"x": sx/n, "y": sy/n, "pixels": n}
 
 
+
+def color_components(im: Image.Image, target, tolerance=18, bounds=(0, 0, 360, 380),
+                     min_pixels=20, min_w=4, max_w=24, min_h=4, max_h=24):
+    rgb = im.convert("RGB")
+    x0, y0, x1, y1 = bounds
+    pix = rgb.load()
+    tr, tg, tb = target
+    matched = set()
+    for y in range(max(0, y0), min(rgb.height, y1)):
+        for x in range(max(0, x0), min(rgb.width, x1)):
+            r, g, b = pix[x, y]
+            if abs(r-tr) <= tolerance and abs(g-tg) <= tolerance and abs(b-tb) <= tolerance:
+                matched.add((x, y))
+
+    components = []
+    while matched:
+        seed = matched.pop()
+        stack = [seed]
+        pts = [seed]
+        while stack:
+            x, y = stack.pop()
+            for nb in ((x-1,y),(x+1,y),(x,y-1),(x,y+1)):
+                if nb in matched:
+                    matched.remove(nb)
+                    stack.append(nb)
+                    pts.append(nb)
+        if len(pts) < min_pixels:
+            continue
+        xs = [p[0] for p in pts]
+        ys = [p[1] for p in pts]
+        w = max(xs) - min(xs) + 1
+        h = max(ys) - min(ys) + 1
+        if not (min_w <= w <= max_w and min_h <= h <= max_h):
+            continue
+        components.append({
+            "x": sum(xs) / len(xs),
+            "y": sum(ys) / len(ys),
+            "pixels": len(pts),
+            "bbox": [min(xs), min(ys), max(xs)+1, max(ys)+1],
+            "width": w,
+            "height": h,
+        })
+    return sorted(components, key=lambda p: (p["y"], p["x"]))
+
+
+def life_icon_count(im: Image.Image):
+    comps = color_components(
+        im, (255, 255, 0), tolerance=28, bounds=(130, 385, 300, 420),
+        min_pixels=25, min_w=7, max_w=28, min_h=7, max_h=24,
+    )
+    return {"count": len(comps), "components": comps}
+
 def pacman_centroid(im: Image.Image):
     rgb = im.convert("RGB")
     pix = rgb.load()
@@ -162,6 +214,7 @@ def main():
         score_hashes = []
         pac = []
         ghosts = []
+        lives = []
         colors = {
             "ghost_red": (221,0,0),
             "ghost_pink": (255,153,153),
@@ -181,7 +234,12 @@ def main():
                 row = {"frame": idx}
                 for name, target in colors.items():
                     row[name] = centroid_for_color(im, target, tolerance=18, bounds=(0, 0, 360, 380))
+                row["frightened_blue_components"] = color_components(
+                    im, colors["frightened_blue"], tolerance=18, bounds=(0, 0, 360, 380),
+                    min_pixels=30, min_w=7, max_w=20, min_h=7, max_h=20,
+                )
                 ghosts.append(row)
+                lives.append({"frame": idx, **life_icon_count(im)})
 
         score_segments = stable_segments(score_hashes, min_len=2)
         # Keep only actual changes in the score/status crop, but retain enough
@@ -227,6 +285,7 @@ def main():
             "pacman_centroids": pac,
             "pacman_large_x_jumps": jumps,
             "ghost_color_centroids_every_3_frames": ghosts,
+            "life_icons_every_3_frames": lives,
             "audio": audio,
         },
         "policy": "Screen pixels and captured audio only; no AVM/internal-variable inspection.",
