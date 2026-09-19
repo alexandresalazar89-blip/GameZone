@@ -12,7 +12,7 @@ var _tone: AudioStreamWAV
 func start(game_context: GameContext) -> void:
 	super.start(game_context)
 	_tone = _make_tone(660.0)
-	var saved := context.saves.load_slot(&"contract_probe", {})
+	var saved: Variant = context.saves.load_slot(&"contract_probe", {})
 	if saved is Dictionary:
 		score = int(saved.get("score", 100))
 	_update_status("started")
