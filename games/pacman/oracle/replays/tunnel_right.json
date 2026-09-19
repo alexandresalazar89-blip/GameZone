@@ -2,76 +2,25 @@
   "name": "tunnel_right",
   "classification": "DETERMINISTIC",
   "fps": 21,
-  "duration_seconds": 12,
-  "notes": "Source Maze route to right tunnel marker R at (27,14), then outside x=28 where frame_6 wraps Pacman._x to OFFX-12 and pacX=-1/nextX=0.",
+  "duration_seconds": 16,
+  "notes": "Fresh game. First follows the source Maze route to power cell O at (26,23), then while ghosts are frightened follows U3,L5,U6,R6 to tunnel marker R at (27,14) and continues right. Source frame_6 then wraps Pac-Man from the right edge to Pacman._x=OFFX-12 with pacX=-1,nextX=0. Power-first routing isolates the wrap observation from ordinary ghost chase as far as the unmodified SWF permits.",
   "events": [
-    {
-      "frame": 21,
-      "order": 0,
-      "type": "mouse_click",
-      "x": 180,
-      "y": 276,
-      "button": 1
-    },
-    {
-      "frame": 112,
-      "order": 0,
-      "type": "key_down",
-      "key": "Right"
-    },
-    {
-      "frame": 113,
-      "order": 0,
-      "type": "key_up",
-      "key": "Right"
-    },
-    {
-      "frame": 115,
-      "order": 0,
-      "type": "key_down",
-      "key": "Up"
-    },
-    {
-      "frame": 116,
-      "order": 0,
-      "type": "key_up",
-      "key": "Up"
-    },
-    {
-      "frame": 124,
-      "order": 0,
-      "type": "key_down",
-      "key": "Right"
-    },
-    {
-      "frame": 125,
-      "order": 0,
-      "type": "key_up",
-      "key": "Right"
-    },
-    {
-      "frame": 133,
-      "order": 0,
-      "type": "key_down",
-      "key": "Up"
-    },
-    {
-      "frame": 134,
-      "order": 0,
-      "type": "key_up",
-      "key": "Up"
-    },
-    {
-      "frame": 151,
-      "order": 0,
-      "type": "key_down",
-      "key": "Right"
-    },
-    {
-      "frame": 152,
-      "order": 0,
-      "type": "key_up",
-      "key": "Right"
-    }
+    {"frame": 21,  "order": 0, "type": "mouse_click", "x": 180, "y": 276, "button": 1},
+    {"frame": 112, "order": 0, "type": "key_down", "key": "Right"},
+    {"frame": 113, "order": 0, "type": "key_up",   "key": "Right"},
+    {"frame": 115, "order": 0, "type": "key_down", "key": "Up"},
+    {"frame": 116, "order": 0, "type": "key_up",   "key": "Up"},
+    {"frame": 124, "order": 0, "type": "key_down", "key": "Right"},
+    {"frame": 125, "order": 0, "type": "key_up",   "key": "Right"},
+    {"frame": 157, "order": 0, "type": "key_down", "key": "Down"},
+    {"frame": 158, "order": 0, "type": "key_up",   "key": "Down"},
+    {"frame": 171, "order": 0, "type": "key_down", "key": "Up"},
+    {"frame": 172, "order": 0, "type": "key_up",   "key": "Up"},
+    {"frame": 180, "order": 0, "type": "key_down", "key": "Left"},
+    {"frame": 181, "order": 0, "type": "key_up",   "key": "Left"},
+    {"frame": 195, "order": 0, "type": "key_down", "key": "Up"},
+    {"frame": 196, "order": 0, "type": "key_up",   "key": "Up"},
+    {"frame": 213, "order": 0, "type": "key_down", "key": "Right"},
+    {"frame": 214, "order": 0, "type": "key_up",   "key": "Right"}
   ]
 }
