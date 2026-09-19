@@ -1,6 +1,8 @@
 extends Control
 class_name TouchControls
 
+signal action_pressed(action: StringName)
+
 var _bindings := {
 	"Up": &"move_up",
 	"Down": &"move_down",
@@ -68,6 +70,7 @@ func _press_action(action: StringName) -> void:
 		return
 	_pressed_actions[action] = true
 	Input.action_press(action, 1.0)
+	action_pressed.emit(action)
 
 
 func _release_action(action: StringName) -> void:

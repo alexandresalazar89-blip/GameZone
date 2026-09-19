@@ -39,6 +39,13 @@ function markerCount(marker) {
   return consoleLines.filter(line => line.includes(marker)).length;
 }
 
+function lastGameRunningId() {
+  const line = [...consoleLines].reverse().find(item => item.includes("[A3] GAME_RUNNING"));
+  if (!line) return null;
+  const match = line.match(/id=([^\\s]+)/);
+  return match ? match[1] : null;
+}
+
 async function waitMarkerCountAbove(marker, previous, timeout = 15000) {
   const started = Date.now();
   while (Date.now() - started < timeout) {
@@ -75,6 +82,8 @@ if (mode === "desktop") {
 
   await page.keyboard.press("Space");
   await waitMarkerCountAbove("[A3] GAME_RUNNING", launchBefore);
+  const firstLaunchId = lastGameRunningId();
+  if (!firstLaunchId) throw new Error("Could not resolve first launched game id.");
   await page.keyboard.press("Escape");
   await waitMarkerCountAbove("[A3] HUB_RETURN", returnBefore);
 
@@ -87,11 +96,18 @@ if (mode === "desktop") {
   const returnMid = markerCount("[A3] HUB_RETURN");
   await page.keyboard.press("Space");
   await waitMarkerCountAbove("[A3] GAME_RUNNING", launchMid);
+  const secondLaunchId = lastGameRunningId();
+  if (!secondLaunchId) throw new Error("Could not resolve second launched game id.");
+  if (secondLaunchId === firstLaunchId) {
+    throw new Error("Focus navigation did not select a different game: " + firstLaunchId);
+  }
   await page.keyboard.press("Escape");
   await waitMarkerCountAbove("[A3] HUB_RETURN", returnMid);
 
   keyboardFocusFlow = {
     focusNavigation: true,
+    firstLaunchId,
+    secondLaunchId,
     launchCount: markerCount("[A3] GAME_RUNNING"),
     hubReturnCount: markerCount("[A3] HUB_RETURN"),
   };

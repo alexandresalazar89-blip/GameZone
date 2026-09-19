@@ -41,6 +41,7 @@ func _ready() -> void:
 
 	_touch_controls = TouchControlsScene.instantiate() as TouchControls
 	add_child(_touch_controls)
+	_touch_controls.action_pressed.connect(_on_touch_action_pressed)
 	_touch_controls.set_gameplay_enabled(false)
 
 	GameManager.game_loaded.connect(_on_game_loaded)
@@ -62,30 +63,51 @@ func _ready() -> void:
 	print("[A3] A3_BOOT_OK games=", GameManager.get_installed_games().size(), " cards=", _card_controls.size())
 
 
-func _process(_delta: float) -> void:
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and (event as InputEventKey).echo:
+		return
+
 	if not GameManager.current_game_id().is_empty():
-		if Input.is_action_just_pressed(&"back"):
+		if event.is_action_pressed(&"back"):
 			print("[A3] BACK_ACTION game=", GameManager.current_game_id())
 			GameManager.request_current_game_exit()
+			get_viewport().set_input_as_handled()
 		return
 
 	if not _hub_layer.visible:
 		return
 
 	var focus_index := _focused_card_index()
-	if Input.is_action_just_pressed(&"move_left") and focus_index >= 0:
+	var handled := false
+
+	if event.is_action_pressed(&"move_left") and focus_index >= 0:
 		_move_card_focus(-1, 0, "move_left")
-	elif Input.is_action_just_pressed(&"move_right") and focus_index >= 0:
+		handled = true
+	elif event.is_action_pressed(&"move_right") and focus_index >= 0:
 		_move_card_focus(1, 0, "move_right")
-	elif Input.is_action_just_pressed(&"move_up") and focus_index >= 0:
+		handled = true
+	elif event.is_action_pressed(&"move_up") and focus_index >= 0:
 		_move_card_focus(0, -1, "move_up")
-	elif Input.is_action_just_pressed(&"move_down") and focus_index >= 0:
+		handled = true
+	elif event.is_action_pressed(&"move_down") and focus_index >= 0:
 		_move_card_focus(0, 1, "move_down")
-	elif Input.is_action_just_pressed(&"action_a") and focus_index >= 0:
+		handled = true
+	elif event.is_action_pressed(&"action_a") and focus_index >= 0:
 		_launch_game(_card_ids[focus_index])
-	elif Input.is_action_just_pressed(&"back") and _settings_panel.visible:
+		handled = true
+	elif event.is_action_pressed(&"back") and _settings_panel.visible:
 		_settings_panel.hide()
 		_focus_last_card("settings_back")
+		handled = true
+
+	if handled:
+		get_viewport().set_input_as_handled()
+
+
+func _on_touch_action_pressed(action: StringName) -> void:
+	if action == &"back" and not GameManager.current_game_id().is_empty():
+		print("[A3] TOUCH_BACK_ACTION game=", GameManager.current_game_id())
+		GameManager.request_current_game_exit()
 
 
 func _build_ui() -> void:
