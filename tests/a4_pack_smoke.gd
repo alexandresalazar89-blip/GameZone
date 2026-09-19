@@ -1,5 +1,7 @@
 extends SceneTree
 
+const InputBootstrap = preload("res://shared/input/input_map_bootstrap.gd")
+
 var _game_manager: Node
 var _audio_manager: Node
 var _save_manager: Node
@@ -10,6 +12,7 @@ func _initialize() -> void:
 
 
 func _run() -> void:
+	InputBootstrap.install_defaults()
 	_game_manager = root.get_node_or_null("GameManager")
 	_audio_manager = root.get_node_or_null("AudioManager")
 	_save_manager = root.get_node_or_null("SaveManager")
