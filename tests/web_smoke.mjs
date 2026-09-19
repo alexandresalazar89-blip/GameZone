@@ -46,6 +46,22 @@ function lastGameRunningId() {
   return match ? match[1] : null;
 }
 
+function cardHitbox(gameId) {
+  const line = [...consoleLines].reverse().find(item => item.includes("[A4] CARD_HITBOX id=" + gameId + " "));
+  if (!line) return null;
+  const x = line.match(/center_x=(\d+)/);
+  const y = line.match(/center_y=(\d+)/);
+  if (!x || !y) return null;
+  return { x: Number(x[1]), y: Number(y[1]) };
+}
+
+function canvasPoint(canvasInfo, canvasBox, point) {
+  return {
+    x: canvasBox.x + point.x * (canvasBox.width / canvasInfo.width),
+    y: canvasBox.y + point.y * (canvasBox.height / canvasInfo.height),
+  };
+}
+
 async function waitMarkerCountAbove(marker, previous, timeout = 15000) {
   const started = Date.now();
   while (Date.now() - started < timeout) {
@@ -81,6 +97,54 @@ const canvasInfo = await canvas.evaluate(node => ({
 }));
 if (canvasInfo.width <= 0 || canvasInfo.height <= 0 || canvasInfo.clientWidth <= 0 || canvasInfo.clientHeight <= 0) {
   throw new Error("Canvas has invalid dimensions: " + JSON.stringify(canvasInfo));
+}
+
+await waitMarker("[A4] CARD_HITBOX id=stub_packed");
+const canvasBox = await canvas.boundingBox();
+if (!canvasBox) throw new Error("Canvas bounding box unavailable.");
+
+let pointerRegression = null;
+let mobileTouchLaunch = false;
+if (mode === "desktop") {
+  const launchBeforeEmptyClick = markerCount("[A3] GAME_RUNNING");
+  await page.mouse.click(canvasBox.x + 8, canvasBox.y + 8);
+  await page.waitForTimeout(350);
+  if (markerCount("[A3] GAME_RUNNING") !== launchBeforeEmptyClick) {
+    throw new Error("Empty hub click launched the focused game.");
+  }
+  console.log("[A4_WEB_TEST] EMPTY_HUB_CLICK_NO_LAUNCH_OK");
+
+  const packedHitbox = cardHitbox("stub_packed");
+  if (!packedHitbox) throw new Error("stub_packed hitbox marker missing.");
+  const packedPoint = canvasPoint(canvasInfo, canvasBox, packedHitbox);
+  const launchBeforeCardClick = markerCount("[A3] GAME_RUNNING");
+  const returnBeforeCardClick = markerCount("[A3] HUB_RETURN");
+  await page.mouse.click(packedPoint.x, packedPoint.y);
+  await waitMarkerCountAbove("[A3] GAME_RUNNING", launchBeforeCardClick);
+  if (lastGameRunningId() !== "stub_packed") {
+    throw new Error("Card click launched wrong game: " + lastGameRunningId());
+  }
+  console.log("[A4_WEB_TEST] CARD_CLICK_LAUNCH_OK id=stub_packed");
+  await page.keyboard.press("Escape");
+  await waitMarkerCountAbove("[A3] HUB_RETURN", returnBeforeCardClick);
+  pointerRegression = {
+    emptyHubClickNoLaunch: true,
+    directCardClickId: "stub_packed",
+  };
+} else {
+  const packedHitbox = cardHitbox("stub_packed");
+  if (!packedHitbox) throw new Error("stub_packed hitbox marker missing in mobile mode.");
+  const packedPoint = canvasPoint(canvasInfo, canvasBox, packedHitbox);
+  const launchBeforeTouch = markerCount("[A3] GAME_RUNNING");
+  await page.touchscreen.tap(packedPoint.x, packedPoint.y);
+  await waitMarkerCountAbove("[A3] GAME_RUNNING", launchBeforeTouch);
+  if (lastGameRunningId() !== "stub_packed") {
+    throw new Error("Mobile card touch launched wrong game: " + lastGameRunningId());
+  }
+  mobileTouchLaunch = true;
+  console.log("[A4_WEB_TEST] MOBILE_CARD_TOUCH_LAUNCH_OK id=stub_packed");
+  await page.keyboard.press("Escape");
+  await waitMarkerCountAbove("[A3] HUB_RETURN", 0);
 }
 
 let platformFlow = null;
@@ -180,6 +244,8 @@ const evidence = {
   packHttpOk: httpIndex >= 0,
   packLoadOk: loadIndex >= 0,
   packLoadOrderOk: httpIndex < loadIndex && loadIndex < bootIndex,
+  pointerRegression,
+  mobileTouchLaunch,
   platformFlow,
   consoleLines,
   pageErrors,
