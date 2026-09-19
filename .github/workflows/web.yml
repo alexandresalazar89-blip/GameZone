@@ -1,4 +1,4 @@
-name: A1 Web Build and Evidence
+name: Platform Web Build and Evidence
 
 on:
   push:
@@ -13,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: a1-web-${{ github.ref }}
+  group: platform-web-${{ github.ref }}
   cancel-in-progress: true
 
 env:
@@ -34,24 +34,24 @@ jobs:
           GODOT_ZIP="Godot_v${GODOT_VERSION}-${GODOT_STATUS}_linux.x86_64.zip"
           TEMPLATES="Godot_v${GODOT_VERSION}-${GODOT_STATUS}_export_templates.tpz"
           BASE="https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-${GODOT_STATUS}"
-
           curl -fL "$BASE/$GODOT_ZIP" -o /tmp/godot.zip
           unzip -q /tmp/godot.zip -d /tmp/godot
           sudo install -m 0755 "/tmp/godot/Godot_v${GODOT_VERSION}-${GODOT_STATUS}_linux.x86_64" /usr/local/bin/godot
-
           curl -fL "$BASE/$TEMPLATES" -o /tmp/templates.tpz
           mkdir -p /tmp/templates "$HOME/.local/share/godot/export_templates/$GODOT_VERSION.$GODOT_STATUS"
           unzip -q /tmp/templates.tpz -d /tmp/templates
           cp -a /tmp/templates/templates/. "$HOME/.local/share/godot/export_templates/$GODOT_VERSION.$GODOT_STATUS/"
-
           godot --version
           godot --version | grep -q "^$GODOT_VERSION.$GODOT_STATUS.official"
 
       - name: Import project
         run: godot --headless --editor --path . --quit
 
-      - name: A1 headless smoke
+      - name: A1 input foundation smoke
         run: godot --headless --path . --script res://tests/a1_smoke.gd
+
+      - name: A2 module contract smoke
+        run: godot --headless --path . --script res://tests/a2_contract_smoke.gd
 
       - name: Verify single-threaded export configuration
         shell: bash
@@ -99,10 +99,10 @@ jobs:
           node tests/web_smoke.mjs http://127.0.0.1:8080/index.html desktop
           node tests/web_smoke.mjs http://127.0.0.1:8080/index.html mobile
 
-      - name: Upload A1 CI evidence
+      - name: Upload platform CI evidence
         uses: actions/upload-artifact@v4
         with:
-          name: a1-ci-evidence
+          name: platform-ci-evidence
           path: artifacts/
           if-no-files-found: error
 
@@ -126,7 +126,6 @@ jobs:
         uses: actions/configure-pages@v6
         with:
           enablement: true
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
@@ -138,13 +137,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
       - name: Install Playwright Chromium
         shell: bash
         run: |
           npm install --no-save playwright
           npx playwright install --with-deps chromium
-
       - name: Verify deployed HTTPS build in desktop browser
         shell: bash
         env:
@@ -153,50 +150,9 @@ jobs:
           set -euxo pipefail
           test -n "$PAGE_URL"
           node tests/web_smoke.mjs "$PAGE_URL" desktop
-
       - name: Upload live desktop evidence
         uses: actions/upload-artifact@v4
         with:
-          name: a1-live-desktop-evidence
-          path: artifacts/
-          if-no-files-found: error
-
-
-  pr-live-pages-probe:
-    if: github.event_name == 'pull_request'
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Wait for live Pages URL
-        shell: bash
-        run: |
-          set -euxo pipefail
-          URL="https://alexandresalazar89-blip.github.io/GameZone/"
-          for i in {1..60}; do
-            if curl -fsS "$URL" >/dev/null; then
-              echo "[A1_LIVE_PROBE] PAGES_HTTP_OK $URL"
-              exit 0
-            fi
-            sleep 5
-          done
-          echo "[A1_LIVE_PROBE] PAGES_HTTP_TIMEOUT"
-          exit 1
-
-      - name: Install Playwright Chromium
-        shell: bash
-        run: |
-          npm install --no-save playwright
-          npx playwright install --with-deps chromium
-
-      - name: Boot live Pages build in Chromium
-        run: node tests/web_smoke.mjs https://alexandresalazar89-blip.github.io/GameZone/ desktop
-
-      - name: Upload live probe evidence
-        uses: actions/upload-artifact@v4
-        with:
-          name: a1-pr-live-pages-evidence
+          name: platform-live-desktop-evidence
           path: artifacts/
           if-no-files-found: error
