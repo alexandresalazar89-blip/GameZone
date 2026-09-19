@@ -68,6 +68,8 @@ func _on_joy_connection_changed(device: int, connected: bool) -> void:
 	_emit_gamepads()
 	if connected:
 		_set_active_method(GAMEPAD)
+	elif Input.get_connected_joypads().is_empty() and active_method == GAMEPAD:
+		_set_active_method(TOUCH if DisplayServer.is_touchscreen_available() else KEYBOARD_MOUSE)
 
 
 func _emit_gamepads() -> void:
