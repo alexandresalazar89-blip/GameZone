@@ -212,6 +212,9 @@ def main():
     ]
     for i in range(1, 6):
         plan.append(("rng_motion.json", f"rng_motion_r{i}"))
+    if (replay_dir / "level_clear_route.json").exists():
+        for i in range(1, 4):
+            plan.append(("level_clear_route.json", f"level_clear_r{i}"))
 
     results = []
     for file_name, capture_name in plan:
