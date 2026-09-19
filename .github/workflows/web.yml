@@ -90,14 +90,13 @@ jobs:
         run: |
           mkdir -p build/web
           godot --headless --verbose --path . --export-release "Web" build/web/index.html
-          mkdir -p build/web/packs
-          cp build/runtime-packs/stub_packed.pck build/web/packs/stub_packed.pck
+          godot --headless --path . --script res://tools/stage_runtime_packs.gd
           touch build/web/.nojekyll
           test -s build/web/index.html
           test -s build/web/index.wasm
           test -s build/web/index.pck
           test -s build/web/packs/stub_packed.pck
-          find build/web -maxdepth 2 -type f -printf '%P %s bytes\n' | sort
+          find build/web -maxdepth 3 -type f -printf '%P %s bytes\n' | sort
 
       - name: Install Playwright Chromium
         shell: bash
