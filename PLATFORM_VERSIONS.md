@@ -12,8 +12,11 @@ Recorded at A4 acceptance candidate.
 - In-tree validation games:
   - **stub_tall v1.0.0**
   - **stub_wide v1.0.0**
-- Tested A4 code candidate: **d1400ea787358e2a001768bb13c765668e987473**
-- Acceptance workflow run: **#60 / 35454782035**
+- Tested A4 code candidate: **69a4ae4ba71e8744a514008aec4e4f0958047104**
+- Acceptance workflow run: **#64 / 35455929887**
 - Public Pages URL: **https://alexandresalazar89-blip.github.io/GameZone/**
 - Physical gamepad validation: **deferred — BL-001**
 - Input remapping UI: **backlog — BL-002**
+
+- Desktop mouse-routing fix: **PASS** — focus-based launch restricted to keyboard/gamepad; mouse/touch use direct card hit-testing.
+- Physical phone A4 acceptance: **PASS (user-reported)**
