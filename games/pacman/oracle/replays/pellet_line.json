@@ -1,0 +1,17 @@
+{
+  "name": "pellet_line",
+  "classification": "DETERMINISTIC",
+  "fps": 21,
+  "duration_seconds": 10,
+  "notes": "Fresh game. No movement override after NewGame: clone default nextPacDir=3 (left). From start (14,23), the source corridor consumes exactly seven '.' cells before wall x=5; expected visible score states 0,10,20,30,40,50,60,70.",
+  "events": [
+    {
+      "frame": 21,
+      "order": 0,
+      "type": "mouse_click",
+      "x": 180,
+      "y": 276,
+      "button": 1
+    }
+  ]
+}
