@@ -30,6 +30,15 @@ var _render_texture: TextureRect
 var _audio_manager: Node
 var _save_manager: Node
 
+# Web-only fetch bridge state. Callback refs must be retained until the JS Promise settles.
+var _web_fetch_response_callback = null
+var _web_fetch_buffer_callback = null
+var _web_fetch_error_callback = null
+var _web_fetch_done := false
+var _web_fetch_status := 0
+var _web_fetch_error := ""
+var _web_fetch_bytes := PackedByteArray()
+
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -305,31 +314,14 @@ func _download_pack_for_web(game_id: StringName, relative_url: String) -> String
 
 	var resolved_url := _resolve_web_url(relative_url)
 	var user_path := PACK_USER_DIR.path_join(str(game_id) + ".pck")
-	var request := HTTPRequest.new()
-	request.name = "PackDownload_" + str(game_id)
-	request.accept_gzip = false
-	add_child(request)
 
 	print("[A4] PACK_HTTP_BEGIN id=", game_id, " url=", resolved_url, " target=", user_path)
 	pack_download_started.emit(game_id, resolved_url)
 
-	var request_error := request.request(resolved_url)
-	if request_error != OK:
-		request.queue_free()
-		push_error("[A4] HTTP request failed id=%s error=%d" % [game_id, request_error])
-		return ""
-
-	var response: Array = await request.request_completed
-	var result_code := int(response[0])
-	var http_code := int(response[1])
-	var body: PackedByteArray = response[3]
-	request.queue_free()
-
-	if result_code != HTTPRequest.RESULT_SUCCESS or http_code < 200 or http_code >= 300:
-		push_error("[A4] PACK_HTTP_FAIL id=%s result=%d http=%d" % [game_id, result_code, http_code])
-		return ""
+	var body: PackedByteArray = await _fetch_web_bytes(resolved_url)
+	var http_code := _web_fetch_status
 	if body.is_empty():
-		push_error("[A4] PACK_HTTP_FAIL id=%s http=%d empty_body=true" % [game_id, http_code])
+		push_error("[A4] PACK_HTTP_FAIL id=%s http=%d error=%s" % [game_id, http_code, _web_fetch_error])
 		return ""
 
 	var file := FileAccess.open(user_path, FileAccess.WRITE)
@@ -350,6 +342,94 @@ func _download_pack_for_web(game_id: StringName, relative_url: String) -> String
 	print("[A4] PACK_VFS_WRITE_OK id=", game_id, " bytes=", persisted_size, " file=", user_path)
 	pack_downloaded.emit(game_id, resolved_url, body.size())
 	return absolute_path
+
+
+func _fetch_web_bytes(url: String) -> PackedByteArray:
+	_web_fetch_done = false
+	_web_fetch_status = 0
+	_web_fetch_error = ""
+	_web_fetch_bytes = PackedByteArray()
+
+	_web_fetch_response_callback = JavaScriptBridge.create_callback(_on_web_fetch_response)
+	_web_fetch_buffer_callback = JavaScriptBridge.create_callback(_on_web_fetch_buffer)
+	_web_fetch_error_callback = JavaScriptBridge.create_callback(_on_web_fetch_error)
+
+	var window = JavaScriptBridge.get_interface("window")
+	if window == null:
+		_web_fetch_error = "window interface unavailable"
+		_web_fetch_done = true
+		return PackedByteArray()
+
+	var fetch_promise = window.fetch(url)
+	if fetch_promise == null:
+		_web_fetch_error = "window.fetch returned null"
+		_web_fetch_done = true
+		return PackedByteArray()
+
+	# Promise.then(onFulfilled, onRejected). The response callback requests an
+	# ArrayBuffer; the browser handles HTTP content-encoding before we receive it.
+	fetch_promise.then(_web_fetch_response_callback, _web_fetch_error_callback)
+
+	var deadline := Time.get_ticks_msec() + 30000
+	while not _web_fetch_done and Time.get_ticks_msec() < deadline:
+		await get_tree().process_frame
+
+	if not _web_fetch_done:
+		_web_fetch_error = "fetch timeout"
+		_web_fetch_done = true
+
+	var result := _web_fetch_bytes
+	_web_fetch_response_callback = null
+	_web_fetch_buffer_callback = null
+	_web_fetch_error_callback = null
+	return result
+
+
+func _on_web_fetch_response(args: Array) -> void:
+	if args.is_empty():
+		_web_fetch_error = "fetch response callback missing response"
+		_web_fetch_done = true
+		return
+
+	var response = args[0]
+	_web_fetch_status = int(response.status)
+	if not bool(response.ok):
+		_web_fetch_error = "HTTP %d" % _web_fetch_status
+		_web_fetch_done = true
+		return
+
+	var buffer_promise = response.arrayBuffer()
+	if buffer_promise == null:
+		_web_fetch_error = "response.arrayBuffer returned null"
+		_web_fetch_done = true
+		return
+
+	buffer_promise.then(_web_fetch_buffer_callback, _web_fetch_error_callback)
+
+
+func _on_web_fetch_buffer(args: Array) -> void:
+	if args.is_empty():
+		_web_fetch_error = "arrayBuffer callback missing buffer"
+		_web_fetch_done = true
+		return
+
+	var buffer = args[0]
+	if not JavaScriptBridge.is_js_buffer(buffer):
+		_web_fetch_error = "arrayBuffer callback did not provide a JS buffer"
+		_web_fetch_done = true
+		return
+
+	_web_fetch_bytes = JavaScriptBridge.js_buffer_to_packed_byte_array(buffer)
+	if _web_fetch_bytes.is_empty():
+		_web_fetch_error = "arrayBuffer converted to empty byte array"
+	_web_fetch_done = true
+
+
+func _on_web_fetch_error(args: Array) -> void:
+	_web_fetch_error = "browser fetch rejected"
+	if not args.is_empty():
+		_web_fetch_error += ": " + str(args[0])
+	_web_fetch_done = true
 
 
 func _resolve_web_url(relative_url: String) -> String:
