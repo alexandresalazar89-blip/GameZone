@@ -26,24 +26,69 @@ page.on("pageerror", error => {
   console.error("[pageerror]", error);
 });
 
+async function waitMarker(marker, timeout = 15000) {
+  const started = Date.now();
+  while (Date.now() - started < timeout) {
+    if (consoleLines.some(line => line.includes(marker))) return true;
+    await page.waitForTimeout(100);
+  }
+  throw new Error("Console marker not observed: " + marker);
+}
+
+function markerCount(marker) {
+  return consoleLines.filter(line => line.includes(marker)).length;
+}
+
 const response = await page.goto(url, { waitUntil: "networkidle", timeout: 120000 });
 if (!response || !response.ok()) throw new Error("HTTP boot failed: " + (response ? response.status() : "no response"));
 
 await page.waitForSelector("canvas", { state: "attached", timeout: 120000 });
-await page.waitForTimeout(5000);
+await waitMarker("[A3] A3_BOOT_OK");
 
-const canvasInfo = await page.locator("canvas").evaluate(canvas => ({
-  width: canvas.width,
-  height: canvas.height,
-  clientWidth: canvas.clientWidth,
-  clientHeight: canvas.clientHeight,
+const canvas = page.locator("canvas");
+await canvas.evaluate(node => node.focus());
+await page.waitForTimeout(500);
+
+const canvasInfo = await canvas.evaluate(node => ({
+  width: node.width,
+  height: node.height,
+  clientWidth: node.clientWidth,
+  clientHeight: node.clientHeight,
 }));
 if (canvasInfo.width <= 0 || canvasInfo.height <= 0 || canvasInfo.clientWidth <= 0 || canvasInfo.clientHeight <= 0) {
   throw new Error("Canvas has invalid dimensions: " + JSON.stringify(canvasInfo));
 }
 
-const a2BootMarker = consoleLines.some(line => line.includes("[A2] A2_BOOT_OK"));
-if (!a2BootMarker) throw new Error("A2 boot marker was not observed in browser console.");
+let keyboardFocusFlow = null;
+if (mode === "desktop") {
+  const launchBefore = markerCount("[A3] GAME_RUNNING");
+  const returnBefore = markerCount("[A3] HUB_RETURN");
+
+  await page.keyboard.press("Space");
+  while (markerCount("[A3] GAME_RUNNING") <= launchBefore) await page.waitForTimeout(100);
+  await page.keyboard.press("Escape");
+  while (markerCount("[A3] HUB_RETURN") <= returnBefore) await page.waitForTimeout(100);
+
+  const focusBefore = markerCount("via=move_right");
+  await page.keyboard.press("ArrowRight");
+  await page.waitForTimeout(300);
+  if (markerCount("via=move_right") <= focusBefore) throw new Error("ArrowRight did not move Godot card focus.");
+
+  const launchMid = markerCount("[A3] GAME_RUNNING");
+  const returnMid = markerCount("[A3] HUB_RETURN");
+  await page.keyboard.press("Space");
+  while (markerCount("[A3] GAME_RUNNING") <= launchMid) await page.waitForTimeout(100);
+  await page.keyboard.press("Escape");
+  while (markerCount("[A3] HUB_RETURN") <= returnMid) await page.waitForTimeout(100);
+
+  keyboardFocusFlow = {
+    focusNavigation: true,
+    launchCount: markerCount("[A3] GAME_RUNNING"),
+    hubReturnCount: markerCount("[A3] HUB_RETURN"),
+  };
+  console.log("[A3_WEB_TEST] KEYBOARD_FOCUS_FLOW_OK " + JSON.stringify(keyboardFocusFlow));
+}
+
 if (pageErrors.length > 0) throw new Error("Browser page errors: " + pageErrors.join(" | "));
 
 const baseUrl = new URL(".", page.url());
@@ -88,7 +133,8 @@ const evidence = {
   finalUrl: page.url(),
   mode,
   canvasInfo,
-  a2BootMarker,
+  a3BootMarker: consoleLines.some(line => line.includes("[A3] A3_BOOT_OK")),
+  keyboardFocusFlow,
   consoleLines,
   pageErrors,
   resourceChecks,
@@ -98,5 +144,5 @@ const evidence = {
 };
 fs.writeFileSync("artifacts/platform-" + mode + ".json", JSON.stringify(evidence, null, 2));
 
-console.log("[A2_WEB_TEST] " + mode.toUpperCase() + "_BOOT_OK " + JSON.stringify(canvasInfo));
+console.log("[A3_WEB_TEST] " + mode.toUpperCase() + "_BOOT_OK " + JSON.stringify(canvasInfo));
 await browser.close();

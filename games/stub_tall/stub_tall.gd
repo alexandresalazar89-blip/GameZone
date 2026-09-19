@@ -49,16 +49,13 @@ func _process(delta: float) -> void:
 		pause_presses += 1
 		_update_status("pause action")
 
-	if Input.is_action_just_pressed(context.action("back")):
-		context.exit()
-
 
 func teardown() -> void:
 	super.teardown()
 
 
 func _update_status(event: String) -> void:
-	status.text = "score=%d  pause=%d  last=%s\nSame slot name, isolated in stub_tall namespace" % [
+	status.text = "score=%d  pause=%d  last=%s\nB saves slot 'Same slot name, isolated in stub_tall namespace" % [
 		score,
 		pause_presses,
 		event,

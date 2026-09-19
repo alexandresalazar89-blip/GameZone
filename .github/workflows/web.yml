@@ -13,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: platform-web-v2-${{ github.ref }}
+  group: platform-web-v3-${{ github.ref }}
   cancel-in-progress: true
 
 env:
@@ -52,6 +52,9 @@ jobs:
 
       - name: A2 module contract smoke
         run: timeout 30s godot --headless --verbose --path . --script res://tests/a2_contract_smoke.gd
+
+      - name: A3 shell hub smoke
+        run: timeout 30s godot --headless --verbose --path . --script res://tests/a3_hub_smoke.gd
 
       - name: Verify single-threaded export configuration
         shell: bash

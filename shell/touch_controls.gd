@@ -13,13 +13,14 @@ var _bindings := {
 }
 var _pressed_actions: Dictionary = {}
 var _default_touch_visible := false
+var _preview_enabled := false
+var _gameplay_enabled := false
 
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_default_touch_visible = DisplayServer.is_touchscreen_available()
-	visible = _default_touch_visible
 
 	for node_name in _bindings:
 		var button := find_child(node_name, true, false) as Button
@@ -31,19 +32,35 @@ func _ready() -> void:
 		button.button_down.connect(_press_action.bind(action))
 		button.button_up.connect(_release_action.bind(action))
 
-	print("[A1] Touch controls available=", _default_touch_visible)
+	_refresh_visibility()
+	print("[A3] Touch controls available=", _default_touch_visible, " gameplay=", _gameplay_enabled)
 
 
 func set_preview_enabled(enabled: bool) -> void:
-	visible = _default_touch_visible or enabled
-	if not visible:
-		release_all()
+	_preview_enabled = enabled
+	_refresh_visibility()
+
+
+func set_gameplay_enabled(enabled: bool) -> void:
+	_gameplay_enabled = enabled
+	_refresh_visibility()
+	print("[A3] TOUCH_GAMEPLAY enabled=", enabled, " visible=", visible)
+
+
+func is_gameplay_enabled() -> bool:
+	return _gameplay_enabled
 
 
 func release_all() -> void:
 	for action in _pressed_actions.keys():
 		Input.action_release(action)
 	_pressed_actions.clear()
+
+
+func _refresh_visibility() -> void:
+	visible = _preview_enabled or (_default_touch_visible and _gameplay_enabled)
+	if not visible:
+		release_all()
 
 
 func _press_action(action: StringName) -> void:

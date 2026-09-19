@@ -125,6 +125,15 @@ func launch(game_id: StringName) -> bool:
 	return true
 
 
+func request_current_game_exit() -> bool:
+	if _current_module == null:
+		return false
+	var game_id := current_game_id()
+	print("[A3][GameManager] GAME_EXIT_REQUEST id=", game_id)
+	_current_module.request_exit()
+	return true
+
+
 func pause_current_game() -> void:
 	if _current_module != null:
 		_current_module.pause()
