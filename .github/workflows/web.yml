@@ -1,0 +1,145 @@
+name: A1 Web Build and Evidence
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: "4.7.2"
+  GODOT_STATUS: "stable"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Godot 4.7.2 and Web export templates
+        shell: bash
+        run: |
+          set -euxo pipefail
+          GODOT_ZIP="Godot_v$GODOT_VERSION-$GODOT_STATUS_linux.x86_64.zip"
+          TEMPLATES="Godot_v$GODOT_VERSION-$GODOT_STATUS_export_templates.tpz"
+          BASE="https://github.com/godotengine/godot/releases/download/$GODOT_VERSION-$GODOT_STATUS"
+
+          curl -fL "$BASE/$GODOT_ZIP" -o /tmp/godot.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          sudo install -m 0755 "/tmp/godot/Godot_v$GODOT_VERSION-$GODOT_STATUS_linux.x86_64" /usr/local/bin/godot
+
+          curl -fL "$BASE/$TEMPLATES" -o /tmp/templates.tpz
+          mkdir -p /tmp/templates "$HOME/.local/share/godot/export_templates/$GODOT_VERSION.$GODOT_STATUS"
+          unzip -q /tmp/templates.tpz -d /tmp/templates
+          cp -a /tmp/templates/templates/. "$HOME/.local/share/godot/export_templates/$GODOT_VERSION.$GODOT_STATUS/"
+
+          godot --version
+          godot --version | grep -q "^$GODOT_VERSION.$GODOT_STATUS.official"
+
+      - name: Import project
+        run: godot --headless --editor --path . --quit
+
+      - name: A1 headless smoke
+        run: godot --headless --path . --script res://tests/a1_smoke.gd
+
+      - name: Verify single-threaded export configuration
+        shell: bash
+        run: |
+          grep -q 'variant/thread_support=false' export_presets.cfg
+          ! grep -q 'variant/thread_support=true' export_presets.cfg
+
+      - name: Export Web release
+        shell: bash
+        run: |
+          mkdir -p build/web
+          godot --headless --path . --export-release "Web" build/web/index.html
+          touch build/web/.nojekyll
+          test -s build/web/index.html
+          test -s build/web/index.wasm
+          test -s build/web/index.pck
+          find build/web -maxdepth 1 -type f -printf '%f %s bytes\n' | sort
+
+      - name: Install Playwright Chromium
+        shell: bash
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Local desktop and mobile-emulation boot smoke
+        shell: bash
+        run: |
+          python3 -m http.server 8080 --directory build/web >/tmp/gamezone-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID' EXIT
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:8080/index.html >/dev/null; then break; fi
+            sleep 1
+          done
+          node tests/web_smoke.mjs http://127.0.0.1:8080/index.html desktop
+          node tests/web_smoke.mjs http://127.0.0.1:8080/index.html mobile
+
+      - name: Upload A1 CI evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: a1-ci-evidence
+          path: artifacts/
+          if-no-files-found: error
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: build/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  live-desktop-smoke:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Playwright Chromium
+        shell: bash
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Verify deployed HTTPS build in desktop browser
+        shell: bash
+        env:
+          PAGE_URL: ${{ needs.deploy.outputs.page_url }}
+        run: |
+          set -euxo pipefail
+          test -n "$PAGE_URL"
+          node tests/web_smoke.mjs "$PAGE_URL" desktop
+
+      - name: Upload live desktop evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: a1-live-desktop-evidence
+          path: artifacts/
+          if-no-files-found: error
