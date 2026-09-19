@@ -9,6 +9,12 @@ config_version=5
 config/name="GameZone"
 run/main_scene="res://shell/main.tscn"
 
+[autoload]
+
+AudioManager="*res://shared/managers/audio_manager.gd"
+SaveManager="*res://shared/managers/save_manager.gd"
+GameManager="*res://shared/managers/game_manager.gd"
+
 [display]
 
 window/size/viewport_width=1280
