@@ -6,6 +6,7 @@ on:
     paths:
       - ".github/workflows/pacman-b2-probe.yml"
       - "tools/pacman_b2/**"
+      - "games/pacman/oracle/replays/**"
   workflow_dispatch:
 
 permissions:
