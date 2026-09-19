@@ -26,7 +26,7 @@ page.on("pageerror", error => {
   console.error("[pageerror]", error);
 });
 
-async function waitMarker(marker, timeout = 15000) {
+async function waitMarker(marker, timeout = 30000) {
   const started = Date.now();
   while (Date.now() - started < timeout) {
     if (consoleLines.some(line => line.includes(marker))) return true;
@@ -59,7 +59,15 @@ const response = await page.goto(url, { waitUntil: "networkidle", timeout: 12000
 if (!response || !response.ok()) throw new Error("HTTP boot failed: " + (response ? response.status() : "no response"));
 
 await page.waitForSelector("canvas", { state: "attached", timeout: 120000 });
-await waitMarker("[A3] A3_BOOT_OK");
+await waitMarker("[A4] A4_BOOT_OK");
+
+const httpIndex = consoleLines.findIndex(line => line.includes("[A4] PACK_HTTP_OK id=stub_packed"));
+const loadIndex = consoleLines.findIndex(line => line.includes("[A4] PACK_LOAD_OK id=stub_packed"));
+const bootIndex = consoleLines.findIndex(line => line.includes("[A4] A4_BOOT_OK"));
+if (httpIndex < 0 || loadIndex < 0 || bootIndex < 0 || !(httpIndex < loadIndex && loadIndex < bootIndex)) {
+  throw new Error("Runtime PCK ordering invalid: HTTP -> load_resource_pack -> A4_BOOT_OK was not observed.");
+}
+console.log("[A4_WEB_TEST] PACK_HTTP_LOAD_ORDER_OK");
 
 const canvas = page.locator("canvas");
 await canvas.evaluate(node => node.focus());
@@ -75,43 +83,52 @@ if (canvasInfo.width <= 0 || canvasInfo.height <= 0 || canvasInfo.clientWidth <=
   throw new Error("Canvas has invalid dimensions: " + JSON.stringify(canvasInfo));
 }
 
-let keyboardFocusFlow = null;
+let platformFlow = null;
 if (mode === "desktop") {
-  const launchBefore = markerCount("[A3] GAME_RUNNING");
-  const returnBefore = markerCount("[A3] HUB_RETURN");
+  const rounds = [];
+  for (let round = 0; round < 2; round++) {
+    const ids = [];
+    for (let i = 0; i < 3; i++) {
+      const launchBefore = markerCount("[A3] GAME_RUNNING");
+      const returnBefore = markerCount("[A3] HUB_RETURN");
 
-  await page.keyboard.press("Space");
-  await waitMarkerCountAbove("[A3] GAME_RUNNING", launchBefore);
-  const firstLaunchId = lastGameRunningId();
-  if (!firstLaunchId) throw new Error("Could not resolve first launched game id.");
-  await page.keyboard.press("Escape");
-  await waitMarkerCountAbove("[A3] HUB_RETURN", returnBefore);
+      await page.keyboard.press("Space");
+      await waitMarkerCountAbove("[A3] GAME_RUNNING", launchBefore);
+      const id = lastGameRunningId();
+      if (!id) throw new Error("Could not resolve launched game id.");
+      ids.push(id);
 
-  const focusBefore = markerCount("via=move_right");
-  await page.keyboard.press("ArrowRight");
-  await page.waitForTimeout(300);
-  if (markerCount("via=move_right") <= focusBefore) throw new Error("ArrowRight did not move Godot card focus.");
+      await page.keyboard.press("z");
+      await page.waitForTimeout(80);
+      await page.keyboard.press("x");
+      await page.waitForTimeout(80);
 
-  const launchMid = markerCount("[A3] GAME_RUNNING");
-  const returnMid = markerCount("[A3] HUB_RETURN");
-  await page.keyboard.press("Space");
-  await waitMarkerCountAbove("[A3] GAME_RUNNING", launchMid);
-  const secondLaunchId = lastGameRunningId();
-  if (!secondLaunchId) throw new Error("Could not resolve second launched game id.");
-  if (secondLaunchId === firstLaunchId) {
-    throw new Error("Focus navigation did not select a different game: " + firstLaunchId);
+      await page.keyboard.press("Escape");
+      await waitMarkerCountAbove("[A3] HUB_RETURN", returnBefore);
+
+      const returnLine = [...consoleLines].reverse().find(line => line.includes("[A3] HUB_RETURN"));
+      if (!returnLine || !returnLine.includes("audio_scopes=0")) {
+        throw new Error("Audio scope did not cleanly teardown after " + id);
+      }
+
+      await page.keyboard.press("ArrowRight");
+      await page.waitForTimeout(120);
+    }
+    if (new Set(ids).size !== 3 || !ids.includes("stub_packed") || !ids.includes("stub_tall") || !ids.includes("stub_wide")) {
+      throw new Error("Registry focus cycle did not launch all three games: " + JSON.stringify(ids));
+    }
+    rounds.push(ids);
   }
-  await page.keyboard.press("Escape");
-  await waitMarkerCountAbove("[A3] HUB_RETURN", returnMid);
 
-  keyboardFocusFlow = {
-    focusNavigation: true,
-    firstLaunchId,
-    secondLaunchId,
+  platformFlow = {
+    allGames: ["stub_packed", "stub_tall", "stub_wide"],
+    rounds,
     launchCount: markerCount("[A3] GAME_RUNNING"),
     hubReturnCount: markerCount("[A3] HUB_RETURN"),
+    relaunchEach: true,
+    audioTeardown: true,
   };
-  console.log("[A3_WEB_TEST] KEYBOARD_FOCUS_FLOW_OK " + JSON.stringify(keyboardFocusFlow));
+  console.log("[A4_WEB_TEST] ALL_GAMES_RELAUNCH_FLOW_OK " + JSON.stringify(platformFlow));
 }
 
 if (pageErrors.length > 0) throw new Error("Browser page errors: " + pageErrors.join(" | "));
@@ -121,6 +138,7 @@ const resourceUrls = {
   "index.html": new URL("index.html", baseUrl).href,
   "index.pck": new URL("index.pck", baseUrl).href,
   "index.wasm": new URL("index.wasm", baseUrl).href,
+  "packs/stub_packed.pck": new URL("packs/stub_packed.pck", baseUrl).href,
 };
 const resourceChecks = {};
 
@@ -158,8 +176,11 @@ const evidence = {
   finalUrl: page.url(),
   mode,
   canvasInfo,
-  a3BootMarker: consoleLines.some(line => line.includes("[A3] A3_BOOT_OK")),
-  keyboardFocusFlow,
+  a4BootMarker: consoleLines.some(line => line.includes("[A4] A4_BOOT_OK")),
+  packHttpOk: httpIndex >= 0,
+  packLoadOk: loadIndex >= 0,
+  packLoadOrderOk: httpIndex < loadIndex && loadIndex < bootIndex,
+  platformFlow,
   consoleLines,
   pageErrors,
   resourceChecks,
@@ -169,5 +190,5 @@ const evidence = {
 };
 fs.writeFileSync("artifacts/platform-" + mode + ".json", JSON.stringify(evidence, null, 2));
 
-console.log("[A3_WEB_TEST] " + mode.toUpperCase() + "_BOOT_OK " + JSON.stringify(canvasInfo));
+console.log("[A4_WEB_TEST] " + mode.toUpperCase() + "_BOOT_OK " + JSON.stringify(canvasInfo));
 await browser.close();

@@ -27,17 +27,21 @@ func _run() -> void:
 		return
 	root.add_child(_hub)
 
-	await process_frame
-	await process_frame
+	for _i in range(120):
+		await process_frame
+		if _hub.get_game_card_count() >= 3:
+			break
 
-	if _hub.get_game_card_count() != 2:
-		_fail("expected 2 registry cards, got %d" % _hub.get_game_card_count())
+	if _hub.get_game_card_count() != 3:
+		_fail("expected 3 registry cards after pack load, got %d" % _hub.get_game_card_count())
 		return
 
 	var ids: Array[StringName] = _hub.get_game_card_ids()
-	if not ids.has(&"stub_wide") or not ids.has(&"stub_tall"):
-		_fail("registry cards missing: %s" % [ids])
-		return
+	for expected_id in [&"stub_wide", &"stub_tall", &"stub_packed"]:
+		if not ids.has(expected_id):
+			_fail("registry card missing: %s ids=%s" % [expected_id, ids])
+			return
+
 	if not _hub.is_hub_visible() or _hub.is_game_visible():
 		_fail("hub/game visibility incorrect at boot")
 		return
