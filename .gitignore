@@ -1,0 +1,11 @@
+# Godot editor/import cache
+.godot/
+
+# Local web exports
+build/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
