@@ -1,6 +1,10 @@
 extends Node
 
 signal registry_loaded(game_count: int)
+signal registry_ready(game_count: int, pack_count: int)
+signal pack_download_started(game_id: StringName, url: String)
+signal pack_downloaded(game_id: StringName, url: String, byte_count: int)
+signal pack_loaded(game_id: StringName, metadata: GameMetadata)
 signal game_loaded(game_id: StringName, metadata: GameMetadata)
 signal game_unloaded(game_id: StringName)
 signal game_load_failed(game_id: StringName, reason: String)
@@ -9,9 +13,12 @@ signal state_saved(game_id: StringName, data: Variant)
 
 const GameContextScript = preload("res://shared/modules/game_context.gd")
 const DEFAULT_REGISTRY := "res://games/registry.json"
+const PACK_USER_DIR := "user://gamezone_packs"
 
 var _host: Control
 var _metadata_by_id: Dictionary = {}
+var _pack_entries: Array[Dictionary] = []
+var _loaded_pack_ids: Dictionary = {}
 
 var _current_metadata: GameMetadata
 var _current_module: GameModule
@@ -44,31 +51,49 @@ func set_host(host: Control) -> void:
 
 func load_registry(path: String = DEFAULT_REGISTRY) -> bool:
 	_metadata_by_id.clear()
+	_pack_entries.clear()
+	_loaded_pack_ids.clear()
+
 	if not FileAccess.file_exists(path):
-		push_error("[A2][GameManager] registry missing: " + path)
+		push_error("[A4][GameManager] registry missing: " + path)
 		return false
 
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
 	if typeof(parsed) != TYPE_DICTIONARY:
-		push_error("[A2][GameManager] invalid registry JSON")
+		push_error("[A4][GameManager] invalid registry JSON")
 		return false
 
 	var games: Array = parsed.get("games", [])
-	for item in games:
-		if typeof(item) != TYPE_DICTIONARY:
+	for item_variant in games:
+		if typeof(item_variant) != TYPE_DICTIONARY:
 			continue
-		var metadata_path: String = item.get("metadata", "")
+
+		var item: Dictionary = item_variant
+		var source := str(item.get("source", "tree"))
+		if source == "pack":
+			_pack_entries.append(item.duplicate(true))
+			continue
+
+		var metadata_path := str(item.get("metadata", ""))
 		if metadata_path.is_empty():
 			continue
-		var metadata := ResourceLoader.load(metadata_path) as GameMetadata
-		if metadata == null or not metadata.is_valid():
-			push_error("[A2][GameManager] invalid metadata: " + metadata_path)
-			continue
-		_metadata_by_id[str(metadata.id)] = metadata
+		_register_metadata(metadata_path, &"")
 
 	registry_loaded.emit(_metadata_by_id.size())
-	print("[A2][GameManager] registry games=", _metadata_by_id.size())
-	return not _metadata_by_id.is_empty()
+	print("[A4][GameManager] registry tree_games=", _metadata_by_id.size(), " pack_entries=", _pack_entries.size())
+	return not _metadata_by_id.is_empty() or not _pack_entries.is_empty()
+
+
+func load_registered_packs() -> bool:
+	var all_ok := true
+	for entry in _pack_entries:
+		var ok: bool = await _load_pack_entry(entry)
+		if not ok:
+			all_ok = false
+
+	registry_ready.emit(_metadata_by_id.size(), _loaded_pack_ids.size())
+	print("[A4] REGISTRY_READY games=", _metadata_by_id.size(), " packs=", _loaded_pack_ids.size())
+	return all_ok
 
 
 func get_installed_games() -> Array:
@@ -77,6 +102,14 @@ func get_installed_games() -> Array:
 		result.append(metadata)
 	result.sort_custom(func(a: GameMetadata, b: GameMetadata) -> bool: return a.title < b.title)
 	return result
+
+
+func get_loaded_pack_count() -> int:
+	return _loaded_pack_ids.size()
+
+
+func is_pack_loaded(game_id: StringName) -> bool:
+	return _loaded_pack_ids.has(str(game_id))
 
 
 func has_game(game_id: StringName) -> bool:
@@ -204,6 +237,133 @@ func get_render_metrics() -> Dictionary:
 		"display_size": display_size,
 		"letterbox": display_size != host_size,
 	}
+
+
+func _load_pack_entry(entry: Dictionary) -> bool:
+	var game_id := StringName(str(entry.get("id", "")))
+	var pack_key := str(game_id)
+	var metadata_path := str(entry.get("metadata", ""))
+
+	if game_id.is_empty() or metadata_path.is_empty():
+		push_error("[A4] invalid pack entry: " + JSON.stringify(entry))
+		return false
+
+	if _loaded_pack_ids.has(pack_key):
+		return true
+
+	var pack_file := ""
+	if OS.has_feature("web"):
+		pack_file = await _download_pack_for_web(game_id, str(entry.get("pack_url", "")))
+	else:
+		var local_path := str(entry.get("local_path", ""))
+		if local_path.is_empty():
+			push_error("[A4] local_path missing for pack " + pack_key)
+			return false
+		pack_file = ProjectSettings.globalize_path(local_path)
+		if not FileAccess.file_exists(pack_file):
+			push_error("[A4] local pack missing id=%s path=%s" % [pack_key, pack_file])
+			return false
+		print("[A4] PACK_LOCAL_OK id=", game_id, " path=", local_path, " bytes=", FileAccess.get_file_as_bytes(pack_file).size())
+
+	if pack_file.is_empty():
+		return false
+
+	var load_ok := ProjectSettings.load_resource_pack(pack_file, false)
+	if not load_ok:
+		push_error("[A4] load_resource_pack failed id=%s file=%s" % [pack_key, pack_file])
+		return false
+
+	var metadata := ResourceLoader.load(metadata_path) as GameMetadata
+	if metadata == null or not metadata.is_valid():
+		push_error("[A4] packed metadata invalid id=%s metadata=%s" % [pack_key, metadata_path])
+		return false
+
+	if not game_id.is_empty() and metadata.id != game_id:
+		push_error("[A4] packed id mismatch registry=%s metadata=%s" % [game_id, metadata.id])
+		return false
+
+	_metadata_by_id[pack_key] = metadata
+	_loaded_pack_ids[pack_key] = true
+	print("[A4] PACK_LOAD_OK id=", game_id, " metadata=", metadata_path, " entry_scene=", metadata.entry_scene.resource_path)
+	pack_loaded.emit(game_id, metadata)
+	return true
+
+
+func _download_pack_for_web(game_id: StringName, relative_url: String) -> String:
+	if relative_url.is_empty():
+		push_error("[A4] pack_url missing for " + str(game_id))
+		return ""
+
+	var dir := DirAccess.open("user://")
+	if dir == null:
+		push_error("[A4] cannot open user://")
+		return ""
+	var mkdir_error := dir.make_dir_recursive("gamezone_packs")
+	if mkdir_error != OK and mkdir_error != ERR_ALREADY_EXISTS:
+		push_error("[A4] cannot create pack dir error=%d" % mkdir_error)
+		return ""
+
+	var resolved_url := _resolve_web_url(relative_url)
+	var user_path := PACK_USER_DIR.path_join(str(game_id) + ".pck")
+	var request := HTTPRequest.new()
+	request.name = "PackDownload_" + str(game_id)
+	request.download_file = user_path
+	add_child(request)
+
+	print("[A4] PACK_HTTP_BEGIN id=", game_id, " url=", resolved_url, " target=", user_path)
+	pack_download_started.emit(game_id, resolved_url)
+
+	var request_error := request.request(resolved_url)
+	if request_error != OK:
+		request.queue_free()
+		push_error("[A4] HTTP request failed id=%s error=%d" % [game_id, request_error])
+		return ""
+
+	var response: Array = await request.request_completed
+	var result_code := int(response[0])
+	var http_code := int(response[1])
+	request.queue_free()
+
+	if result_code != HTTPRequest.RESULT_SUCCESS or http_code < 200 or http_code >= 300:
+		push_error("[A4] PACK_HTTP_FAIL id=%s result=%d http=%d" % [game_id, result_code, http_code])
+		return ""
+
+	var absolute_path := ProjectSettings.globalize_path(user_path)
+	var byte_count := FileAccess.get_file_as_bytes(absolute_path).size()
+	if byte_count <= 0:
+		push_error("[A4] downloaded pack empty id=" + str(game_id))
+		return ""
+
+	print("[A4] PACK_HTTP_OK id=", game_id, " status=", http_code, " bytes=", byte_count, " file=", user_path)
+	pack_downloaded.emit(game_id, resolved_url, byte_count)
+	return absolute_path
+
+
+func _resolve_web_url(relative_url: String) -> String:
+	if relative_url.begins_with("http://") or relative_url.begins_with("https://"):
+		return relative_url
+
+	var document = JavaScriptBridge.get_interface("document")
+	if document == null:
+		return relative_url
+
+	var base_uri := str(document.baseURI)
+	var slash := base_uri.rfind("/")
+	if slash < 0:
+		return relative_url
+	return base_uri.substr(0, slash + 1) + relative_url.trim_prefix("./")
+
+
+func _register_metadata(metadata_path: String, expected_id: StringName) -> bool:
+	var metadata := ResourceLoader.load(metadata_path) as GameMetadata
+	if metadata == null or not metadata.is_valid():
+		push_error("[A4][GameManager] invalid metadata: " + metadata_path)
+		return false
+	if not expected_id.is_empty() and metadata.id != expected_id:
+		push_error("[A4][GameManager] metadata id mismatch expected=%s actual=%s" % [expected_id, metadata.id])
+		return false
+	_metadata_by_id[str(metadata.id)] = metadata
+	return true
 
 
 func _create_render_surface(native_size: Vector2i) -> void:

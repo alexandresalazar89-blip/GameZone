@@ -1,6 +1,22 @@
 {
+  "schema_version": 2,
   "games": [
-    {"metadata": "res://games/stub_wide/metadata.tres"},
-    {"metadata": "res://games/stub_tall/metadata.tres"}
+    {
+      "source": "tree",
+      "metadata": "res://games/stub_wide/metadata.tres"
+    },
+    {
+      "source": "tree",
+      "metadata": "res://games/stub_tall/metadata.tres"
+    },
+    {
+      "source": "pack",
+      "id": "stub_packed",
+      "metadata": "res://games/stub_packed/metadata.tres",
+      "pack_url": "packs/stub_packed.pck",
+      "local_path": "res://build/runtime-packs/stub_packed.pck",
+      "build_source": "pack_sources/stub_packed",
+      "mount": "res://games/stub_packed"
+    }
   ]
 }

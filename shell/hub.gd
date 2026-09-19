@@ -55,12 +55,19 @@ func _ready() -> void:
 		_hub_status.text = "Could not load the game registry."
 		return
 
+	_hub_status.text = "Loading runtime game packs..."
+	var packs_ok: bool = await GameManager.load_registered_packs()
+	if not packs_ok:
+		_hub_status.text = "One or more runtime packs failed to load."
+		return
+
 	_populate_game_grid()
 	resized.connect(_update_grid_columns)
 	_update_grid_columns()
 	call_deferred("_focus_first_card")
 
 	print("[A3] A3_BOOT_OK games=", GameManager.get_installed_games().size(), " cards=", _card_controls.size())
+	print("[A4] A4_BOOT_OK games=", GameManager.get_installed_games().size(), " packs=", GameManager.get_loaded_pack_count(), " cards=", _card_controls.size())
 
 
 func _input(event: InputEvent) -> void:

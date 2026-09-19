@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://shared/modules/game_metadata.gd" id="1"]
+[ext_resource type="PackedScene" path="res://games/stub_packed/main.tscn" id="2"]
+
+[sub_resource type="Gradient" id="Gradient_pack"]
+offsets = PackedFloat32Array(0, 1)
+colors = PackedColorArray(0.04, 0.2, 0.11, 1, 0.12, 0.58, 0.31, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture_pack"]
+gradient = SubResource("Gradient_pack")
+width = 512
+height = 288
+fill_from = Vector2(0, 0)
+fill_to = Vector2(1, 1)
+
+[resource]
+script = ExtResource("1")
+id = &"stub_packed"
+title = "Runtime PCK Stub"
+version = "1.0.0"
+controls_text = "Loaded over HTTP at runtime • Move + A audio + B save + Back exit"
+thumbnail = SubResource("GradientTexture_pack")
+entry_scene = ExtResource("2")
+native_size = Vector2i(256, 192)

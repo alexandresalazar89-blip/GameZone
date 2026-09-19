@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://games/stub_packed/stub_packed.gd" id="1"]
+
+[node name="StubPacked" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 256.0
+offset_bottom = 192.0
+color = Color(0.055, 0.12, 0.08, 1)
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 244.0
+offset_bottom = 42.0
+text = "RUNTIME PCK STUB"
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 138.0
+offset_right = 246.0
+offset_bottom = 188.0
+text = "loading from pack..."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Marker" type="ColorRect" parent="."]
+offset_left = 24.0
+offset_top = 72.0
+offset_right = 48.0
+offset_bottom = 96.0
+color = Color(0.25, 1, 0.55, 1)
+mouse_filter = 2
