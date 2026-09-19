@@ -71,11 +71,33 @@ def matrix_data(node):
     return out
 
 
-def timeline(container, timeline_id, kind, frame_count):
+def build_script_index(files):
+    index = {}
+    main_rx = re.compile(r"^scripts/frame_(\\d+)/DoAction(?:_(\\d+))?\\.as$")
+    sprite_rx = re.compile(r"^scripts/DefineSprite_(\\d+)(?:_[^/]+)?/frame_(\\d+)/DoAction(?:_(\\d+))?\\.as$")
+    for item in files:
+        path = item["path"]
+        match = main_rx.match(path)
+        if match:
+            frame = int(match.group(1))
+            order = int(match.group(2) or "1")
+            index.setdefault((0, frame), []).append((order, path))
+            continue
+        match = sprite_rx.match(path)
+        if match:
+            sid = int(match.group(1))
+            frame = int(match.group(2))
+            order = int(match.group(3) or "1")
+            index.setdefault((sid, frame), []).append((order, path))
+    return {key: [path for _, path in sorted(values)] for key, values in index.items()}
+
+
+def timeline(container, timeline_id, kind, frame_count, script_index):
     frames = []
     current = {"frame": 1, "labels": [], "events": []}
     placements = []
     actions = []
+    action_ordinals = {}
 
     def finish_frame():
         nonlocal current
@@ -102,12 +124,17 @@ def timeline(container, timeline_id, kind, frame_count):
         elif t == "RemoveObject2Tag":
             current["events"].append({"type": "remove", "depth": int(item.attrib.get("depth", "0"))})
         elif t == "DoActionTag":
-            if kind == "main":
-                script = "scripts/frame_%d/DoAction.as" % current["frame"]
-            else:
-                script = "scripts/DefineSprite_%d/frame_%d/DoAction.as" % (timeline_id, current["frame"])
-            current["events"].append({"type": "action", "script": script})
-            actions.append({"timeline": timeline_id, "frame": current["frame"], "script": script})
+            key = (timeline_id, current["frame"])
+            ordinal = action_ordinals.get(key, 0)
+            candidates = script_index.get(key, [])
+            script = candidates[ordinal] if ordinal < len(candidates) else None
+            action_ordinals[key] = ordinal + 1
+            if script is None:
+                raise RuntimeError("No raw script path for DoAction timeline=%s frame=%s ordinal=%s" % (
+                    timeline_id, current["frame"], ordinal + 1
+                ))
+            current["events"].append({"type": "action", "script": script, "ordinal": ordinal + 1})
+            actions.append({"timeline": timeline_id, "frame": current["frame"], "ordinal": ordinal + 1, "script": script})
         elif t == "StartSoundTag":
             current["events"].append({"type": "start_sound", "sound_id": int(item.attrib["soundId"]) if item.attrib.get("soundId", "").isdigit() else None})
         elif t == "SoundStreamHead2Tag":
@@ -232,7 +259,8 @@ def main():
             info["font_id"] = int(item.attrib["fontId"]) if item.attrib.get("fontId", "").isdigit() else None
         definitions[cid] = info
 
-    main_tl = timeline(top_tags, 0, "main", int(root.attrib.get("frameCount", "0")))
+    script_index = build_script_index(files)
+    main_tl = timeline(top_tags, 0, "main", int(root.attrib.get("frameCount", "0")), script_index)
     sprite_tls = {}
     all_placements = list(main_tl["placements"])
     all_actions = list(main_tl["actions"])
@@ -243,7 +271,7 @@ def main():
         subtags = item.find("subTags")
         if subtags is None:
             continue
-        tl = timeline(subtags, sid, "sprite", int(item.attrib.get("frameCount", "0")))
+        tl = timeline(subtags, sid, "sprite", int(item.attrib.get("frameCount", "0")), script_index)
         sprite_tls[str(sid)] = tl
         all_placements.extend(tl["placements"])
         all_actions.extend(tl["actions"])
@@ -306,12 +334,22 @@ def main():
     }
 
     display = root.find("displayRect")
+    if len(all_actions) != 59:
+        raise RuntimeError("Expected 59 timeline DoAction entries from source XML, got %d" % len(all_actions))
+    if any(not (raw / item["script"]).is_file() for item in all_actions):
+        missing = [item["script"] for item in all_actions if not (raw / item["script"]).is_file()]
+        raise RuntimeError("TIMELINE_MAP points at missing raw scripts: " + ", ".join(missing))
+
     mapped_scripts = {item["script"] for item in all_actions}
     all_raw_scripts = sorted(
         item["path"] for item in files
         if item["category"] == "scripts" and item["path"].lower().endswith(".as")
     )
     non_timeline_scripts = [path for path in all_raw_scripts if path not in mapped_scripts]
+    if len(non_timeline_scripts) != 6:
+        raise RuntimeError("Expected 6 non-timeline button/clip scripts, got %d: %s" % (
+            len(non_timeline_scripts), non_timeline_scripts
+        ))
 
     timeline_map = {
         "schema": 1,
