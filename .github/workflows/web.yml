@@ -13,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: platform-web-v5-${{ github.ref }}
+  group: platform-web-v6-${{ github.ref }}
   cancel-in-progress: true
 
 env:
