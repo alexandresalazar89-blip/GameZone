@@ -1,0 +1,148 @@
+name: Pac-Man B0 Triage
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pacman-b0.yml"
+      - "tools/pacman_b0/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  SWF_URL: "https://raw.githubusercontent.com/AmmarSAA/flash-games-directory/main/pacman.swf"
+  SWF_PATH: "games/pacman/original/pacman.swf"
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Prepare directories
+        run: mkdir -p games/pacman/original .b0/tools .b0/evidence .b0/scripts
+
+      - name: Resolve and install latest FFDec release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euxo pipefail
+          curl -fsSL --retry 4 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/jindrapetrik/jpexs-decompiler/releases/latest -o .b0/ffdec-release.json
+          python3 - <<'PY' > .b0/ffdec-selection.env
+          import json,re
+          d=json.load(open('.b0/ffdec-release.json'))
+          c=[a for a in d.get('assets',[]) if re.fullmatch(r'ffdec_[0-9]+(?:\.[0-9]+)+\.zip',a['name'])]
+          if not c: raise SystemExit('No ffdec_<version>.zip asset found')
+          a=c[0]; print('FFDEC_TAG='+d['tag_name']); print('FFDEC_ASSET='+a['name']); print('FFDEC_URL='+a['browser_download_url'])
+          PY
+          source .b0/ffdec-selection.env
+          curl -fsSL --retry 4 "$FFDEC_URL" -o .b0/tools/ffdec.zip
+          unzip -q .b0/tools/ffdec.zip -d .b0/tools/ffdec
+          FFDEC_JAR="$(find .b0/tools/ffdec -type f -name ffdec.jar -print -quit)"
+          test -n "$FFDEC_JAR"
+          echo "FFDEC_JAR=$FFDEC_JAR" >> "$GITHUB_ENV"
+          echo "FFDEC_TAG=$FFDEC_TAG" >> "$GITHUB_ENV"
+          echo "FFDEC_ASSET=$FFDEC_ASSET" >> "$GITHUB_ENV"
+
+      - name: Verify FFDec CLI flags
+        run: |
+          set -euxo pipefail
+          java -Djava.awt.headless=true -jar "$FFDEC_JAR" --help > .b0/evidence/ffdec-help.txt 2>&1
+          head -n 45 .b0/evidence/ffdec-help.txt
+          grep -q -- "-export" .b0/evidence/ffdec-help.txt
+          grep -q -- "-dumpSWF" .b0/evidence/ffdec-help.txt
+
+      - name: Resolve and install latest Ruffle desktop Linux release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euxo pipefail
+          curl -fsSL --retry 4 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" "https://api.github.com/repos/ruffle-rs/ruffle/releases?per_page=30" -o .b0/ruffle-releases.json
+          python3 - <<'PY' > .b0/ruffle-selection.env
+          import json,re
+          for d in json.load(open('.b0/ruffle-releases.json')):
+              if d.get('draft'): continue
+              c=[a for a in d.get('assets',[]) if re.fullmatch(r'ruffle.*-linux-x86_64\.tar\.gz',a['name'])]
+              if c:
+                  a=c[0]; print('RUFFLE_TAG='+d['tag_name']); print('RUFFLE_ASSET='+a['name']); print('RUFFLE_URL='+a['browser_download_url']); break
+          else: raise SystemExit('No recent Ruffle linux-x86_64 tar.gz asset found')
+          PY
+          source .b0/ruffle-selection.env
+          curl -fsSL --retry 4 "$RUFFLE_URL" -o .b0/tools/ruffle.tar.gz
+          mkdir -p .b0/tools/ruffle && tar -xzf .b0/tools/ruffle.tar.gz -C .b0/tools/ruffle
+          RUFFLE_BIN="$(find .b0/tools/ruffle -type f -name ruffle -print -quit)"
+          test -n "$RUFFLE_BIN" && chmod +x "$RUFFLE_BIN"
+          echo "RUFFLE_BIN=$RUFFLE_BIN" >> "$GITHUB_ENV"
+          echo "RUFFLE_TAG=$RUFFLE_TAG" >> "$GITHUB_ENV"
+          echo "RUFFLE_ASSET=$RUFFLE_ASSET" >> "$GITHUB_ENV"
+
+      - name: Record exact tool versions
+        run: |
+          set -euxo pipefail
+          java -version 2>&1 | tee .b0/evidence/java-version.txt
+          ("$RUFFLE_BIN" --version || true) 2>&1 | tee .b0/evidence/ruffle-version.txt
+          printf '%s\n' "$FFDEC_TAG" > .b0/evidence/ffdec-release.txt
+          printf '%s\n' "$RUFFLE_TAG" > .b0/evidence/ruffle-release.txt
+
+      - name: Download authoritative Pac-Man SWF
+        run: |
+          set -euxo pipefail
+          curl -fsSL --retry 5 "$SWF_URL" -o "$SWF_PATH"
+          test -s "$SWF_PATH"
+          SIG="$(head -c 3 "$SWF_PATH")"
+          case "$SIG" in FWS|CWS|ZWS) ;; *) echo "Unexpected SWF signature: $SIG" >&2; exit 1 ;; esac
+          sha256sum "$SWF_PATH" | tee .b0/evidence/pacman.sha256
+          stat -c '%n %s bytes' "$SWF_PATH"
+
+      - name: B0 FFDec triage only
+        shell: bash
+        run: |
+          set -euxo pipefail
+          java -Djava.awt.headless=true -jar "$FFDEC_JAR" -cli -dumpSWF "$SWF_PATH" > .b0/evidence/dumpSWF.txt 2>&1
+          java -Djava.awt.headless=true -jar "$FFDEC_JAR" -cli -dumpAS2 "$SWF_PATH" > .b0/evidence/dumpAS2.txt 2>&1 || true
+          java -Djava.awt.headless=true -jar "$FFDEC_JAR" -cli -dumpAS3 "$SWF_PATH" > .b0/evidence/dumpAS3.txt 2>&1 || true
+          java -Djava.awt.headless=true -jar "$FFDEC_JAR" -cli -swf2xml "$SWF_PATH" .b0/evidence/pacman.xml > .b0/evidence/swf2xml.log 2>&1
+          java -Djava.awt.headless=true -jar "$FFDEC_JAR" -cli -onerror abort -timeout 30 -export script .b0/scripts "$SWF_PATH" > .b0/evidence/export-script.log 2>&1
+          find .b0/scripts -type f -printf '%P\n' | sort | tee .b0/evidence/script-files.txt
+
+      - name: Generate B0 report and port plan
+        run: |
+          set -euxo pipefail
+          JAVA_VERSION="$(java -version 2>&1 | head -n 1 | sed 's/"//g')"
+          RUFFLE_VERSION="$(head -n 1 .b0/evidence/ruffle-version.txt | tr -d '\r')"
+          FFDEC_HELP_HEAD="$(head -n 8 .b0/evidence/ffdec-help.txt)"
+          python3 tools/pacman_b0/analyze_swf.py --swf "$SWF_PATH" --xml .b0/evidence/pacman.xml --scripts .b0/scripts --ffdec-tag "$FFDEC_TAG" --ffdec-asset "$FFDEC_ASSET" --ruffle-tag "$RUFFLE_TAG" --ruffle-asset "$RUFFLE_ASSET" --java-version "$JAVA_VERSION" --ruffle-version-output "$RUFFLE_VERSION" --ffdec-help-head "$FFDEC_HELP_HEAD" --out-json games/pacman/B0_TRIAGE.json --out-plan PACMAN_PORT_PLAN.md
+          cat games/pacman/B0_TRIAGE.json
+          sed -n '1,180p' PACMAN_PORT_PLAN.md
+
+      - name: Upload B0 evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: pacman-b0-evidence
+          path: |
+            .b0/evidence/
+            .b0/scripts/
+            games/pacman/B0_TRIAGE.json
+            PACMAN_PORT_PLAN.md
+          if-no-files-found: error
+
+      - name: Persist authoritative SWF and B0 report
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$SWF_PATH" games/pacman/B0_TRIAGE.json PACMAN_PORT_PLAN.md
+          if git diff --cached --quiet; then echo "No B0 files changed."; exit 0; fi
+          git commit -m "docs(pacman-b0): record SWF triage and pinned toolchain [skip ci]"
+          git push origin HEAD:main
