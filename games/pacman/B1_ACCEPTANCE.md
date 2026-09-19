@@ -27,7 +27,7 @@ Structure:
 - Timeline ActionScript entries: 59
 - Named instances: 48
 - Frame labels: 17
-- Non-timeline ActionScript files (button/clip actions): 13
+- Non-timeline ActionScript files (button/clip actions): 6
 - Font definitions: 3; exported TTF files: 2; zero-glyph font IDs: [49]
 - Bitmap image definitions: 0; exported image files: 0
 

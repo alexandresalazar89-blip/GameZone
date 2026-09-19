@@ -26,11 +26,13 @@
           },
           {
             "type": "action",
-            "script": "scripts/frame_1/DoAction.as"
+            "script": "scripts/frame_1/DoAction.as",
+            "ordinal": 1
           },
           {
             "type": "action",
-            "script": "scripts/frame_1/DoAction.as"
+            "script": "scripts/frame_1/DoAction_2.as",
+            "ordinal": 2
           },
           {
             "type": "place",
@@ -85,7 +87,8 @@
           },
           {
             "type": "action",
-            "script": "scripts/frame_2/DoAction.as"
+            "script": "scripts/frame_2/DoAction.as",
+            "ordinal": 1
           },
           {
             "type": "place",
@@ -208,7 +211,8 @@
           },
           {
             "type": "action",
-            "script": "scripts/frame_4/DoAction.as"
+            "script": "scripts/frame_4/DoAction.as",
+            "ordinal": 1
           },
           {
             "type": "place",
@@ -745,7 +749,8 @@
         "events": [
           {
             "type": "action",
-            "script": "scripts/frame_5/DoAction.as"
+            "script": "scripts/frame_5/DoAction.as",
+            "ordinal": 1
           },
           {
             "type": "frame_label",
@@ -761,7 +766,8 @@
         "events": [
           {
             "type": "action",
-            "script": "scripts/frame_6/DoAction.as"
+            "script": "scripts/frame_6/DoAction.as",
+            "ordinal": 1
           },
           {
             "type": "frame_label",
@@ -775,7 +781,8 @@
         "events": [
           {
             "type": "action",
-            "script": "scripts/frame_7/DoAction.as"
+            "script": "scripts/frame_7/DoAction.as",
+            "ordinal": 1
           }
         ]
       },
@@ -953,11 +960,13 @@
           },
           {
             "type": "action",
-            "script": "scripts/frame_9/DoAction.as"
+            "script": "scripts/frame_9/DoAction.as",
+            "ordinal": 1
           },
           {
             "type": "action",
-            "script": "scripts/frame_9/DoAction.as"
+            "script": "scripts/frame_9/DoAction_2.as",
+            "ordinal": 2
           },
           {
             "type": "place",
@@ -1091,7 +1100,8 @@
           },
           {
             "type": "action",
-            "script": "scripts/frame_10/DoAction.as"
+            "script": "scripts/frame_10/DoAction.as",
+            "ordinal": 1
           },
           {
             "type": "place",
@@ -2401,51 +2411,61 @@
       {
         "timeline": 0,
         "frame": 1,
+        "ordinal": 1,
         "script": "scripts/frame_1/DoAction.as"
       },
       {
         "timeline": 0,
         "frame": 1,
-        "script": "scripts/frame_1/DoAction.as"
+        "ordinal": 2,
+        "script": "scripts/frame_1/DoAction_2.as"
       },
       {
         "timeline": 0,
         "frame": 2,
+        "ordinal": 1,
         "script": "scripts/frame_2/DoAction.as"
       },
       {
         "timeline": 0,
         "frame": 4,
+        "ordinal": 1,
         "script": "scripts/frame_4/DoAction.as"
       },
       {
         "timeline": 0,
         "frame": 5,
+        "ordinal": 1,
         "script": "scripts/frame_5/DoAction.as"
       },
       {
         "timeline": 0,
         "frame": 6,
+        "ordinal": 1,
         "script": "scripts/frame_6/DoAction.as"
       },
       {
         "timeline": 0,
         "frame": 7,
+        "ordinal": 1,
         "script": "scripts/frame_7/DoAction.as"
       },
       {
         "timeline": 0,
         "frame": 9,
+        "ordinal": 1,
         "script": "scripts/frame_9/DoAction.as"
       },
       {
         "timeline": 0,
         "frame": 9,
-        "script": "scripts/frame_9/DoAction.as"
+        "ordinal": 2,
+        "script": "scripts/frame_9/DoAction_2.as"
       },
       {
         "timeline": 0,
         "frame": 10,
+        "ordinal": 1,
         "script": "scripts/frame_10/DoAction.as"
       }
     ]
@@ -2684,7 +2704,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_16/frame_1/DoAction.as"
+              "script": "scripts/DefineSprite_16/frame_1/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -3161,6 +3182,7 @@
         {
           "timeline": 16,
           "frame": 1,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_16/frame_1/DoAction.as"
         }
       ]
@@ -3280,7 +3302,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_19/frame_1/DoAction.as"
+              "script": "scripts/DefineSprite_19_Ghost/frame_1/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -3373,7 +3396,8 @@
         {
           "timeline": 19,
           "frame": 1,
-          "script": "scripts/DefineSprite_19/frame_1/DoAction.as"
+          "ordinal": 1,
+          "script": "scripts/DefineSprite_19_Ghost/frame_1/DoAction.as"
         }
       ]
     },
@@ -3440,7 +3464,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_23/frame_1/DoAction.as"
+              "script": "scripts/DefineSprite_23_GhKill/frame_1/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -3450,7 +3475,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_23/frame_2/DoAction.as"
+              "script": "scripts/DefineSprite_23_GhKill/frame_2/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -3614,7 +3640,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_23/frame_12/DoAction.as"
+              "script": "scripts/DefineSprite_23_GhKill/frame_12/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -3800,7 +3827,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_23/frame_41/DoAction.as"
+              "script": "scripts/DefineSprite_23_GhKill/frame_41/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -3987,22 +4015,26 @@
         {
           "timeline": 23,
           "frame": 1,
-          "script": "scripts/DefineSprite_23/frame_1/DoAction.as"
+          "ordinal": 1,
+          "script": "scripts/DefineSprite_23_GhKill/frame_1/DoAction.as"
         },
         {
           "timeline": 23,
           "frame": 2,
-          "script": "scripts/DefineSprite_23/frame_2/DoAction.as"
+          "ordinal": 1,
+          "script": "scripts/DefineSprite_23_GhKill/frame_2/DoAction.as"
         },
         {
           "timeline": 23,
           "frame": 12,
-          "script": "scripts/DefineSprite_23/frame_12/DoAction.as"
+          "ordinal": 1,
+          "script": "scripts/DefineSprite_23_GhKill/frame_12/DoAction.as"
         },
         {
           "timeline": 23,
           "frame": 41,
-          "script": "scripts/DefineSprite_23/frame_41/DoAction.as"
+          "ordinal": 1,
+          "script": "scripts/DefineSprite_23_GhKill/frame_41/DoAction.as"
         }
       ]
     },
@@ -4613,7 +4645,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_39/frame_8/DoAction.as"
+              "script": "scripts/DefineSprite_39/frame_8/DoAction.as",
+              "ordinal": 1
             }
           ]
         }
@@ -4729,6 +4762,7 @@
         {
           "timeline": 39,
           "frame": 8,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_39/frame_8/DoAction.as"
         }
       ]
@@ -4891,7 +4925,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_40/frame_5/DoAction.as"
+              "script": "scripts/DefineSprite_40/frame_5/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -4915,7 +4950,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_40/frame_6/DoAction.as"
+              "script": "scripts/DefineSprite_40/frame_6/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "frame_label",
@@ -5043,7 +5079,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_40/frame_25/DoAction.as"
+              "script": "scripts/DefineSprite_40/frame_25/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -5062,7 +5099,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_40/frame_27/DoAction.as"
+              "script": "scripts/DefineSprite_40/frame_27/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -5390,7 +5428,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_40/frame_59/DoAction.as"
+              "script": "scripts/DefineSprite_40/frame_59/DoAction.as",
+              "ordinal": 1
             }
           ]
         }
@@ -5688,26 +5727,31 @@
         {
           "timeline": 40,
           "frame": 5,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_40/frame_5/DoAction.as"
         },
         {
           "timeline": 40,
           "frame": 6,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_40/frame_6/DoAction.as"
         },
         {
           "timeline": 40,
           "frame": 25,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_40/frame_25/DoAction.as"
         },
         {
           "timeline": 40,
           "frame": 27,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_40/frame_27/DoAction.as"
         },
         {
           "timeline": 40,
           "frame": 59,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_40/frame_59/DoAction.as"
         }
       ]
@@ -6096,7 +6140,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_42/frame_17/DoAction.as"
+              "script": "scripts/DefineSprite_42/frame_17/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -6450,6 +6495,7 @@
         {
           "timeline": 42,
           "frame": 17,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_42/frame_17/DoAction.as"
         }
       ]
@@ -6513,7 +6559,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_47/frame_1/DoAction.as"
+              "script": "scripts/DefineSprite_47/frame_1/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -6584,7 +6631,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_47/frame_2/DoAction.as"
+              "script": "scripts/DefineSprite_47/frame_2/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -6605,7 +6653,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_47/frame_3/DoAction.as"
+              "script": "scripts/DefineSprite_47/frame_3/DoAction.as",
+              "ordinal": 1
             }
           ]
         }
@@ -6700,16 +6749,19 @@
         {
           "timeline": 47,
           "frame": 1,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_47/frame_1/DoAction.as"
         },
         {
           "timeline": 47,
           "frame": 2,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_47/frame_2/DoAction.as"
         },
         {
           "timeline": 47,
           "frame": 3,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_47/frame_3/DoAction.as"
         }
       ]
@@ -6729,7 +6781,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_1/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_1/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -6750,7 +6803,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_2/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_2/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -6805,7 +6859,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_3/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_3/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -6826,7 +6881,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_4/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_4/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -6855,7 +6911,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_5/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_5/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -6869,7 +6926,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_6/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_6/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -6890,7 +6948,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_7/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_7/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -6900,7 +6959,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_8/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_8/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -7274,7 +7334,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_9/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_9/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -7392,7 +7453,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_10/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_10/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -7413,7 +7475,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_11/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_11/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -7423,7 +7486,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_12/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_12/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -7441,7 +7505,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_13/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_13/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -7451,7 +7516,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_14/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_14/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -7475,7 +7541,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_71/frame_15/DoAction.as"
+              "script": "scripts/DefineSprite_71/frame_15/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "frame_label",
@@ -8072,76 +8139,91 @@
         {
           "timeline": 71,
           "frame": 1,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_1/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 2,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_2/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 3,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_3/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 4,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_4/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 5,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_5/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 6,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_6/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 7,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_7/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 8,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_8/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 9,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_9/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 10,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_10/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 11,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_11/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 12,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_12/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 13,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_13/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 14,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_14/DoAction.as"
         },
         {
           "timeline": 71,
           "frame": 15,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_71/frame_15/DoAction.as"
         }
       ]
@@ -8677,7 +8759,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_80/frame_5/DoAction.as"
+              "script": "scripts/DefineSprite_80/frame_5/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -9024,7 +9107,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_80/frame_33/DoAction.as"
+              "script": "scripts/DefineSprite_80/frame_33/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -9421,11 +9505,13 @@
         {
           "timeline": 80,
           "frame": 5,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_80/frame_5/DoAction.as"
         },
         {
           "timeline": 80,
           "frame": 33,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_80/frame_33/DoAction.as"
         }
       ]
@@ -9686,7 +9772,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_82/frame_26/DoAction.as"
+              "script": "scripts/DefineSprite_82/frame_26/DoAction.as",
+              "ordinal": 1
             }
           ]
         }
@@ -9817,6 +9904,7 @@
         {
           "timeline": 82,
           "frame": 26,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_82/frame_26/DoAction.as"
         }
       ]
@@ -9836,7 +9924,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_83/frame_1/DoAction.as"
+              "script": "scripts/DefineSprite_83/frame_1/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -9932,7 +10021,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_83/frame_4/DoAction.as"
+              "script": "scripts/DefineSprite_83/frame_4/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "frame_label",
@@ -10071,11 +10161,13 @@
         {
           "timeline": 83,
           "frame": 1,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_83/frame_1/DoAction.as"
         },
         {
           "timeline": 83,
           "frame": 4,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_83/frame_4/DoAction.as"
         }
       ]
@@ -10095,7 +10187,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_87/frame_1/DoAction.as"
+              "script": "scripts/DefineSprite_87/frame_1/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -10107,7 +10200,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_87/frame_2/DoAction.as"
+              "script": "scripts/DefineSprite_87/frame_2/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "frame_label",
@@ -10273,7 +10367,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_87/frame_31/DoAction.as"
+              "script": "scripts/DefineSprite_87/frame_31/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -10450,7 +10545,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_87/frame_65/DoAction.as"
+              "script": "scripts/DefineSprite_87/frame_65/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "frame_label",
@@ -10569,7 +10665,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_87/frame_87/DoAction.as"
+              "script": "scripts/DefineSprite_87/frame_87/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -10581,7 +10678,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_87/frame_88/DoAction.as"
+              "script": "scripts/DefineSprite_87/frame_88/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "frame_label",
@@ -10605,7 +10703,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_87/frame_90/DoAction.as"
+              "script": "scripts/DefineSprite_87/frame_90/DoAction.as",
+              "ordinal": 1
             }
           ]
         }
@@ -10615,36 +10714,43 @@
         {
           "timeline": 87,
           "frame": 1,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_87/frame_1/DoAction.as"
         },
         {
           "timeline": 87,
           "frame": 2,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_87/frame_2/DoAction.as"
         },
         {
           "timeline": 87,
           "frame": 31,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_87/frame_31/DoAction.as"
         },
         {
           "timeline": 87,
           "frame": 65,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_87/frame_65/DoAction.as"
         },
         {
           "timeline": 87,
           "frame": 87,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_87/frame_87/DoAction.as"
         },
         {
           "timeline": 87,
           "frame": 88,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_87/frame_88/DoAction.as"
         },
         {
           "timeline": 87,
           "frame": 90,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_87/frame_90/DoAction.as"
         }
       ]
@@ -10664,7 +10770,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_92/frame_1/DoAction.as"
+              "script": "scripts/DefineSprite_92/frame_1/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -10690,7 +10797,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_92/frame_3/DoAction.as"
+              "script": "scripts/DefineSprite_92/frame_3/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -10716,7 +10824,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_92/frame_5/DoAction.as"
+              "script": "scripts/DefineSprite_92/frame_5/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -10797,7 +10906,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_92/frame_18/DoAction.as"
+              "script": "scripts/DefineSprite_92/frame_18/DoAction.as",
+              "ordinal": 1
             }
           ]
         },
@@ -10823,7 +10933,8 @@
           "events": [
             {
               "type": "action",
-              "script": "scripts/DefineSprite_92/frame_20/DoAction.as"
+              "script": "scripts/DefineSprite_92/frame_20/DoAction.as",
+              "ordinal": 1
             }
           ]
         }
@@ -10833,26 +10944,31 @@
         {
           "timeline": 92,
           "frame": 1,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_92/frame_1/DoAction.as"
         },
         {
           "timeline": 92,
           "frame": 3,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_92/frame_3/DoAction.as"
         },
         {
           "timeline": 92,
           "frame": 5,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_92/frame_5/DoAction.as"
         },
         {
           "timeline": 92,
           "frame": 18,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_92/frame_18/DoAction.as"
         },
         {
           "timeline": 92,
           "frame": 20,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_92/frame_20/DoAction.as"
         }
       ]
@@ -10972,7 +11088,8 @@
             },
             {
               "type": "action",
-              "script": "scripts/DefineSprite_105/frame_1/DoAction.as"
+              "script": "scripts/DefineSprite_105/frame_1/DoAction.as",
+              "ordinal": 1
             },
             {
               "type": "place",
@@ -11045,6 +11162,7 @@
         {
           "timeline": 105,
           "frame": 1,
+          "ordinal": 1,
           "script": "scripts/DefineSprite_105/frame_1/DoAction.as"
         }
       ]
@@ -11054,296 +11172,355 @@
     {
       "timeline": 0,
       "frame": 1,
+      "ordinal": 1,
       "script": "scripts/frame_1/DoAction.as"
     },
     {
       "timeline": 0,
       "frame": 1,
-      "script": "scripts/frame_1/DoAction.as"
+      "ordinal": 2,
+      "script": "scripts/frame_1/DoAction_2.as"
     },
     {
       "timeline": 0,
       "frame": 2,
+      "ordinal": 1,
       "script": "scripts/frame_2/DoAction.as"
     },
     {
       "timeline": 0,
       "frame": 4,
+      "ordinal": 1,
       "script": "scripts/frame_4/DoAction.as"
     },
     {
       "timeline": 0,
       "frame": 5,
+      "ordinal": 1,
       "script": "scripts/frame_5/DoAction.as"
     },
     {
       "timeline": 0,
       "frame": 6,
+      "ordinal": 1,
       "script": "scripts/frame_6/DoAction.as"
     },
     {
       "timeline": 0,
       "frame": 7,
+      "ordinal": 1,
       "script": "scripts/frame_7/DoAction.as"
     },
     {
       "timeline": 0,
       "frame": 9,
+      "ordinal": 1,
       "script": "scripts/frame_9/DoAction.as"
     },
     {
       "timeline": 0,
       "frame": 9,
-      "script": "scripts/frame_9/DoAction.as"
+      "ordinal": 2,
+      "script": "scripts/frame_9/DoAction_2.as"
     },
     {
       "timeline": 0,
       "frame": 10,
+      "ordinal": 1,
       "script": "scripts/frame_10/DoAction.as"
     },
     {
       "timeline": 16,
       "frame": 1,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_16/frame_1/DoAction.as"
     },
     {
       "timeline": 19,
       "frame": 1,
-      "script": "scripts/DefineSprite_19/frame_1/DoAction.as"
+      "ordinal": 1,
+      "script": "scripts/DefineSprite_19_Ghost/frame_1/DoAction.as"
     },
     {
       "timeline": 23,
       "frame": 1,
-      "script": "scripts/DefineSprite_23/frame_1/DoAction.as"
+      "ordinal": 1,
+      "script": "scripts/DefineSprite_23_GhKill/frame_1/DoAction.as"
     },
     {
       "timeline": 23,
       "frame": 2,
-      "script": "scripts/DefineSprite_23/frame_2/DoAction.as"
+      "ordinal": 1,
+      "script": "scripts/DefineSprite_23_GhKill/frame_2/DoAction.as"
     },
     {
       "timeline": 23,
       "frame": 12,
-      "script": "scripts/DefineSprite_23/frame_12/DoAction.as"
+      "ordinal": 1,
+      "script": "scripts/DefineSprite_23_GhKill/frame_12/DoAction.as"
     },
     {
       "timeline": 23,
       "frame": 41,
-      "script": "scripts/DefineSprite_23/frame_41/DoAction.as"
+      "ordinal": 1,
+      "script": "scripts/DefineSprite_23_GhKill/frame_41/DoAction.as"
     },
     {
       "timeline": 39,
       "frame": 8,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_39/frame_8/DoAction.as"
     },
     {
       "timeline": 40,
       "frame": 5,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_40/frame_5/DoAction.as"
     },
     {
       "timeline": 40,
       "frame": 6,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_40/frame_6/DoAction.as"
     },
     {
       "timeline": 40,
       "frame": 25,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_40/frame_25/DoAction.as"
     },
     {
       "timeline": 40,
       "frame": 27,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_40/frame_27/DoAction.as"
     },
     {
       "timeline": 40,
       "frame": 59,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_40/frame_59/DoAction.as"
     },
     {
       "timeline": 42,
       "frame": 17,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_42/frame_17/DoAction.as"
     },
     {
       "timeline": 47,
       "frame": 1,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_47/frame_1/DoAction.as"
     },
     {
       "timeline": 47,
       "frame": 2,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_47/frame_2/DoAction.as"
     },
     {
       "timeline": 47,
       "frame": 3,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_47/frame_3/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 1,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_1/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 2,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_2/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 3,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_3/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 4,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_4/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 5,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_5/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 6,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_6/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 7,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_7/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 8,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_8/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 9,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_9/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 10,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_10/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 11,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_11/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 12,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_12/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 13,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_13/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 14,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_14/DoAction.as"
     },
     {
       "timeline": 71,
       "frame": 15,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_71/frame_15/DoAction.as"
     },
     {
       "timeline": 80,
       "frame": 5,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_80/frame_5/DoAction.as"
     },
     {
       "timeline": 80,
       "frame": 33,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_80/frame_33/DoAction.as"
     },
     {
       "timeline": 82,
       "frame": 26,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_82/frame_26/DoAction.as"
     },
     {
       "timeline": 83,
       "frame": 1,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_83/frame_1/DoAction.as"
     },
     {
       "timeline": 83,
       "frame": 4,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_83/frame_4/DoAction.as"
     },
     {
       "timeline": 87,
       "frame": 1,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_87/frame_1/DoAction.as"
     },
     {
       "timeline": 87,
       "frame": 2,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_87/frame_2/DoAction.as"
     },
     {
       "timeline": 87,
       "frame": 31,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_87/frame_31/DoAction.as"
     },
     {
       "timeline": 87,
       "frame": 65,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_87/frame_65/DoAction.as"
     },
     {
       "timeline": 87,
       "frame": 87,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_87/frame_87/DoAction.as"
     },
     {
       "timeline": 87,
       "frame": 88,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_87/frame_88/DoAction.as"
     },
     {
       "timeline": 87,
       "frame": 90,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_87/frame_90/DoAction.as"
     },
     {
       "timeline": 92,
       "frame": 1,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_92/frame_1/DoAction.as"
     },
     {
       "timeline": 92,
       "frame": 3,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_92/frame_3/DoAction.as"
     },
     {
       "timeline": 92,
       "frame": 5,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_92/frame_5/DoAction.as"
     },
     {
       "timeline": 92,
       "frame": 18,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_92/frame_18/DoAction.as"
     },
     {
       "timeline": 92,
       "frame": 20,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_92/frame_20/DoAction.as"
     },
     {
       "timeline": 105,
       "frame": 1,
+      "ordinal": 1,
       "script": "scripts/DefineSprite_105/frame_1/DoAction.as"
     }
   ],
@@ -11353,13 +11530,6 @@
     "scripts/DefineButton2_30/BUTTONCONDACTION on(release).as",
     "scripts/DefineButton2_45/BUTTONCONDACTION on(release).as",
     "scripts/DefineButton2_94/BUTTONCONDACTION on(release).as",
-    "scripts/DefineSprite_19_Ghost/frame_1/DoAction.as",
-    "scripts/DefineSprite_23_GhKill/frame_1/DoAction.as",
-    "scripts/DefineSprite_23_GhKill/frame_12/DoAction.as",
-    "scripts/DefineSprite_23_GhKill/frame_2/DoAction.as",
-    "scripts/DefineSprite_23_GhKill/frame_41/DoAction.as",
-    "scripts/frame_1/DoAction_2.as",
-    "scripts/frame_4/PlaceObject2_25_Empty_26/CLIPACTIONRECORD onClipEvent(keyDown).as",
-    "scripts/frame_9/DoAction_2.as"
+    "scripts/frame_4/PlaceObject2_25_Empty_26/CLIPACTIONRECORD onClipEvent(keyDown).as"
   ]
 }
