@@ -12,7 +12,7 @@ Exact main build workflow:
 - Web mode: **single-threaded**
 - Headless contract smoke: **PASS**
 - Browser smoke: **PASS**
-- Pages deploy: **BLOCKED — repository Pages site is not enabled yet**
+- Pages deploy: **BLOCKED — repository Pages site is not enabled yet**\n- Auto-enablement attempt: https://github.com/alexandresalazar89-blip/GameZone/actions/runs/35445339492 — build **PASS**, deploy **FAIL** because the GitHub integration is not permitted to create the Pages site
 
 Independent PR validation of the same A1 code path:
 
@@ -44,12 +44,12 @@ and configured to build using GitHub Actions.
 Error: Not Found
 ```
 
-One repository setting is required:
+`actions/configure-pages@v6` was also retried with `enablement: true`. GitHub returned `Create Pages site failed: Resource not accessible by integration`, so this cannot be completed through the connected GitHub App.\n\nOne repository setting is required:
 
 1. Open **GameZone → Settings → Pages**.
 2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
 
-After that setting is enabled, rerun the failed deployment. The intended live URL is:
+After that setting is enabled, the open validation PR https://github.com/alexandresalazar89-blip/GameZone/pull/2 can be rerun to prove the live HTTPS boot, and the main deployment can be rerun. The intended live URL is:
 
 ```text
 https://alexandresalazar89-blip.github.io/GameZone/
