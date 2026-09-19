@@ -195,7 +195,7 @@ func _build_ui() -> void:
 func _update_actions_label() -> void:
 	var parts: Array[String] = []
 	for action in ACTIONS:
-		var marker := "●" if Input.is_action_pressed(action) else "○"
+		var marker := "[X]" if Input.is_action_pressed(action) else "[ ]"
 		parts.append("%s %s" % [marker, action])
 	_actions_label.text = "Actions: " + "   ".join(parts)
 
@@ -234,7 +234,7 @@ func _update_prompt(method: StringName) -> void:
 		&"touch":
 			_prompt_label.text = "TOUCH: on-screen D-pad = move • A/B • PAUSE • BACK"
 		_:
-			_prompt_label.text = "KEYBOARD: WASD / arrows = move • Space/Z = A • X/Shift = B • P = pause • Esc = back"
+			_prompt_label.text = "KEYBOARD/MOUSE: WASD / arrows = move • Space/Z or left click = A • X/Shift or right click = B • P = pause • Esc = back"
 
 
 func _on_input_method_changed(method: StringName) -> void:
