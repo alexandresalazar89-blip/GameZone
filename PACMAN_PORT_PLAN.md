@@ -16,7 +16,7 @@ Status: **B0 TRIAGE COMPLETE — STOP / WAIT FOR GO BEFORE B1.**
 - FFDec asset: ffdec_26.3.0.zip
 - Ruffle release: **nightly-2026-09-19**
 - Ruffle asset: ruffle-nightly-2026_09_19-linux-x86_64.tar.gz
-- Ruffle version command: + .b0/tools/ruffle/ruffle --version
+- Ruffle version command: Ruffle 0.7.0-nightly.2026.9.19-nightly (28f2fccd19db20fe9797097e24aa1c83d815c398 2026-09-19)
 
 FFDec CLI flags were verified on the runner; the help header was:
 
@@ -35,8 +35,8 @@ JPEXS Free Flash Decompiler v.26.3.0
 
 - SWF signature/compression: **CWS / zlib**
 - SWF version: **6**
-- ActionScript VM: **none**
-- Decompiled source style: **none**
+- ActionScript VM: **AVM1**
+- Decompiled source style: **ActionScript 1/2 timeline style**
 - Frame rate: **21 fps**
 - Fixed-step target: **1 / 21 s per SWF frame**
 - Main timeline frame count: **10**
@@ -47,14 +47,14 @@ JPEXS Free Flash Decompiler v.26.3.0
 
 ### Definitions visible at B0
 
-- Defined character tags: **0**
-- Sprites: **0**
-- Shapes: **0**
+- Defined character tags: **109**
+- Sprites: **25**
+- Shapes: **36**
 - Images: **0**
-- Sounds: **0**
-- Fonts: **0**
-- Text definitions: **0**
-- Buttons: **0**
+- Sounds: **13**
+- Fonts: **3**
+- Text definitions: **27**
+- Buttons: **5**
 - ActionScript files exported only for B0 readability triage: **65**
 
 The full immutable FFDec export to games/pacman/decompiled is **not** performed until B1.
