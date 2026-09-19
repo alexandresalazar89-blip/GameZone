@@ -1,0 +1,6 @@
+{
+  "games": [
+    {"metadata": "res://games/stub_wide/metadata.tres"},
+    {"metadata": "res://games/stub_tall/metadata.tres"}
+  ]
+}

@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://shell/a1_diagnostics.gd" id="1"]
+[ext_resource type="Script" path="res://shell/a2_contract_harness.gd" id="1"]
 
-[node name="GameZoneA1Diagnostics" type="Control"]
+[node name="GameZoneA2Harness" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

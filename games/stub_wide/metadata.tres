@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://shared/modules/game_metadata.gd" id="1"]
+[ext_resource type="PackedScene" path="res://games/stub_wide/main.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"stub_wide"
+title = "Stub Wide 16:9"
+version = "1.0.0"
+controls_text = "Move + A score/audio + B save + Pause counter + Back exit"
+entry_scene = ExtResource("2")
+native_size = Vector2i(320, 180)
