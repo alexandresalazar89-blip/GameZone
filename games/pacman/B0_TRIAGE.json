@@ -1,0 +1,107 @@
+{
+  "b0_gate": "triage_only",
+  "source_url": "https://raw.githubusercontent.com/AmmarSAA/flash-games-directory/main/pacman.swf",
+  "swf": {
+    "signature": "CWS",
+    "compression": "zlib",
+    "swf_version": 6,
+    "declared_file_length": 66235,
+    "actual_file_length": 42511,
+    "frame_rate": 21.0,
+    "frame_count": 10,
+    "stage_twips": {
+      "xmin": 0,
+      "xmax": 7200,
+      "ymin": 0,
+      "ymax": 8400
+    },
+    "stage_px": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 360.0,
+      "height": 420.0
+    },
+    "sha256": "e0a61ed23375aaacf92dcac91c24e6d0111612b420024756f0872f56fd59cb26"
+  },
+  "actionscript": {
+    "vm": "none",
+    "source_style": "none",
+    "script_files_exported_for_triage": 65,
+    "obfuscation": {
+      "status": "no_obvious_obfuscation_in_b0",
+      "evidence": [
+        "decompiled scripts: 65",
+        "non-empty source lines: 1374",
+        "readable control-flow/Flash API lines: 233",
+        "replacement characters: 0",
+        "very-long identifier hits: 0",
+        ">500-char line ratio: 0.0007"
+      ]
+    },
+    "central_excerpt": {
+      "path": "scripts/frame_6/DoAction.as",
+      "line_start": 100,
+      "excerpt": "      nextX = 27;\n      Pacman._x = OFFX + 336;\n   }\n   else if(Maze[pacX - 1][pacY] == \"R\")",
+      "reason": "Highest B0 movement/character-logic score"
+    }
+  },
+  "counts": {
+    "defined_character_tags": 0,
+    "sprites": 0,
+    "shapes": 0,
+    "images": 0,
+    "sounds": 0,
+    "fonts": 0,
+    "texts": 0,
+    "buttons": 0
+  },
+  "tag_counts": {
+    "actions": 5,
+    "allEventFlags": 1,
+    "backgroundColor": 1,
+    "bounds": 10,
+    "characters": 5,
+    "clipActionRecords": 1,
+    "clipActions": 1,
+    "codeTable": 3,
+    "color": 78,
+    "colorTransform": 101,
+    "displayRect": 1,
+    "eventFlags": 1,
+    "fillStyles": 76,
+    "fontAdvanceTable": 1,
+    "fontBoundsTable": 1,
+    "fontKerningTable": 1,
+    "glyphEntries": 17,
+    "glyphShapeTable": 3,
+    "gradient": 8,
+    "gradientMatrix": 8,
+    "gradientRecords": 8,
+    "item": 4213,
+    "languageCode": 3,
+    "lineStyles": 76,
+    "matrix": 267,
+    "names": 27,
+    "placeMatrix": 15,
+    "shapeBounds": 36,
+    "shapeRecords": 101,
+    "shapes": 36,
+    "soundInfo": 6,
+    "subTags": 25,
+    "swf": 1,
+    "tags": 28,
+    "textBounds": 17,
+    "textColor": 27,
+    "textMatrix": 17,
+    "textRecords": 17
+  },
+  "toolchain": {
+    "java": "openjdk version 17.0.20.1 2026-08-18",
+    "ffdec_release": "version26.3.0",
+    "ffdec_asset": "ffdec_26.3.0.zip",
+    "ruffle_release": "nightly-2026-09-19",
+    "ruffle_asset": "ruffle-nightly-2026_09_19-linux-x86_64.tar.gz",
+    "ruffle_version_output": "+ .b0/tools/ruffle/ruffle --version",
+    "ffdec_help_head": "JPEXS Free Flash Decompiler v.26.3.0\n------------------------------------\n\u001b[1;4mUsage\u001b[m: <executable> [PRE-OPTIONS] [COMMAND]\r\n\r\n\u001b[1;4mExecutable\u001b[m:\r\n       Linux: ffdec or ffdec.sh\r\n      Mac OS: ffdec.sh\r\n     Windows: ffdec-cli.exe or ffdec.bat\r"
+  }
+}
