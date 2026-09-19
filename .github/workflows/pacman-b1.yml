@@ -1,0 +1,199 @@
+name: Pac-Man B1 Full Extraction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pacman-b1.yml"
+      - "tools/pacman_b1/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  SWF_PATH: "games/pacman/original/pacman.swf"
+  EXPECTED_SWF_SHA256: "e0a61ed23375aaacf92dcac91c24e6d0111612b420024756f0872f56fd59cb26"
+  FFDEC_TAG: "version26.3.0"
+  FFDEC_ASSET: "ffdec_26.3.0.zip"
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Verify authoritative SWF
+        shell: bash
+        run: |
+          set -euxo pipefail
+          test -s "$SWF_PATH"
+          ACTUAL="$(sha256sum "$SWF_PATH" | awk '{print $1}')"
+          test "$ACTUAL" = "$EXPECTED_SWF_SHA256"
+          printf 'SWF_SHA256=%s\n' "$ACTUAL"
+
+      - name: Install pinned FFDec 26.3.0
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euxo pipefail
+          mkdir -p .b1/tools/ffdec .b1/evidence
+          API="https://api.github.com/repos/jindrapetrik/jpexs-decompiler/releases/tags/$FFDEC_TAG"
+          curl -fsSL --retry 4             -H "Authorization: Bearer $GH_TOKEN"             -H "Accept: application/vnd.github+json"             -H "X-GitHub-Api-Version: 2022-11-28"             "$API" -o .b1/ffdec-release.json
+          URL="$(python3 - <<'PY'
+          import json, os
+          d=json.load(open('.b1/ffdec-release.json'))
+          target=os.environ['FFDEC_ASSET']
+          for a in d.get('assets', []):
+              if a['name']==target:
+                  print(a['browser_download_url'])
+                  break
+          else:
+              raise SystemExit('Pinned FFDec asset missing')
+          PY
+          )"
+          curl -fsSL --retry 4 "$URL" -o .b1/tools/ffdec.zip
+          unzip -q .b1/tools/ffdec.zip -d .b1/tools/ffdec
+          FFDEC_JAR="$(find .b1/tools/ffdec -type f -name ffdec.jar -print -quit)"
+          test -n "$FFDEC_JAR"
+          echo "FFDEC_JAR=$FFDEC_JAR" >> "$GITHUB_ENV"
+
+      - name: Verify exact FFDec export syntax
+        shell: bash
+        run: |
+          set -euxo pipefail
+          java -Djava.awt.headless=true -jar "$FFDEC_JAR" --help export > .b1/evidence/ffdec-help-export.txt 2>&1
+          java -Djava.awt.headless=true -jar "$FFDEC_JAR" --help format > .b1/evidence/ffdec-help-format.txt 2>&1
+          grep -q -- "-export <itemtypes>" .b1/evidence/ffdec-help-export.txt
+          for ITEM in script image shape sprite sound font frame text; do
+            grep -q "$ITEM" .b1/evidence/ffdec-help-export.txt
+          done
+          grep -q "shape:svg" .b1/evidence/ffdec-help-format.txt
+          grep -q "sprite:svg" .b1/evidence/ffdec-help-format.txt
+          grep -q "frame:svg" .b1/evidence/ffdec-help-format.txt
+          head -n 80 .b1/evidence/ffdec-help-export.txt
+
+      - name: Export immutable raw FFDec tree
+        shell: bash
+        run: |
+          set -euxo pipefail
+          rm -rf games/pacman/decompiled
+          mkdir -p games/pacman/decompiled
+          java -Djava.awt.headless=true -jar "$FFDEC_JAR"             -cli             -onerror abort             -timeout 120             -format script:as,shape:svg,sprite:svg,frame:svg,text:plain,font:ttf,sound:mp3_wav_flv             -export script,image,shape,sprite,sound,font,frame,text             games/pacman/decompiled             "$SWF_PATH"             > .b1/evidence/export.log 2>&1
+          test -d games/pacman/decompiled/scripts
+          test -n "$(find games/pacman/decompiled/scripts -type f -name '*.as' -print -quit)"
+          test -n "$(find games/pacman/decompiled/shapes -type f -name '*.svg' -print -quit)"
+          if find games/pacman/decompiled/shapes -type f ! -name '*.svg' -print -quit | grep -q .; then
+            echo "Non-SVG raw shape export detected" >&2
+            exit 1
+          fi
+          find games/pacman/decompiled -type f -printf '%P\t%s bytes\n' | sort | tee .b1/evidence/raw-files.txt
+
+      - name: Export FFDec XML for maps
+        shell: bash
+        run: |
+          set -euxo pipefail
+          java -Djava.awt.headless=true -jar "$FFDEC_JAR" -cli -swf2xml "$SWF_PATH" .b1/evidence/pacman.xml > .b1/evidence/swf2xml.log 2>&1
+          test -s .b1/evidence/pacman.xml
+
+      - name: Build manifests and timeline maps
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python3 tools/pacman_b1/build_manifests.py             --swf "$SWF_PATH"             --xml .b1/evidence/pacman.xml             --raw games/pacman/decompiled             --ffdec-version "26.3.0"             --out-dir games/pacman
+          python3 -m json.tool games/pacman/ASSET_MANIFEST.json >/dev/null
+          python3 -m json.tool games/pacman/SYMBOL_MAP.json >/dev/null
+          python3 -m json.tool games/pacman/TIMELINE_MAP.json >/dev/null
+          python3 -m json.tool games/pacman/DETERMINISM_POLICY.json >/dev/null
+          cat games/pacman/B1_ACCEPTANCE.md
+
+      - name: Freeze B1 and B2/B7 determinism in port plan
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('PACMAN_PORT_PLAN.md')
+          s=p.read_text('utf-8')
+          s=s.replace('- **B1 — PENDING GO:** total FFDec export + ASSET_MANIFEST + SYMBOL_MAP + TIMELINE_MAP.',
+                      '- **B1 — COMPLETE:** immutable FFDec export + ASSET_MANIFEST + SYMBOL_MAP + TIMELINE_MAP.')
+          if '## B2/B7 determinism contract' not in s:
+              s += """
+          
+          ## B2/B7 determinism contract
+          
+          Deterministic near-diff scope:
+          - maze layout;
+          - pellet +10 and power-pellet additional +40;
+          - wall collision;
+          - Pac-Man tunnel offsets +336/-12;
+          - ghost tunnel offsets +348/-24;
+          - extra-life threshold logic based on score / 10000 exactly as decompiled.
+          
+          RNG rule/distribution scope:
+          - Flash random(n) returns an integer from 0 through n-1;
+          - !random(n) is true with probability 1/n;
+          - do not require frame/pixel-identical ghost trajectories against Ruffle;
+          - validate ghChoice legality, ghBest selection behavior, Shape._visible frightened branching;
+          - validate source-faithful Pacman.Hit / Shape.Hit collision, EatGhost scoring, and Ghost["K"+g] respawn.
+          
+          Never replace this clone's ghost logic with arcade-original targeting.
+          """
+          p.write_text(s, 'utf-8')
+          PY
+
+      - name: Verify required B1 deliverables
+        shell: bash
+        run: |
+          set -euxo pipefail
+          test -s games/pacman/ASSET_MANIFEST.json
+          test -s games/pacman/SYMBOL_MAP.json
+          test -s games/pacman/TIMELINE_MAP.json
+          test -s games/pacman/DETERMINISM_POLICY.json
+          test -s games/pacman/B1_ACCEPTANCE.md
+          grep -Rqs 'random(' games/pacman/decompiled/scripts
+          grep -Rqs 'ghChoice' games/pacman/decompiled/scripts
+          grep -Rqs 'ghBest' games/pacman/decompiled/scripts
+          grep -Rqs 'Shape._visible' games/pacman/decompiled/scripts
+          grep -Rqs 'OFFX + 336' games/pacman/decompiled/scripts
+          grep -Rqs 'OFFX + 348' games/pacman/decompiled/scripts
+          grep -Rqs 'OFFX - 12' games/pacman/decompiled/scripts
+          grep -Rqs 'OFFX - 24' games/pacman/decompiled/scripts
+          grep -Rqs 'score += 10' games/pacman/decompiled/scripts
+          grep -Rqs 'score += 40' games/pacman/decompiled/scripts
+
+      - name: Upload B1 evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: pacman-b1-evidence
+          path: |
+            .b1/evidence/
+            games/pacman/ASSET_MANIFEST.json
+            games/pacman/SYMBOL_MAP.json
+            games/pacman/TIMELINE_MAP.json
+            games/pacman/DETERMINISM_POLICY.json
+            games/pacman/B1_ACCEPTANCE.md
+            PACMAN_PORT_PLAN.md
+          if-no-files-found: error
+
+      - name: Persist immutable B1 extraction
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add games/pacman/decompiled                   games/pacman/ASSET_MANIFEST.json                   games/pacman/SYMBOL_MAP.json                   games/pacman/TIMELINE_MAP.json                   games/pacman/DETERMINISM_POLICY.json                   games/pacman/B1_ACCEPTANCE.md                   PACMAN_PORT_PLAN.md
+          if git diff --cached --quiet; then
+            echo "No B1 files changed."
+            exit 0
+          fi
+          git commit -m "feat(pacman-b1): persist immutable FFDec extraction [skip ci]"
+          git push origin HEAD:main
