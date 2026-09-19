@@ -154,6 +154,8 @@ jobs:
           echo "$WIN" > .b2/probe/window-id.txt
           xdotool windowmove "$WIN" 0 0
           xdotool windowsize "$WIN" 360 420
+          xdotool windowfocus --sync "$WIN"
+          test "$(xdotool getwindowfocus)" = "$WIN"
           sleep 0.5
           xwininfo -id "$WIN" | tee .b2/probe/window-info.txt
 
@@ -188,7 +190,8 @@ jobs:
             --window "$WIN" \
             --schedule .b2/probe/sanity-replay.json \
             --audit .b2/probe/sanity-replay-audit.json \
-            --start-delay 0.75
+            --start-delay 0.75 \
+            --input-mode xtest
 
           wait "$VIDPID"
           wait "$AUDPID" || true
@@ -213,13 +216,18 @@ jobs:
           ffmpeg -hide_banner -i .b2/probe/sanity-audio.wav -af volumedetect -f null - \
             > .b2/probe/audio-volumedetect.txt 2>&1 || true
           cat .b2/probe/audio-volumedetect.txt
-          if grep -q "max_volume: -inf" .b2/probe/audio-volumedetect.txt; then
-            echo "Captured Ruffle audio is silent" >&2
-            exit 1
-          fi
-
           python3 - <<'PY'
-          import json
+          import json, re
+          from pathlib import Path
+          audio=Path('.b2/probe/audio-volumedetect.txt').read_text(errors='replace')
+          m=re.search(r'max_volume:\s*(-?\d+(?:\.\d+)?) dB', audio)
+          if not m:
+              raise SystemExit('No numeric max_volume found in captured audio')
+          max_db=float(m.group(1))
+          print(f'audio_max_volume_db={max_db:.1f}')
+          if max_db <= -70:
+              raise SystemExit('Captured Ruffle audio is effectively silent')
+
           a=json.load(open('.b2/probe/sanity-replay-audit.json'))
           late=max(abs(float(x['lateness_ms'])) for x in a['events'])
           print(f"max_replay_dispatch_lateness_ms={late:.3f}")
