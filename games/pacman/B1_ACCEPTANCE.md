@@ -27,6 +27,9 @@ Structure:
 - Timeline ActionScript entries: 59
 - Named instances: 48
 - Frame labels: 17
+- Non-timeline ActionScript files (button/clip actions): 13
+- Font definitions: 3; exported TTF files: 2; zero-glyph font IDs: [49]
+- Bitmap image definitions: 0; exported image files: 0
 
 Determinism frozen for B2/B7:
 - Deterministic near-diff: maze, +10, +40, walls, tunnel offsets +336/-12 and +348/-24, extra-life logic.

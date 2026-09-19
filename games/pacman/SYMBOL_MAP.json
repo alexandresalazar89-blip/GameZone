@@ -436,6 +436,7 @@
       "kind": "font",
       "export_names": [],
       "font_name": "Whimsy TT\\u0000",
+      "glyph_count": 50,
       "placements": []
     },
     {
@@ -885,6 +886,7 @@
       "kind": "font",
       "export_names": [],
       "font_name": "Verdana\\u0000",
+      "glyph_count": 15,
       "placements": []
     },
     {
@@ -976,6 +978,7 @@
       "kind": "font",
       "export_names": [],
       "font_name": "Arial\\u0000",
+      "glyph_count": 0,
       "placements": []
     },
     {

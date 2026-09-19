@@ -74,13 +74,13 @@
       "path": "fonts/21_Whimsy TT.ttf",
       "category": "fonts",
       "bytes": 11260,
-      "sha256": "6a8fdc95d698d291664127bbaeb7ad6707e347a0345b4784c89e7236868cb742"
+      "sha256": "b8273a9558d9e95d5e9e9082e039cb14e0ef32305fdf59f467735c1f8e31f381"
     },
     {
       "path": "fonts/43_Verdana.ttf",
       "category": "fonts",
       "bytes": 4780,
-      "sha256": "8dcb4b3d118d992b92cd8876893cd149d89ace89250e4994ddc32f7371894e74"
+      "sha256": "660d967fc487185e7bbc8e82ef6d82273dfc31078ba369a45da3ea62163eb870"
     },
     {
       "path": "frames/1.svg",
@@ -3148,5 +3148,23 @@
       "bytes": 5,
       "sha256": "a60ffbb10dc4cf25ca492a4f7f05751e488c53719cbeccacaabe41c2db88c4a3"
     }
+  ],
+  "source_definition_accounting": {
+    "character_definitions": 109,
+    "shape_definitions": 36,
+    "sprite_definitions": 25,
+    "sound_definitions": 13,
+    "font_definitions": 3,
+    "zero_glyph_font_ids": [
+      49
+    ],
+    "text_definitions": 27,
+    "button_definitions": 5,
+    "bitmap_image_definitions": 0
+  },
+  "raw_export_notes": [
+    "No image files are expected because the source SWF has zero DefineBits bitmap definitions.",
+    "Font ID 49 (Arial) has zero embedded glyphs, so FFDec has no TTF payload to export for that definition.",
+    "sounds/-1.wav is the exported streaming sound in addition to DefineSound assets."
   ]
 }

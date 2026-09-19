@@ -11346,5 +11346,20 @@
       "frame": 1,
       "script": "scripts/DefineSprite_105/frame_1/DoAction.as"
     }
+  ],
+  "non_timeline_action_scripts": [
+    "scripts/DefineButton2_107/BUTTONCONDACTION on(press).as",
+    "scripts/DefineButton2_109/BUTTONCONDACTION on(press).as",
+    "scripts/DefineButton2_30/BUTTONCONDACTION on(release).as",
+    "scripts/DefineButton2_45/BUTTONCONDACTION on(release).as",
+    "scripts/DefineButton2_94/BUTTONCONDACTION on(release).as",
+    "scripts/DefineSprite_19_Ghost/frame_1/DoAction.as",
+    "scripts/DefineSprite_23_GhKill/frame_1/DoAction.as",
+    "scripts/DefineSprite_23_GhKill/frame_12/DoAction.as",
+    "scripts/DefineSprite_23_GhKill/frame_2/DoAction.as",
+    "scripts/DefineSprite_23_GhKill/frame_41/DoAction.as",
+    "scripts/frame_1/DoAction_2.as",
+    "scripts/frame_4/PlaceObject2_25_Empty_26/CLIPACTIONRECORD onClipEvent(keyDown).as",
+    "scripts/frame_9/DoAction_2.as"
   ]
 }
