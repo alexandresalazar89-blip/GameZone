@@ -302,6 +302,7 @@ func _create_game_card(metadata: GameMetadata) -> PanelContainer:
 	card.add_theme_stylebox_override("panel", style)
 
 	var margin := MarginContainer.new()
+	margin.mouse_filter = Control.MOUSE_FILTER_PASS
 	margin.add_theme_constant_override("margin_left", 12)
 	margin.add_theme_constant_override("margin_top", 12)
 	margin.add_theme_constant_override("margin_right", 12)
@@ -309,10 +310,12 @@ func _create_game_card(metadata: GameMetadata) -> PanelContainer:
 	card.add_child(margin)
 
 	var column := VBoxContainer.new()
+	column.mouse_filter = Control.MOUSE_FILTER_PASS
 	column.add_theme_constant_override("separation", 10)
 	margin.add_child(column)
 
 	var thumb_frame := PanelContainer.new()
+	thumb_frame.mouse_filter = Control.MOUSE_FILTER_PASS
 	thumb_frame.custom_minimum_size = Vector2(220, 132)
 	thumb_frame.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	column.add_child(thumb_frame)
