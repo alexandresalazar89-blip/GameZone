@@ -58,12 +58,22 @@ jobs:
         run: |
           grep -q 'variant/thread_support=false' export_presets.cfg
           ! grep -q 'variant/thread_support=true' export_presets.cfg
+          grep -q 'vram_texture_compression/for_mobile=false' export_presets.cfg
+
+      - name: Diagnose Web export templates
+        shell: bash
+        run: |
+          set -euxo pipefail
+          TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/$GODOT_VERSION.$GODOT_STATUS"
+          ls -lah "$TEMPLATE_DIR"/web*.zip
+          test -s "$TEMPLATE_DIR/web_nothreads_release.zip"
+          test -s "$TEMPLATE_DIR/web_nothreads_debug.zip"
 
       - name: Export Web release
         shell: bash
         run: |
           mkdir -p build/web
-          godot --headless --path . --export-release "Web" build/web/index.html
+          godot --headless --verbose --path . --export-release "Web" build/web/index.html
           touch build/web/.nojekyll
           test -s build/web/index.html
           test -s build/web/index.wasm
@@ -96,10 +106,6 @@ jobs:
           path: artifacts/
           if-no-files-found: error
 
-      - name: Configure Pages
-        if: github.event_name == 'push'
-        uses: actions/configure-pages@v5
-
       - name: Upload Pages artifact
         if: github.event_name == 'push'
         uses: actions/upload-pages-artifact@v4
@@ -116,6 +122,9 @@ jobs:
     outputs:
       page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
