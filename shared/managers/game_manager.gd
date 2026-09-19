@@ -307,7 +307,6 @@ func _download_pack_for_web(game_id: StringName, relative_url: String) -> String
 	var user_path := PACK_USER_DIR.path_join(str(game_id) + ".pck")
 	var request := HTTPRequest.new()
 	request.name = "PackDownload_" + str(game_id)
-	request.download_file = user_path
 	add_child(request)
 
 	print("[A4] PACK_HTTP_BEGIN id=", game_id, " url=", resolved_url, " target=", user_path)
@@ -322,20 +321,33 @@ func _download_pack_for_web(game_id: StringName, relative_url: String) -> String
 	var response: Array = await request.request_completed
 	var result_code := int(response[0])
 	var http_code := int(response[1])
+	var body: PackedByteArray = response[3]
 	request.queue_free()
 
 	if result_code != HTTPRequest.RESULT_SUCCESS or http_code < 200 or http_code >= 300:
 		push_error("[A4] PACK_HTTP_FAIL id=%s result=%d http=%d" % [game_id, result_code, http_code])
 		return ""
-
-	var absolute_path := ProjectSettings.globalize_path(user_path)
-	var byte_count := FileAccess.get_file_as_bytes(absolute_path).size()
-	if byte_count <= 0:
-		push_error("[A4] downloaded pack empty id=" + str(game_id))
+	if body.is_empty():
+		push_error("[A4] PACK_HTTP_FAIL id=%s http=%d empty_body=true" % [game_id, http_code])
 		return ""
 
-	print("[A4] PACK_HTTP_OK id=", game_id, " status=", http_code, " bytes=", byte_count, " file=", user_path)
-	pack_downloaded.emit(game_id, resolved_url, byte_count)
+	var file := FileAccess.open(user_path, FileAccess.WRITE)
+	if file == null:
+		push_error("[A4] cannot open virtual pack file for write id=%s error=%d" % [game_id, FileAccess.get_open_error()])
+		return ""
+	file.store_buffer(body)
+	file.flush()
+	file.close()
+
+	var absolute_path := ProjectSettings.globalize_path(user_path)
+	var persisted_size := FileAccess.get_file_as_bytes(user_path).size()
+	if persisted_size != body.size():
+		push_error("[A4] virtual pack write mismatch id=%s http_bytes=%d file_bytes=%d" % [game_id, body.size(), persisted_size])
+		return ""
+
+	print("[A4] PACK_HTTP_OK id=", game_id, " status=", http_code, " bytes=", body.size(), " file=", user_path)
+	print("[A4] PACK_VFS_WRITE_OK id=", game_id, " bytes=", persisted_size, " file=", user_path)
+	pack_downloaded.emit(game_id, resolved_url, body.size())
 	return absolute_path
 
 
