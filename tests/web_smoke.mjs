@@ -39,6 +39,15 @@ function markerCount(marker) {
   return consoleLines.filter(line => line.includes(marker)).length;
 }
 
+async function waitMarkerCountAbove(marker, previous, timeout = 15000) {
+  const started = Date.now();
+  while (Date.now() - started < timeout) {
+    if (markerCount(marker) > previous) return;
+    await page.waitForTimeout(100);
+  }
+  throw new Error("Console marker count did not increase: " + marker);
+}
+
 const response = await page.goto(url, { waitUntil: "networkidle", timeout: 120000 });
 if (!response || !response.ok()) throw new Error("HTTP boot failed: " + (response ? response.status() : "no response"));
 
@@ -65,9 +74,9 @@ if (mode === "desktop") {
   const returnBefore = markerCount("[A3] HUB_RETURN");
 
   await page.keyboard.press("Space");
-  while (markerCount("[A3] GAME_RUNNING") <= launchBefore) await page.waitForTimeout(100);
+  await waitMarkerCountAbove("[A3] GAME_RUNNING", launchBefore);
   await page.keyboard.press("Escape");
-  while (markerCount("[A3] HUB_RETURN") <= returnBefore) await page.waitForTimeout(100);
+  await waitMarkerCountAbove("[A3] HUB_RETURN", returnBefore);
 
   const focusBefore = markerCount("via=move_right");
   await page.keyboard.press("ArrowRight");
@@ -77,9 +86,9 @@ if (mode === "desktop") {
   const launchMid = markerCount("[A3] GAME_RUNNING");
   const returnMid = markerCount("[A3] HUB_RETURN");
   await page.keyboard.press("Space");
-  while (markerCount("[A3] GAME_RUNNING") <= launchMid) await page.waitForTimeout(100);
+  await waitMarkerCountAbove("[A3] GAME_RUNNING", launchMid);
   await page.keyboard.press("Escape");
-  while (markerCount("[A3] HUB_RETURN") <= returnMid) await page.waitForTimeout(100);
+  await waitMarkerCountAbove("[A3] HUB_RETURN", returnMid);
 
   keyboardFocusFlow = {
     focusNavigation: true,
