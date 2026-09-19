@@ -89,9 +89,10 @@ jobs:
 
       - name: Record exact tool versions
         run: |
-          set -euxo pipefail
+          set -euo pipefail
           java -version 2>&1 | tee .b0/evidence/java-version.txt
-          ("$RUFFLE_BIN" --version || true) 2>&1 | tee .b0/evidence/ruffle-version.txt
+          "$RUFFLE_BIN" --version > .b0/evidence/ruffle-version.txt 2>&1 || true
+          cat .b0/evidence/ruffle-version.txt
           printf '%s\n' "$FFDEC_TAG" > .b0/evidence/ffdec-release.txt
           printf '%s\n' "$RUFFLE_TAG" > .b0/evidence/ruffle-release.txt
 
