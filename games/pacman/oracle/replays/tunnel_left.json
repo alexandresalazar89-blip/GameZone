@@ -1,0 +1,77 @@
+{
+  "name": "tunnel_left",
+  "classification": "DETERMINISTIC",
+  "fps": 21,
+  "duration_seconds": 12,
+  "notes": "Source Maze route to left tunnel marker L at (0,14), then outside x=-1 where frame_6 wraps Pacman._x to OFFX+336 and pacX=28/nextX=27.",
+  "events": [
+    {
+      "frame": 21,
+      "order": 0,
+      "type": "mouse_click",
+      "x": 180,
+      "y": 276,
+      "button": 1
+    },
+    {
+      "frame": 112,
+      "order": 0,
+      "type": "key_down",
+      "key": "Left"
+    },
+    {
+      "frame": 113,
+      "order": 0,
+      "type": "key_up",
+      "key": "Left"
+    },
+    {
+      "frame": 118,
+      "order": 0,
+      "type": "key_down",
+      "key": "Up"
+    },
+    {
+      "frame": 119,
+      "order": 0,
+      "type": "key_up",
+      "key": "Up"
+    },
+    {
+      "frame": 127,
+      "order": 0,
+      "type": "key_down",
+      "key": "Left"
+    },
+    {
+      "frame": 128,
+      "order": 0,
+      "type": "key_up",
+      "key": "Left"
+    },
+    {
+      "frame": 136,
+      "order": 0,
+      "type": "key_down",
+      "key": "Up"
+    },
+    {
+      "frame": 137,
+      "order": 0,
+      "type": "key_up",
+      "key": "Up"
+    },
+    {
+      "frame": 154,
+      "order": 0,
+      "type": "key_down",
+      "key": "Left"
+    },
+    {
+      "frame": 155,
+      "order": 0,
+      "type": "key_up",
+      "key": "Left"
+    }
+  ]
+}
