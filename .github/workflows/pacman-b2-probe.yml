@@ -31,7 +31,7 @@ jobs:
           set -euxo pipefail
           sudo apt-get update
           sudo apt-get install -y \
-            xvfb xdotool x11-utils ffmpeg pulseaudio pulseaudio-utils \
+            xvfb xdotool x11-utils ffmpeg pulseaudio pulseaudio-utils python3-pil \
             libgtk-3-0 libasound2t64 libudev1 libfontconfig1 libfreetype6 libxkbcommon-x11-0 \
             mesa-vulkan-drivers vulkan-tools
           mkdir -p .b2/tools/ruffle .b2/probe/frames .b2/logs
@@ -234,6 +234,30 @@ jobs:
           if late > 25:
               raise SystemExit("Replay dispatch jitter exceeded 25 ms")
           PY
+
+      - name: Capture B2 scenario suite
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p .b2/oracle
+          python3 tools/pacman_b2/run_capture_suite.py \
+            --ruffle "$RUFFLE_BIN" \
+            --swf "$SWF_PATH" \
+            --replay-dir games/pacman/oracle/replays \
+            --out-root .b2/oracle \
+            --replay-driver tools/pacman_b2/replay_x11.py \
+            --analyzer tools/pacman_b2/analyze_capture.py \
+            --display "$DISPLAY" \
+            --pulse-sink oracle
+          cat .b2/oracle/suite-summary.json
+
+      - name: Upload B2 oracle suite
+        uses: actions/upload-artifact@v4
+        with:
+          name: pacman-b2-oracle-suite
+          path: |
+            .b2/oracle/
+          if-no-files-found: error
 
       - name: Upload B2 probe evidence
         uses: actions/upload-artifact@v4
