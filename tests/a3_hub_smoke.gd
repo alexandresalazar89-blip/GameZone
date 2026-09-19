@@ -51,76 +51,99 @@ func _run() -> void:
 		_fail("no initial Godot focus owner on game cards")
 		return
 
-	await _pulse_action(&"move_right")
+	await _tap_key(KEY_RIGHT)
 
 	var second: StringName = _hub.get_focused_game_id()
 	if second.is_empty() or second == first:
-		_fail("move_right did not change card focus: first=%s second=%s" % [first, second])
+		_fail("keyboard move_right did not change card focus: first=%s second=%s" % [first, second])
 		return
-	print("[A3_TEST] FOCUS_NAV_OK first=", first, " second=", second)
+	print("[A3_TEST] KEYBOARD_FOCUS_NAV_OK first=", first, " second=", second)
 
-	await _pulse_action(&"action_a")
+	await _tap_key(KEY_SPACE)
 
 	if _game_manager.call("current_game_id") != second:
-		_fail("action_a did not launch focused game")
+		_fail("keyboard action_a did not launch focused game")
 		return
 	if _hub.is_hub_visible() or not _hub.is_game_visible():
-		_fail("game view not active after launch")
+		_fail("game view not active after keyboard launch")
 		return
 	if not _hub.touch_gameplay_enabled():
 		_fail("touch gameplay controls not enabled in game state")
 		return
-	print("[A3_TEST] ACTION_A_LAUNCH_OK id=", second)
+	print("[A3_TEST] KEYBOARD_ACTION_A_LAUNCH_OK id=", second)
 
-	await _pulse_action(&"back")
+	await _tap_key(KEY_ESCAPE)
 
 	var current_after_back: StringName = _game_manager.call("current_game_id")
 	if not current_after_back.is_empty():
-		_fail("back did not exit through shell")
+		_fail("keyboard back did not exit through shell")
 		return
 	if not _hub.is_hub_visible() or _hub.is_game_visible():
-		_fail("hub not restored after back")
+		_fail("hub not restored after keyboard back")
 		return
 	if int(_audio_manager.call("active_game_count")) != 0:
-		_fail("audio scope leaked after hub return")
+		_fail("audio scope leaked after keyboard hub return")
 		return
 	if _hub.touch_gameplay_enabled():
 		_fail("touch gameplay controls remained enabled on hub")
 		return
-	print("[A3_TEST] BACK_TO_HUB_OK id=", second)
+	print("[A3_TEST] KEYBOARD_BACK_TO_HUB_OK id=", second)
 
-	await _pulse_action(&"move_left")
+	await _tap_joy(JOY_BUTTON_DPAD_LEFT)
+
 	var returned_first: StringName = _hub.get_focused_game_id()
 	if returned_first != first:
-		_fail("focus did not navigate back to first card")
+		_fail("gamepad D-pad left did not navigate back to first card")
 		return
+	print("[A3_TEST] GAMEPAD_FOCUS_NAV_EMULATION_OK id=", returned_first)
 
-	await _pulse_action(&"action_a")
+	await _tap_joy(JOY_BUTTON_A)
+
 	if _game_manager.call("current_game_id") != first:
-		_fail("first game relaunch failed")
+		_fail("gamepad A did not launch focused game")
 		return
 
-	await _pulse_action(&"back")
+	await _tap_joy(JOY_BUTTON_BACK)
+
 	var current_final: StringName = _game_manager.call("current_game_id")
 	if not current_final.is_empty() or int(_audio_manager.call("active_game_count")) != 0:
-		_fail("second teardown was not clean")
+		_fail("gamepad BACK teardown was not clean")
 		return
 
+	print("[A3_TEST] GAMEPAD_ACTIONS_EMULATION_OK id=", first)
 	print("[A3_TEST] RELAUNCH_TEARDOWN_OK id=", first)
 	print("[A3_TEST] HUB_SMOKE_OK")
 	quit(0)
 
 
-func _pulse_action(action: StringName) -> void:
-	var pressed := InputEventAction.new()
-	pressed.action = action
+func _tap_key(keycode: int) -> void:
+	var pressed := InputEventKey.new()
+	pressed.physical_keycode = keycode
 	pressed.pressed = true
 	Input.parse_input_event(pressed)
 	await process_frame
 
-	var released := InputEventAction.new()
-	released.action = action
+	var released := InputEventKey.new()
+	released.physical_keycode = keycode
 	released.pressed = false
+	Input.parse_input_event(released)
+	await process_frame
+
+
+func _tap_joy(button_index: int) -> void:
+	var pressed := InputEventJoypadButton.new()
+	pressed.device = 0
+	pressed.button_index = button_index
+	pressed.pressed = true
+	pressed.pressure = 1.0
+	Input.parse_input_event(pressed)
+	await process_frame
+
+	var released := InputEventJoypadButton.new()
+	released.device = 0
+	released.button_index = button_index
+	released.pressed = false
+	released.pressure = 0.0
 	Input.parse_input_event(released)
 	await process_frame
 
