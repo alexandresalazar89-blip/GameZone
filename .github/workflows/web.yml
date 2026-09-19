@@ -51,7 +51,7 @@ jobs:
         run: godot --headless --path . --script res://tests/a1_smoke.gd
 
       - name: A2 module contract smoke
-        run: godot --headless --path . --script res://tests/a2_contract_smoke.gd
+        run: timeout 30s godot --headless --verbose --path . --script res://tests/a2_contract_smoke.gd
 
       - name: Verify single-threaded export configuration
         shell: bash
