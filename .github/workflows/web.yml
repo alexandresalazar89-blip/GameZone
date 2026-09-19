@@ -160,3 +160,43 @@ jobs:
           name: a1-live-desktop-evidence
           path: artifacts/
           if-no-files-found: error
+
+
+  pr-live-pages-probe:
+    if: github.event_name == 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Wait for live Pages URL
+        shell: bash
+        run: |
+          set -euxo pipefail
+          URL="https://alexandresalazar89-blip.github.io/GameZone/"
+          for i in {1..60}; do
+            if curl -fsS "$URL" >/dev/null; then
+              echo "[A1_LIVE_PROBE] PAGES_HTTP_OK $URL"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "[A1_LIVE_PROBE] PAGES_HTTP_TIMEOUT"
+          exit 1
+
+      - name: Install Playwright Chromium
+        shell: bash
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Boot live Pages build in Chromium
+        run: node tests/web_smoke.mjs https://alexandresalazar89-blip.github.io/GameZone/ desktop
+
+      - name: Upload live probe evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: a1-pr-live-pages-evidence
+          path: artifacts/
+          if-no-files-found: error
