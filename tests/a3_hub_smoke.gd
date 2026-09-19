@@ -1,6 +1,8 @@
 extends SceneTree
 
 var _hub: Control
+var _game_manager: Node
+var _audio_manager: Node
 
 
 func _initialize() -> void:
@@ -8,6 +10,12 @@ func _initialize() -> void:
 
 
 func _run() -> void:
+	_game_manager = root.get_node_or_null("GameManager")
+	_audio_manager = root.get_node_or_null("AudioManager")
+	if _game_manager == null or _audio_manager == null:
+		_fail("autoload managers not available")
+		return
+
 	var packed := load("res://shell/main.tscn") as PackedScene
 	if packed == null:
 		_fail("main scene failed to load")
@@ -59,7 +67,7 @@ func _run() -> void:
 	Input.action_release(&"action_a")
 	await process_frame
 
-	if GameManager.current_game_id() != second:
+	if _game_manager.call("current_game_id") != second:
 		_fail("action_a did not launch focused game")
 		return
 	if _hub.is_hub_visible() or not _hub.is_game_visible():
@@ -75,13 +83,14 @@ func _run() -> void:
 	Input.action_release(&"back")
 	await process_frame
 
-	if not GameManager.current_game_id().is_empty():
+	var current_after_back: StringName = _game_manager.call("current_game_id")
+	if not current_after_back.is_empty():
 		_fail("back did not exit through shell")
 		return
 	if not _hub.is_hub_visible() or _hub.is_game_visible():
 		_fail("hub not restored after back")
 		return
-	if AudioManager.active_game_count() != 0:
+	if int(_audio_manager.call("active_game_count")) != 0:
 		_fail("audio scope leaked after hub return")
 		return
 	if _hub.touch_gameplay_enabled():
@@ -102,7 +111,7 @@ func _run() -> void:
 	await process_frame
 	Input.action_release(&"action_a")
 	await process_frame
-	if GameManager.current_game_id() != first:
+	if _game_manager.call("current_game_id") != first:
 		_fail("first game relaunch failed")
 		return
 
@@ -110,7 +119,8 @@ func _run() -> void:
 	await process_frame
 	Input.action_release(&"back")
 	await process_frame
-	if not GameManager.current_game_id().is_empty() or AudioManager.active_game_count() != 0:
+	var current_final: StringName = _game_manager.call("current_game_id")
+	if not current_final.is_empty() or int(_audio_manager.call("active_game_count")) != 0:
 		_fail("second teardown was not clean")
 		return
 
