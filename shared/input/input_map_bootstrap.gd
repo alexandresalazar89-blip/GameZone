@@ -37,6 +37,9 @@ static func install_defaults() -> void:
 	_add_key(&"pause", KEY_P)
 	_add_key(&"back", KEY_ESCAPE)
 
+	_add_mouse_button(&"action_a", MOUSE_BUTTON_LEFT)
+	_add_mouse_button(&"action_b", MOUSE_BUTTON_RIGHT)
+
 	_add_joy_button(&"move_up", JOY_BUTTON_DPAD_UP)
 	_add_joy_button(&"move_down", JOY_BUTTON_DPAD_DOWN)
 	_add_joy_button(&"move_left", JOY_BUTTON_DPAD_LEFT)
@@ -58,6 +61,13 @@ static func install_defaults() -> void:
 static func _add_key(action: StringName, keycode: int) -> void:
 	var event := InputEventKey.new()
 	event.physical_keycode = keycode
+	if not InputMap.action_has_event(action, event):
+		InputMap.action_add_event(action, event)
+
+
+static func _add_mouse_button(action: StringName, button_index: int) -> void:
+	var event := InputEventMouseButton.new()
+	event.button_index = button_index
 	if not InputMap.action_has_event(action, event):
 		InputMap.action_add_event(action, event)
 
