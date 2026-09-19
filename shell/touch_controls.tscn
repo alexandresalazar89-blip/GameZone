@@ -17,10 +17,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = -200.0
-offset_right = 200.0
-offset_bottom = -16.0
+offset_left = 20.0
+offset_top = -480.0
+offset_right = 480.0
+offset_bottom = -20.0
 grow_vertical = 0
 modulate = Color(1, 1, 1, 0.82)
 
@@ -29,43 +29,47 @@ layout_mode = 2
 columns = 3
 
 [node name="SpacerTopLeft" type="Control" parent="DPad/Grid"]
-custom_minimum_size = Vector2(56, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="Up" type="Button" parent="DPad/Grid"]
-custom_minimum_size = Vector2(56, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "▲"
+theme_override_font_sizes/font_size = 42
+text = "UP"
 
 [node name="SpacerTopRight" type="Control" parent="DPad/Grid"]
-custom_minimum_size = Vector2(56, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="Left" type="Button" parent="DPad/Grid"]
-custom_minimum_size = Vector2(56, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "◀"
+theme_override_font_sizes/font_size = 42
+text = "LEFT"
 
 [node name="Center" type="Control" parent="DPad/Grid"]
-custom_minimum_size = Vector2(56, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="Right" type="Button" parent="DPad/Grid"]
-custom_minimum_size = Vector2(56, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "▶"
+theme_override_font_sizes/font_size = 42
+text = "RIGHT"
 
 [node name="SpacerBottomLeft" type="Control" parent="DPad/Grid"]
-custom_minimum_size = Vector2(56, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="Down" type="Button" parent="DPad/Grid"]
-custom_minimum_size = Vector2(56, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "▼"
+theme_override_font_sizes/font_size = 42
+text = "DOWN"
 
 [node name="SpacerBottomRight" type="Control" parent="DPad/Grid"]
-custom_minimum_size = Vector2(56, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="Actions" type="PanelContainer" parent="."]
@@ -75,10 +79,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -160.0
-offset_right = -16.0
-offset_bottom = -16.0
+offset_left = -340.0
+offset_top = -340.0
+offset_right = -20.0
+offset_bottom = -20.0
 grow_horizontal = 0
 grow_vertical = 0
 modulate = Color(1, 1, 1, 0.82)
@@ -88,21 +92,25 @@ layout_mode = 2
 columns = 2
 
 [node name="ActionB" type="Button" parent="Actions/Grid"]
-custom_minimum_size = Vector2(64, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
+theme_override_font_sizes/font_size = 42
 text = "B"
 
 [node name="ActionA" type="Button" parent="Actions/Grid"]
-custom_minimum_size = Vector2(64, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
+theme_override_font_sizes/font_size = 42
 text = "A"
 
 [node name="Back" type="Button" parent="Actions/Grid"]
-custom_minimum_size = Vector2(64, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
+theme_override_font_sizes/font_size = 34
 text = "BACK"
 
 [node name="Pause" type="Button" parent="Actions/Grid"]
-custom_minimum_size = Vector2(64, 56)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "PAUSE"
