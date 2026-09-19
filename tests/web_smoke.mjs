@@ -55,6 +55,48 @@ if (pageErrors.length > 0) {
   throw new Error("Browser page errors: " + pageErrors.join(" | "));
 }
 
+const baseUrl = new URL(".", page.url());
+const resourceUrls = {
+  "index.html": new URL("index.html", baseUrl).href,
+  "index.pck": new URL("index.pck", baseUrl).href,
+  "index.wasm": new URL("index.wasm", baseUrl).href,
+};
+const resourceChecks = {};
+
+for (const [name, assetUrl] of Object.entries(resourceUrls)) {
+  const assetResponse = name === "index.html" ? response : await context.request.get(assetUrl);
+  const headers = assetResponse.headers();
+  resourceChecks[name] = {
+    url: assetUrl,
+    status: assetResponse.status(),
+    ok: assetResponse.ok(),
+    contentType: headers["content-type"] || null,
+    contentLength: headers["content-length"] || null,
+    coop: headers["cross-origin-opener-policy"] || null,
+    coep: headers["cross-origin-embedder-policy"] || null,
+  };
+
+  if (!assetResponse.ok()) {
+    throw new Error(name + " failed over HTTP: " + assetResponse.status());
+  }
+  if (headers["cross-origin-opener-policy"] || headers["cross-origin-embedder-policy"]) {
+    throw new Error(name + " unexpectedly returned COOP/COEP headers: " + JSON.stringify(resourceChecks[name]));
+  }
+
+  console.log("[A1_WEB_TEST] RESOURCE_OK " + name + " " + assetResponse.status() + " " + assetUrl);
+}
+
+if (page.url().startsWith("https://")) {
+  for (const item of Object.values(resourceChecks)) {
+    if (!item.url.startsWith("https://")) {
+      throw new Error("Live resource was not loaded over HTTPS: " + item.url);
+    }
+  }
+  console.log("[A1_WEB_TEST] HTTPS_RESOURCES_OK");
+}
+
+console.log("[A1_WEB_TEST] COOP_COEP_ABSENT");
+
 await page.screenshot({
   path: "artifacts/a1-" + mode + ".png",
   fullPage: true,
@@ -62,11 +104,13 @@ await page.screenshot({
 
 const evidence = {
   url,
+  finalUrl: page.url(),
   mode,
   canvasInfo,
   bootMarker,
   consoleLines,
   pageErrors,
+  resourceChecks,
   userAgent: await page.evaluate(() => navigator.userAgent),
   maxTouchPoints: await page.evaluate(() => navigator.maxTouchPoints),
   timestamp: new Date().toISOString(),
