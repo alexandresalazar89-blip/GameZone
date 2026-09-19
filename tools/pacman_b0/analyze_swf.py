@@ -47,7 +47,9 @@ def swf_header(path):
 def tag_counts(xml_path):
     out = collections.Counter()
     for _, el in ET.iterparse(xml_path, events=('start',)):
-        out[el.tag.rsplit('}',1)[-1]] += 1
+        type_name = el.attrib.get('type', '')
+        if type_name.endswith('Tag'):
+            out[type_name[:-3]] += 1
     return out
 
 
