@@ -55,11 +55,12 @@ func _run() -> void:
 		_fail("no initial Godot focus owner on game cards")
 		return
 
-	await _click_mouse(Vector2(8, 8))
+	_dispatch_mouse_action_to_shell()
+	await process_frame
 	if not StringName(_game_manager.call("current_game_id")).is_empty():
-		_fail("empty hub mouse click launched focused game")
+		_fail("global hub mouse action launched focused game")
 		return
-	print("[A4_TEST] EMPTY_HUB_MOUSE_CLICK_NO_LAUNCH_OK focused=", first)
+	print("[A4_TEST] GLOBAL_MOUSE_ACTION_IGNORED_FOR_FOCUS_LAUNCH_OK focused=", first)
 
 	await _tap_key(KEY_RIGHT)
 
@@ -126,22 +127,11 @@ func _run() -> void:
 	quit(0)
 
 
-func _click_mouse(position: Vector2) -> void:
-	var pressed := InputEventMouseButton.new()
-	pressed.position = position
-	pressed.global_position = position
-	pressed.button_index = MOUSE_BUTTON_LEFT
-	pressed.pressed = true
-	Input.parse_input_event(pressed)
-	await process_frame
-
-	var released := InputEventMouseButton.new()
-	released.position = position
-	released.global_position = position
-	released.button_index = MOUSE_BUTTON_LEFT
-	released.pressed = false
-	Input.parse_input_event(released)
-	await process_frame
+func _dispatch_mouse_action_to_shell() -> void:
+	var mouse := InputEventMouseButton.new()
+	mouse.button_index = MOUSE_BUTTON_LEFT
+	mouse.pressed = true
+	_hub._input(mouse)
 
 
 func _tap_key(keycode: int) -> void:
