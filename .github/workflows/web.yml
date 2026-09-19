@@ -3,6 +3,8 @@ name: A1 Web Build and Evidence
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: a1-web-${{ github.ref }}
   cancel-in-progress: true
 
 env:
@@ -95,14 +97,17 @@ jobs:
           if-no-files-found: error
 
       - name: Configure Pages
+        if: github.event_name == 'push'
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
+        if: github.event_name == 'push'
         uses: actions/upload-pages-artifact@v4
         with:
           path: build/web
 
   deploy:
+    if: github.event_name == 'push'
     needs: build
     runs-on: ubuntu-latest
     environment:
@@ -116,6 +121,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
   live-desktop-smoke:
+    if: github.event_name == 'push'
     needs: deploy
     runs-on: ubuntu-latest
     steps:
