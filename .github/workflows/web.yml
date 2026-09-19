@@ -59,11 +59,20 @@ jobs:
           grep -q 'variant/thread_support=false' export_presets.cfg
           ! grep -q 'variant/thread_support=true' export_presets.cfg
 
+      - name: Diagnose Web export templates
+        shell: bash
+        run: |
+          set -euxo pipefail
+          TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/$GODOT_VERSION.$GODOT_STATUS"
+          ls -lah "$TEMPLATE_DIR"/web*.zip
+          test -s "$TEMPLATE_DIR/web_nothreads_release.zip"
+          test -s "$TEMPLATE_DIR/web_nothreads_debug.zip"
+
       - name: Export Web release
         shell: bash
         run: |
           mkdir -p build/web
-          godot --headless --path . --export-release "Web" build/web/index.html
+          godot --headless --verbose --path . --export-release "Web" build/web/index.html
           touch build/web/.nojekyll
           test -s build/web/index.html
           test -s build/web/index.wasm
