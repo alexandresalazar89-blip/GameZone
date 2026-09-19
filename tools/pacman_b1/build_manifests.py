@@ -225,6 +225,8 @@ def main():
             info["sample_count"] = int(item.attrib.get("soundSampleCount", "0"))
         elif tag_type.startswith("DefineFont"):
             info["font_name"] = item.attrib.get("fontName")
+            glyphs = item.find("glyphShapeTable")
+            info["glyph_count"] = len(list(glyphs)) if glyphs is not None else 0
         elif tag_type == "DefineEditTextTag":
             info["variable_name"] = item.attrib.get("variableName", "")
             info["font_id"] = int(item.attrib["fontId"]) if item.attrib.get("fontId", "").isdigit() else None
@@ -266,6 +268,34 @@ def main():
     for cid, info in definitions.items():
         info["placements"] = placements_by_char.get(str(cid), [])
 
+    zero_glyph_fonts = [
+        info["character_id"] for info in definitions.values()
+        if info["kind"] == "font" and info.get("glyph_count", 0) == 0
+    ]
+    source_bitmap_defs = sum(
+        1 for item in top_tags
+        if item.attrib.get("type", "").startswith("DefineBits")
+    )
+    asset_manifest["source_definition_accounting"] = {
+        "character_definitions": len(definitions),
+        "shape_definitions": sum(1 for info in definitions.values() if info["kind"] == "shape"),
+        "sprite_definitions": sum(1 for info in definitions.values() if info["kind"] == "sprite"),
+        "sound_definitions": sum(1 for info in definitions.values() if info["kind"] == "sound"),
+        "font_definitions": sum(1 for info in definitions.values() if info["kind"] == "font"),
+        "zero_glyph_font_ids": zero_glyph_fonts,
+        "text_definitions": sum(1 for info in definitions.values() if info["kind"] == "text"),
+        "button_definitions": sum(1 for info in definitions.values() if info["kind"] == "button"),
+        "bitmap_image_definitions": source_bitmap_defs,
+    }
+    asset_manifest["raw_export_notes"] = [
+        "No image files are expected because the source SWF has zero DefineBits bitmap definitions."
+        if source_bitmap_defs == 0 else "Source bitmap definitions are present.",
+        "Font ID 49 (Arial) has zero embedded glyphs, so FFDec has no TTF payload to export for that definition."
+        if 49 in zero_glyph_fonts else "All defined fonts contain glyphs.",
+        "sounds/-1.wav is the exported streaming sound in addition to DefineSound assets."
+        if any(item["path"] == "sounds/-1.wav" for item in files) else "No separate streaming sound file was exported.",
+    ]
+
     symbol_map = {
         "schema": 1,
         "source_swf_sha256": digest(swf),
@@ -276,6 +306,13 @@ def main():
     }
 
     display = root.find("displayRect")
+    mapped_scripts = {item["script"] for item in all_actions}
+    all_raw_scripts = sorted(
+        item["path"] for item in files
+        if item["category"] == "scripts" and item["path"].lower().endswith(".as")
+    )
+    non_timeline_scripts = [path for path in all_raw_scripts if path not in mapped_scripts]
+
     timeline_map = {
         "schema": 1,
         "source_swf_sha256": digest(swf),
@@ -290,6 +327,7 @@ def main():
         "main": main_tl,
         "sprites": sprite_tls,
         "all_action_scripts": all_actions,
+        "non_timeline_action_scripts": non_timeline_scripts,
     }
 
     patterns = {
@@ -365,6 +403,16 @@ def main():
     report.append("- Timeline ActionScript entries: %d" % len(all_actions))
     report.append("- Named instances: %d" % len(instances))
     report.append("- Frame labels: %d" % label_count)
+    report.append("- Non-timeline ActionScript files (button/clip actions): %d" % len(non_timeline_scripts))
+    report.append("- Font definitions: %d; exported TTF files: %d; zero-glyph font IDs: %s" % (
+        asset_manifest["source_definition_accounting"]["font_definitions"],
+        asset_manifest["category_summary"].get("fonts", {}).get("files", 0),
+        zero_glyph_fonts,
+    ))
+    report.append("- Bitmap image definitions: %d; exported image files: %d" % (
+        source_bitmap_defs,
+        asset_manifest["category_summary"].get("images", {}).get("files", 0),
+    ))
     report.append("")
     report.append("Determinism frozen for B2/B7:")
     report.append("- Deterministic near-diff: maze, +10, +40, walls, tunnel offsets +336/-12 and +348/-24, extra-life logic.")
