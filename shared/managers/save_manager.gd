@@ -35,7 +35,7 @@ func load_game(game_id: StringName, slot: StringName, fallback: Variant = null) 
 
 	var text := file.get_as_text()
 	file.close()
-	var parsed := JSON.parse_string(text)
+	var parsed: Variant = JSON.parse_string(text)
 	return fallback if parsed == null else parsed
 
 
