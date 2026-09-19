@@ -1,0 +1,65 @@
+{
+  "name": "power_right",
+  "classification": "DETERMINISTIC",
+  "fps": 21,
+  "duration_seconds": 12,
+  "notes": "Route from (14,23) to source power cell O at (26,23), using buffered direction changes derived from Maze and pacStep=4/pacPosMax=2. Used to capture +10 pellets then +40 power bonus and frightened visual state.",
+  "events": [
+    {
+      "frame": 21,
+      "order": 0,
+      "type": "mouse_click",
+      "x": 180,
+      "y": 276,
+      "button": 1
+    },
+    {
+      "frame": 112,
+      "order": 0,
+      "type": "key_down",
+      "key": "Right"
+    },
+    {
+      "frame": 113,
+      "order": 0,
+      "type": "key_up",
+      "key": "Right"
+    },
+    {
+      "frame": 115,
+      "order": 0,
+      "type": "key_down",
+      "key": "Up"
+    },
+    {
+      "frame": 116,
+      "order": 0,
+      "type": "key_up",
+      "key": "Up"
+    },
+    {
+      "frame": 124,
+      "order": 0,
+      "type": "key_down",
+      "key": "Right"
+    },
+    {
+      "frame": 125,
+      "order": 0,
+      "type": "key_up",
+      "key": "Right"
+    },
+    {
+      "frame": 157,
+      "order": 0,
+      "type": "key_down",
+      "key": "Down"
+    },
+    {
+      "frame": 158,
+      "order": 0,
+      "type": "key_up",
+      "key": "Down"
+    }
+  ]
+}
