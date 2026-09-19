@@ -32,7 +32,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             xvfb xdotool x11-utils ffmpeg pulseaudio pulseaudio-utils \
-            libgtk-3-0 libasound2t64 libudev1 libfontconfig1 libfreetype6 \
+            libgtk-3-0 libasound2t64 libudev1 libfontconfig1 libfreetype6 libxkbcommon-x11-0 \
             mesa-vulkan-drivers vulkan-tools
           mkdir -p .b2/tools/ruffle .b2/probe/frames .b2/logs
 
