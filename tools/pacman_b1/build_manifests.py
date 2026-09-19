@@ -73,8 +73,8 @@ def matrix_data(node):
 
 def build_script_index(files):
     index = {}
-    main_rx = re.compile(r"^scripts/frame_(\\d+)/DoAction(?:_(\\d+))?\\.as$")
-    sprite_rx = re.compile(r"^scripts/DefineSprite_(\\d+)(?:_[^/]+)?/frame_(\\d+)/DoAction(?:_(\\d+))?\\.as$")
+    main_rx = re.compile(r"^scripts/frame_(\d+)/DoAction(?:_(\d+))?\.as$")
+    sprite_rx = re.compile(r"^scripts/DefineSprite_(\d+)(?:_[^/]+)?/frame_(\d+)/DoAction(?:_(\d+))?\.as$")
     for item in files:
         path = item["path"]
         match = main_rx.match(path)
