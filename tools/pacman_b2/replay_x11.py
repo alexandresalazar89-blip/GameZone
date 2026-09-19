@@ -6,8 +6,25 @@ import time
 from pathlib import Path
 
 
-def run_xdotool(window_id, event):
+def run_xdotool(window_id, event, input_mode):
     kind = event["type"]
+    if input_mode == "xtest":
+        if kind == "mouse_click":
+            subprocess.run([
+                "xdotool", "mousemove", "--sync",
+                str(event["x"]), str(event["y"]),
+            ], check=True)
+            subprocess.run(["xdotool", "click", str(event.get("button", 1))], check=True)
+            return
+        key = event["key"]
+        if kind == "key_down":
+            subprocess.run(["xdotool", "keydown", key], check=True)
+        elif kind == "key_up":
+            subprocess.run(["xdotool", "keyup", key], check=True)
+        else:
+            raise ValueError(f"Unsupported replay event type: {kind}")
+        return
+
     if kind == "mouse_click":
         subprocess.run([
             "xdotool", "mousemove", "--window", window_id,
@@ -33,6 +50,7 @@ def main():
     ap.add_argument("--schedule", required=True)
     ap.add_argument("--audit", required=True)
     ap.add_argument("--start-delay", type=float, default=0.75)
+    ap.add_argument("--input-mode", choices=["direct", "xtest"], default="direct")
     args = ap.parse_args()
 
     schedule = json.loads(Path(args.schedule).read_text("utf-8"))
@@ -44,6 +62,7 @@ def main():
         "frame_period_seconds": 1.0 / fps,
         "window": args.window,
         "start_delay_seconds": args.start_delay,
+        "input_mode": args.input_mode,
         "events": [],
     }
 
@@ -57,7 +76,7 @@ def main():
                 break
             time.sleep(min(remaining, 0.002))
         before = time.monotonic()
-        run_xdotool(args.window, event)
+        run_xdotool(args.window, event, args.input_mode)
         after = time.monotonic()
         audit["events"].append({
             **event,
