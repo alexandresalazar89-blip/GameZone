@@ -7,7 +7,7 @@ const GameManagerScript = preload("res://shared/managers/game_manager.gd")
 
 
 func _initialize() -> void:
-	call_deferred("_run")
+	_run()
 
 
 func _run() -> void:
@@ -45,7 +45,6 @@ func _run() -> void:
 	if not game_manager.launch(&"stub_wide"):
 		_fail("stub_wide launch failed")
 		return
-	await process_frame
 
 	if game_manager.current_game_id() != &"stub_wide":
 		_fail("stub_wide not current")
@@ -73,7 +72,6 @@ func _run() -> void:
 	print("[A2_TEST] WIDE_VIEWPORT_OK 320x180 display=", wide_display)
 
 	game_manager.unload_current_game()
-	await process_frame
 	if audio_manager.has_game_scope(&"stub_wide"):
 		_fail("stub_wide audio scope leaked")
 		return
@@ -82,7 +80,6 @@ func _run() -> void:
 	if not game_manager.launch(&"stub_tall"):
 		_fail("stub_tall launch failed")
 		return
-	await process_frame
 
 	if game_manager.current_viewport_size() != Vector2i(240, 320):
 		_fail("stub_tall viewport changed: %s" % game_manager.current_viewport_size())
@@ -108,7 +105,6 @@ func _run() -> void:
 	print("[A2_TEST] SAVE_NAMESPACE_OK same-slot different-game")
 
 	game_manager.current_context().exit()
-	await process_frame
 	if not game_manager.current_game_id().is_empty():
 		_fail("context.exit did not unload game")
 		return
