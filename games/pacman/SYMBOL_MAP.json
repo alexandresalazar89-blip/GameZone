@@ -1,0 +1,2783 @@
+{
+  "schema": 1,
+  "source_swf_sha256": "e0a61ed23375aaacf92dcac91c24e6d0111612b420024756f0872f56fd59cb26",
+  "character_definitions": [
+    {
+      "character_id": 1,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [
+        "NewLev"
+      ],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 7087,
+      "placements": []
+    },
+    {
+      "character_id": 2,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [
+        "ExLife"
+      ],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 2224,
+      "placements": []
+    },
+    {
+      "character_id": 3,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [
+        "BGEyes"
+      ],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 2774,
+      "placements": []
+    },
+    {
+      "character_id": 4,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [
+        "BGGhost"
+      ],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 1675,
+      "placements": []
+    },
+    {
+      "character_id": 5,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [
+        "BG3"
+      ],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 4398,
+      "placements": []
+    },
+    {
+      "character_id": 6,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [
+        "BG2"
+      ],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 4386,
+      "placements": []
+    },
+    {
+      "character_id": 7,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [
+        "BG1"
+      ],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 4395,
+      "placements": []
+    },
+    {
+      "character_id": 8,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 95,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 96,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 3,
+          "instance_name": null,
+          "move": true
+        },
+        {
+          "timeline": 9,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 20,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 28,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 40,
+          "frame": 2,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 40,
+          "frame": 33,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 47,
+          "frame": 1,
+          "depth": 13,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 47,
+          "frame": 1,
+          "depth": 14,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 83,
+          "frame": 2,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 9,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 1,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 9,
+          "instance_name": "Hit",
+          "move": false
+        },
+        {
+          "timeline": 14,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": "Hit",
+          "move": false
+        },
+        {
+          "timeline": 40,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": "Hit",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 10,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 12,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 11,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 12,
+          "frame": 3,
+          "depth": 1,
+          "instance_name": null,
+          "move": true
+        }
+      ]
+    },
+    {
+      "character_id": 12,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 4,
+      "placements": [
+        {
+          "timeline": 14,
+          "frame": 1,
+          "depth": 3,
+          "instance_name": "Btm",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 13,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 14,
+          "frame": 1,
+          "depth": 5,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 14,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 1,
+      "placements": [
+        {
+          "timeline": 19,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": "Shape",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 15,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 12,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 16,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 16,
+          "frame": 1,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 16,
+          "frame": 1,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 16,
+          "frame": 1,
+          "depth": 4,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 18,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 18,
+          "frame": 1,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 24,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 40,
+          "frame": 1,
+          "depth": 4,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 40,
+          "frame": 6,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 16,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 4,
+      "placements": [
+        {
+          "timeline": 19,
+          "frame": 1,
+          "depth": 7,
+          "instance_name": "Eyes",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 17,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 18,
+          "frame": 1,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 18,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 1,
+      "placements": [
+        {
+          "timeline": 19,
+          "frame": 2,
+          "depth": 7,
+          "instance_name": "PPEyes",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 19,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [
+        "Ghost"
+      ],
+      "frame_count": 2,
+      "placements": []
+    },
+    {
+      "character_id": 20,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [
+        "Pill"
+      ],
+      "frame_count": 1,
+      "placements": []
+    },
+    {
+      "character_id": 21,
+      "tag_type": "DefineFont2Tag",
+      "kind": "font",
+      "export_names": [],
+      "font_name": "Whimsy TT\\u0000",
+      "placements": []
+    },
+    {
+      "character_id": 22,
+      "tag_type": "DefineEditTextTag",
+      "kind": "text",
+      "export_names": [],
+      "variable_name": "kval",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 23,
+          "frame": 2,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 46,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 23,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [
+        "GhKill"
+      ],
+      "frame_count": 41,
+      "placements": [
+        {
+          "timeline": 71,
+          "frame": 15,
+          "depth": 1,
+          "instance_name": "F",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 24,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [
+        "Power"
+      ],
+      "frame_count": 11,
+      "placements": [
+        {
+          "timeline": 47,
+          "frame": 2,
+          "depth": 1,
+          "instance_name": "Pill",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 25,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [
+        "Empty"
+      ],
+      "frame_count": 1,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 26,
+          "instance_name": "Maze",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 86,
+          "instance_name": "Ghost",
+          "move": false
+        },
+        {
+          "timeline": 47,
+          "frame": 1,
+          "depth": 5,
+          "instance_name": "G",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 26,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 3,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 105,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 27,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 1,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 28,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 1,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 1,
+          "depth": 3,
+          "instance_name": "Bar",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 29,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": []
+    },
+    {
+      "character_id": 30,
+      "tag_type": "DefineButton2Tag",
+      "kind": "button",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 2,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 31,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 11,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 40,
+          "frame": 1,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 40,
+          "frame": 3,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 40,
+          "frame": 6,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 32,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 40,
+          "frame": 4,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 33,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 40,
+          "frame": 27,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 34,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 40,
+          "frame": 29,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 35,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 40,
+          "frame": 31,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 36,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 40,
+          "frame": 35,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 37,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 40,
+          "frame": 37,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 40,
+          "frame": 39,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 38,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 39,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 39,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 8,
+      "placements": [
+        {
+          "timeline": 40,
+          "frame": 45,
+          "depth": 3,
+          "instance_name": "D1",
+          "move": false
+        },
+        {
+          "timeline": 40,
+          "frame": 50,
+          "depth": 1,
+          "instance_name": "D2",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 40,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 59,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 88,
+          "instance_name": "Pacman",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 98,
+          "instance_name": "Life1",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 104,
+          "instance_name": "Life2",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 110,
+          "instance_name": "Life3",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 120,
+          "instance_name": "Life4",
+          "move": false
+        },
+        {
+          "timeline": 42,
+          "frame": 1,
+          "depth": 2,
+          "instance_name": "CPac",
+          "move": false
+        },
+        {
+          "timeline": 47,
+          "frame": 1,
+          "depth": 7,
+          "instance_name": "Pac",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 41,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 42,
+          "frame": 12,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 42,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 17,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 2,
+          "depth": 3,
+          "instance_name": "PacLogo",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 21,
+          "instance_name": "PacLogo",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 43,
+      "tag_type": "DefineFont2Tag",
+      "kind": "font",
+      "export_names": [],
+      "font_name": "Verdana\\u0000",
+      "placements": []
+    },
+    {
+      "character_id": 44,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": []
+    },
+    {
+      "character_id": 45,
+      "tag_type": "DefineButton2Tag",
+      "kind": "button",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 2,
+          "depth": 6,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 46,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 1,
+      "placements": [
+        {
+          "timeline": 47,
+          "frame": 1,
+          "depth": 3,
+          "instance_name": "GK",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 47,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 3,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 2,
+          "depth": 8,
+          "instance_name": "Demo",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 6,
+          "instance_name": "Demo",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 48,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 2,
+          "depth": 23,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 24,
+          "instance_name": null,
+          "move": true
+        }
+      ]
+    },
+    {
+      "character_id": 49,
+      "tag_type": "DefineFont2Tag",
+      "kind": "font",
+      "export_names": [],
+      "font_name": "Arial\\u0000",
+      "placements": []
+    },
+    {
+      "character_id": 50,
+      "tag_type": "DefineEditTextTag",
+      "kind": "text",
+      "export_names": [],
+      "variable_name": "",
+      "font_id": 49,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 2,
+          "depth": 24,
+          "instance_name": "promo",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 51,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 52,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 4,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 53,
+      "tag_type": "DefineShape2Tag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 6,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 54,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 7,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 8,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 9,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 10,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 55,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 11,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 12,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 13,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 14,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 15,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 56,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 16,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 17,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 57,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 18,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 19,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 58,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 20,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 21,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 59,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 22,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 23,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 60,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 24,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 25,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 61,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 71,
+          "frame": 2,
+          "depth": 1,
+          "instance_name": null,
+          "move": true
+        },
+        {
+          "timeline": 71,
+          "frame": 2,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 62,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 71,
+          "frame": 2,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 63,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 71,
+          "frame": 3,
+          "depth": 1,
+          "instance_name": null,
+          "move": true
+        }
+      ]
+    },
+    {
+      "character_id": 64,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 71,
+          "frame": 4,
+          "depth": 1,
+          "instance_name": null,
+          "move": true
+        }
+      ]
+    },
+    {
+      "character_id": 65,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 71,
+          "frame": 4,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 28,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 66,
+      "tag_type": "DefineShape2Tag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 71,
+          "frame": 6,
+          "depth": 2,
+          "instance_name": null,
+          "move": true
+        }
+      ]
+    },
+    {
+      "character_id": 67,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 2,
+          "instance_name": null,
+          "move": true
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 4,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 5,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 6,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 7,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 8,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 9,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 10,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 11,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 12,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 13,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 14,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 15,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 16,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 17,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 18,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 19,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 20,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 21,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 22,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 23,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 24,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 25,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 26,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 71,
+          "frame": 8,
+          "depth": 27,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 68,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 71,
+          "frame": 10,
+          "depth": 1,
+          "instance_name": null,
+          "move": true
+        }
+      ]
+    },
+    {
+      "character_id": 69,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 71,
+          "frame": 12,
+          "depth": 1,
+          "instance_name": null,
+          "move": true
+        }
+      ]
+    },
+    {
+      "character_id": 70,
+      "tag_type": "DefineShapeTag",
+      "kind": "shape",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 71,
+          "frame": 14,
+          "depth": 1,
+          "instance_name": null,
+          "move": true
+        }
+      ]
+    },
+    {
+      "character_id": 71,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 15,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 28,
+          "instance_name": "Fruit",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 57,
+          "instance_name": "FrLev",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 72,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 94,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 73,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 97,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 74,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 83,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 75,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 76,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 76,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 11,
+      "placements": [
+        {
+          "timeline": 83,
+          "frame": 2,
+          "depth": 2,
+          "instance_name": "Psd",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 77,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 83,
+          "frame": 3,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 78,
+      "tag_type": "DefineEditTextTag",
+      "kind": "text",
+      "export_names": [],
+      "variable_name": "lval",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 80,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 79,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 80,
+          "frame": 1,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 80,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 33,
+      "placements": [
+        {
+          "timeline": 83,
+          "frame": 4,
+          "depth": 2,
+          "instance_name": "LevMov",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 81,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 82,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 82,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 26,
+      "placements": [
+        {
+          "timeline": 83,
+          "frame": 5,
+          "depth": 1,
+          "instance_name": "GO",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 83,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 5,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 116,
+          "instance_name": "Ready",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 84,
+      "tag_type": "DefineEditTextTag",
+      "kind": "text",
+      "export_names": [],
+      "variable_name": "score",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 119,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 85,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 46490,
+      "placements": []
+    },
+    {
+      "character_id": 86,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 16916,
+      "placements": []
+    },
+    {
+      "character_id": 87,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 90,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 126,
+          "instance_name": "BGSnd",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 88,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 1131,
+      "placements": []
+    },
+    {
+      "character_id": 89,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 1127,
+      "placements": []
+    },
+    {
+      "character_id": 90,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 4523,
+      "placements": []
+    },
+    {
+      "character_id": 91,
+      "tag_type": "DefineSoundTag",
+      "kind": "sound",
+      "export_names": [],
+      "sound_format": 2,
+      "sound_rate": 1,
+      "sample_count": 4845,
+      "placements": []
+    },
+    {
+      "character_id": 92,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 20,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 128,
+          "instance_name": "Snd",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 93,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": []
+    },
+    {
+      "character_id": 94,
+      "tag_type": "DefineButton2Tag",
+      "kind": "button",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 95,
+      "tag_type": "DefineEditTextTag",
+      "kind": "text",
+      "export_names": [],
+      "variable_name": "score",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 4,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 96,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 5,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 97,
+      "tag_type": "DefineEditTextTag",
+      "kind": "text",
+      "export_names": [],
+      "variable_name": "",
+      "font_id": 49,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 25,
+          "instance_name": "promo",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 98,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 99,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 4,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 100,
+      "tag_type": "DefineEditTextTag",
+      "kind": "text",
+      "export_names": [],
+      "variable_name": "",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 103,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": "score_txt",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 101,
+      "tag_type": "DefineEditTextTag",
+      "kind": "text",
+      "export_names": [],
+      "variable_name": "",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 103,
+          "frame": 1,
+          "depth": 2,
+          "instance_name": "name_txt",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 102,
+      "tag_type": "DefineEditTextTag",
+      "kind": "text",
+      "export_names": [],
+      "variable_name": "",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 103,
+          "frame": 1,
+          "depth": 3,
+          "instance_name": "rank_txt",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 103,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 1,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 5,
+          "instance_name": "line1_mc",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 14,
+          "instance_name": "line2_mc",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 18,
+          "instance_name": "line3_mc",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 22,
+          "instance_name": "line4_mc",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 26,
+          "instance_name": "line5_mc",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 30,
+          "instance_name": "line6_mc",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 34,
+          "instance_name": "line7_mc",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 38,
+          "instance_name": "line8_mc",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 42,
+          "instance_name": "line9_mc",
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 46,
+          "instance_name": "line10_mc",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 104,
+      "tag_type": "DefineEditTextTag",
+      "kind": "text",
+      "export_names": [],
+      "variable_name": "errorMsg",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 105,
+          "frame": 2,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 105,
+      "tag_type": "DefineSpriteTag",
+      "kind": "sprite",
+      "export_names": [],
+      "frame_count": 2,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 50,
+          "instance_name": "loading_mc",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 106,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": []
+    },
+    {
+      "character_id": 107,
+      "tag_type": "DefineButton2Tag",
+      "kind": "button",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 52,
+          "instance_name": "last_btn",
+          "move": false
+        }
+      ]
+    },
+    {
+      "character_id": 108,
+      "tag_type": "DefineTextTag",
+      "kind": "text",
+      "export_names": [],
+      "placements": []
+    },
+    {
+      "character_id": 109,
+      "tag_type": "DefineButton2Tag",
+      "kind": "button",
+      "export_names": [],
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 54,
+          "instance_name": "next_btn",
+          "move": false
+        }
+      ]
+    }
+  ],
+  "export_assets_occurrences": [
+    {
+      "character_id": 1,
+      "name": "NewLev"
+    },
+    {
+      "character_id": 2,
+      "name": "ExLife"
+    },
+    {
+      "character_id": 3,
+      "name": "BGEyes"
+    },
+    {
+      "character_id": 4,
+      "name": "BGGhost"
+    },
+    {
+      "character_id": 5,
+      "name": "BG3"
+    },
+    {
+      "character_id": 6,
+      "name": "BG2"
+    },
+    {
+      "character_id": 7,
+      "name": "BG1"
+    },
+    {
+      "character_id": 19,
+      "name": "Ghost"
+    },
+    {
+      "character_id": 20,
+      "name": "Pill"
+    },
+    {
+      "character_id": 23,
+      "name": "GhKill"
+    },
+    {
+      "character_id": 24,
+      "name": "Power"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 24,
+      "name": "Power"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 24,
+      "name": "Power"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 23,
+      "name": "GhKill"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    },
+    {
+      "character_id": 25,
+      "name": "Empty"
+    }
+  ],
+  "export_names_by_character_id": {
+    "1": [
+      "NewLev"
+    ],
+    "2": [
+      "ExLife"
+    ],
+    "3": [
+      "BGEyes"
+    ],
+    "4": [
+      "BGGhost"
+    ],
+    "5": [
+      "BG3"
+    ],
+    "6": [
+      "BG2"
+    ],
+    "7": [
+      "BG1"
+    ],
+    "19": [
+      "Ghost"
+    ],
+    "20": [
+      "Pill"
+    ],
+    "23": [
+      "GhKill"
+    ],
+    "24": [
+      "Power"
+    ],
+    "25": [
+      "Empty"
+    ]
+  },
+  "instance_names": {
+    "BGSnd": [
+      {
+        "character_id": 87,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 126
+      }
+    ],
+    "Bar": [
+      {
+        "character_id": 28,
+        "timeline": 0,
+        "frame": 1,
+        "depth": 3
+      }
+    ],
+    "Btm": [
+      {
+        "character_id": 12,
+        "timeline": 14,
+        "frame": 1,
+        "depth": 3
+      }
+    ],
+    "CPac": [
+      {
+        "character_id": 40,
+        "timeline": 42,
+        "frame": 1,
+        "depth": 2
+      }
+    ],
+    "D1": [
+      {
+        "character_id": 39,
+        "timeline": 40,
+        "frame": 45,
+        "depth": 3
+      }
+    ],
+    "D2": [
+      {
+        "character_id": 39,
+        "timeline": 40,
+        "frame": 50,
+        "depth": 1
+      }
+    ],
+    "Demo": [
+      {
+        "character_id": 47,
+        "timeline": 0,
+        "frame": 2,
+        "depth": 8
+      },
+      {
+        "character_id": 47,
+        "timeline": 0,
+        "frame": 9,
+        "depth": 6
+      }
+    ],
+    "Eyes": [
+      {
+        "character_id": 16,
+        "timeline": 19,
+        "frame": 1,
+        "depth": 7
+      }
+    ],
+    "F": [
+      {
+        "character_id": 23,
+        "timeline": 71,
+        "frame": 15,
+        "depth": 1
+      }
+    ],
+    "FrLev": [
+      {
+        "character_id": 71,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 57
+      }
+    ],
+    "Fruit": [
+      {
+        "character_id": 71,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 28
+      }
+    ],
+    "G": [
+      {
+        "character_id": 25,
+        "timeline": 47,
+        "frame": 1,
+        "depth": 5
+      }
+    ],
+    "GK": [
+      {
+        "character_id": 46,
+        "timeline": 47,
+        "frame": 1,
+        "depth": 3
+      }
+    ],
+    "GO": [
+      {
+        "character_id": 82,
+        "timeline": 83,
+        "frame": 5,
+        "depth": 1
+      }
+    ],
+    "Ghost": [
+      {
+        "character_id": 25,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 86
+      }
+    ],
+    "Hit": [
+      {
+        "character_id": 9,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 9
+      },
+      {
+        "character_id": 9,
+        "timeline": 14,
+        "frame": 1,
+        "depth": 1
+      },
+      {
+        "character_id": 9,
+        "timeline": 40,
+        "frame": 1,
+        "depth": 1
+      }
+    ],
+    "LevMov": [
+      {
+        "character_id": 80,
+        "timeline": 83,
+        "frame": 4,
+        "depth": 2
+      }
+    ],
+    "Life1": [
+      {
+        "character_id": 40,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 98
+      }
+    ],
+    "Life2": [
+      {
+        "character_id": 40,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 104
+      }
+    ],
+    "Life3": [
+      {
+        "character_id": 40,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 110
+      }
+    ],
+    "Life4": [
+      {
+        "character_id": 40,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 120
+      }
+    ],
+    "Maze": [
+      {
+        "character_id": 25,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 26
+      }
+    ],
+    "PPEyes": [
+      {
+        "character_id": 18,
+        "timeline": 19,
+        "frame": 2,
+        "depth": 7
+      }
+    ],
+    "Pac": [
+      {
+        "character_id": 40,
+        "timeline": 47,
+        "frame": 1,
+        "depth": 7
+      }
+    ],
+    "PacLogo": [
+      {
+        "character_id": 42,
+        "timeline": 0,
+        "frame": 2,
+        "depth": 3
+      },
+      {
+        "character_id": 42,
+        "timeline": 0,
+        "frame": 9,
+        "depth": 21
+      }
+    ],
+    "Pacman": [
+      {
+        "character_id": 40,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 88
+      }
+    ],
+    "Pill": [
+      {
+        "character_id": 24,
+        "timeline": 47,
+        "frame": 2,
+        "depth": 1
+      }
+    ],
+    "Psd": [
+      {
+        "character_id": 76,
+        "timeline": 83,
+        "frame": 2,
+        "depth": 2
+      }
+    ],
+    "Ready": [
+      {
+        "character_id": 83,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 116
+      }
+    ],
+    "Shape": [
+      {
+        "character_id": 14,
+        "timeline": 19,
+        "frame": 1,
+        "depth": 1
+      }
+    ],
+    "Snd": [
+      {
+        "character_id": 92,
+        "timeline": 0,
+        "frame": 4,
+        "depth": 128
+      }
+    ],
+    "last_btn": [
+      {
+        "character_id": 107,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 52
+      }
+    ],
+    "line10_mc": [
+      {
+        "character_id": 103,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 46
+      }
+    ],
+    "line1_mc": [
+      {
+        "character_id": 103,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 5
+      }
+    ],
+    "line2_mc": [
+      {
+        "character_id": 103,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 14
+      }
+    ],
+    "line3_mc": [
+      {
+        "character_id": 103,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 18
+      }
+    ],
+    "line4_mc": [
+      {
+        "character_id": 103,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 22
+      }
+    ],
+    "line5_mc": [
+      {
+        "character_id": 103,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 26
+      }
+    ],
+    "line6_mc": [
+      {
+        "character_id": 103,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 30
+      }
+    ],
+    "line7_mc": [
+      {
+        "character_id": 103,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 34
+      }
+    ],
+    "line8_mc": [
+      {
+        "character_id": 103,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 38
+      }
+    ],
+    "line9_mc": [
+      {
+        "character_id": 103,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 42
+      }
+    ],
+    "loading_mc": [
+      {
+        "character_id": 105,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 50
+      }
+    ],
+    "name_txt": [
+      {
+        "character_id": 101,
+        "timeline": 103,
+        "frame": 1,
+        "depth": 2
+      }
+    ],
+    "next_btn": [
+      {
+        "character_id": 109,
+        "timeline": 0,
+        "frame": 10,
+        "depth": 54
+      }
+    ],
+    "promo": [
+      {
+        "character_id": 50,
+        "timeline": 0,
+        "frame": 2,
+        "depth": 24
+      },
+      {
+        "character_id": 97,
+        "timeline": 0,
+        "frame": 9,
+        "depth": 25
+      }
+    ],
+    "rank_txt": [
+      {
+        "character_id": 102,
+        "timeline": 103,
+        "frame": 1,
+        "depth": 3
+      }
+    ],
+    "score_txt": [
+      {
+        "character_id": 100,
+        "timeline": 103,
+        "frame": 1,
+        "depth": 1
+      }
+    ]
+  }
+}

@@ -100,7 +100,7 @@ Selection note: Highest B0 movement/character-logic score. The complete raw scri
 ## Phase gates
 
 - **B0 — COMPLETE:** triage only.
-- **B1 — PENDING GO:** total FFDec export + ASSET_MANIFEST + SYMBOL_MAP + TIMELINE_MAP.
+- **B1 — COMPLETE:** immutable FFDec export + ASSET_MANIFEST + SYMBOL_MAP + TIMELINE_MAP.
 - **B2 — PENDING:** pinned Ruffle oracle and deterministic scenarios.
 - **B3 — PENDING:** minimal Flash runtime shim.
 - **B4 — PENDING:** SWF assets and timelines.
@@ -114,3 +114,23 @@ Single-threaded remains mandatory. Physical gamepad remains deferred under BL-00
 ## B0 gate
 
 **STOP HERE. Do not start B1 until explicit user GO.**
+
+
+## B2/B7 determinism contract
+
+Deterministic near-diff scope:
+- maze layout;
+- pellet +10 and power-pellet additional +40;
+- wall collision;
+- Pac-Man tunnel offsets +336/-12;
+- ghost tunnel offsets +348/-24;
+- extra-life threshold logic based on score / 10000 exactly as decompiled.
+
+RNG rule/distribution scope:
+- Flash random(n) returns an integer from 0 through n-1;
+- !random(n) is true with probability 1/n;
+- do not require frame/pixel-identical ghost trajectories against Ruffle;
+- validate ghChoice legality, ghBest selection behavior, Shape._visible frightened branching;
+- validate source-faithful Pacman.Hit / Shape.Hit collision, EatGhost scoring, and Ghost["K"+g] respawn.
+
+Never replace this clone's ghost logic with arcade-original targeting.

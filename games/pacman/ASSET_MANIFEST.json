@@ -1,0 +1,3152 @@
+{
+  "schema": 1,
+  "raw_root": "games/pacman/decompiled",
+  "immutable_policy": "Raw FFDec output. Never hand-edit files under this root.",
+  "source_swf": {
+    "path": "games/pacman/original/pacman.swf",
+    "bytes": 42511,
+    "sha256": "e0a61ed23375aaacf92dcac91c24e6d0111612b420024756f0872f56fd59cb26"
+  },
+  "ffdec": "26.3.0",
+  "export_types": [
+    "script",
+    "image",
+    "shape",
+    "sprite",
+    "sound",
+    "font",
+    "frame",
+    "text"
+  ],
+  "formats": {
+    "script": "as",
+    "image": "FFDec default",
+    "shape": "svg",
+    "sprite": "svg",
+    "sound": "mp3/wav/flv according to source encoding",
+    "font": "ttf",
+    "frame": "svg",
+    "text": "plain"
+  },
+  "shape_vector_only_verified": true,
+  "category_summary": {
+    "fonts": {
+      "files": 2,
+      "bytes": 16040
+    },
+    "frames": {
+      "files": 10,
+      "bytes": 232100
+    },
+    "scripts": {
+      "files": 65,
+      "bytes": 28732
+    },
+    "shapes": {
+      "files": 36,
+      "bytes": 32428
+    },
+    "sounds": {
+      "files": 14,
+      "bytes": 24276
+    },
+    "sprites": {
+      "files": 359,
+      "bytes": 502804
+    },
+    "texts": {
+      "files": 27,
+      "bytes": 153
+    }
+  },
+  "extension_summary": {
+    ".as": 65,
+    ".mp3": 13,
+    ".svg": 405,
+    ".ttf": 2,
+    ".txt": 27,
+    ".wav": 1
+  },
+  "total_files": 513,
+  "total_bytes": 836533,
+  "files": [
+    {
+      "path": "fonts/21_Whimsy TT.ttf",
+      "category": "fonts",
+      "bytes": 11260,
+      "sha256": "6a8fdc95d698d291664127bbaeb7ad6707e347a0345b4784c89e7236868cb742"
+    },
+    {
+      "path": "fonts/43_Verdana.ttf",
+      "category": "fonts",
+      "bytes": 4780,
+      "sha256": "8dcb4b3d118d992b92cd8876893cd149d89ace89250e4994ddc32f7371894e74"
+    },
+    {
+      "path": "frames/1.svg",
+      "category": "frames",
+      "bytes": 6487,
+      "sha256": "1b5c9fa51e45d51fa9cd96e6ad43a6ee5384d15afb0e9552b0a1a09d9e5a9a4a"
+    },
+    {
+      "path": "frames/10.svg",
+      "category": "frames",
+      "bytes": 29378,
+      "sha256": "e7d412747a1dbe7194b38adf46e4c50461a55039c975d51a78a77525f2abf18e"
+    },
+    {
+      "path": "frames/2.svg",
+      "category": "frames",
+      "bytes": 28816,
+      "sha256": "90bf49ea371f41a1bbba06366979e3c575333125863c115e122fe79d88a047ad"
+    },
+    {
+      "path": "frames/3.svg",
+      "category": "frames",
+      "bytes": 5373,
+      "sha256": "2182712a232fe48cc302b8ef9467195edc82086c39b60930bc471c1422b6769e"
+    },
+    {
+      "path": "frames/4.svg",
+      "category": "frames",
+      "bytes": 27513,
+      "sha256": "2ef8412b74aa25a7b889f380e16d1b889cbc793cb463795e42065e37379fde9a"
+    },
+    {
+      "path": "frames/5.svg",
+      "category": "frames",
+      "bytes": 29918,
+      "sha256": "0ffb9a732e8e90d1a77bb10040f7a2c2d4252896055687d52866a77c4a682a4f"
+    },
+    {
+      "path": "frames/6.svg",
+      "category": "frames",
+      "bytes": 32346,
+      "sha256": "e3232b2038ea756fd691527c5f2ba3213f6c9f2ec7a38421f235b662bdf5ab8f"
+    },
+    {
+      "path": "frames/7.svg",
+      "category": "frames",
+      "bytes": 27988,
+      "sha256": "9353417ded46264645d16f83cd6aa774925e9f85e55856f2efa317d266d294b5"
+    },
+    {
+      "path": "frames/8.svg",
+      "category": "frames",
+      "bytes": 24425,
+      "sha256": "fc21e7653b0f0c3ed85a1553541687b13bb4839f6ab31e882565b6ca667d9c26"
+    },
+    {
+      "path": "frames/9.svg",
+      "category": "frames",
+      "bytes": 19856,
+      "sha256": "d645768a46dde0687de7404348d69003c9f4d58157ce7241e9044afeaf5b40c0"
+    },
+    {
+      "path": "scripts/DefineButton2_107/BUTTONCONDACTION on(press).as",
+      "category": "scripts",
+      "bytes": 189,
+      "sha256": "c660a7f514f9999b3f317f46dba70301113a5b1fa67d14245a386117cddc046b"
+    },
+    {
+      "path": "scripts/DefineButton2_109/BUTTONCONDACTION on(press).as",
+      "category": "scripts",
+      "bytes": 214,
+      "sha256": "9e7d4dda5bdd751cbd286cd0b0f8eb67dd3fec663c37035e051ecf973af0bbb6"
+    },
+    {
+      "path": "scripts/DefineButton2_30/BUTTONCONDACTION on(release).as",
+      "category": "scripts",
+      "bytes": 59,
+      "sha256": "6daa48bc6cd2a4edb7c535be3158d2777dd05f40de54a31ea236dc5c6b44fa86"
+    },
+    {
+      "path": "scripts/DefineButton2_45/BUTTONCONDACTION on(release).as",
+      "category": "scripts",
+      "bytes": 79,
+      "sha256": "da3e5dbff087a320785cd1453d5c7cae146b9324d6713c386c0d61d05fd39f31"
+    },
+    {
+      "path": "scripts/DefineButton2_94/BUTTONCONDACTION on(release).as",
+      "category": "scripts",
+      "bytes": 37,
+      "sha256": "07e512f58af98afa4ad69a439b5861b869251d53325a4f4743ae6e73db8dc9c8"
+    },
+    {
+      "path": "scripts/DefineSprite_105/frame_1/DoAction.as",
+      "category": "scripts",
+      "bytes": 25,
+      "sha256": "1ddc924e5a34e98550031d18f641533aa1e380ed72db435c9d73dd2c1abb9f04"
+    },
+    {
+      "path": "scripts/DefineSprite_16/frame_1/DoAction.as",
+      "category": "scripts",
+      "bytes": 9,
+      "sha256": "3271a793e3f9600314c6b0facc05023c4f3ed09c116d452966200a5d04735655"
+    },
+    {
+      "path": "scripts/DefineSprite_19_Ghost/frame_1/DoAction.as",
+      "category": "scripts",
+      "bytes": 9,
+      "sha256": "3271a793e3f9600314c6b0facc05023c4f3ed09c116d452966200a5d04735655"
+    },
+    {
+      "path": "scripts/DefineSprite_23_GhKill/frame_1/DoAction.as",
+      "category": "scripts",
+      "bytes": 9,
+      "sha256": "3271a793e3f9600314c6b0facc05023c4f3ed09c116d452966200a5d04735655"
+    },
+    {
+      "path": "scripts/DefineSprite_23_GhKill/frame_12/DoAction.as",
+      "category": "scripts",
+      "bytes": 108,
+      "sha256": "d1661ac1d0360de44e0233bcf1f67d6e5b1e40b4ad938f5e31d37b38d8904bc3"
+    },
+    {
+      "path": "scripts/DefineSprite_23_GhKill/frame_2/DoAction.as",
+      "category": "scripts",
+      "bytes": 82,
+      "sha256": "13d1ff55c03c1c84618e6ad1fab2eed61b1c53111ac8b7b067ae914752a93dc4"
+    },
+    {
+      "path": "scripts/DefineSprite_23_GhKill/frame_41/DoAction.as",
+      "category": "scripts",
+      "bytes": 89,
+      "sha256": "0a0020b14981b4f3c74b9c113606e9041831961dfe3f99acd471bc148e867e68"
+    },
+    {
+      "path": "scripts/DefineSprite_39/frame_8/DoAction.as",
+      "category": "scripts",
+      "bytes": 9,
+      "sha256": "3271a793e3f9600314c6b0facc05023c4f3ed09c116d452966200a5d04735655"
+    },
+    {
+      "path": "scripts/DefineSprite_40/frame_25/DoAction.as",
+      "category": "scripts",
+      "bytes": 126,
+      "sha256": "5ca672ef847a0a89aa09468a748246f4d119b3fe5fab81322dbf8fd916644f16"
+    },
+    {
+      "path": "scripts/DefineSprite_40/frame_27/DoAction.as",
+      "category": "scripts",
+      "bytes": 16,
+      "sha256": "54f9d33a81d423cece79ef3c580612bbed22e6383d98a0c2db6ff8352134a9ba"
+    },
+    {
+      "path": "scripts/DefineSprite_40/frame_5/DoAction.as",
+      "category": "scripts",
+      "bytes": 17,
+      "sha256": "35053f002c5674b71a6b615ae0d190871a1a56ad1c185af6cd86771bbcde532c"
+    },
+    {
+      "path": "scripts/DefineSprite_40/frame_59/DoAction.as",
+      "category": "scripts",
+      "bytes": 92,
+      "sha256": "905e9e7f8fda461e1e7c720e73aa5e033ab32a6391cc992e75b90cdc3e2210a9"
+    },
+    {
+      "path": "scripts/DefineSprite_40/frame_6/DoAction.as",
+      "category": "scripts",
+      "bytes": 39,
+      "sha256": "ea1cad2a173fdcb8b187da92253656ee9652c2ba1cadddcd46789d452761e61f"
+    },
+    {
+      "path": "scripts/DefineSprite_42/frame_17/DoAction.as",
+      "category": "scripts",
+      "bytes": 51,
+      "sha256": "cdd58eb710363180ff3abf4de0168393fdc514af6533ebbc97e5ed8aada6db95"
+    },
+    {
+      "path": "scripts/DefineSprite_47/frame_1/DoAction.as",
+      "category": "scripts",
+      "bytes": 339,
+      "sha256": "b753bdcd1a3ac46291c8bd25c0d5caf3a7059e5e64443fb82288209ac8a754ed"
+    },
+    {
+      "path": "scripts/DefineSprite_47/frame_2/DoAction.as",
+      "category": "scripts",
+      "bytes": 2114,
+      "sha256": "1b610fd2233452fe524bc3a4122197f2622bc10e202dbc066118681150342d47"
+    },
+    {
+      "path": "scripts/DefineSprite_47/frame_3/DoAction.as",
+      "category": "scripts",
+      "bytes": 17,
+      "sha256": "aad9fbd033f4051df0d5b0428acd91b40fea4614cb0f7e65dce362f29d541857"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_1/DoAction.as",
+      "category": "scripts",
+      "bytes": 24,
+      "sha256": "c6e83934f7d30ea650cf70919ff14258da31006f77d77384145a808e6ebde1f9"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_10/DoAction.as",
+      "category": "scripts",
+      "bytes": 14,
+      "sha256": "533debd4bf1450d3cde102b4860a6aef6a72561e5a579382ec808b27a8853df4"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_11/DoAction.as",
+      "category": "scripts",
+      "bytes": 14,
+      "sha256": "533debd4bf1450d3cde102b4860a6aef6a72561e5a579382ec808b27a8853df4"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_12/DoAction.as",
+      "category": "scripts",
+      "bytes": 14,
+      "sha256": "3fef53aed8168d289c040fd883d58c61f12f7f89492da7ae7cf53933059ea6d7"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_13/DoAction.as",
+      "category": "scripts",
+      "bytes": 14,
+      "sha256": "3fef53aed8168d289c040fd883d58c61f12f7f89492da7ae7cf53933059ea6d7"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_14/DoAction.as",
+      "category": "scripts",
+      "bytes": 14,
+      "sha256": "bc36687d015f118d8847043f33e60084f78be63ac10cf91e360dc27427b148fb"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_15/DoAction.as",
+      "category": "scripts",
+      "bytes": 153,
+      "sha256": "e0fb55b22c21fd5e45f0b57bf3179afd26c693e39a7bc971d2bd32dd3190bdb4"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_2/DoAction.as",
+      "category": "scripts",
+      "bytes": 13,
+      "sha256": "4a07d326579f6a13ccfdc5d7e16915ebbbb26c5f3cca18e57f19c369da2b074e"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_3/DoAction.as",
+      "category": "scripts",
+      "bytes": 13,
+      "sha256": "a79837712a1b51c91acd94b6d443a6fe69e22b19a35624af86feb409e29b77d0"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_4/DoAction.as",
+      "category": "scripts",
+      "bytes": 13,
+      "sha256": "da22a7eab925f34d9aecbacc563d944ef44ab70549509d631cb4ddbcf8e360cc"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_5/DoAction.as",
+      "category": "scripts",
+      "bytes": 13,
+      "sha256": "da22a7eab925f34d9aecbacc563d944ef44ab70549509d631cb4ddbcf8e360cc"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_6/DoAction.as",
+      "category": "scripts",
+      "bytes": 13,
+      "sha256": "7c21d7004fa7b624069d19027122878d4690646ebf4b1217601856e620fe6786"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_7/DoAction.as",
+      "category": "scripts",
+      "bytes": 13,
+      "sha256": "7c21d7004fa7b624069d19027122878d4690646ebf4b1217601856e620fe6786"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_8/DoAction.as",
+      "category": "scripts",
+      "bytes": 14,
+      "sha256": "796ec5dd90e2183e7ca422912646a25cfedf4ed3bbb4d1a75c940552aeeff745"
+    },
+    {
+      "path": "scripts/DefineSprite_71/frame_9/DoAction.as",
+      "category": "scripts",
+      "bytes": 14,
+      "sha256": "796ec5dd90e2183e7ca422912646a25cfedf4ed3bbb4d1a75c940552aeeff745"
+    },
+    {
+      "path": "scripts/DefineSprite_80/frame_33/DoAction.as",
+      "category": "scripts",
+      "bytes": 9,
+      "sha256": "3271a793e3f9600314c6b0facc05023c4f3ed09c116d452966200a5d04735655"
+    },
+    {
+      "path": "scripts/DefineSprite_80/frame_5/DoAction.as",
+      "category": "scripts",
+      "bytes": 57,
+      "sha256": "f70131f612228cef3b8923e440fa287b4843eb7a97d917a3de0b30f9d6920890"
+    },
+    {
+      "path": "scripts/DefineSprite_82/frame_26/DoAction.as",
+      "category": "scripts",
+      "bytes": 37,
+      "sha256": "5758ef2eba5d913f25714c44a9df1a29ef43bd3e564062c25e5576bc8fa46c7e"
+    },
+    {
+      "path": "scripts/DefineSprite_83/frame_1/DoAction.as",
+      "category": "scripts",
+      "bytes": 9,
+      "sha256": "3271a793e3f9600314c6b0facc05023c4f3ed09c116d452966200a5d04735655"
+    },
+    {
+      "path": "scripts/DefineSprite_83/frame_4/DoAction.as",
+      "category": "scripts",
+      "bytes": 72,
+      "sha256": "bdac5736ac255617364d1964dd0833acaa9b9ba66e584b7fa8f120057ce4dc28"
+    },
+    {
+      "path": "scripts/DefineSprite_87/frame_1/DoAction.as",
+      "category": "scripts",
+      "bytes": 373,
+      "sha256": "89ec7fcb7ae63ee73452e7dea8920c5306dde0faba6824351617a257bc1db033"
+    },
+    {
+      "path": "scripts/DefineSprite_87/frame_2/DoAction.as",
+      "category": "scripts",
+      "bytes": 65,
+      "sha256": "49ab7d0d10181cbac40b97f5bf8dfeff74c8570ab9e227885d458a28c6d469f6"
+    },
+    {
+      "path": "scripts/DefineSprite_87/frame_31/DoAction.as",
+      "category": "scripts",
+      "bytes": 344,
+      "sha256": "8a95199065f494f52facb85911a3c168459e2c084f37f267974f48c435bb3bb5"
+    },
+    {
+      "path": "scripts/DefineSprite_87/frame_65/DoAction.as",
+      "category": "scripts",
+      "bytes": 162,
+      "sha256": "74650ac0385a1bd8ac22f1bc6f4071bf34f96ceb9e968eb62dad395478790d67"
+    },
+    {
+      "path": "scripts/DefineSprite_87/frame_87/DoAction.as",
+      "category": "scripts",
+      "bytes": 184,
+      "sha256": "a2f0042e838b83352e23019812b4941629107ebd62453ffde51ed12efba8679c"
+    },
+    {
+      "path": "scripts/DefineSprite_87/frame_88/DoAction.as",
+      "category": "scripts",
+      "bytes": 38,
+      "sha256": "ae9ffdcfb8648d88de18ea9c4f60a53c838635304344ab7758a1f97ce56f2e19"
+    },
+    {
+      "path": "scripts/DefineSprite_87/frame_90/DoAction.as",
+      "category": "scripts",
+      "bytes": 9,
+      "sha256": "3271a793e3f9600314c6b0facc05023c4f3ed09c116d452966200a5d04735655"
+    },
+    {
+      "path": "scripts/DefineSprite_92/frame_1/DoAction.as",
+      "category": "scripts",
+      "bytes": 9,
+      "sha256": "3271a793e3f9600314c6b0facc05023c4f3ed09c116d452966200a5d04735655"
+    },
+    {
+      "path": "scripts/DefineSprite_92/frame_18/DoAction.as",
+      "category": "scripts",
+      "bytes": 43,
+      "sha256": "a8fbd3e3768970ea50b8b0492a57566f4c54f3f6744f00151110f43e6e00d505"
+    },
+    {
+      "path": "scripts/DefineSprite_92/frame_20/DoAction.as",
+      "category": "scripts",
+      "bytes": 9,
+      "sha256": "3271a793e3f9600314c6b0facc05023c4f3ed09c116d452966200a5d04735655"
+    },
+    {
+      "path": "scripts/DefineSprite_92/frame_3/DoAction.as",
+      "category": "scripts",
+      "bytes": 9,
+      "sha256": "3271a793e3f9600314c6b0facc05023c4f3ed09c116d452966200a5d04735655"
+    },
+    {
+      "path": "scripts/DefineSprite_92/frame_5/DoAction.as",
+      "category": "scripts",
+      "bytes": 9,
+      "sha256": "3271a793e3f9600314c6b0facc05023c4f3ed09c116d452966200a5d04735655"
+    },
+    {
+      "path": "scripts/frame_1/DoAction.as",
+      "category": "scripts",
+      "bytes": 487,
+      "sha256": "4a3efbae89a2c71e580eba243c21fa0fd463efeaa7e763e96cf1f0586ebd2839"
+    },
+    {
+      "path": "scripts/frame_1/DoAction_2.as",
+      "category": "scripts",
+      "bytes": 302,
+      "sha256": "777d6ba850ba86763b25144ac327729a37eadb648d782c79bb5552b846bb7e2c"
+    },
+    {
+      "path": "scripts/frame_10/DoAction.as",
+      "category": "scripts",
+      "bytes": 1775,
+      "sha256": "5a493cfaa6fcac60718dde79d2a9abb938e2326e39ef1175252337e06c80b476"
+    },
+    {
+      "path": "scripts/frame_2/DoAction.as",
+      "category": "scripts",
+      "bytes": 499,
+      "sha256": "ac7322589cf98bf296465d84d1a392d42c4b0ed9a25d9be6fbf3ef521a05ada8"
+    },
+    {
+      "path": "scripts/frame_4/DoAction.as",
+      "category": "scripts",
+      "bytes": 5043,
+      "sha256": "13cb3f8161122ff6d83a76736c36380594a7743a1a78f6a769049c9276b30dcf"
+    },
+    {
+      "path": "scripts/frame_4/PlaceObject2_25_Empty_26/CLIPACTIONRECORD onClipEvent(keyDown).as",
+      "category": "scripts",
+      "bytes": 2131,
+      "sha256": "691d0f17d0435a7efedf15576ffda90c63fe534a1bbfe6fc0753cc10cc82cf66"
+    },
+    {
+      "path": "scripts/frame_5/DoAction.as",
+      "category": "scripts",
+      "bytes": 940,
+      "sha256": "c3dbcfc9047fb0935be5b16026e5f46fce7ece9696925dc0154a27a946cedee9"
+    },
+    {
+      "path": "scripts/frame_6/DoAction.as",
+      "category": "scripts",
+      "bytes": 11341,
+      "sha256": "b691d5f4cfdaf1c1cd31924ce8c9074d23b6cba34cdcf28282bb24df79758ee8"
+    },
+    {
+      "path": "scripts/frame_7/DoAction.as",
+      "category": "scripts",
+      "bytes": 31,
+      "sha256": "d47216f3a0eeb91495b6f0387736fe96f8e24cac6b664377e077a71ff9f83d31"
+    },
+    {
+      "path": "scripts/frame_9/DoAction.as",
+      "category": "scripts",
+      "bytes": 487,
+      "sha256": "4a3efbae89a2c71e580eba243c21fa0fd463efeaa7e763e96cf1f0586ebd2839"
+    },
+    {
+      "path": "scripts/frame_9/DoAction_2.as",
+      "category": "scripts",
+      "bytes": 176,
+      "sha256": "d9b8e4a5a086d91bdca8509a0d2cdae06fa9072cde14f0d7417d93a613e92330"
+    },
+    {
+      "path": "shapes/10.svg",
+      "category": "shapes",
+      "bytes": 519,
+      "sha256": "320b10042fde00728c865c5ea62fd3278fe1e80a69ce9c7ab20963cc1b5eb0c7"
+    },
+    {
+      "path": "shapes/11.svg",
+      "category": "shapes",
+      "bytes": 500,
+      "sha256": "b1aa064713b2f5cd416276257e0edc7bf4e549ec97c96df1191f2f5c7bb37204"
+    },
+    {
+      "path": "shapes/13.svg",
+      "category": "shapes",
+      "bytes": 483,
+      "sha256": "5390befd6877299b00e6ee63c6723c220cc374d553d31b6cd45f971bb4928082"
+    },
+    {
+      "path": "shapes/15.svg",
+      "category": "shapes",
+      "bytes": 544,
+      "sha256": "caec014f883dbcb7e40a0aee3efdf36e61701d03f2e39f29372f883e8d9ce991"
+    },
+    {
+      "path": "shapes/17.svg",
+      "category": "shapes",
+      "bytes": 498,
+      "sha256": "b6da8767d6a6beba60441fc4de0601b785c543ee313ea28ec09187536b747edb"
+    },
+    {
+      "path": "shapes/27.svg",
+      "category": "shapes",
+      "bytes": 497,
+      "sha256": "6ff6c6bdc7e3fe627e5a5374e0139b98e8ddf277c254728a373d6905b00586bc"
+    },
+    {
+      "path": "shapes/31.svg",
+      "category": "shapes",
+      "bytes": 472,
+      "sha256": "86e6bee39b8ba4dda517345fb5486a787ca480922da6730e5cc5d1545fa85231"
+    },
+    {
+      "path": "shapes/32.svg",
+      "category": "shapes",
+      "bytes": 493,
+      "sha256": "60a1aa1c14c9b0112ff5e27ee66ce98c3cfcec63574a769e63060a7045700f33"
+    },
+    {
+      "path": "shapes/33.svg",
+      "category": "shapes",
+      "bytes": 468,
+      "sha256": "574d01756ba2b35078d4bb17c18f91a562a6d1910f7168a294e70efe80aebf75"
+    },
+    {
+      "path": "shapes/34.svg",
+      "category": "shapes",
+      "bytes": 448,
+      "sha256": "ce6c7927885d5ee102edeb8a2beaf48eaf53297ed35d8b4dc8be888018949bfc"
+    },
+    {
+      "path": "shapes/35.svg",
+      "category": "shapes",
+      "bytes": 444,
+      "sha256": "86890859b836c92607900e16762c74a722adadade84da247de7310500a233983"
+    },
+    {
+      "path": "shapes/36.svg",
+      "category": "shapes",
+      "bytes": 441,
+      "sha256": "df1682065e8a14c1655abd649494238b8afc8b86f7cd16a166169f8095bfb6a9"
+    },
+    {
+      "path": "shapes/37.svg",
+      "category": "shapes",
+      "bytes": 418,
+      "sha256": "230af5486274619e2183aa3d78b2d44d8f4c4ceb574802e76c6d47a1301b1b32"
+    },
+    {
+      "path": "shapes/38.svg",
+      "category": "shapes",
+      "bytes": 711,
+      "sha256": "b2068d6c0541a1699dc063e2ffc24d81fd54d2a55682bd5bda7448609ad1b25d"
+    },
+    {
+      "path": "shapes/48.svg",
+      "category": "shapes",
+      "bytes": 897,
+      "sha256": "2560c35f2d2e4e6ce025082497e9e41e9e912745314710ef2a9947dd13b28671"
+    },
+    {
+      "path": "shapes/51.svg",
+      "category": "shapes",
+      "bytes": 1222,
+      "sha256": "382350e76462723a7f2fbe21d498efe5768c87bdff33e61363deba6b7fcf0920"
+    },
+    {
+      "path": "shapes/52.svg",
+      "category": "shapes",
+      "bytes": 1222,
+      "sha256": "2871f8cda67f416426bf5ca17296e9080ed95d267f88cf533e1d33d951eeafb7"
+    },
+    {
+      "path": "shapes/53.svg",
+      "category": "shapes",
+      "bytes": 714,
+      "sha256": "1bb098d5a1dab6e865e9af3959be0b2c618fa7fa7157460379873a04ab1eb9ee"
+    },
+    {
+      "path": "shapes/54.svg",
+      "category": "shapes",
+      "bytes": 645,
+      "sha256": "fc4aa396cdfcfaa3d91f7fa65e6158ae338a4094df44f44d63063e0ae7b7623a"
+    },
+    {
+      "path": "shapes/55.svg",
+      "category": "shapes",
+      "bytes": 872,
+      "sha256": "e3a9d4f24e53e3c24823307571c4a2f08895a95657a71774904bbc0929434243"
+    },
+    {
+      "path": "shapes/56.svg",
+      "category": "shapes",
+      "bytes": 673,
+      "sha256": "17657f8e96ef73efc2eb39efcfad31f30f9ef54a3f728dd0f52c1b4a7274c9b5"
+    },
+    {
+      "path": "shapes/57.svg",
+      "category": "shapes",
+      "bytes": 768,
+      "sha256": "79fc4482fb89abf74f747d31fbbfe4ae73166084adb434258f7544e280e2292b"
+    },
+    {
+      "path": "shapes/58.svg",
+      "category": "shapes",
+      "bytes": 854,
+      "sha256": "415ab9b059f22cc94e08f14754657afb457299df154b337d434f059d324c6b75"
+    },
+    {
+      "path": "shapes/59.svg",
+      "category": "shapes",
+      "bytes": 692,
+      "sha256": "825015c2c5a70c9753830a56b34c88e9b764248b90a9f424a70d496413236d2f"
+    },
+    {
+      "path": "shapes/60.svg",
+      "category": "shapes",
+      "bytes": 693,
+      "sha256": "72b212f60a5fb657046c0aeedd53ac4dbf127825bd2d21671d415777b6e80eac"
+    },
+    {
+      "path": "shapes/61.svg",
+      "category": "shapes",
+      "bytes": 1007,
+      "sha256": "c58d5aa4dcb0afabfbce1d4cfff305df57808afa372fb295e629ccf396c7ad9f"
+    },
+    {
+      "path": "shapes/62.svg",
+      "category": "shapes",
+      "bytes": 678,
+      "sha256": "8941721b3446ecf965070e08deb4c4eba0c7d2aa733a8244aec3d36bdaf24a15"
+    },
+    {
+      "path": "shapes/63.svg",
+      "category": "shapes",
+      "bytes": 3964,
+      "sha256": "e0cca809eaa7dc010d972ff508282075ccc88ed489134600de76e4401c13f3ff"
+    },
+    {
+      "path": "shapes/64.svg",
+      "category": "shapes",
+      "bytes": 1509,
+      "sha256": "d28366c34509f3a15dc98685d3b9b990efeb90ded6c39ced5d15277fd32899cc"
+    },
+    {
+      "path": "shapes/65.svg",
+      "category": "shapes",
+      "bytes": 832,
+      "sha256": "d8e4099edd1b5aa0bd4e04fc7c1b84214ab08468f0f9977c354538775eb764c5"
+    },
+    {
+      "path": "shapes/66.svg",
+      "category": "shapes",
+      "bytes": 1809,
+      "sha256": "b551e1eda63078ef86f0c2fccfd1fc6affb95ea36c170b73e905232a1380bcf6"
+    },
+    {
+      "path": "shapes/67.svg",
+      "category": "shapes",
+      "bytes": 1012,
+      "sha256": "607778d6e32e41902ef64e240d7c2fd8eec5ab3600908543245ffa6ba23dac0e"
+    },
+    {
+      "path": "shapes/68.svg",
+      "category": "shapes",
+      "bytes": 1799,
+      "sha256": "777c51c6a87ed78546e69fe6fd4697e521696da3b0d1a145040d4d05026dbcd4"
+    },
+    {
+      "path": "shapes/69.svg",
+      "category": "shapes",
+      "bytes": 1271,
+      "sha256": "2df45f958bf47cb2348e4cc3927cfeabc2973f52df4c851a7ec162ee6ddc78ca"
+    },
+    {
+      "path": "shapes/70.svg",
+      "category": "shapes",
+      "bytes": 1686,
+      "sha256": "02d2254e6f12009a1a7d28caf084cb4da913e181cf760c62f3e3f5fa09f1216f"
+    },
+    {
+      "path": "shapes/8.svg",
+      "category": "shapes",
+      "bytes": 673,
+      "sha256": "415e62ea8b6df6ddb6486d348c2f55bbe1186f979333feb3979ac76b98f54a0b"
+    },
+    {
+      "path": "sounds/-1.wav",
+      "category": "sounds",
+      "bytes": 44,
+      "sha256": "ae8cd4d87061de84b556826a36ea6e209689ff2bb3632b9ac121aa34a5338a6c"
+    },
+    {
+      "path": "sounds/1_NewLev.mp3",
+      "category": "sounds",
+      "bytes": 1768,
+      "sha256": "d7bbb9d9a1c22a2e92c3a9e74a49e21c93169f027f6003c9b8f2f20a7a1369b1"
+    },
+    {
+      "path": "sounds/2_ExLife.mp3",
+      "category": "sounds",
+      "bytes": 728,
+      "sha256": "abcc89ea941aa6568036f3125b85da3af764f5ab624c97dd697db96a0780e67f"
+    },
+    {
+      "path": "sounds/3_BGEyes.mp3",
+      "category": "sounds",
+      "bytes": 832,
+      "sha256": "93bafab3b7f95bcd6abd48a37a150eb4e3246ce291b0c2240b55a2c936de8b73"
+    },
+    {
+      "path": "sounds/4_BGGhost.mp3",
+      "category": "sounds",
+      "bytes": 832,
+      "sha256": "ec7c62f810b1d370b2a1db333005be7b1c8addf7496bdacc65eaa33ef082215e"
+    },
+    {
+      "path": "sounds/5_BG3.mp3",
+      "category": "sounds",
+      "bytes": 1248,
+      "sha256": "3310ca2f28c4091baa9ae401716f15e3ba8b957e29db044469ff87ecdeb846b8"
+    },
+    {
+      "path": "sounds/6_BG2.mp3",
+      "category": "sounds",
+      "bytes": 1248,
+      "sha256": "2c74f8c96d552b56cb7e56771aabbc4d9c0011f61e59d53736de4703f6f8119a"
+    },
+    {
+      "path": "sounds/7_BG1.mp3",
+      "category": "sounds",
+      "bytes": 1248,
+      "sha256": "2da9d514b483c3620adae718d1105bc55973e7c833fc58f40b8bd0ea809751dc"
+    },
+    {
+      "path": "sounds/85.mp3",
+      "category": "sounds",
+      "bytes": 8840,
+      "sha256": "32c2169aae92a07f9e2a9a31929331eef66a72ca1f77db74c991e72a91abecf4"
+    },
+    {
+      "path": "sounds/86.mp3",
+      "category": "sounds",
+      "bytes": 3536,
+      "sha256": "886371468002f45d53d78ec9df44b9386e20b650e8e07c6da2daef6f44af266e"
+    },
+    {
+      "path": "sounds/88.mp3",
+      "category": "sounds",
+      "bytes": 728,
+      "sha256": "3edb6170f647a53bb612ad95508eafc6d705112b93551a9f4af4c5d81d933f64"
+    },
+    {
+      "path": "sounds/89.mp3",
+      "category": "sounds",
+      "bytes": 728,
+      "sha256": "809e22479b7565817a6335e09186ea01c769fad0e5b17a8806d3a1ce25cae11b"
+    },
+    {
+      "path": "sounds/90.mp3",
+      "category": "sounds",
+      "bytes": 1144,
+      "sha256": "f40dbfbce9173bd28c6e00fb0ff0af38bca4b3a04f66b8e1d9f5046764263132"
+    },
+    {
+      "path": "sounds/91.mp3",
+      "category": "sounds",
+      "bytes": 1352,
+      "sha256": "b580c770d67a9e6dc4356cd27fa30b438dee2f08a0eab8aeb413671f5d34a3ce"
+    },
+    {
+      "path": "sprites/DefineSprite_103/1.svg",
+      "category": "sprites",
+      "bytes": 787,
+      "sha256": "6317c781b9e1670601680bbf0619cc6131eca9237a88ee75741d6d914ac1d453"
+    },
+    {
+      "path": "sprites/DefineSprite_105/1.svg",
+      "category": "sprites",
+      "bytes": 5315,
+      "sha256": "9d8fc96830996a826099cc42a10b22d1f8c00dbe11a3ca87bcb71adf4ea6a9c3"
+    },
+    {
+      "path": "sprites/DefineSprite_105/2.svg",
+      "category": "sprites",
+      "bytes": 467,
+      "sha256": "956eae87cfe3deb7cd7f428561e03eed7794efb224ede9740d6ff05045027ea1"
+    },
+    {
+      "path": "sprites/DefineSprite_12/1.svg",
+      "category": "sprites",
+      "bytes": 699,
+      "sha256": "edca9710e2202059abfb6be56983c13db5e88c71fd59f0f0dbf75ad819284cb4"
+    },
+    {
+      "path": "sprites/DefineSprite_12/2.svg",
+      "category": "sprites",
+      "bytes": 699,
+      "sha256": "edca9710e2202059abfb6be56983c13db5e88c71fd59f0f0dbf75ad819284cb4"
+    },
+    {
+      "path": "sprites/DefineSprite_12/3.svg",
+      "category": "sprites",
+      "bytes": 680,
+      "sha256": "a013fa6f3825b0c55e450bc42d71d5c49b2ef6ba33ea1196dbc100a379547879"
+    },
+    {
+      "path": "sprites/DefineSprite_12/4.svg",
+      "category": "sprites",
+      "bytes": 680,
+      "sha256": "a013fa6f3825b0c55e450bc42d71d5c49b2ef6ba33ea1196dbc100a379547879"
+    },
+    {
+      "path": "sprites/DefineSprite_14/1.svg",
+      "category": "sprites",
+      "bytes": 1976,
+      "sha256": "4f9dfbce23aeda7914fea46a7bc07c3c6607679d58a944450fd25f1b408c7eb7"
+    },
+    {
+      "path": "sprites/DefineSprite_16/1.svg",
+      "category": "sprites",
+      "bytes": 1407,
+      "sha256": "9b1802c2d7d643690fe8264b56f6fbdcb663693173396ad0882fefe140f05a8a"
+    },
+    {
+      "path": "sprites/DefineSprite_16/2.svg",
+      "category": "sprites",
+      "bytes": 1403,
+      "sha256": "a9fd6d31ae28dddfae9171ed08d5d16acaf121b340364d707394e94d892e60c7"
+    },
+    {
+      "path": "sprites/DefineSprite_16/3.svg",
+      "category": "sprites",
+      "bytes": 1403,
+      "sha256": "277ca10e566b477fd41a82b55747dacb80ac999ed606c363c2fc03986bc9131c"
+    },
+    {
+      "path": "sprites/DefineSprite_16/4.svg",
+      "category": "sprites",
+      "bytes": 1403,
+      "sha256": "9974ddc3a702cdd953d414b5ada869aaeadaa843cd2aa0b08e8693405d8202bb"
+    },
+    {
+      "path": "sprites/DefineSprite_18/1.svg",
+      "category": "sprites",
+      "bytes": 1215,
+      "sha256": "80b6c47e3864f1844c6060616f8762212756028bb9a9d174adc72d3ae43bf494"
+    },
+    {
+      "path": "sprites/DefineSprite_19_Ghost/1.svg",
+      "category": "sprites",
+      "bytes": 3412,
+      "sha256": "e3cd8da09a76b56cafd46c8f50c5244cc00e741840653b732e74a89c1f16c978"
+    },
+    {
+      "path": "sprites/DefineSprite_19_Ghost/2.svg",
+      "category": "sprites",
+      "bytes": 3218,
+      "sha256": "0352f0bb445eeda83cc176bba171959952db6d6855ce8adef804381d62d0398a"
+    },
+    {
+      "path": "sprites/DefineSprite_20_Pill/1.svg",
+      "category": "sprites",
+      "bytes": 939,
+      "sha256": "8c2a8549db119c5ace512dc826848ffe509e98f2e97d313c7cee364ed849282d"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/1.svg",
+      "category": "sprites",
+      "bytes": 315,
+      "sha256": "102f504c3558378bf56cec5f70a74ae875f30f135a541acacceb5aad2e7d3a2e"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/10.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/11.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/12.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/13.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/14.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/15.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/16.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/17.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/18.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/19.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/2.svg",
+      "category": "sprites",
+      "bytes": 468,
+      "sha256": "e7e688ae35aa3162c0b831cbc1b2a8a49526728872eb6206af4e8418416ff068"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/20.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/21.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/22.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/23.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/24.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/25.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/26.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/27.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/28.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/29.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/3.svg",
+      "category": "sprites",
+      "bytes": 471,
+      "sha256": "2f5d3ecd868a20679704ad6a3acbea12b472c631f92b902addb13084b0ce9f20"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/30.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/31.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/32.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/33.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/34.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/35.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/36.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/37.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/38.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/39.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/4.svg",
+      "category": "sprites",
+      "bytes": 472,
+      "sha256": "8d2e71d434a7988bf0c857e0d47dabe071385fd4cbc206253c14e68df955e1f5"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/40.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/41.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/5.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "2ea4af44cc91f242e4ca17e3cd90f4ad9c2e6204cb735bde620a0fffdb10b2d7"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/6.svg",
+      "category": "sprites",
+      "bytes": 472,
+      "sha256": "340f587c6fca55926fc3a5a22dc41d692e93d8641ebcd3ee10cf1ae93063fd4e"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/7.svg",
+      "category": "sprites",
+      "bytes": 472,
+      "sha256": "b196d2db6fba4804d596b891fec1dd616edb1d7f49024d96885fea645d9edda0"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/8.svg",
+      "category": "sprites",
+      "bytes": 473,
+      "sha256": "38141007fad4ff7f5da5191ce0444f40ed969d7eb8ab6ef265df3f6e79196d10"
+    },
+    {
+      "path": "sprites/DefineSprite_23_GhKill/9.svg",
+      "category": "sprites",
+      "bytes": 466,
+      "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+    },
+    {
+      "path": "sprites/DefineSprite_24_Power/1.svg",
+      "category": "sprites",
+      "bytes": 731,
+      "sha256": "5311cd681e8329785ee7dedd4f00686465447c79507ff6564576e91446a5ad05"
+    },
+    {
+      "path": "sprites/DefineSprite_24_Power/10.svg",
+      "category": "sprites",
+      "bytes": 731,
+      "sha256": "311b11c459d9866aa7352100d2ca6caf6c09f0242fc24fb072fee461a26e72eb"
+    },
+    {
+      "path": "sprites/DefineSprite_24_Power/11.svg",
+      "category": "sprites",
+      "bytes": 731,
+      "sha256": "5311cd681e8329785ee7dedd4f00686465447c79507ff6564576e91446a5ad05"
+    },
+    {
+      "path": "sprites/DefineSprite_24_Power/2.svg",
+      "category": "sprites",
+      "bytes": 731,
+      "sha256": "311b11c459d9866aa7352100d2ca6caf6c09f0242fc24fb072fee461a26e72eb"
+    },
+    {
+      "path": "sprites/DefineSprite_24_Power/3.svg",
+      "category": "sprites",
+      "bytes": 727,
+      "sha256": "72fcc4c9f298abd3f9fc137d7466de9866771f519505cfdb4d66efebd01e2e56"
+    },
+    {
+      "path": "sprites/DefineSprite_24_Power/4.svg",
+      "category": "sprites",
+      "bytes": 731,
+      "sha256": "195342be1b50f1bcc0baf4ce5130f80d080d23bac9b14a8f3ea84af74298fe0b"
+    },
+    {
+      "path": "sprites/DefineSprite_24_Power/5.svg",
+      "category": "sprites",
+      "bytes": 731,
+      "sha256": "00545caa3f091caca92b3683f658eaa5b50dc8053921faeadd32c61233bdd6c6"
+    },
+    {
+      "path": "sprites/DefineSprite_24_Power/6.svg",
+      "category": "sprites",
+      "bytes": 731,
+      "sha256": "7c510336c1927b160f5ae430d68e3aadb6381f623cf895d584c04cf1f24871ef"
+    },
+    {
+      "path": "sprites/DefineSprite_24_Power/7.svg",
+      "category": "sprites",
+      "bytes": 731,
+      "sha256": "00545caa3f091caca92b3683f658eaa5b50dc8053921faeadd32c61233bdd6c6"
+    },
+    {
+      "path": "sprites/DefineSprite_24_Power/8.svg",
+      "category": "sprites",
+      "bytes": 731,
+      "sha256": "195342be1b50f1bcc0baf4ce5130f80d080d23bac9b14a8f3ea84af74298fe0b"
+    },
+    {
+      "path": "sprites/DefineSprite_24_Power/9.svg",
+      "category": "sprites",
+      "bytes": 727,
+      "sha256": "72fcc4c9f298abd3f9fc137d7466de9866771f519505cfdb4d66efebd01e2e56"
+    },
+    {
+      "path": "sprites/DefineSprite_25_Empty/1.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_28/1.svg",
+      "category": "sprites",
+      "bytes": 935,
+      "sha256": "1aaae01344bb1171e2d714d0a43855ba6fc83641ff88bee04bf7d88f91c754b4"
+    },
+    {
+      "path": "sprites/DefineSprite_39/1.svg",
+      "category": "sprites",
+      "bytes": 902,
+      "sha256": "59605e757fee7357a21067436f35cf58e414212b3072c69fc495d7559fe4371f"
+    },
+    {
+      "path": "sprites/DefineSprite_39/2.svg",
+      "category": "sprites",
+      "bytes": 927,
+      "sha256": "e3c1f53b0e9c62fcd39d7e2083ddee61e62dce74038c75a528c812808374b6bb"
+    },
+    {
+      "path": "sprites/DefineSprite_39/3.svg",
+      "category": "sprites",
+      "bytes": 927,
+      "sha256": "ccb0d47c1d404eb3e0caf1b5beeb024169c980a0b629744f6eb1dcc71bd6575a"
+    },
+    {
+      "path": "sprites/DefineSprite_39/4.svg",
+      "category": "sprites",
+      "bytes": 928,
+      "sha256": "1d13c8295a0a9e3c90b3afbd7d3f041697be85e00ab99764c5c40e42c1802e24"
+    },
+    {
+      "path": "sprites/DefineSprite_39/5.svg",
+      "category": "sprites",
+      "bytes": 928,
+      "sha256": "89d7b6e30ceee4dea84b1c4aa6f296e8b57649a91a958328a0a27b48b93acdde"
+    },
+    {
+      "path": "sprites/DefineSprite_39/6.svg",
+      "category": "sprites",
+      "bytes": 928,
+      "sha256": "6d8bf85f370dc749646aac0a22794f7e20d514b17084b96d53a7d6c48df646cf"
+    },
+    {
+      "path": "sprites/DefineSprite_39/7.svg",
+      "category": "sprites",
+      "bytes": 928,
+      "sha256": "1c18ec7e158de96897b4a03ecf9f0d07352562343179a21a68a6f89479d23871"
+    },
+    {
+      "path": "sprites/DefineSprite_39/8.svg",
+      "category": "sprites",
+      "bytes": 314,
+      "sha256": "1d57955bbe8262830076a65f7f7f0c10f0c80331161e9e4df4042f17448a2291"
+    },
+    {
+      "path": "sprites/DefineSprite_40/1.svg",
+      "category": "sprites",
+      "bytes": 1723,
+      "sha256": "c83eae725e8ba23afdbea2f563ee15323e712b43faa91067c6ee814ccba96ff3"
+    },
+    {
+      "path": "sprites/DefineSprite_40/10.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/11.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/12.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/13.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/14.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/15.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/16.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/17.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/18.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/19.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/2.svg",
+      "category": "sprites",
+      "bytes": 1745,
+      "sha256": "ac2600bb76769205003eb520a0e54fc0b266b537850968600808393c97a5776e"
+    },
+    {
+      "path": "sprites/DefineSprite_40/20.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/21.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/22.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/23.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/24.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/25.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/26.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/27.svg",
+      "category": "sprites",
+      "bytes": 899,
+      "sha256": "1af3f920456366dfc96962f18fc8319f30d3e1fd4af193992401c1ef4f77cbec"
+    },
+    {
+      "path": "sprites/DefineSprite_40/28.svg",
+      "category": "sprites",
+      "bytes": 899,
+      "sha256": "1af3f920456366dfc96962f18fc8319f30d3e1fd4af193992401c1ef4f77cbec"
+    },
+    {
+      "path": "sprites/DefineSprite_40/29.svg",
+      "category": "sprites",
+      "bytes": 892,
+      "sha256": "ab5b733eca4906dbf598104b12aa1d8b67936c4078fac32fb0ca3db1e87261da"
+    },
+    {
+      "path": "sprites/DefineSprite_40/3.svg",
+      "category": "sprites",
+      "bytes": 1723,
+      "sha256": "c83eae725e8ba23afdbea2f563ee15323e712b43faa91067c6ee814ccba96ff3"
+    },
+    {
+      "path": "sprites/DefineSprite_40/30.svg",
+      "category": "sprites",
+      "bytes": 892,
+      "sha256": "ab5b733eca4906dbf598104b12aa1d8b67936c4078fac32fb0ca3db1e87261da"
+    },
+    {
+      "path": "sprites/DefineSprite_40/31.svg",
+      "category": "sprites",
+      "bytes": 889,
+      "sha256": "0d3db1cea1b6f8af4b832f3708ba58c306a0f813e7c11788b0a7e4c9c6688b98"
+    },
+    {
+      "path": "sprites/DefineSprite_40/32.svg",
+      "category": "sprites",
+      "bytes": 889,
+      "sha256": "0d3db1cea1b6f8af4b832f3708ba58c306a0f813e7c11788b0a7e4c9c6688b98"
+    },
+    {
+      "path": "sprites/DefineSprite_40/33.svg",
+      "category": "sprites",
+      "bytes": 934,
+      "sha256": "9dbc2992d7401537bc475cfa4ddaa4d53b403fb8c977c78f9ad7d6eb7f36eb2c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/34.svg",
+      "category": "sprites",
+      "bytes": 934,
+      "sha256": "9dbc2992d7401537bc475cfa4ddaa4d53b403fb8c977c78f9ad7d6eb7f36eb2c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/35.svg",
+      "category": "sprites",
+      "bytes": 884,
+      "sha256": "d0b2bd92ceaa7953a4438081235fe368a1f827b83f6bc5e08989ba6ba73c9e76"
+    },
+    {
+      "path": "sprites/DefineSprite_40/36.svg",
+      "category": "sprites",
+      "bytes": 884,
+      "sha256": "d0b2bd92ceaa7953a4438081235fe368a1f827b83f6bc5e08989ba6ba73c9e76"
+    },
+    {
+      "path": "sprites/DefineSprite_40/37.svg",
+      "category": "sprites",
+      "bytes": 869,
+      "sha256": "2de3d67fb82e5452ddd42a77a84a9a0d6acf18ad8267a2f02b4ccc58c2411816"
+    },
+    {
+      "path": "sprites/DefineSprite_40/38.svg",
+      "category": "sprites",
+      "bytes": 869,
+      "sha256": "2de3d67fb82e5452ddd42a77a84a9a0d6acf18ad8267a2f02b4ccc58c2411816"
+    },
+    {
+      "path": "sprites/DefineSprite_40/39.svg",
+      "category": "sprites",
+      "bytes": 867,
+      "sha256": "13edc0fcd47015147b23e423e9861bb8b304a62bdc4cbb77416ab4b79c6a1ed7"
+    },
+    {
+      "path": "sprites/DefineSprite_40/4.svg",
+      "category": "sprites",
+      "bytes": 1750,
+      "sha256": "2122c0c1c4ef19d83aa379abb202e2486ec39d19976fdfe6700f1724ea117e98"
+    },
+    {
+      "path": "sprites/DefineSprite_40/40.svg",
+      "category": "sprites",
+      "bytes": 867,
+      "sha256": "13edc0fcd47015147b23e423e9861bb8b304a62bdc4cbb77416ab4b79c6a1ed7"
+    },
+    {
+      "path": "sprites/DefineSprite_40/41.svg",
+      "category": "sprites",
+      "bytes": 312,
+      "sha256": "df717b0c3ae72b7bd44d33ef167ff5a425a45c80e7f8bb4e9b8b2dc1d6c7a22f"
+    },
+    {
+      "path": "sprites/DefineSprite_40/42.svg",
+      "category": "sprites",
+      "bytes": 312,
+      "sha256": "df717b0c3ae72b7bd44d33ef167ff5a425a45c80e7f8bb4e9b8b2dc1d6c7a22f"
+    },
+    {
+      "path": "sprites/DefineSprite_40/43.svg",
+      "category": "sprites",
+      "bytes": 312,
+      "sha256": "df717b0c3ae72b7bd44d33ef167ff5a425a45c80e7f8bb4e9b8b2dc1d6c7a22f"
+    },
+    {
+      "path": "sprites/DefineSprite_40/44.svg",
+      "category": "sprites",
+      "bytes": 312,
+      "sha256": "df717b0c3ae72b7bd44d33ef167ff5a425a45c80e7f8bb4e9b8b2dc1d6c7a22f"
+    },
+    {
+      "path": "sprites/DefineSprite_40/45.svg",
+      "category": "sprites",
+      "bytes": 1072,
+      "sha256": "c483cd2699da7a86a33b919715e2efdcdf73280d0bffffb7ec3aa732a276721f"
+    },
+    {
+      "path": "sprites/DefineSprite_40/46.svg",
+      "category": "sprites",
+      "bytes": 1097,
+      "sha256": "384f0d4fbf598421b0b6c9f64ac56dc0be8c8225b41c87f129fe6f1b714091aa"
+    },
+    {
+      "path": "sprites/DefineSprite_40/47.svg",
+      "category": "sprites",
+      "bytes": 1097,
+      "sha256": "febd8a8b996b60af7c498e4635b99f6c8d99df1d4ec68d2c79237894affe5256"
+    },
+    {
+      "path": "sprites/DefineSprite_40/48.svg",
+      "category": "sprites",
+      "bytes": 1098,
+      "sha256": "d198ad7867c84bb0dd987e4d0de6fc2754b8016f83c900d67707f9617bf5fc45"
+    },
+    {
+      "path": "sprites/DefineSprite_40/49.svg",
+      "category": "sprites",
+      "bytes": 1098,
+      "sha256": "0f5a800bbe34ec28fe34aaae8152494b08b223ff01d8f0786f7b3f93baae1688"
+    },
+    {
+      "path": "sprites/DefineSprite_40/5.svg",
+      "category": "sprites",
+      "bytes": 1750,
+      "sha256": "2122c0c1c4ef19d83aa379abb202e2486ec39d19976fdfe6700f1724ea117e98"
+    },
+    {
+      "path": "sprites/DefineSprite_40/50.svg",
+      "category": "sprites",
+      "bytes": 1833,
+      "sha256": "fae57059bbd81de465e08c67cd9d755f4679414a6f3c025962fed5daa45b0d09"
+    },
+    {
+      "path": "sprites/DefineSprite_40/51.svg",
+      "category": "sprites",
+      "bytes": 1858,
+      "sha256": "cdbe08d0596331d2e38695f57a6319101968e8163ca3ed25789313cac2a9868f"
+    },
+    {
+      "path": "sprites/DefineSprite_40/52.svg",
+      "category": "sprites",
+      "bytes": 1237,
+      "sha256": "eea279003fe1f68c05b0f02bb159c4bedc85517f950941a5b1ae522f42f9de77"
+    },
+    {
+      "path": "sprites/DefineSprite_40/53.svg",
+      "category": "sprites",
+      "bytes": 1833,
+      "sha256": "41b7b61bd16b5538588c4075512e1f8cf498bf87a19fdaf6858847b7d021dc03"
+    },
+    {
+      "path": "sprites/DefineSprite_40/54.svg",
+      "category": "sprites",
+      "bytes": 1858,
+      "sha256": "9f40ee80419a08b5caa32c779c483f95b3f17248ff8d1cb22c46e2773b3ea892"
+    },
+    {
+      "path": "sprites/DefineSprite_40/55.svg",
+      "category": "sprites",
+      "bytes": 1858,
+      "sha256": "eeeb5f1e4861cc1943aaaf9e803d59adc52215e48a03ef315e7331f16b069202"
+    },
+    {
+      "path": "sprites/DefineSprite_40/56.svg",
+      "category": "sprites",
+      "bytes": 1859,
+      "sha256": "38215ded6f0cab688d017a2e064b1bb393f7eed4528a757cf31a7cd4f10e834e"
+    },
+    {
+      "path": "sprites/DefineSprite_40/57.svg",
+      "category": "sprites",
+      "bytes": 1238,
+      "sha256": "01715709d9315d94b47adb321a55abeeab3b8048a0aa6bd4e6a676a87e76a667"
+    },
+    {
+      "path": "sprites/DefineSprite_40/58.svg",
+      "category": "sprites",
+      "bytes": 1833,
+      "sha256": "fae57059bbd81de465e08c67cd9d755f4679414a6f3c025962fed5daa45b0d09"
+    },
+    {
+      "path": "sprites/DefineSprite_40/59.svg",
+      "category": "sprites",
+      "bytes": 312,
+      "sha256": "df717b0c3ae72b7bd44d33ef167ff5a425a45c80e7f8bb4e9b8b2dc1d6c7a22f"
+    },
+    {
+      "path": "sprites/DefineSprite_40/6.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/7.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/8.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_40/9.svg",
+      "category": "sprites",
+      "bytes": 908,
+      "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+    },
+    {
+      "path": "sprites/DefineSprite_42/1.svg",
+      "category": "sprites",
+      "bytes": 1840,
+      "sha256": "2702bff67507a3738a7fa4c808715e5360e522f357fb1252b0a7606f2862bb86"
+    },
+    {
+      "path": "sprites/DefineSprite_42/10.svg",
+      "category": "sprites",
+      "bytes": 1101,
+      "sha256": "e807c0b54748ea4e75817dd8ecd68df9dfdb2ff7f2f89babef7eedbb525fade9"
+    },
+    {
+      "path": "sprites/DefineSprite_42/11.svg",
+      "category": "sprites",
+      "bytes": 1100,
+      "sha256": "c1ea03861a320ad8dfd416b2662df4886fbeda1031af538de1f2ed4f2b83af39"
+    },
+    {
+      "path": "sprites/DefineSprite_42/12.svg",
+      "category": "sprites",
+      "bytes": 3233,
+      "sha256": "de68f6f1d08274a71809e948b53f95727712a31971959158970f866be9076a8e"
+    },
+    {
+      "path": "sprites/DefineSprite_42/13.svg",
+      "category": "sprites",
+      "bytes": 3233,
+      "sha256": "58fbd5bb3a6f1822eff86358a158e375eea6e4657dbf1a9dff74bdc922189f95"
+    },
+    {
+      "path": "sprites/DefineSprite_42/14.svg",
+      "category": "sprites",
+      "bytes": 3233,
+      "sha256": "4a7be3cb0057ca5f02b29dc544e440552418cd2e6956a8aae09e7fde1bfa19f8"
+    },
+    {
+      "path": "sprites/DefineSprite_42/15.svg",
+      "category": "sprites",
+      "bytes": 3233,
+      "sha256": "cad4106e887b7d5276015e7efb951d12f206b2f07ecd5a3ca9f4af674aebac62"
+    },
+    {
+      "path": "sprites/DefineSprite_42/16.svg",
+      "category": "sprites",
+      "bytes": 3232,
+      "sha256": "ddf53296268befa10984b41adaf04334e30f5a4ca7e12835f25fd080af9f2a12"
+    },
+    {
+      "path": "sprites/DefineSprite_42/17.svg",
+      "category": "sprites",
+      "bytes": 3232,
+      "sha256": "2cfeb920e83b62f48edc8cca7f7835ff88cc6a010559bd29c96957c02915dc16"
+    },
+    {
+      "path": "sprites/DefineSprite_42/2.svg",
+      "category": "sprites",
+      "bytes": 1863,
+      "sha256": "bf0f71604fcb96618db1870d6206ef3641e2fc6cd3fc45640e4aaa4f17231a12"
+    },
+    {
+      "path": "sprites/DefineSprite_42/3.svg",
+      "category": "sprites",
+      "bytes": 1841,
+      "sha256": "f6e6be03c6fac8a5388e230182b371d1f086e85809064a5173ef1fa0087e0565"
+    },
+    {
+      "path": "sprites/DefineSprite_42/4.svg",
+      "category": "sprites",
+      "bytes": 1868,
+      "sha256": "7fd1f539e59e8aca29cf4c916f7de40c0ad5ddb0310b730455e70aeaa0a4d13b"
+    },
+    {
+      "path": "sprites/DefineSprite_42/5.svg",
+      "category": "sprites",
+      "bytes": 1868,
+      "sha256": "d7963d44879c6101ce0b23d0e4cc1b9fee8c3cf0a51cdac3c0ac59f0cfa9cb65"
+    },
+    {
+      "path": "sprites/DefineSprite_42/6.svg",
+      "category": "sprites",
+      "bytes": 1101,
+      "sha256": "cc720846690169da5ff73f164f86c606c057b760c6164b5e40325b5631637c27"
+    },
+    {
+      "path": "sprites/DefineSprite_42/7.svg",
+      "category": "sprites",
+      "bytes": 1102,
+      "sha256": "fd6cef19f7d514f01a3c202644e19007fed41506133a96efeea969a48c57bee7"
+    },
+    {
+      "path": "sprites/DefineSprite_42/8.svg",
+      "category": "sprites",
+      "bytes": 1102,
+      "sha256": "89f649fb41c15b5adbc3f7eb3fcc3f86d769ae27fd659969deae9b9d92821084"
+    },
+    {
+      "path": "sprites/DefineSprite_42/9.svg",
+      "category": "sprites",
+      "bytes": 1101,
+      "sha256": "a67f36b1d947c5048958e5243c2a502a297a80e17c275c36c1445560b136140b"
+    },
+    {
+      "path": "sprites/DefineSprite_46/1.svg",
+      "category": "sprites",
+      "bytes": 465,
+      "sha256": "86c9c66c613efacb2ed7f28cc9f92696cebfd6148cb8ac0f6dc1507ba4f20321"
+    },
+    {
+      "path": "sprites/DefineSprite_47/1.svg",
+      "category": "sprites",
+      "bytes": 3023,
+      "sha256": "f4b7fa7cf4fb070bba103047f937d81d363bf6443efa821115c33c8b190049e5"
+    },
+    {
+      "path": "sprites/DefineSprite_47/2.svg",
+      "category": "sprites",
+      "bytes": 3617,
+      "sha256": "743464102ec17536ff8db52ff77150cb80ae8325a79656935254a3752a87bd0e"
+    },
+    {
+      "path": "sprites/DefineSprite_47/3.svg",
+      "category": "sprites",
+      "bytes": 3595,
+      "sha256": "26f51295bb366771566720ad3da3516621b4a4b8a604190315737a387d1073af"
+    },
+    {
+      "path": "sprites/DefineSprite_71/1.svg",
+      "category": "sprites",
+      "bytes": 859,
+      "sha256": "7aa81b86b5ffed216dbc6a6ebba31ca5bb058555d8ff159f3154eac040de1039"
+    },
+    {
+      "path": "sprites/DefineSprite_71/10.svg",
+      "category": "sprites",
+      "bytes": 1994,
+      "sha256": "e0c2bd1c346723972b43372d07786932232767e5e52d31405b9f45c55609c865"
+    },
+    {
+      "path": "sprites/DefineSprite_71/11.svg",
+      "category": "sprites",
+      "bytes": 1994,
+      "sha256": "e0c2bd1c346723972b43372d07786932232767e5e52d31405b9f45c55609c865"
+    },
+    {
+      "path": "sprites/DefineSprite_71/12.svg",
+      "category": "sprites",
+      "bytes": 1438,
+      "sha256": "8fd5bf5bbba62d2a83f998634342535f855415dc8af184f010d8052810bf3301"
+    },
+    {
+      "path": "sprites/DefineSprite_71/13.svg",
+      "category": "sprites",
+      "bytes": 1438,
+      "sha256": "8fd5bf5bbba62d2a83f998634342535f855415dc8af184f010d8052810bf3301"
+    },
+    {
+      "path": "sprites/DefineSprite_71/14.svg",
+      "category": "sprites",
+      "bytes": 1878,
+      "sha256": "3c1e0bf8eba181f3cacbec2488185c18ae2c77dc9854487fd154aa947eb70516"
+    },
+    {
+      "path": "sprites/DefineSprite_71/15.svg",
+      "category": "sprites",
+      "bytes": 471,
+      "sha256": "0e1397d4ba9fd0d41e74f60d73f8559befadcda67627d0ce362f4882bdc74dcf"
+    },
+    {
+      "path": "sprites/DefineSprite_71/2.svg",
+      "category": "sprites",
+      "bytes": 2548,
+      "sha256": "90a365e62c9e595c27489fe38596e447a7f813419acd7fc628b1661b58def3ac"
+    },
+    {
+      "path": "sprites/DefineSprite_71/3.svg",
+      "category": "sprites",
+      "bytes": 4137,
+      "sha256": "f2b428b35812bc56147b7ae4479295fb690d099bb30b83a093d758db02b60848"
+    },
+    {
+      "path": "sprites/DefineSprite_71/4.svg",
+      "category": "sprites",
+      "bytes": 2338,
+      "sha256": "83c368ec080917590b328e36438e708f24c6a8d707411523e120cd66fa5d05d9"
+    },
+    {
+      "path": "sprites/DefineSprite_71/5.svg",
+      "category": "sprites",
+      "bytes": 2338,
+      "sha256": "83c368ec080917590b328e36438e708f24c6a8d707411523e120cd66fa5d05d9"
+    },
+    {
+      "path": "sprites/DefineSprite_71/6.svg",
+      "category": "sprites",
+      "bytes": 1983,
+      "sha256": "887e94073bc1147d1a0a7ba61f8b3f10ba43d93ee29fadf3916621c813f7a645"
+    },
+    {
+      "path": "sprites/DefineSprite_71/7.svg",
+      "category": "sprites",
+      "bytes": 1983,
+      "sha256": "887e94073bc1147d1a0a7ba61f8b3f10ba43d93ee29fadf3916621c813f7a645"
+    },
+    {
+      "path": "sprites/DefineSprite_71/8.svg",
+      "category": "sprites",
+      "bytes": 8887,
+      "sha256": "ccdd756c9ba5b5c08c43dfb0c3d43da1482cc59092961cfefcaa716915a716b4"
+    },
+    {
+      "path": "sprites/DefineSprite_71/9.svg",
+      "category": "sprites",
+      "bytes": 8887,
+      "sha256": "ccdd756c9ba5b5c08c43dfb0c3d43da1482cc59092961cfefcaa716915a716b4"
+    },
+    {
+      "path": "sprites/DefineSprite_76/1.svg",
+      "category": "sprites",
+      "bytes": 4243,
+      "sha256": "6834f5fd8c5391adb19840c3033f702fe22d22f372037b860e388e4f7db7475f"
+    },
+    {
+      "path": "sprites/DefineSprite_76/10.svg",
+      "category": "sprites",
+      "bytes": 4243,
+      "sha256": "11c62d6fdffe051057808084ec5b337716339725cd5bd98d8a8d6874a28c2644"
+    },
+    {
+      "path": "sprites/DefineSprite_76/11.svg",
+      "category": "sprites",
+      "bytes": 4243,
+      "sha256": "6834f5fd8c5391adb19840c3033f702fe22d22f372037b860e388e4f7db7475f"
+    },
+    {
+      "path": "sprites/DefineSprite_76/2.svg",
+      "category": "sprites",
+      "bytes": 4243,
+      "sha256": "11c62d6fdffe051057808084ec5b337716339725cd5bd98d8a8d6874a28c2644"
+    },
+    {
+      "path": "sprites/DefineSprite_76/3.svg",
+      "category": "sprites",
+      "bytes": 4243,
+      "sha256": "b8c9b7463cc687ad268a773eeb4ad3e53846c54b5ea17181ae762d3c71c4e2fa"
+    },
+    {
+      "path": "sprites/DefineSprite_76/4.svg",
+      "category": "sprites",
+      "bytes": 4244,
+      "sha256": "5837b06fdaf4343e77658c69cd6a752f6722c6a75dd1061a8c391616e56aa6a8"
+    },
+    {
+      "path": "sprites/DefineSprite_76/5.svg",
+      "category": "sprites",
+      "bytes": 4244,
+      "sha256": "ae66ed2e21927c8aed15981d27462f3e7becb2ad617552663be1109e8072315a"
+    },
+    {
+      "path": "sprites/DefineSprite_76/6.svg",
+      "category": "sprites",
+      "bytes": 4243,
+      "sha256": "9d37f32352a4028f7e9b0c9dda227711dd346927c65b655f824ad7e7bfb3be95"
+    },
+    {
+      "path": "sprites/DefineSprite_76/7.svg",
+      "category": "sprites",
+      "bytes": 4244,
+      "sha256": "ae66ed2e21927c8aed15981d27462f3e7becb2ad617552663be1109e8072315a"
+    },
+    {
+      "path": "sprites/DefineSprite_76/8.svg",
+      "category": "sprites",
+      "bytes": 4244,
+      "sha256": "5837b06fdaf4343e77658c69cd6a752f6722c6a75dd1061a8c391616e56aa6a8"
+    },
+    {
+      "path": "sprites/DefineSprite_76/9.svg",
+      "category": "sprites",
+      "bytes": 4243,
+      "sha256": "b8c9b7463cc687ad268a773eeb4ad3e53846c54b5ea17181ae762d3c71c4e2fa"
+    },
+    {
+      "path": "sprites/DefineSprite_80/1.svg",
+      "category": "sprites",
+      "bytes": 2155,
+      "sha256": "1309baad6ceb0d65d243015d8ffa7f398796864869913fd3adc8086b3d85c457"
+    },
+    {
+      "path": "sprites/DefineSprite_80/10.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/11.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/12.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/13.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/14.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/15.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/16.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/17.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/18.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/19.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/2.svg",
+      "category": "sprites",
+      "bytes": 2189,
+      "sha256": "03fb68730dff930eff6c3742f41ddaf42dc806b555e6a98d8b4118dd4457c877"
+    },
+    {
+      "path": "sprites/DefineSprite_80/20.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/21.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/22.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/23.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/24.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/25.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/26.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/27.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/28.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_80/29.svg",
+      "category": "sprites",
+      "bytes": 2154,
+      "sha256": "a704710e5ebe97409565f762a3cf8b9e9df2b63afc9bd367884b407d12815b07"
+    },
+    {
+      "path": "sprites/DefineSprite_80/3.svg",
+      "category": "sprites",
+      "bytes": 2190,
+      "sha256": "b70deba39b1e313e254377a260b37eca1e79c3c78e3b5cebf9721e6a738f007c"
+    },
+    {
+      "path": "sprites/DefineSprite_80/30.svg",
+      "category": "sprites",
+      "bytes": 2154,
+      "sha256": "b69fdae6e7fdea3097cfb03094ea05d3d5e6736baa7fc3f309f1e4907a5d0bb8"
+    },
+    {
+      "path": "sprites/DefineSprite_80/31.svg",
+      "category": "sprites",
+      "bytes": 2189,
+      "sha256": "8386bc08b53ced44ffd48a102a06c8cc21f89344aa955da1ca04b1a189a66d98"
+    },
+    {
+      "path": "sprites/DefineSprite_80/32.svg",
+      "category": "sprites",
+      "bytes": 2189,
+      "sha256": "f6b7e3cd76a82d3df7e84c34bd2efbae50eba52be5a9be7ced6d66f85476d4c9"
+    },
+    {
+      "path": "sprites/DefineSprite_80/33.svg",
+      "category": "sprites",
+      "bytes": 2154,
+      "sha256": "1fb471ba3d48506a3f0d0cac1044c4773c748805680b347d68c175a29a94c310"
+    },
+    {
+      "path": "sprites/DefineSprite_80/4.svg",
+      "category": "sprites",
+      "bytes": 2183,
+      "sha256": "412cf2139db5082de13d9e27330fd8faceed4e06fe5b9ee643d81f07a5d3391c"
+    },
+    {
+      "path": "sprites/DefineSprite_80/5.svg",
+      "category": "sprites",
+      "bytes": 2058,
+      "sha256": "061f1a84ecd673c63a81d5fe4d205052e11f89d722d6f4f19289e328d446bd7f"
+    },
+    {
+      "path": "sprites/DefineSprite_80/6.svg",
+      "category": "sprites",
+      "bytes": 2060,
+      "sha256": "37dbd13ea36ee34511c718e16320217bed76f615d37d48570db5e7961e27ccac"
+    },
+    {
+      "path": "sprites/DefineSprite_80/7.svg",
+      "category": "sprites",
+      "bytes": 2058,
+      "sha256": "61054548904cd13fcfcb58b0ec90900e5bc441643a079c9f72e9f57ac3abdcdc"
+    },
+    {
+      "path": "sprites/DefineSprite_80/8.svg",
+      "category": "sprites",
+      "bytes": 2058,
+      "sha256": "6950659d6a060af345a25736e3dce97f2541cd2d00a0a3ebf81d688a8b211f54"
+    },
+    {
+      "path": "sprites/DefineSprite_80/9.svg",
+      "category": "sprites",
+      "bytes": 2059,
+      "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+    },
+    {
+      "path": "sprites/DefineSprite_82/1.svg",
+      "category": "sprites",
+      "bytes": 4749,
+      "sha256": "518777d897a1e50a477585192fa77dab8598bfb4ce6872c69036d3406d6ba1d4"
+    },
+    {
+      "path": "sprites/DefineSprite_82/10.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/11.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/12.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/13.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/14.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/15.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/16.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/17.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/18.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/19.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/2.svg",
+      "category": "sprites",
+      "bytes": 4796,
+      "sha256": "ec9280a06a293b2be14ba7ddf9bb7482f03e081c6f9c2c54d07bd65d5b367341"
+    },
+    {
+      "path": "sprites/DefineSprite_82/20.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/21.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/22.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/23.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/24.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/25.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/26.svg",
+      "category": "sprites",
+      "bytes": 314,
+      "sha256": "ef188d629eb30f3dd0d868cd689204eb9031b77e016e277ded77b2f2301c72b7"
+    },
+    {
+      "path": "sprites/DefineSprite_82/3.svg",
+      "category": "sprites",
+      "bytes": 4797,
+      "sha256": "94dab2ae11805507ed4ea8fdec223b5ca1b1db76b538145e6407207e76193012"
+    },
+    {
+      "path": "sprites/DefineSprite_82/4.svg",
+      "category": "sprites",
+      "bytes": 4806,
+      "sha256": "1db50b4e4110143af9215d95b4fedd324fb932674e735a3025c5f82be7f68f70"
+    },
+    {
+      "path": "sprites/DefineSprite_82/5.svg",
+      "category": "sprites",
+      "bytes": 4798,
+      "sha256": "1d4d08e060949f0faa2aa10a84379f210202b79abd77cf7c2fb56d6daa176012"
+    },
+    {
+      "path": "sprites/DefineSprite_82/6.svg",
+      "category": "sprites",
+      "bytes": 4806,
+      "sha256": "c5b8a3197ec9316026cfb0443be459b1bb72ddaea84d353f7148003e4c6ab41b"
+    },
+    {
+      "path": "sprites/DefineSprite_82/7.svg",
+      "category": "sprites",
+      "bytes": 4806,
+      "sha256": "acd8bbecc7f973950cbf1c4baed120e72b334b3b7b4b911b74611f41066dd216"
+    },
+    {
+      "path": "sprites/DefineSprite_82/8.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_82/9.svg",
+      "category": "sprites",
+      "bytes": 4597,
+      "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+    },
+    {
+      "path": "sprites/DefineSprite_83/1.svg",
+      "category": "sprites",
+      "bytes": 4759,
+      "sha256": "d30377ab9978445a96674e6e5001072ab6ab8f6cf6395d274381b9fe254cf896"
+    },
+    {
+      "path": "sprites/DefineSprite_83/2.svg",
+      "category": "sprites",
+      "bytes": 5006,
+      "sha256": "6dea3f23d8baf2b9a166fedc441ffc7050e1b3bb7b1782f13c50a4290800ffce"
+    },
+    {
+      "path": "sprites/DefineSprite_83/3.svg",
+      "category": "sprites",
+      "bytes": 5546,
+      "sha256": "17ae65e9f7dc5ead2c00465b54dfc2d0deeb4db1fee8c8cc308cab712163030c"
+    },
+    {
+      "path": "sprites/DefineSprite_83/4.svg",
+      "category": "sprites",
+      "bytes": 2921,
+      "sha256": "6dab2f7327a349bd0bcb83211ca2615a81e5d8b0bbaf68eaa43e6aa4af47f03f"
+    },
+    {
+      "path": "sprites/DefineSprite_83/5.svg",
+      "category": "sprites",
+      "bytes": 4927,
+      "sha256": "7307d39098fb21e727a6d44ee5f2469dde51a89eee59dafa40cdcd5d92464e2e"
+    },
+    {
+      "path": "sprites/DefineSprite_87/1.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/10.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/11.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/12.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/13.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/14.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/15.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/16.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/17.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/18.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/19.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/2.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/20.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/21.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/22.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/23.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/24.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/25.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/26.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/27.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/28.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/29.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/3.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/30.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/31.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/32.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/33.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/34.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/35.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/36.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/37.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/38.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/39.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/4.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/40.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/41.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/42.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/43.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/44.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/45.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/46.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/47.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/48.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/49.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/5.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/50.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/51.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/52.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/53.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/54.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/55.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/56.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/57.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/58.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/59.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/6.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/60.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/61.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/62.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/63.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/64.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/65.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/66.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/67.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/68.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/69.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/7.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/70.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/71.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/72.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/73.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/74.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/75.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/76.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/77.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/78.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/79.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/8.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/80.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/81.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/82.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/83.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/84.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/85.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/86.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/87.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/88.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/89.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/9.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_87/90.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_9/1.svg",
+      "category": "sprites",
+      "bytes": 939,
+      "sha256": "1fd498e753579d061a9ce609c8f4e9c23a13ea84c74f00bc23189a911a04f149"
+    },
+    {
+      "path": "sprites/DefineSprite_92/1.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/10.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/11.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/12.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/13.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/14.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/15.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/16.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/17.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/18.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/19.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/2.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/20.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/3.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/4.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/5.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/6.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/7.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/8.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "sprites/DefineSprite_92/9.svg",
+      "category": "sprites",
+      "bytes": 308,
+      "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+    },
+    {
+      "path": "texts/100.txt",
+      "category": "texts",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "texts/101.txt",
+      "category": "texts",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "texts/102.txt",
+      "category": "texts",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "texts/104.txt",
+      "category": "texts",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "texts/106.txt",
+      "category": "texts",
+      "bytes": 7,
+      "sha256": "226869afb13f56b6c0fa51089553821314593c729627f214c46613241c7cf212"
+    },
+    {
+      "path": "texts/108.txt",
+      "category": "texts",
+      "bytes": 7,
+      "sha256": "2e7bcfaa9e90cb14b4413b24d1716ca39ef501e873329f064e9b8894a655f461"
+    },
+    {
+      "path": "texts/22.txt",
+      "category": "texts",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "texts/26.txt",
+      "category": "texts",
+      "bytes": 10,
+      "sha256": "b6dcb96448c66497eb4c33547598e500a15266bd3b49dfd887e06c568fb6bed6"
+    },
+    {
+      "path": "texts/29.txt",
+      "category": "texts",
+      "bytes": 9,
+      "sha256": "48656023c1ca386657bd4b792e6b640f137e6cad75bacc8f9dc4c74a86d7e210"
+    },
+    {
+      "path": "texts/41.txt",
+      "category": "texts",
+      "bytes": 7,
+      "sha256": "7ffe57aebb01465ba200e4dab7e88da5eb5e73e65429d4cc39a4f8c2000b539a"
+    },
+    {
+      "path": "texts/44.txt",
+      "category": "texts",
+      "bytes": 28,
+      "sha256": "b282aff3f86710cad0ed6e250dea5f9f6896652e5b0667cf0cda29a20bb274e8"
+    },
+    {
+      "path": "texts/50.txt",
+      "category": "texts",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "texts/72.txt",
+      "category": "texts",
+      "bytes": 5,
+      "sha256": "a60ffbb10dc4cf25ca492a4f7f05751e488c53719cbeccacaabe41c2db88c4a3"
+    },
+    {
+      "path": "texts/73.txt",
+      "category": "texts",
+      "bytes": 5,
+      "sha256": "c5045fcd123dde9c6dcacdf08de555f6f3765dcb1bc0d322af174d736e9e472e"
+    },
+    {
+      "path": "texts/74.txt",
+      "category": "texts",
+      "bytes": 10,
+      "sha256": "0589b404cdfd7e7fd41c78bed205421a424d961ca08fe3c52789c934105e51ab"
+    },
+    {
+      "path": "texts/75.txt",
+      "category": "texts",
+      "bytes": 6,
+      "sha256": "5b5f8d4f6743c1f4215bcd899b25dae31631fb4d68e0d78043f8aa84902546b5"
+    },
+    {
+      "path": "texts/77.txt",
+      "category": "texts",
+      "bytes": 10,
+      "sha256": "d66376083771471c59345a20a5a0174e87e5a54a7245859706a819422c3abb3a"
+    },
+    {
+      "path": "texts/78.txt",
+      "category": "texts",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "texts/79.txt",
+      "category": "texts",
+      "bytes": 5,
+      "sha256": "d81674b2bdd5e6040532eea9bf30c4e1813f87db874078284dd00cfa198e47fc"
+    },
+    {
+      "path": "texts/81.txt",
+      "category": "texts",
+      "bytes": 9,
+      "sha256": "6f391555cf2297ac2470f187b5c1bb7b3f2d0a96e161ad6f2f67401a748005f3"
+    },
+    {
+      "path": "texts/84.txt",
+      "category": "texts",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "texts/93.txt",
+      "category": "texts",
+      "bytes": 11,
+      "sha256": "1e84bfe43d1f41a4928151585b62fa6877ca0d535ba2e898d1f224905d1e4682"
+    },
+    {
+      "path": "texts/95.txt",
+      "category": "texts",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "texts/96.txt",
+      "category": "texts",
+      "bytes": 10,
+      "sha256": "961ecedef654431819aa6d9e659e06b41bad5c8aa04588f300bbbe6ce67e15dd"
+    },
+    {
+      "path": "texts/97.txt",
+      "category": "texts",
+      "bytes": 5,
+      "sha256": "f3bb2a12375c92b2875c39ea1279ce443b7bfd8368604b9ca6c6ab5b17b05a32"
+    },
+    {
+      "path": "texts/98.txt",
+      "category": "texts",
+      "bytes": 4,
+      "sha256": "eaa589322731009980d99891b5c7850ac5172dda7cdf73a533ab403332d7e944"
+    },
+    {
+      "path": "texts/99.txt",
+      "category": "texts",
+      "bytes": 5,
+      "sha256": "a60ffbb10dc4cf25ca492a4f7f05751e488c53719cbeccacaabe41c2db88c4a3"
+    }
+  ]
+}

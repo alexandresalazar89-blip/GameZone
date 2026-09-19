@@ -1,0 +1,15 @@
+stop();
+Back1 = new Sound();
+Back1.attachSound("BG1");
+Back2 = new Sound();
+Back2.attachSound("BG2");
+Back3 = new Sound();
+Back3.attachSound("BG3");
+BlueGh = new Sound();
+BlueGh.attachSound("BGGhost");
+EyesGh = new Sound();
+EyesGh.attachSound("BGEyes");
+ExLife = new Sound();
+ExLife.attachSound("ExLife");
+NewLev = new Sound();
+NewLev.attachSound("NewLev");

@@ -1,0 +1,207 @@
+{
+  "flash_random_semantics_required": "random(n) returns an integer in [0,n-1]; !random(n) is true with probability 1/n.",
+  "oracle_policy_for_b2_b7": {
+    "deterministic_near_diff": [
+      "maze layout",
+      "pellet score +10",
+      "power-pellet additional +40",
+      "wall collision",
+      "Pac-Man tunnel offsets +336/-12",
+      "ghost tunnel offsets +348/-24",
+      "extra-life threshold logic around score / 10000 exactly as source writes it"
+    ],
+    "rng_rule_distribution_only": [
+      "ghost trajectories are not frame/pixel path-diffed against Ruffle",
+      "directions must come from valid ghChoice entries",
+      "Shape._visible frightened state changes random-vs-best choice exactly as written",
+      "chase uses ghBest when source selects that branch",
+      "ghost-eat collision/score/EatGhost/Ghost K respawn follows source hitTest/state transitions"
+    ]
+  },
+  "source_evidence": {
+    "rng": [
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 168,
+        "source": "if(!random(600))"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 308,
+        "source": "if(best == 0 || Shape._visible && !random(3))"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 310,
+        "source": "ghDir = ghChoice[random(pos)];"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 314,
+        "source": "ghDir = ghBest[random(best)];"
+      }
+    ],
+    "ghost_choice": [
+      {
+        "file": "scripts/frame_4/DoAction.as",
+        "line": 177,
+        "source": "ghChoice = new Array(4);"
+      },
+      {
+        "file": "scripts/frame_4/DoAction.as",
+        "line": 178,
+        "source": "ghBest = new Array(4);"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 263,
+        "source": "ghChoice[i] = -1;"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 266,
+        "source": "ghChoice[pos++] = i;"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 302,
+        "source": "if(ghChoice[i] == bestXDir || ghChoice[i] == bestYDir)"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 304,
+        "source": "ghBest[best++] = ghChoice[i];"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 310,
+        "source": "ghDir = ghChoice[random(pos)];"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 314,
+        "source": "ghDir = ghBest[random(best)];"
+      }
+    ],
+    "frightened_visibility": [
+      {
+        "file": "scripts/frame_4/DoAction.as",
+        "line": 71,
+        "source": "Shape._visible = true;"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 74,
+        "source": "if(Shape._visible)"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 272,
+        "source": "if(Shape._visible && _currentframe == 1)"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 308,
+        "source": "if(best == 0 || Shape._visible && !random(3))"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 331,
+        "source": "if(Shape._visible)"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 344,
+        "source": "Shape._visible = true;"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 366,
+        "source": "if(!Shape._visible)"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 456,
+        "source": "Shape._visible = false;"
+      }
+    ],
+    "pacman_ghost_hittest": [
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 175,
+        "source": "if(hitTest(_root.Pacman.Hit))"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 428,
+        "source": "if(Shape.Hit._visible && Pacman.Hit.hitTest(Shape.Hit) && !newLev)"
+      }
+    ],
+    "eat_ghost": [
+      {
+        "file": "scripts/frame_4/DoAction.as",
+        "line": 184,
+        "source": "Ghost[\"K\" + g].kval = \"\";"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 452,
+        "source": "Snd.gotoAndPlay(\"EatGhost\");"
+      },
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 459,
+        "source": "with(Ghost[\"K\" + g])"
+      }
+    ],
+    "score_plus_10": [
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 58,
+        "source": "score += 10;"
+      }
+    ],
+    "score_plus_40": [
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 61,
+        "source": "score += 40;"
+      }
+    ],
+    "extra_life_10000": [
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 491,
+        "source": "s = Math.floor(score / 10000);"
+      }
+    ],
+    "pacman_tunnel_right": [
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 101,
+        "source": "Pacman._x = OFFX + 336;"
+      }
+    ],
+    "pacman_tunnel_left": [
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 107,
+        "source": "Pacman._x = OFFX - 12;"
+      }
+    ],
+    "ghost_tunnel_right": [
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 225,
+        "source": "_x = OFFX + 348;"
+      }
+    ],
+    "ghost_tunnel_left": [
+      {
+        "file": "scripts/frame_6/DoAction.as",
+        "line": 231,
+        "source": "_x = OFFX - 24;"
+      }
+    ]
+  }
+}
