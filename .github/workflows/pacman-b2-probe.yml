@@ -236,6 +236,18 @@ jobs:
               raise SystemExit("Replay dispatch jitter exceeded 25 ms")
           PY
 
+      - name: Generate source-derived long replay
+        shell: bash
+        run: |
+          set -euxo pipefail
+          rm -rf .b2/replays
+          mkdir -p .b2/replays
+          cp games/pacman/oracle/replays/*.json .b2/replays/
+          python3 tools/pacman_b2/generate_level_replay.py \
+            --source games/pacman/decompiled/scripts/frame_4/DoAction.as \
+            --out .b2/replays/level_clear_route.json
+          python3 -m json.tool .b2/replays/level_clear_route.json >/dev/null
+
       - name: Capture B2 scenario suite
         shell: bash
         run: |
@@ -244,7 +256,7 @@ jobs:
           python3 tools/pacman_b2/run_capture_suite.py \
             --ruffle "$RUFFLE_BIN" \
             --swf "$SWF_PATH" \
-            --replay-dir games/pacman/oracle/replays \
+            --replay-dir .b2/replays \
             --out-root .b2/oracle \
             --replay-driver tools/pacman_b2/replay_x11.py \
             --analyzer tools/pacman_b2/analyze_capture.py \
