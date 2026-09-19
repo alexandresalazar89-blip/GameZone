@@ -215,6 +215,9 @@ def main():
         pac = []
         ghosts = []
         lives = []
+        long_capture = float(schedule.get("duration_seconds", 0)) > 30
+        pac_stride = 3 if long_capture else 1
+        ghost_stride = 6 if long_capture else 3
         colors = {
             "ghost_red": (221,0,0),
             "ghost_pink": (255,153,153),
@@ -227,10 +230,11 @@ def main():
             im = Image.open(path).convert("RGB")
             score_crop = im.crop((0, 386, min(145, im.width), min(420, im.height)))
             score_hashes.append((idx, sha_rgb(score_crop)))
-            pc = pacman_centroid(im)
-            if pc:
-                pac.append({"frame": idx, **pc})
-            if idx % 3 == 0:
+            if idx % pac_stride == 0:
+                pc = pacman_centroid(im)
+                if pc:
+                    pac.append({"frame": idx, **pc})
+            if idx % ghost_stride == 0:
                 row = {"frame": idx}
                 for name, target in colors.items():
                     row[name] = centroid_for_color(im, target, tolerance=18, bounds=(0, 0, 360, 380))
@@ -248,7 +252,7 @@ def main():
 
         jumps = []
         for a, b in zip(pac, pac[1:]):
-            if b["frame"] == a["frame"] + 1 and abs(b["x"] - a["x"]) >= 180:
+            if b["frame"] - a["frame"] <= pac_stride and abs(b["x"] - a["x"]) >= 180:
                 jumps.append({
                     "from_frame": a["frame"], "to_frame": b["frame"],
                     "from_x": round(a["x"],3), "to_x": round(b["x"],3),
@@ -277,6 +281,7 @@ def main():
         "classification": schedule["classification"],
         "fps": fps,
         "frame_count": len(frames),
+        "analysis_sampling": {"pacman_stride": pac_stride, "ghost_life_stride": ghost_stride},
         "duration_seconds": len(frames)/fps,
         "replay_schedule": schedule,
         "replay_audit": audit,
