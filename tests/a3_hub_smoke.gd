@@ -51,10 +51,7 @@ func _run() -> void:
 		_fail("no initial Godot focus owner on game cards")
 		return
 
-	Input.action_press(&"move_right")
-	await process_frame
-	Input.action_release(&"move_right")
-	await process_frame
+	await _pulse_action(&"move_right")
 
 	var second: StringName = _hub.get_focused_game_id()
 	if second.is_empty() or second == first:
@@ -62,10 +59,7 @@ func _run() -> void:
 		return
 	print("[A3_TEST] FOCUS_NAV_OK first=", first, " second=", second)
 
-	Input.action_press(&"action_a")
-	await process_frame
-	Input.action_release(&"action_a")
-	await process_frame
+	await _pulse_action(&"action_a")
 
 	if _game_manager.call("current_game_id") != second:
 		_fail("action_a did not launch focused game")
@@ -78,10 +72,7 @@ func _run() -> void:
 		return
 	print("[A3_TEST] ACTION_A_LAUNCH_OK id=", second)
 
-	Input.action_press(&"back")
-	await process_frame
-	Input.action_release(&"back")
-	await process_frame
+	await _pulse_action(&"back")
 
 	var current_after_back: StringName = _game_manager.call("current_game_id")
 	if not current_after_back.is_empty():
@@ -98,27 +89,18 @@ func _run() -> void:
 		return
 	print("[A3_TEST] BACK_TO_HUB_OK id=", second)
 
-	Input.action_press(&"move_left")
-	await process_frame
-	Input.action_release(&"move_left")
-	await process_frame
+	await _pulse_action(&"move_left")
 	var returned_first: StringName = _hub.get_focused_game_id()
 	if returned_first != first:
 		_fail("focus did not navigate back to first card")
 		return
 
-	Input.action_press(&"action_a")
-	await process_frame
-	Input.action_release(&"action_a")
-	await process_frame
+	await _pulse_action(&"action_a")
 	if _game_manager.call("current_game_id") != first:
 		_fail("first game relaunch failed")
 		return
 
-	Input.action_press(&"back")
-	await process_frame
-	Input.action_release(&"back")
-	await process_frame
+	await _pulse_action(&"back")
 	var current_final: StringName = _game_manager.call("current_game_id")
 	if not current_final.is_empty() or int(_audio_manager.call("active_game_count")) != 0:
 		_fail("second teardown was not clean")
@@ -127,6 +109,20 @@ func _run() -> void:
 	print("[A3_TEST] RELAUNCH_TEARDOWN_OK id=", first)
 	print("[A3_TEST] HUB_SMOKE_OK")
 	quit(0)
+
+
+func _pulse_action(action: StringName) -> void:
+	var pressed := InputEventAction.new()
+	pressed.action = action
+	pressed.pressed = true
+	Input.parse_input_event(pressed)
+	await process_frame
+
+	var released := InputEventAction.new()
+	released.action = action
+	released.pressed = false
+	Input.parse_input_event(released)
+	await process_frame
 
 
 func _fail(message: String) -> void:
