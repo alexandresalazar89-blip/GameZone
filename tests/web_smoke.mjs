@@ -42,7 +42,7 @@ function markerCount(marker) {
 function lastGameRunningId() {
   const line = [...consoleLines].reverse().find(item => item.includes("[A3] GAME_RUNNING"));
   if (!line) return null;
-  const match = line.match(/id=([^\\s]+)/);
+  const match = line.match(/id=([^\s]+)/);
   return match ? match[1] : null;
 }
 
