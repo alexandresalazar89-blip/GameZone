@@ -1,0 +1,65 @@
+{
+  "name": "rng_motion",
+  "classification": "RNG",
+  "fps": 21,
+  "duration_seconds": 12,
+  "notes": "Same fixed replay repeated multiple times. Used only to demonstrate/characterize non-identical ghost trajectories under Flash random(); not a pixel-exact ghost oracle.",
+  "events": [
+    {
+      "frame": 21,
+      "order": 0,
+      "type": "mouse_click",
+      "x": 180,
+      "y": 276,
+      "button": 1
+    },
+    {
+      "frame": 126,
+      "order": 0,
+      "type": "key_down",
+      "key": "Left"
+    },
+    {
+      "frame": 127,
+      "order": 0,
+      "type": "key_up",
+      "key": "Left"
+    },
+    {
+      "frame": 154,
+      "order": 0,
+      "type": "key_down",
+      "key": "Up"
+    },
+    {
+      "frame": 155,
+      "order": 0,
+      "type": "key_up",
+      "key": "Up"
+    },
+    {
+      "frame": 196,
+      "order": 0,
+      "type": "key_down",
+      "key": "Right"
+    },
+    {
+      "frame": 197,
+      "order": 0,
+      "type": "key_up",
+      "key": "Right"
+    },
+    {
+      "frame": 238,
+      "order": 0,
+      "type": "key_down",
+      "key": "Down"
+    },
+    {
+      "frame": 239,
+      "order": 0,
+      "type": "key_up",
+      "key": "Down"
+    }
+  ]
+}
