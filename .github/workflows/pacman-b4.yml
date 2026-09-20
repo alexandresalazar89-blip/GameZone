@@ -16,6 +16,10 @@ permissions:
   contents: write
   actions: read
 
+concurrency:
+  group: pacman-b4-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   GODOT_VERSION: "4.7.2"
   GODOT_STATUS: "stable"
