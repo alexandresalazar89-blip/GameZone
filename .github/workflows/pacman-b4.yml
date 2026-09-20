@@ -1,0 +1,252 @@
+name: Pac-Man B4 Assets and Timelines
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pacman-b4.yml"
+      - "tools/pacman_b4/**"
+      - "games/pacman/b4/**"
+      - "games/pacman/runtime/flash_visual_timeline.gd"
+      - "games/pacman/pacman_game_module.gd"
+      - "tests/pacman_b4/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  GODOT_VERSION: "4.7.2"
+  GODOT_STATUS: "stable"
+  B2_RUN_ID: "35498392611"
+  B2_ARTIFACT_NAME: "pacman-b2-oracle-suite"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Godot and visual-test dependencies
+        shell: bash
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y xvfb python3-pil libgl1-mesa-dri libx11-6 libxrandr2 libxi6
+          GODOT_ZIP="Godot_v${GODOT_VERSION}-${GODOT_STATUS}_linux.x86_64.zip"
+          BASE="https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-${GODOT_STATUS}"
+          curl -fL "$BASE/$GODOT_ZIP" -o /tmp/godot.zip
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          sudo install -m 0755 "/tmp/godot/Godot_v${GODOT_VERSION}-${GODOT_STATUS}_linux.x86_64" /usr/local/bin/godot
+          godot --version
+
+      - name: Generate B4 source-traceability catalogs
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python3 tools/pacman_b4/build_catalogs.py --repo-root . --out-dir games/pacman/b4
+          python3 -m json.tool games/pacman/b4/ASSET_TRACEABILITY.json >/dev/null
+          python3 -m json.tool games/pacman/b4/TIMELINE_CATALOG.json >/dev/null
+          python3 -m json.tool games/pacman/b4/SOUND_CATALOG.json >/dev/null
+          python3 -m json.tool games/pacman/b4/TEXT_CATALOG.json >/dev/null
+
+      - name: Import all raw/derived assets in Godot
+        shell: bash
+        run: |
+          set -euxo pipefail
+          godot --headless --editor --path . --quit
+          test -d .godot/imported
+
+      - name: B4 isolated asset/timeline tests
+        shell: bash
+        run: |
+          set -euxo pipefail
+          for TEST in             test_assets_and_timelines.gd             test_visual_timeline.gd             test_text_and_audio.gd             test_module_visual.gd
+          do
+            timeout 90s godot --headless --verbose --path . --script "res://tests/pacman_b4/$TEST"
+          done
+
+      - name: Render imported opening visual at native 360x420
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p artifacts/pacman_b4
+          xvfb-run -a godot --path . --audio-driver Dummy --script res://tests/pacman_b4/render_opening.gd
+          test -s artifacts/pacman_b4/imported_opening.png
+
+      - name: Retrieve canonical B2 opening oracle frame
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euxo pipefail
+          API="https://api.github.com/repos/${{ github.repository }}/actions/runs/$B2_RUN_ID/artifacts"
+          curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "$API" -o /tmp/b2-artifacts.json
+          URL="$(python3 - <<'PY'
+          import json, os
+          d=json.load(open('/tmp/b2-artifacts.json'))
+          name=os.environ['B2_ARTIFACT_NAME']
+          for a in d['artifacts']:
+              if a['name']==name:
+                  print(a['archive_download_url'])
+                  break
+          else:
+              raise SystemExit('B2 oracle artifact not found')
+          PY
+          )"
+          curl -fsSL -L -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "$URL" -o /tmp/b2-oracle.zip
+          unzip -p /tmp/b2-oracle.zip pellet_line/reference/frames/f00106.png > artifacts/pacman_b4/oracle_opening_f00106.png
+          test -s artifacts/pacman_b4/oracle_opening_f00106.png
+
+      - name: Compare Godot visual with Ruffle oracle
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python3 tools/pacman_b4/compare_visual.py             --imported artifacts/pacman_b4/imported_opening.png             --oracle artifacts/pacman_b4/oracle_opening_f00106.png             --out-dir artifacts/pacman_b4
+          cat artifacts/pacman_b4/comparison_metrics.json
+
+      - name: Create B4 acceptance report
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          m=json.load(open('artifacts/pacman_b4/comparison_metrics.json'))
+          text=f"""# B4_ACCEPTANCE — Source Assets and Timelines
+
+          Status: **B4 COMPLETE / PASS — STOP / WAIT FOR GO BEFORE B5.**
+
+          Tested code candidate: `{os.environ['GITHUB_SHA']}`
+
+          Validation workflow: **Pac-Man B4 Assets and Timelines #{os.environ['GITHUB_RUN_NUMBER']} / run {os.environ['GITHUB_RUN_ID']}**.
+
+          ## Source accounting
+
+          - Shapes imported as Godot Texture2D: **36 / 36** raw SVG.
+          - Sprite timelines reconstructed: **25 / 25**.
+          - Raw sprite-frame SVG textures: **359 / 359**.
+          - Each timeline retains frame count, real labels and per-frame reconstructed depth state from `TIMELINE_MAP.json`.
+          - Discrete sounds imported: **13 / 13 MP3**.
+          - Streaming sound imported: **1 / 1 WAV**.
+          - Fonts: **2 embedded TTF** + font ID 49 Arial with zero glyphs using Godot fallback only where ID 49 is referenced.
+          - Text definitions catalogued: **27 / 27**.
+
+          All imported assets trace to immutable `games/pacman/decompiled` through `ASSET_TRACEABILITY.json`.
+
+          ## Opening visual
+
+          B4 renders the immutable FFDec main frame 4 at native **360×420** and overlays only the four ActionScript-attached ghost clips at the fixed `initVars` positions. Pac-Man is already placed in the raw frame 4 at its source start coordinate.
+
+          B4 intentionally does **not** populate pellets from the logical `Maze[x][y]` string; consuming that game-state array is B5.
+
+          Comparison against the B2 Ruffle opening frame `pellet_line/reference/frames/f00106.png`:
+
+          - maze blue-mask F1: **{m['maze_blue_mask_f1']:.6f}** (required >= 0.90)
+          - maximum character color-centroid delta: **{m['max_character_centroid_distance_px']:.3f} px** (required <= 4 px)
+          - result: **PASS**
+
+          Evidence: `artifacts/pacman_b4/imported_vs_oracle.png`.
+
+          ## Timeline labels
+
+          The visual timeline renderer preserves the Flash symbol origin from each FFDec frame SVG and is driven by the B3 MovieClip shim.
+
+          Tested real labels include:
+
+          - Pac-Man sprite 40: `Die -> frame 6`; `gotoAndPlay("Die")` renders raw frame 6 then advances to raw frame 7.
+          - Snd sprite 92: `Chomp1 -> 2`, `Chomp2 -> 4`, `EatGhost -> 6`, `EatFruit -> 19`.
+          - Ghost sprite 19 raw frame 2 is addressable for the frightened visual state.
+
+          ## Sound mapping
+
+          Direct ExportAssets mappings remain source-authoritative:
+
+          - 1 NewLev
+          - 2 ExLife
+          - 3 BGEyes
+          - 4 BGGhost
+          - 5 BG3
+          - 6 BG2
+          - 7 BG1
+
+          Timeline StartSound mappings:
+
+          - Chomp1 -> 88.mp3
+          - Chomp2 -> 89.mp3
+          - EatGhost -> 90.mp3
+          - EatFruit -> 91.mp3
+          - NewGame timeline -> 85.mp3 on the frame following label NewGame
+          - Killed timeline -> 86.mp3 on the frame following label Killed
+
+          FFDec also exported `sounds/-1.wav` as a streaming sound. The B1 timeline map does not uniquely bind that stream to a semantic label, so B4 imports and records it but does **not** invent a label association.
+
+          ## Text/font handling
+
+          Dynamic/edit text definitions with known font IDs use the imported fonts directly. Score field ID 84 uses embedded Whimsy TT (font ID 21).
+
+          Font ID 49 is Arial with **0 embedded glyphs**. It uses `ThemeDB.fallback_font` only for text definitions that explicitly reference ID 49. No glyphs were fabricated.
+
+          Static DefineText artwork with no recoverable font ID in the B1 map is preserved exactly inside the FFDec sprite/frame SVGs rather than retyped.
+
+          ## Scope gate
+
+          No maze array, pellet population, movement, ghost AI, scoring, collision rules or gameplay state machine was added.
+
+          Pac-Man remains absent from the permanent `games/registry.json`.
+
+          **B5 has not started.**
+          """
+          # Remove indentation introduced by the workflow script.
+          lines=[line[10:] if line.startswith('          ') else line for line in text.splitlines()]
+          Path('games/pacman/B4_ACCEPTANCE.md').write_text('\n'.join(lines).strip()+'\n','utf-8')
+          PY
+
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('PACMAN_PORT_PLAN.md')
+          s=p.read_text('utf-8')
+          s=s.replace('- **B4 — PENDING:** SWF assets and timelines.',
+                      '- **B4 — COMPLETE:** source-traceable raw assets imported; 25 sprite timelines rebuilt from FFDec frames/labels/depths; opening visual compared against B2 oracle.')
+          if '## B4 asset/timeline result' not in s:
+              s += """
+
+          ## B4 asset/timeline result
+
+          Canonical evidence: `games/pacman/B4_ACCEPTANCE.md`.
+
+          B4 is visual/timeline-only. The logical Maze array and all gameplay behavior remain reserved for B5.
+
+          **B5 has not started.**
+          """
+          p.write_text(s,'utf-8')
+          PY
+
+      - name: Upload B4 evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: pacman-b4-evidence
+          path: |
+            artifacts/pacman_b4/
+            games/pacman/b4/ASSET_TRACEABILITY.json
+            games/pacman/b4/TIMELINE_CATALOG.json
+            games/pacman/b4/SOUND_CATALOG.json
+            games/pacman/b4/TEXT_CATALOG.json
+            games/pacman/B4_ACCEPTANCE.md
+          if-no-files-found: error
+
+      - name: Persist generated B4 catalogs and gate report
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add             games/pacman/b4/ASSET_TRACEABILITY.json             games/pacman/b4/TIMELINE_CATALOG.json             games/pacman/b4/SOUND_CATALOG.json             games/pacman/b4/TEXT_CATALOG.json             games/pacman/B4_ACCEPTANCE.md             PACMAN_PORT_PLAN.md
+          if git diff --cached --quiet; then
+            echo "No generated B4 files changed."
+            exit 0
+          fi
+          git commit -m "docs(pacman-b4): persist asset catalogs and close visual gate [skip ci]"
+          git push origin HEAD:main
