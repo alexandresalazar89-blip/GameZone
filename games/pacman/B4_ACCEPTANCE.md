@@ -2,9 +2,9 @@
 
 Status: **B4 COMPLETE / PASS — STOP / WAIT FOR GO BEFORE B5.**
 
-Tested code candidate: `b55343ec28b072ab26a96157f1687b51dcf33a5b`
+Tested code candidate: `2058af64ac2d97499c672ffadcd9e60bde086249`
 
-Validation workflow: **Pac-Man B4 Assets and Timelines #9 / run 35516659293**.
+Validation workflow: **Pac-Man B4 Assets and Timelines #13 / run 35517856299**.
 
 ## Source accounting
 
