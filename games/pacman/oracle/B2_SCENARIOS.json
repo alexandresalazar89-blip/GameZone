@@ -1,0 +1,181 @@
+{
+  "schema": 1,
+  "phase": "B2",
+  "oracle": {
+    "emulator": "Ruffle desktop",
+    "version": "Ruffle 0.7.0-nightly.2026.9.19-nightly",
+    "commit": "28f2fccd19db20fe9797097e24aa1c83d815c398",
+    "swf_sha256": "e0a61ed23375aaacf92dcac91c24e6d0111612b420024756f0872f56fd59cb26",
+    "fps": 21,
+    "stage_px": [
+      360,
+      420
+    ],
+    "workflow_run": 35498392611,
+    "artifact_name": "pacman-b2-oracle-suite",
+    "artifact_sha256": "438769ff8f7d0befb27c2d5a5c98ba2a2cf305a5e9f3d92a5976aaaec9e666bd",
+    "observable_only": true,
+    "audio_fidelity": "event/presence reference; not bit-exact waveform oracle because Ruffle logged MP3 decoder main_data_begin warnings while still producing audible output"
+  },
+  "fidelity_probe": {
+    "status": "PASS_WITH_DOCUMENTED_AUDIO_LIMITATION",
+    "observations": [
+      "SWF reported by Ruffle as version 6, 360x420 at 21 FPS.",
+      "Title screen, full maze, pellets, Pac-Man movement, four ghosts, frightened visual state and score rendering are visibly functional.",
+      "Captured audio is non-silent (probe mean about -12.9 dB, peak 0 dB).",
+      "External legacy LoadVars/promo request fails under local file execution; it is outside gameplay.",
+      "Ruffle/Symphonia emits MP3 main_data_begin warnings. No gameplay break or silence was observed, so audio is retained only as event/presence/timing evidence, not sample-perfect PCM truth."
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "pellet_line",
+      "classification": "DETERMINISTIC",
+      "status": "CAPTURED_PASS",
+      "replay": "games/pacman/oracle/replays/pellet_line.json",
+      "observable_reference": "artifact/pellet_line/",
+      "observations": {
+        "score_sequence": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70
+        ],
+        "meaning": "seven visible pellet increments of +10",
+        "audio": "non-silent chomp/background capture retained in capture.wav"
+      },
+      "b7_rule": "near-diff score/status pixels, Pac-Man path and pellet disappearance; ghost paths ignored"
+    },
+    {
+      "id": "power_right",
+      "classification": "DETERMINISTIC",
+      "status": "CAPTURED_PASS",
+      "replay": "games/pacman/oracle/replays/power_right.json",
+      "observable_reference": "artifact/power_right/",
+      "observations": {
+        "score_sequence": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100,
+          110,
+          120,
+          130,
+          140,
+          150,
+          160,
+          170,
+          220
+        ],
+        "power_transition": [
+          170,
+          220
+        ],
+        "power_transition_delta": 50,
+        "interpretation": "+10 pellet plus +40 power-pellet bonus",
+        "frightened_visual": "four frightened-blue ghost components visible in sampled frames 186 through 252",
+        "audio": "captured; use event/presence comparison only"
+      },
+      "b7_rule": "near-diff deterministic score/pellet/Pac-Man/frightened onset; do not diff later ghost trajectories"
+    },
+    {
+      "id": "tunnel_left",
+      "classification": "DETERMINISTIC",
+      "status": "CAPTURED_PASS",
+      "replay": "games/pacman/oracle/replays/tunnel_left.json",
+      "observable_reference": "artifact/tunnel_left/",
+      "observations": {
+        "pre_edge": {
+          "frame": 193,
+          "x": 47.4,
+          "y": 184.2
+        },
+        "post_edge": {
+          "frame": 198,
+          "x": 305.7,
+          "y": 186.4
+        },
+        "visible_behavior": "left edge -> right edge wrap",
+        "source_assignment": "Pacman._x = OFFX + 336; pacX=28; nextX=27"
+      },
+      "b7_rule": "near-diff observable edge transition; exact +336 assignment is source-backed"
+    },
+    {
+      "id": "tunnel_right",
+      "classification": "DETERMINISTIC",
+      "status": "CAPTURED_PASS",
+      "replay": "games/pacman/oracle/replays/tunnel_right.json",
+      "observable_reference": "artifact/tunnel_right/",
+      "observations": {
+        "pre_edge": {
+          "frame": 189,
+          "x": 321.2,
+          "y": 185.9
+        },
+        "post_edge": {
+          "frame": 194,
+          "x": 70.9,
+          "y": 182.6
+        },
+        "visible_behavior": "right edge -> left edge wrap",
+        "source_assignment": "Pacman._x = OFFX - 12; pacX=-1; nextX=0"
+      },
+      "b7_rule": "near-diff observable edge transition; exact -12 assignment is source-backed"
+    },
+    {
+      "id": "extra_life_10000",
+      "classification": "DETERMINISTIC",
+      "status": "NOT_ISOLATABLE_IN_OBSERVABLE_ONLY_B2",
+      "source_rule": "s=Math.floor(score/10000); extra life on odd 10000 bands when crossing threshold and lives<5",
+      "reason": "A pellet-only level yields 2600 points (244 base pellets/powers plus four additional +40 bonuses). Reaching 10000 naturally requires multiple level clears and/or ghost/fruit scoring, which introduces RNG ghost interaction. B2 does not inject or alter internal score state.",
+      "b7_rule": "verify threshold literally from source in port; do not claim a Ruffle visual capture that was not obtained"
+    },
+    {
+      "id": "rng_motion",
+      "classification": "RNG",
+      "status": "CAPTURED_5_RUNS",
+      "replay": "games/pacman/oracle/replays/rng_motion.json",
+      "observable_reference": "artifact/rng_motion_r1..r5/",
+      "observations": {
+        "same_input_replay": true,
+        "trajectory_variation": true,
+        "example_frame_150": "red/pink ghost positions differ across runs under identical input"
+      },
+      "b7_rule": "rules/distribution only: legal ghChoice directions, frightened random branch, ghBest tendency; never pixel/frame path diff"
+    },
+    {
+      "id": "ghost_eat_respawn",
+      "classification": "RNG",
+      "status": "STRUCTURAL_SOURCE_RULE_REFERENCE",
+      "source_evidence": "games/pacman/DETERMINISM_POLICY.json -> pacman_ghost_hittest/eat_ghost",
+      "b7_rule": "validate Pacman.Hit vs Shape.Hit collision, doubled ghKill scoring, EatGhost sound event, Shape visibility and Ghost['K'+g] respawn behavior; no fixed ghost path requirement"
+    },
+    {
+      "id": "death",
+      "classification": "RNG",
+      "status": "OBSERVED_IN_LONG_RUNS",
+      "observable_reference": "artifact/level_clear_r1..r3/",
+      "observations": "Long fixed-route attempts visibly contain deaths/life loss and ultimately Game Over; occurrence frame differs because ghost paths are RNG.",
+      "b7_rule": "compare death animation once collision event is aligned, not absolute global frame of collision"
+    },
+    {
+      "id": "level_clear",
+      "classification": "RNG",
+      "status": "ATTEMPTED_NO_SUCCESSFUL_REFERENCE",
+      "observable_reference": "artifact/level_clear_r1..r3/",
+      "observations": "Three 62-second source-derived routes attempted all 244 pellet/power cells, but ghost RNG caused Game Over before successful level clear in every captured run.",
+      "b7_rule": "no B2 level-clear pixel oracle is claimed; later verification must not invent one"
+    }
+  ]
+}
