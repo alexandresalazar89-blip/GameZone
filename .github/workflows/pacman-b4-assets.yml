@@ -1,0 +1,38 @@
+name: Pac-Man B4 Asset Map
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pacman-b4-assets.yml"
+      - "tools/pacman_b4/build_asset_map.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-map:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Generate B4 asset map from immutable B1 raw
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python3 tools/pacman_b4/build_asset_map.py
+          python3 -m json.tool games/pacman/B4_ASSET_MAP.json >/dev/null
+          grep -q '"native_stage":' games/pacman/B4_ASSET_MAP.json
+      - name: Persist generated B4 asset map
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add games/pacman/B4_ASSET_MAP.json
+          if git diff --cached --quiet; then
+            echo "No asset map changes."
+            exit 0
+          fi
+          git commit -m "feat(pacman-b4): persist raw asset traceability map [skip ci]"
+          git push origin HEAD:main
