@@ -1,6 +1,6 @@
 # PACMAN_PORT_PLAN
 
-Status: **B2 ORACLE CAPTURE COMPLETE WITH DOCUMENTED LIMITATIONS — STOP / WAIT FOR GO BEFORE B3.**
+Status: **B3 FLASH RUNTIME SHIM COMPLETE — STOP / WAIT FOR GO BEFORE B4.**
 
 ## Source of truth
 
@@ -102,7 +102,7 @@ Selection note: Highest B0 movement/character-logic score. The complete raw scri
 - **B0 — COMPLETE:** triage only.
 - **B1 — COMPLETE:** immutable FFDec export + ASSET_MANIFEST + SYMBOL_MAP + TIMELINE_MAP.
 - **B2 — COMPLETE WITH DOCUMENTED LIMITATIONS:** observable Ruffle oracle, fixed-frame replays, deterministic score/power/tunnel references and multi-run RNG evidence. No successful level-clear or isolated 10,000 extra-life visual oracle was fabricated.
-- **B3 — PENDING:** minimal Flash runtime shim.
+- **B3 — COMPLETE:** minimal game-specific Flash runtime shim: fixed 21 fps tick, MovieClip properties/labels, polygon hitTest, shared semantic input, scoped audio, seedable Flash random.
 - **B4 — PENDING:** SWF assets and timelines.
 - **B5 — PENDING:** 1:1 ActionScript port.
 - **B6 — PENDING:** A2 GameModule integration.
@@ -165,3 +165,29 @@ Observable-only limitations:
 Canonical details: `games/pacman/oracle/B2_ACCEPTANCE.md` and `games/pacman/oracle/B2_SCENARIOS.json`.
 
 **B3 has not started.**
+
+
+## B3 runtime shim result
+
+Final tested code candidate: `bbe85f72df5bea4b76e11588b587ffc148bb921f`  
+Validation: **Platform Web Build and Evidence #105 / run 35508227460**.
+
+Implemented only the primitives used by this SWF:
+
+- fixed 21 fps / 47.619 ms Flash-frame clock;
+- MovieClip-compatible `_x/_y/_visible/_currentframe` and `gotoAndPlay/gotoAndStop`;
+- keyed dynamic clip children for `Ghost[g]` and `Ghost["K"+g]`;
+- shape-level polygon `hitTest`;
+- shared A1/A2 semantic directional input;
+- scoped audio through the A2 game bus, proven with the extracted `EatGhost` sound;
+- seedable Flash-style `random(n)` with default nondeterministic behavior.
+
+Pac-Man's entry scene is a valid A2 `GameModule` with native size **360×420**, verified through a temporary registry and the real `GameManager`.
+
+The permanent `games/registry.json` remains unchanged. Pac-Man is not exposed in the hub until B6.
+
+No maze, scoring, ghost AI, gameplay state, or SWF asset/timeline recreation is implemented in B3.
+
+Canonical evidence: `games/pacman/B3_ACCEPTANCE.md`.
+
+**B4 has not started.**
