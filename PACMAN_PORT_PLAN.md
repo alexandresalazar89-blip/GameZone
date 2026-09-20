@@ -1,6 +1,6 @@
 # PACMAN_PORT_PLAN
 
-Status: **B0 TRIAGE COMPLETE — STOP / WAIT FOR GO BEFORE B1.**
+Status: **B2 ORACLE CAPTURE COMPLETE WITH DOCUMENTED LIMITATIONS — STOP / WAIT FOR GO BEFORE B3.**
 
 ## Source of truth
 
@@ -101,7 +101,7 @@ Selection note: Highest B0 movement/character-logic score. The complete raw scri
 
 - **B0 — COMPLETE:** triage only.
 - **B1 — COMPLETE:** immutable FFDec export + ASSET_MANIFEST + SYMBOL_MAP + TIMELINE_MAP.
-- **B2 — PENDING:** pinned Ruffle oracle and deterministic scenarios.
+- **B2 — COMPLETE WITH DOCUMENTED LIMITATIONS:** observable Ruffle oracle, fixed-frame replays, deterministic score/power/tunnel references and multi-run RNG evidence. No successful level-clear or isolated 10,000 extra-life visual oracle was fabricated.
 - **B3 — PENDING:** minimal Flash runtime shim.
 - **B4 — PENDING:** SWF assets and timelines.
 - **B5 — PENDING:** 1:1 ActionScript port.
@@ -134,3 +134,34 @@ RNG rule/distribution scope:
 - validate source-faithful Pacman.Hit / Shape.Hit collision, EatGhost scoring, and Ghost["K"+g] respawn.
 
 Never replace this clone's ghost logic with arcade-original targeting.
+
+
+## B2 oracle result
+
+Final validated capture run: **#19 / 35498392611** at code candidate `e91a826dce009336e06419d4556b569651cf7d21`.
+
+Ruffle is accepted as the observable gameplay oracle for this SWF:
+
+- visual gameplay at 360x420 / 21 fps is functional;
+- score, pellet removal, Pac-Man motion, ghosts and frightened visuals are captured;
+- sound is audibly captured, but MP3 decoder warnings mean B7 uses audio event/presence comparison rather than sample-perfect PCM equality.
+
+Deterministic references captured:
+
+- pellet score `0→10→...→70`;
+- power transition `170→220` (+10 +40);
+- left and right tunnel wraps using shortest source-derived routes.
+
+RNG references:
+
+- five identical-input ghost runs, used only for rule/distribution validation;
+- three long route attempts demonstrate death/Game Over variation and do not constitute a level-clear oracle.
+
+Observable-only limitations:
+
+- no successful level-clear capture was obtained before RNG deaths;
+- 10,000-point extra-life cannot be isolated without multiple RNG-exposed levels or RNG scoring, so no internal state was injected to manufacture that oracle.
+
+Canonical details: `games/pacman/oracle/B2_ACCEPTANCE.md` and `games/pacman/oracle/B2_SCENARIOS.json`.
+
+**B3 has not started.**
