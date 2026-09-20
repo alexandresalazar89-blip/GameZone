@@ -186,8 +186,8 @@ def main():
             entry.update(font_paths[fid])
             entry["strategy"]="imported_ttf"
         else:
-            entry["raw"]=None
-            entry["godot_resource"]=None
+            entry["raw"]=""
+            entry["godot_resource"]=""
             entry["strategy"]="godot_fallback_only_when_referenced"
         font_entries.append(entry)
 
