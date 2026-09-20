@@ -1,0 +1,6321 @@
+{
+  "schema": 1,
+  "policy": "B4 imports only FFDec raw assets. No artwork is redrawn. Logical Maze[x][y], movement, AI and scoring remain B5.",
+  "native_stage": [
+    360,
+    420
+  ],
+  "main_visual": {
+    "raw_source": "res://games/pacman/decompiled/frames/4.svg",
+    "sha256": "2ef8412b74aa25a7b889f380e16d1b889cbc793cb463795e42065e37379fde9a",
+    "note": "Static SWF frame-4 visual composition. Dynamic pellet placement is intentionally absent because it derives from the B5 Maze[x][y] source state."
+  },
+  "shapes": [
+    {
+      "id": 10,
+      "raw_source": "res://games/pacman/decompiled/shapes/10.svg",
+      "sha256": "320b10042fde00728c865c5ea62fd3278fe1e80a69ce9c7ab20963cc1b5eb0c7"
+    },
+    {
+      "id": 11,
+      "raw_source": "res://games/pacman/decompiled/shapes/11.svg",
+      "sha256": "b1aa064713b2f5cd416276257e0edc7bf4e549ec97c96df1191f2f5c7bb37204"
+    },
+    {
+      "id": 13,
+      "raw_source": "res://games/pacman/decompiled/shapes/13.svg",
+      "sha256": "5390befd6877299b00e6ee63c6723c220cc374d553d31b6cd45f971bb4928082"
+    },
+    {
+      "id": 15,
+      "raw_source": "res://games/pacman/decompiled/shapes/15.svg",
+      "sha256": "caec014f883dbcb7e40a0aee3efdf36e61701d03f2e39f29372f883e8d9ce991"
+    },
+    {
+      "id": 17,
+      "raw_source": "res://games/pacman/decompiled/shapes/17.svg",
+      "sha256": "b6da8767d6a6beba60441fc4de0601b785c543ee313ea28ec09187536b747edb"
+    },
+    {
+      "id": 27,
+      "raw_source": "res://games/pacman/decompiled/shapes/27.svg",
+      "sha256": "6ff6c6bdc7e3fe627e5a5374e0139b98e8ddf277c254728a373d6905b00586bc"
+    },
+    {
+      "id": 31,
+      "raw_source": "res://games/pacman/decompiled/shapes/31.svg",
+      "sha256": "86e6bee39b8ba4dda517345fb5486a787ca480922da6730e5cc5d1545fa85231"
+    },
+    {
+      "id": 32,
+      "raw_source": "res://games/pacman/decompiled/shapes/32.svg",
+      "sha256": "60a1aa1c14c9b0112ff5e27ee66ce98c3cfcec63574a769e63060a7045700f33"
+    },
+    {
+      "id": 33,
+      "raw_source": "res://games/pacman/decompiled/shapes/33.svg",
+      "sha256": "574d01756ba2b35078d4bb17c18f91a562a6d1910f7168a294e70efe80aebf75"
+    },
+    {
+      "id": 34,
+      "raw_source": "res://games/pacman/decompiled/shapes/34.svg",
+      "sha256": "ce6c7927885d5ee102edeb8a2beaf48eaf53297ed35d8b4dc8be888018949bfc"
+    },
+    {
+      "id": 35,
+      "raw_source": "res://games/pacman/decompiled/shapes/35.svg",
+      "sha256": "86890859b836c92607900e16762c74a722adadade84da247de7310500a233983"
+    },
+    {
+      "id": 36,
+      "raw_source": "res://games/pacman/decompiled/shapes/36.svg",
+      "sha256": "df1682065e8a14c1655abd649494238b8afc8b86f7cd16a166169f8095bfb6a9"
+    },
+    {
+      "id": 37,
+      "raw_source": "res://games/pacman/decompiled/shapes/37.svg",
+      "sha256": "230af5486274619e2183aa3d78b2d44d8f4c4ceb574802e76c6d47a1301b1b32"
+    },
+    {
+      "id": 38,
+      "raw_source": "res://games/pacman/decompiled/shapes/38.svg",
+      "sha256": "b2068d6c0541a1699dc063e2ffc24d81fd54d2a55682bd5bda7448609ad1b25d"
+    },
+    {
+      "id": 48,
+      "raw_source": "res://games/pacman/decompiled/shapes/48.svg",
+      "sha256": "2560c35f2d2e4e6ce025082497e9e41e9e912745314710ef2a9947dd13b28671"
+    },
+    {
+      "id": 51,
+      "raw_source": "res://games/pacman/decompiled/shapes/51.svg",
+      "sha256": "382350e76462723a7f2fbe21d498efe5768c87bdff33e61363deba6b7fcf0920"
+    },
+    {
+      "id": 52,
+      "raw_source": "res://games/pacman/decompiled/shapes/52.svg",
+      "sha256": "2871f8cda67f416426bf5ca17296e9080ed95d267f88cf533e1d33d951eeafb7"
+    },
+    {
+      "id": 53,
+      "raw_source": "res://games/pacman/decompiled/shapes/53.svg",
+      "sha256": "1bb098d5a1dab6e865e9af3959be0b2c618fa7fa7157460379873a04ab1eb9ee"
+    },
+    {
+      "id": 54,
+      "raw_source": "res://games/pacman/decompiled/shapes/54.svg",
+      "sha256": "fc4aa396cdfcfaa3d91f7fa65e6158ae338a4094df44f44d63063e0ae7b7623a"
+    },
+    {
+      "id": 55,
+      "raw_source": "res://games/pacman/decompiled/shapes/55.svg",
+      "sha256": "e3a9d4f24e53e3c24823307571c4a2f08895a95657a71774904bbc0929434243"
+    },
+    {
+      "id": 56,
+      "raw_source": "res://games/pacman/decompiled/shapes/56.svg",
+      "sha256": "17657f8e96ef73efc2eb39efcfad31f30f9ef54a3f728dd0f52c1b4a7274c9b5"
+    },
+    {
+      "id": 57,
+      "raw_source": "res://games/pacman/decompiled/shapes/57.svg",
+      "sha256": "79fc4482fb89abf74f747d31fbbfe4ae73166084adb434258f7544e280e2292b"
+    },
+    {
+      "id": 58,
+      "raw_source": "res://games/pacman/decompiled/shapes/58.svg",
+      "sha256": "415ab9b059f22cc94e08f14754657afb457299df154b337d434f059d324c6b75"
+    },
+    {
+      "id": 59,
+      "raw_source": "res://games/pacman/decompiled/shapes/59.svg",
+      "sha256": "825015c2c5a70c9753830a56b34c88e9b764248b90a9f424a70d496413236d2f"
+    },
+    {
+      "id": 60,
+      "raw_source": "res://games/pacman/decompiled/shapes/60.svg",
+      "sha256": "72b212f60a5fb657046c0aeedd53ac4dbf127825bd2d21671d415777b6e80eac"
+    },
+    {
+      "id": 61,
+      "raw_source": "res://games/pacman/decompiled/shapes/61.svg",
+      "sha256": "c58d5aa4dcb0afabfbce1d4cfff305df57808afa372fb295e629ccf396c7ad9f"
+    },
+    {
+      "id": 62,
+      "raw_source": "res://games/pacman/decompiled/shapes/62.svg",
+      "sha256": "8941721b3446ecf965070e08deb4c4eba0c7d2aa733a8244aec3d36bdaf24a15"
+    },
+    {
+      "id": 63,
+      "raw_source": "res://games/pacman/decompiled/shapes/63.svg",
+      "sha256": "e0cca809eaa7dc010d972ff508282075ccc88ed489134600de76e4401c13f3ff"
+    },
+    {
+      "id": 64,
+      "raw_source": "res://games/pacman/decompiled/shapes/64.svg",
+      "sha256": "d28366c34509f3a15dc98685d3b9b990efeb90ded6c39ced5d15277fd32899cc"
+    },
+    {
+      "id": 65,
+      "raw_source": "res://games/pacman/decompiled/shapes/65.svg",
+      "sha256": "d8e4099edd1b5aa0bd4e04fc7c1b84214ab08468f0f9977c354538775eb764c5"
+    },
+    {
+      "id": 66,
+      "raw_source": "res://games/pacman/decompiled/shapes/66.svg",
+      "sha256": "b551e1eda63078ef86f0c2fccfd1fc6affb95ea36c170b73e905232a1380bcf6"
+    },
+    {
+      "id": 67,
+      "raw_source": "res://games/pacman/decompiled/shapes/67.svg",
+      "sha256": "607778d6e32e41902ef64e240d7c2fd8eec5ab3600908543245ffa6ba23dac0e"
+    },
+    {
+      "id": 68,
+      "raw_source": "res://games/pacman/decompiled/shapes/68.svg",
+      "sha256": "777c51c6a87ed78546e69fe6fd4697e521696da3b0d1a145040d4d05026dbcd4"
+    },
+    {
+      "id": 69,
+      "raw_source": "res://games/pacman/decompiled/shapes/69.svg",
+      "sha256": "2df45f958bf47cb2348e4cc3927cfeabc2973f52df4c851a7ec162ee6ddc78ca"
+    },
+    {
+      "id": 70,
+      "raw_source": "res://games/pacman/decompiled/shapes/70.svg",
+      "sha256": "02d2254e6f12009a1a7d28caf084cb4da913e181cf760c62f3e3f5fa09f1216f"
+    },
+    {
+      "id": 8,
+      "raw_source": "res://games/pacman/decompiled/shapes/8.svg",
+      "sha256": "415e62ea8b6df6ddb6486d348c2f55bbe1186f979333feb3979ac76b98f54a0b"
+    }
+  ],
+  "sprites": [
+    {
+      "id": 9,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_9",
+      "frame_count": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_9/1.svg",
+          "sha256": "1fd498e753579d061a9ce609c8f4e9c23a13ea84c74f00bc23189a911a04f149"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 8,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 0.66667175,
+              "scaleY": 0.66667175,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 12,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_12",
+      "frame_count": 4,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_12/1.svg",
+          "sha256": "edca9710e2202059abfb6be56983c13db5e88c71fd59f0f0dbf75ad819284cb4"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_12/2.svg",
+          "sha256": "edca9710e2202059abfb6be56983c13db5e88c71fd59f0f0dbf75ad819284cb4"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_12/3.svg",
+          "sha256": "a013fa6f3825b0c55e450bc42d71d5c49b2ef6ba33ea1196dbc100a379547879"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_12/4.svg",
+          "sha256": "a013fa6f3825b0c55e450bc42d71d5c49b2ef6ba33ea1196dbc100a379547879"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 10,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "2": [],
+        "3": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 11,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ],
+        "4": []
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 14,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_14",
+      "frame_count": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_14/1.svg",
+          "sha256": "4f9dfbce23aeda7914fea46a7bc07c3c6607679d58a944450fd25f1b408c7eb7"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 9,
+            "instance_name": "Hit",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 60
+            }
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 12,
+            "instance_name": "Btm",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 186
+            }
+          },
+          {
+            "type": "place",
+            "depth": 5,
+            "character_id": 13,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 16,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_16",
+      "frame_count": 4,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_16/1.svg",
+          "sha256": "9b1802c2d7d643690fe8264b56f6fbdcb663693173396ad0882fefe140f05a8a"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_16/2.svg",
+          "sha256": "a9fd6d31ae28dddfae9171ed08d5d16acaf121b340364d707394e94d892e60c7"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_16/3.svg",
+          "sha256": "277ca10e566b477fd41a82b55747dacb80ac999ed606c363c2fc03986bc9131c"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_16/4.svg",
+          "sha256": "9974ddc3a702cdd953d414b5ada869aaeadaa843cd2aa0b08e8693405d8202bb"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 15,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 0.3333435,
+              "scaleY": 0.3333435,
+              "translateX": -70,
+              "translateY": -50
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 15,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 0.3333435,
+              "scaleY": 0.3333435,
+              "translateX": 70,
+              "translateY": -50
+            }
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 15,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 0.16667175,
+              "scaleY": 0.16667175,
+              "translateX": -70,
+              "translateY": -90
+            }
+          },
+          {
+            "type": "place",
+            "depth": 4,
+            "character_id": 15,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 0.16667175,
+              "scaleY": 0.16667175,
+              "translateX": 70,
+              "translateY": -90
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.3333435,
+              "scaleY": 0.3333435,
+              "translateX": -40,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.3333435,
+              "scaleY": 0.3333435,
+              "translateX": 100,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.16667175,
+              "scaleY": 0.16667175,
+              "translateX": -10,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 4,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.16667175,
+              "scaleY": 0.16667175,
+              "translateX": 130,
+              "translateY": 0
+            }
+          }
+        ],
+        "3": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.3333435,
+              "scaleY": 0.3333435,
+              "translateX": -70,
+              "translateY": 30
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.3333435,
+              "scaleY": 0.3333435,
+              "translateX": 70,
+              "translateY": 30
+            }
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.16667175,
+              "scaleY": 0.16667175,
+              "translateX": -70,
+              "translateY": 70
+            }
+          },
+          {
+            "type": "place",
+            "depth": 4,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.16667175,
+              "scaleY": 0.16667175,
+              "translateX": 70,
+              "translateY": 70
+            }
+          }
+        ],
+        "4": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.3333435,
+              "scaleY": 0.3333435,
+              "translateX": -100,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.3333435,
+              "scaleY": 0.3333435,
+              "translateX": 40,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.16667175,
+              "scaleY": 0.16667175,
+              "translateX": -130,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 4,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.16667175,
+              "scaleY": 0.16667175,
+              "translateX": 10,
+              "translateY": 0
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 18,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_18",
+      "frame_count": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_18/1.svg",
+          "sha256": "80b6c47e3864f1844c6060616f8762212756028bb9a9d174adc72d3ae43bf494"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 15,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 0.16667175,
+              "scaleY": 0.16667175,
+              "translateX": -50,
+              "translateY": -55
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 15,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 0.16667175,
+              "scaleY": 0.16667175,
+              "translateX": 50,
+              "translateY": -55
+            }
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 17,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 19,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_19_Ghost",
+      "frame_count": 2,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_19_Ghost/1.svg",
+          "sha256": "e3cd8da09a76b56cafd46c8f50c5244cc00e741840653b732e74a89c1f16c978"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_19_Ghost/2.svg",
+          "sha256": "0352f0bb445eeda83cc176bba171959952db6d6855ce8adef804381d62d0398a"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 14,
+            "instance_name": "Shape",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": -39
+            }
+          },
+          {
+            "type": "place",
+            "depth": 7,
+            "character_id": 16,
+            "instance_name": "Eyes",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": -39
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "remove",
+            "depth": 7
+          },
+          {
+            "type": "place",
+            "depth": 7,
+            "character_id": 18,
+            "instance_name": "PPEyes",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 5
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 20,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_20_Pill",
+      "frame_count": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_20_Pill/1.svg",
+          "sha256": "8c2a8549db119c5ace512dc826848ffe509e98f2e97d313c7cee364ed849282d"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 8,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 0.16667175,
+              "scaleY": 0.16667175,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 23,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill",
+      "frame_count": 41,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/1.svg",
+          "sha256": "102f504c3558378bf56cec5f70a74ae875f30f135a541acacceb5aad2e7d3a2e"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/2.svg",
+          "sha256": "e7e688ae35aa3162c0b831cbc1b2a8a49526728872eb6206af4e8418416ff068"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/3.svg",
+          "sha256": "2f5d3ecd868a20679704ad6a3acbea12b472c631f92b902addb13084b0ce9f20"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/4.svg",
+          "sha256": "8d2e71d434a7988bf0c857e0d47dabe071385fd4cbc206253c14e68df955e1f5"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/5.svg",
+          "sha256": "2ea4af44cc91f242e4ca17e3cd90f4ad9c2e6204cb735bde620a0fffdb10b2d7"
+        },
+        {
+          "frame": 6,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/6.svg",
+          "sha256": "340f587c6fca55926fc3a5a22dc41d692e93d8641ebcd3ee10cf1ae93063fd4e"
+        },
+        {
+          "frame": 7,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/7.svg",
+          "sha256": "b196d2db6fba4804d596b891fec1dd616edb1d7f49024d96885fea645d9edda0"
+        },
+        {
+          "frame": 8,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/8.svg",
+          "sha256": "38141007fad4ff7f5da5191ce0444f40ed969d7eb8ab6ef265df3f6e79196d10"
+        },
+        {
+          "frame": 9,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/9.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 10,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/10.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 11,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/11.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 12,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/12.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 13,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/13.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 14,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/14.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 15,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/15.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 16,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/16.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 17,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/17.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 18,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/18.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 19,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/19.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 20,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/20.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 21,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/21.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 22,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/22.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 23,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/23.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 24,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/24.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 25,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/25.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 26,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/26.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 27,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/27.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 28,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/28.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 29,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/29.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 30,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/30.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 31,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/31.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 32,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/32.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 33,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/33.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 34,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/34.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 35,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/35.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 36,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/36.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 37,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/37.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 38,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/38.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 39,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/39.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 40,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/40.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        },
+        {
+          "frame": 41,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_23_GhKill/41.svg",
+          "sha256": "c72c36ad539649f68dd36bd1200dbe8eff7eed5fb4e3015cd2088eb9ed916a9b"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [],
+        "2": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 22,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 0.25,
+              "scaleY": 0.25,
+              "translateX": -111,
+              "translateY": -31
+            }
+          }
+        ],
+        "3": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.38890076,
+              "scaleY": 0.38890076,
+              "translateX": -173,
+              "translateY": -48
+            }
+          }
+        ],
+        "4": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.8055725,
+              "scaleY": 0.8055725,
+              "translateX": -358,
+              "translateY": -99
+            }
+          }
+        ],
+        "5": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.5000153,
+              "scaleY": 1.5000153,
+              "translateX": -666,
+              "translateY": -185
+            }
+          }
+        ],
+        "6": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.328125,
+              "scaleY": 1.328125,
+              "translateX": -590,
+              "translateY": -163
+            }
+          }
+        ],
+        "7": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.1875,
+              "scaleY": 1.1875,
+              "translateX": -527,
+              "translateY": -146
+            }
+          }
+        ],
+        "8": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0781097,
+              "scaleY": 1.0781097,
+              "translateX": -479,
+              "translateY": -133
+            }
+          }
+        ],
+        "9": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "translateX": -444,
+              "translateY": -123
+            }
+          }
+        ],
+        "10": [],
+        "11": [],
+        "12": [],
+        "13": [],
+        "14": [],
+        "15": [],
+        "16": [],
+        "17": [],
+        "18": [],
+        "19": [],
+        "20": [],
+        "21": [],
+        "22": [],
+        "23": [],
+        "24": [],
+        "25": [],
+        "26": [],
+        "27": [],
+        "28": [],
+        "29": [],
+        "30": [],
+        "31": [],
+        "32": [],
+        "33": [],
+        "34": [],
+        "35": [],
+        "36": [],
+        "37": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ],
+        "38": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ],
+        "39": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ],
+        "40": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ],
+        "41": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 24,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power",
+      "frame_count": 11,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power/1.svg",
+          "sha256": "5311cd681e8329785ee7dedd4f00686465447c79507ff6564576e91446a5ad05"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power/2.svg",
+          "sha256": "311b11c459d9866aa7352100d2ca6caf6c09f0242fc24fb072fee461a26e72eb"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power/3.svg",
+          "sha256": "72fcc4c9f298abd3f9fc137d7466de9866771f519505cfdb4d66efebd01e2e56"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power/4.svg",
+          "sha256": "195342be1b50f1bcc0baf4ce5130f80d080d23bac9b14a8f3ea84af74298fe0b"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power/5.svg",
+          "sha256": "00545caa3f091caca92b3683f658eaa5b50dc8053921faeadd32c61233bdd6c6"
+        },
+        {
+          "frame": 6,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power/6.svg",
+          "sha256": "7c510336c1927b160f5ae430d68e3aadb6381f623cf895d584c04cf1f24871ef"
+        },
+        {
+          "frame": 7,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power/7.svg",
+          "sha256": "00545caa3f091caca92b3683f658eaa5b50dc8053921faeadd32c61233bdd6c6"
+        },
+        {
+          "frame": 8,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power/8.svg",
+          "sha256": "195342be1b50f1bcc0baf4ce5130f80d080d23bac9b14a8f3ea84af74298fe0b"
+        },
+        {
+          "frame": 9,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power/9.svg",
+          "sha256": "72fcc4c9f298abd3f9fc137d7466de9866771f519505cfdb4d66efebd01e2e56"
+        },
+        {
+          "frame": 10,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power/10.svg",
+          "sha256": "311b11c459d9866aa7352100d2ca6caf6c09f0242fc24fb072fee461a26e72eb"
+        },
+        {
+          "frame": 11,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_24_Power/11.svg",
+          "sha256": "5311cd681e8329785ee7dedd4f00686465447c79507ff6564576e91446a5ad05"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 15,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 0.55555725,
+              "scaleY": 0.55555725,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.54667664,
+              "scaleY": 0.54667664,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "3": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.5200043,
+              "scaleY": 0.5200043,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "4": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.47555542,
+              "scaleY": 0.47555542,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "5": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.41334534,
+              "scaleY": 0.41334534,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "6": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.3333435,
+              "scaleY": 0.3333435,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "7": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.41334534,
+              "scaleY": 0.41334534,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "8": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.47555542,
+              "scaleY": 0.47555542,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "9": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.5200043,
+              "scaleY": 0.5200043,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "10": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.54667664,
+              "scaleY": 0.54667664,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "11": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.55555725,
+              "scaleY": 0.55555725,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 25,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_25_Empty",
+      "frame_count": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_25_Empty/1.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": []
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 28,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_28",
+      "frame_count": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_28/1.svg",
+          "sha256": "1aaae01344bb1171e2d714d0a43855ba6fc83641ff88bee04bf7d88f91c754b4"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 8,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0,
+              "scaleY": 0.66667175,
+              "translateX": 120,
+              "translateY": 0
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 39,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_39",
+      "frame_count": 8,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_39/1.svg",
+          "sha256": "59605e757fee7357a21067436f35cf58e414212b3072c69fc495d7559fe4371f"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_39/2.svg",
+          "sha256": "e3c1f53b0e9c62fcd39d7e2083ddee61e62dce74038c75a528c812808374b6bb"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_39/3.svg",
+          "sha256": "ccb0d47c1d404eb3e0caf1b5beeb024169c980a0b629744f6eb1dcc71bd6575a"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_39/4.svg",
+          "sha256": "1d13c8295a0a9e3c90b3afbd7d3f041697be85e00ab99764c5c40e42c1802e24"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_39/5.svg",
+          "sha256": "89d7b6e30ceee4dea84b1c4aa6f296e8b57649a91a958328a0a27b48b93acdde"
+        },
+        {
+          "frame": 6,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_39/6.svg",
+          "sha256": "6d8bf85f370dc749646aac0a22794f7e20d514b17084b96d53a7d6c48df646cf"
+        },
+        {
+          "frame": 7,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_39/7.svg",
+          "sha256": "1c18ec7e158de96897b4a03ecf9f0d07352562343179a21a68a6f89479d23871"
+        },
+        {
+          "frame": 8,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_39/8.svg",
+          "sha256": "1d57955bbe8262830076a65f7f7f0c10f0c80331161e9e4df4042f17448a2291"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 38,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 0.05555725,
+              "scaleY": 0.05555725,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.26852417,
+              "scaleY": 0.26852417,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "3": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.48147583,
+              "scaleY": 0.48147583,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "4": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.69444275,
+              "scaleY": 0.69444275,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "5": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.90740967,
+              "scaleY": 0.90740967,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "6": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.1203613,
+              "scaleY": 1.1203613,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "7": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.3333282,
+              "scaleY": 1.3333282,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "8": [
+          {
+            "type": "remove",
+            "depth": 1
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 40,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_40",
+      "frame_count": 59,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/1.svg",
+          "sha256": "c83eae725e8ba23afdbea2f563ee15323e712b43faa91067c6ee814ccba96ff3"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/2.svg",
+          "sha256": "ac2600bb76769205003eb520a0e54fc0b266b537850968600808393c97a5776e"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/3.svg",
+          "sha256": "c83eae725e8ba23afdbea2f563ee15323e712b43faa91067c6ee814ccba96ff3"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/4.svg",
+          "sha256": "2122c0c1c4ef19d83aa379abb202e2486ec39d19976fdfe6700f1724ea117e98"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/5.svg",
+          "sha256": "2122c0c1c4ef19d83aa379abb202e2486ec39d19976fdfe6700f1724ea117e98"
+        },
+        {
+          "frame": 6,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/6.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 7,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/7.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 8,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/8.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 9,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/9.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 10,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/10.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 11,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/11.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 12,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/12.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 13,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/13.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 14,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/14.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 15,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/15.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 16,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/16.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 17,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/17.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 18,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/18.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 19,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/19.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 20,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/20.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 21,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/21.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 22,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/22.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 23,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/23.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 24,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/24.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 25,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/25.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 26,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/26.svg",
+          "sha256": "eb096f17c49d81dfd66df27591591ad847556b9af5ff431728eeec36764de02c"
+        },
+        {
+          "frame": 27,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/27.svg",
+          "sha256": "1af3f920456366dfc96962f18fc8319f30d3e1fd4af193992401c1ef4f77cbec"
+        },
+        {
+          "frame": 28,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/28.svg",
+          "sha256": "1af3f920456366dfc96962f18fc8319f30d3e1fd4af193992401c1ef4f77cbec"
+        },
+        {
+          "frame": 29,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/29.svg",
+          "sha256": "ab5b733eca4906dbf598104b12aa1d8b67936c4078fac32fb0ca3db1e87261da"
+        },
+        {
+          "frame": 30,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/30.svg",
+          "sha256": "ab5b733eca4906dbf598104b12aa1d8b67936c4078fac32fb0ca3db1e87261da"
+        },
+        {
+          "frame": 31,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/31.svg",
+          "sha256": "0d3db1cea1b6f8af4b832f3708ba58c306a0f813e7c11788b0a7e4c9c6688b98"
+        },
+        {
+          "frame": 32,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/32.svg",
+          "sha256": "0d3db1cea1b6f8af4b832f3708ba58c306a0f813e7c11788b0a7e4c9c6688b98"
+        },
+        {
+          "frame": 33,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/33.svg",
+          "sha256": "9dbc2992d7401537bc475cfa4ddaa4d53b403fb8c977c78f9ad7d6eb7f36eb2c"
+        },
+        {
+          "frame": 34,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/34.svg",
+          "sha256": "9dbc2992d7401537bc475cfa4ddaa4d53b403fb8c977c78f9ad7d6eb7f36eb2c"
+        },
+        {
+          "frame": 35,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/35.svg",
+          "sha256": "d0b2bd92ceaa7953a4438081235fe368a1f827b83f6bc5e08989ba6ba73c9e76"
+        },
+        {
+          "frame": 36,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/36.svg",
+          "sha256": "d0b2bd92ceaa7953a4438081235fe368a1f827b83f6bc5e08989ba6ba73c9e76"
+        },
+        {
+          "frame": 37,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/37.svg",
+          "sha256": "2de3d67fb82e5452ddd42a77a84a9a0d6acf18ad8267a2f02b4ccc58c2411816"
+        },
+        {
+          "frame": 38,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/38.svg",
+          "sha256": "2de3d67fb82e5452ddd42a77a84a9a0d6acf18ad8267a2f02b4ccc58c2411816"
+        },
+        {
+          "frame": 39,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/39.svg",
+          "sha256": "13edc0fcd47015147b23e423e9861bb8b304a62bdc4cbb77416ab4b79c6a1ed7"
+        },
+        {
+          "frame": 40,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/40.svg",
+          "sha256": "13edc0fcd47015147b23e423e9861bb8b304a62bdc4cbb77416ab4b79c6a1ed7"
+        },
+        {
+          "frame": 41,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/41.svg",
+          "sha256": "df717b0c3ae72b7bd44d33ef167ff5a425a45c80e7f8bb4e9b8b2dc1d6c7a22f"
+        },
+        {
+          "frame": 42,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/42.svg",
+          "sha256": "df717b0c3ae72b7bd44d33ef167ff5a425a45c80e7f8bb4e9b8b2dc1d6c7a22f"
+        },
+        {
+          "frame": 43,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/43.svg",
+          "sha256": "df717b0c3ae72b7bd44d33ef167ff5a425a45c80e7f8bb4e9b8b2dc1d6c7a22f"
+        },
+        {
+          "frame": 44,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/44.svg",
+          "sha256": "df717b0c3ae72b7bd44d33ef167ff5a425a45c80e7f8bb4e9b8b2dc1d6c7a22f"
+        },
+        {
+          "frame": 45,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/45.svg",
+          "sha256": "c483cd2699da7a86a33b919715e2efdcdf73280d0bffffb7ec3aa732a276721f"
+        },
+        {
+          "frame": 46,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/46.svg",
+          "sha256": "384f0d4fbf598421b0b6c9f64ac56dc0be8c8225b41c87f129fe6f1b714091aa"
+        },
+        {
+          "frame": 47,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/47.svg",
+          "sha256": "febd8a8b996b60af7c498e4635b99f6c8d99df1d4ec68d2c79237894affe5256"
+        },
+        {
+          "frame": 48,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/48.svg",
+          "sha256": "d198ad7867c84bb0dd987e4d0de6fc2754b8016f83c900d67707f9617bf5fc45"
+        },
+        {
+          "frame": 49,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/49.svg",
+          "sha256": "0f5a800bbe34ec28fe34aaae8152494b08b223ff01d8f0786f7b3f93baae1688"
+        },
+        {
+          "frame": 50,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/50.svg",
+          "sha256": "fae57059bbd81de465e08c67cd9d755f4679414a6f3c025962fed5daa45b0d09"
+        },
+        {
+          "frame": 51,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/51.svg",
+          "sha256": "cdbe08d0596331d2e38695f57a6319101968e8163ca3ed25789313cac2a9868f"
+        },
+        {
+          "frame": 52,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/52.svg",
+          "sha256": "eea279003fe1f68c05b0f02bb159c4bedc85517f950941a5b1ae522f42f9de77"
+        },
+        {
+          "frame": 53,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/53.svg",
+          "sha256": "41b7b61bd16b5538588c4075512e1f8cf498bf87a19fdaf6858847b7d021dc03"
+        },
+        {
+          "frame": 54,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/54.svg",
+          "sha256": "9f40ee80419a08b5caa32c779c483f95b3f17248ff8d1cb22c46e2773b3ea892"
+        },
+        {
+          "frame": 55,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/55.svg",
+          "sha256": "eeeb5f1e4861cc1943aaaf9e803d59adc52215e48a03ef315e7331f16b069202"
+        },
+        {
+          "frame": 56,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/56.svg",
+          "sha256": "38215ded6f0cab688d017a2e064b1bb393f7eed4528a757cf31a7cd4f10e834e"
+        },
+        {
+          "frame": 57,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/57.svg",
+          "sha256": "01715709d9315d94b47adb321a55abeeab3b8048a0aa6bd4e6a676a87e76a667"
+        },
+        {
+          "frame": 58,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/58.svg",
+          "sha256": "fae57059bbd81de465e08c67cd9d755f4679414a6f3c025962fed5daa45b0d09"
+        },
+        {
+          "frame": 59,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_40/59.svg",
+          "sha256": "df717b0c3ae72b7bd44d33ef167ff5a425a45c80e7f8bb4e9b8b2dc1d6c7a22f"
+        }
+      ],
+      "labels": {
+        "Die": 6
+      },
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 9,
+            "instance_name": "Hit",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 31,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 4,
+            "character_id": 15,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0,
+              "scaleY": 1.0555573,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "remove",
+            "depth": 3
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 8,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 2.0,
+              "scaleY": 2.0,
+              "translateX": 0,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 4,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "3": [
+          {
+            "type": "remove",
+            "depth": 3
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 31,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 4,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0,
+              "scaleY": 1.0555573,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "4": [
+          {
+            "type": "remove",
+            "depth": 3
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 32,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 4,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0,
+              "scaleY": 1.1666718,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "5": [],
+        "6": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "remove",
+            "depth": 3
+          },
+          {
+            "type": "remove",
+            "depth": 4
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 31,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 15,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0,
+              "scaleY": 1.0555573,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "7": [],
+        "8": [],
+        "9": [],
+        "10": [],
+        "11": [],
+        "12": [],
+        "13": [],
+        "14": [],
+        "15": [],
+        "16": [],
+        "17": [],
+        "18": [],
+        "19": [],
+        "20": [],
+        "21": [],
+        "22": [],
+        "23": [],
+        "24": [],
+        "25": [],
+        "26": [],
+        "27": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 33,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "28": [],
+        "29": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 34,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "30": [],
+        "31": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 35,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "32": [],
+        "33": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 8,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 2.0,
+              "scaleY": 1.0,
+              "translateX": 0,
+              "translateY": 120
+            }
+          }
+        ],
+        "34": [],
+        "35": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 36,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "36": [],
+        "37": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 37,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 2.0,
+              "scaleY": 1.0,
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "38": [],
+        "39": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 37,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "40": [],
+        "41": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "remove",
+            "depth": 2
+          }
+        ],
+        "42": [],
+        "43": [],
+        "44": [],
+        "45": [
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 39,
+            "instance_name": "D1",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "46": [],
+        "47": [],
+        "48": [],
+        "49": [],
+        "50": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 39,
+            "instance_name": "D2",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "51": [],
+        "52": [],
+        "53": [],
+        "54": [],
+        "55": [],
+        "56": [],
+        "57": [],
+        "58": [],
+        "59": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "remove",
+            "depth": 3
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 42,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_42",
+      "frame_count": 17,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/1.svg",
+          "sha256": "2702bff67507a3738a7fa4c808715e5360e522f357fb1252b0a7606f2862bb86"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/2.svg",
+          "sha256": "bf0f71604fcb96618db1870d6206ef3641e2fc6cd3fc45640e4aaa4f17231a12"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/3.svg",
+          "sha256": "f6e6be03c6fac8a5388e230182b371d1f086e85809064a5173ef1fa0087e0565"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/4.svg",
+          "sha256": "7fd1f539e59e8aca29cf4c916f7de40c0ad5ddb0310b730455e70aeaa0a4d13b"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/5.svg",
+          "sha256": "d7963d44879c6101ce0b23d0e4cc1b9fee8c3cf0a51cdac3c0ac59f0cfa9cb65"
+        },
+        {
+          "frame": 6,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/6.svg",
+          "sha256": "cc720846690169da5ff73f164f86c606c057b760c6164b5e40325b5631637c27"
+        },
+        {
+          "frame": 7,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/7.svg",
+          "sha256": "fd6cef19f7d514f01a3c202644e19007fed41506133a96efeea969a48c57bee7"
+        },
+        {
+          "frame": 8,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/8.svg",
+          "sha256": "89f649fb41c15b5adbc3f7eb3fcc3f86d769ae27fd659969deae9b9d92821084"
+        },
+        {
+          "frame": 9,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/9.svg",
+          "sha256": "a67f36b1d947c5048958e5243c2a502a297a80e17c275c36c1445560b136140b"
+        },
+        {
+          "frame": 10,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/10.svg",
+          "sha256": "e807c0b54748ea4e75817dd8ecd68df9dfdb2ff7f2f89babef7eedbb525fade9"
+        },
+        {
+          "frame": 11,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/11.svg",
+          "sha256": "c1ea03861a320ad8dfd416b2662df4886fbeda1031af538de1f2ed4f2b83af39"
+        },
+        {
+          "frame": 12,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/12.svg",
+          "sha256": "de68f6f1d08274a71809e948b53f95727712a31971959158970f866be9076a8e"
+        },
+        {
+          "frame": 13,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/13.svg",
+          "sha256": "58fbd5bb3a6f1822eff86358a158e375eea6e4657dbf1a9dff74bdc922189f95"
+        },
+        {
+          "frame": 14,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/14.svg",
+          "sha256": "4a7be3cb0057ca5f02b29dc544e440552418cd2e6956a8aae09e7fde1bfa19f8"
+        },
+        {
+          "frame": 15,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/15.svg",
+          "sha256": "cad4106e887b7d5276015e7efb951d12f206b2f07ecd5a3ca9f4af674aebac62"
+        },
+        {
+          "frame": 16,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/16.svg",
+          "sha256": "ddf53296268befa10984b41adaf04334e30f5a4ca7e12835f25fd080af9f2a12"
+        },
+        {
+          "frame": 17,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_42/17.svg",
+          "sha256": "2cfeb920e83b62f48edc8cca7f7835ff88cc6a010559bd29c96957c02915dc16"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 40,
+            "instance_name": "CPac",
+            "move": false,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -4120,
+              "translateY": 140
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -3803,
+              "translateY": 140
+            }
+          }
+        ],
+        "3": [
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -3501,
+              "translateY": 140
+            }
+          }
+        ],
+        "4": [
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -3213,
+              "translateY": 140
+            }
+          }
+        ],
+        "5": [
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -2939,
+              "translateY": 140
+            }
+          }
+        ],
+        "6": [
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -2680,
+              "translateY": 140
+            }
+          }
+        ],
+        "7": [
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -2435,
+              "translateY": 140
+            }
+          }
+        ],
+        "8": [
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -2205,
+              "translateY": 140
+            }
+          }
+        ],
+        "9": [
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -1989,
+              "translateY": 140
+            }
+          }
+        ],
+        "10": [
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -1787,
+              "translateY": 140
+            }
+          }
+        ],
+        "11": [
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -1600,
+              "translateY": 140
+            }
+          }
+        ],
+        "12": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 41,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0001526,
+              "scaleY": 1.0,
+              "translateX": -3203,
+              "translateY": -983
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -1427,
+              "translateY": 140
+            }
+          }
+        ],
+        "13": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0001526,
+              "scaleY": 1.0,
+              "translateX": -3207,
+              "translateY": -983
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -1269,
+              "translateY": 140
+            }
+          }
+        ],
+        "14": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0001526,
+              "scaleY": 1.0,
+              "translateX": -3211,
+              "translateY": -983
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -1125,
+              "translateY": 140
+            }
+          }
+        ],
+        "15": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0001526,
+              "scaleY": 1.0,
+              "translateX": -3215,
+              "translateY": -983
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -995,
+              "translateY": 140
+            }
+          }
+        ],
+        "16": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0001526,
+              "scaleY": 1.0,
+              "translateX": -3219,
+              "translateY": -983
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": -3.1999817,
+              "scaleY": -3.1999817,
+              "translateX": -880,
+              "translateY": 140
+            }
+          }
+        ],
+        "17": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0001526,
+              "scaleY": 1.0,
+              "translateX": -3223,
+              "translateY": -983
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 46,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_46",
+      "frame_count": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_46/1.svg",
+          "sha256": "86c9c66c613efacb2ed7f28cc9f92696cebfd6148cb8ac0f6dc1507ba4f20321"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 22,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": -444,
+              "translateY": -123
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 47,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_47",
+      "frame_count": 3,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_47/1.svg",
+          "sha256": "f4b7fa7cf4fb070bba103047f937d81d363bf6443efa821115c33c8b190049e5"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_47/2.svg",
+          "sha256": "743464102ec17536ff8db52ff77150cb80ae8325a79656935254a3752a87bd0e"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_47/3.svg",
+          "sha256": "26f51295bb366771566720ad3da3516621b4a4b8a604190315737a387d1073af"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 46,
+            "instance_name": "GK",
+            "move": false,
+            "matrix": {
+              "translateX": -4000,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 5,
+            "character_id": 25,
+            "instance_name": "G",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 7,
+            "character_id": 40,
+            "instance_name": "Pac",
+            "move": false,
+            "matrix": {
+              "scaleX": -1.0,
+              "scaleY": -1.0,
+              "translateX": -3920,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 13,
+            "character_id": 8,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 3.3333435,
+              "scaleY": 4.0,
+              "translateX": -4000,
+              "translateY": 0
+            }
+          },
+          {
+            "type": "place",
+            "depth": 14,
+            "character_id": 8,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 3.3333435,
+              "scaleY": 4.0,
+              "translateX": 4000,
+              "translateY": 0
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 24,
+            "instance_name": "Pill",
+            "move": false,
+            "matrix": {
+              "translateX": 2880,
+              "translateY": 0
+            }
+          }
+        ],
+        "3": []
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 71,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_71",
+      "frame_count": 15,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/1.svg",
+          "sha256": "7aa81b86b5ffed216dbc6a6ebba31ca5bb058555d8ff159f3154eac040de1039"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/2.svg",
+          "sha256": "90a365e62c9e595c27489fe38596e447a7f813419acd7fc628b1661b58def3ac"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/3.svg",
+          "sha256": "f2b428b35812bc56147b7ae4479295fb690d099bb30b83a093d758db02b60848"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/4.svg",
+          "sha256": "83c368ec080917590b328e36438e708f24c6a8d707411523e120cd66fa5d05d9"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/5.svg",
+          "sha256": "83c368ec080917590b328e36438e708f24c6a8d707411523e120cd66fa5d05d9"
+        },
+        {
+          "frame": 6,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/6.svg",
+          "sha256": "887e94073bc1147d1a0a7ba61f8b3f10ba43d93ee29fadf3916621c813f7a645"
+        },
+        {
+          "frame": 7,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/7.svg",
+          "sha256": "887e94073bc1147d1a0a7ba61f8b3f10ba43d93ee29fadf3916621c813f7a645"
+        },
+        {
+          "frame": 8,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/8.svg",
+          "sha256": "ccdd756c9ba5b5c08c43dfb0c3d43da1482cc59092961cfefcaa716915a716b4"
+        },
+        {
+          "frame": 9,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/9.svg",
+          "sha256": "ccdd756c9ba5b5c08c43dfb0c3d43da1482cc59092961cfefcaa716915a716b4"
+        },
+        {
+          "frame": 10,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/10.svg",
+          "sha256": "e0c2bd1c346723972b43372d07786932232767e5e52d31405b9f45c55609c865"
+        },
+        {
+          "frame": 11,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/11.svg",
+          "sha256": "e0c2bd1c346723972b43372d07786932232767e5e52d31405b9f45c55609c865"
+        },
+        {
+          "frame": 12,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/12.svg",
+          "sha256": "8fd5bf5bbba62d2a83f998634342535f855415dc8af184f010d8052810bf3301"
+        },
+        {
+          "frame": 13,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/13.svg",
+          "sha256": "8fd5bf5bbba62d2a83f998634342535f855415dc8af184f010d8052810bf3301"
+        },
+        {
+          "frame": 14,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/14.svg",
+          "sha256": "3c1e0bf8eba181f3cacbec2488185c18ae2c77dc9854487fd154aa947eb70516"
+        },
+        {
+          "frame": 15,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_71/15.svg",
+          "sha256": "0e1397d4ba9fd0d41e74f60d73f8559befadcda67627d0ce362f4882bdc74dcf"
+        }
+      ],
+      "labels": {
+        "Show": 15
+      },
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 8,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 61,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0070953,
+              "scaleY": 0.99723816,
+              "translateX": -81,
+              "translateY": 89
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 61,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0910034,
+              "scaleY": 1.0803375,
+              "translateX": 77,
+              "translateY": 116
+            }
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 62,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "3": [
+          {
+            "type": "remove",
+            "depth": 2
+          },
+          {
+            "type": "remove",
+            "depth": 3
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 63,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "4": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 64,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 65,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": 5,
+              "translateY": -122
+            }
+          }
+        ],
+        "5": [],
+        "6": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 66,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "7": [],
+        "8": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -62,
+              "translateY": -133
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 67,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 38,
+              "translateY": -135
+            }
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -7,
+              "translateY": -129
+            }
+          },
+          {
+            "type": "place",
+            "depth": 4,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 59,
+              "translateY": -114
+            }
+          },
+          {
+            "type": "place",
+            "depth": 5,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -102,
+              "translateY": -91
+            }
+          },
+          {
+            "type": "place",
+            "depth": 6,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -64,
+              "translateY": -103
+            }
+          },
+          {
+            "type": "place",
+            "depth": 7,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 2,
+              "translateY": 153
+            }
+          },
+          {
+            "type": "place",
+            "depth": 8,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -19,
+              "translateY": 103
+            }
+          },
+          {
+            "type": "place",
+            "depth": 9,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 53,
+              "translateY": 97
+            }
+          },
+          {
+            "type": "place",
+            "depth": 10,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 22,
+              "translateY": 113
+            }
+          },
+          {
+            "type": "place",
+            "depth": 11,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -48,
+              "translateY": 67
+            }
+          },
+          {
+            "type": "place",
+            "depth": 12,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 14,
+              "translateY": 75
+            }
+          },
+          {
+            "type": "place",
+            "depth": 13,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 69,
+              "translateY": 41
+            }
+          },
+          {
+            "type": "place",
+            "depth": 14,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -55,
+              "translateY": 11
+            }
+          },
+          {
+            "type": "place",
+            "depth": 15,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -16,
+              "translateY": 37
+            }
+          },
+          {
+            "type": "place",
+            "depth": 16,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 35,
+              "translateY": 39
+            }
+          },
+          {
+            "type": "place",
+            "depth": 17,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -84,
+              "translateY": -49
+            }
+          },
+          {
+            "type": "place",
+            "depth": 18,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 96,
+              "translateY": -27
+            }
+          },
+          {
+            "type": "place",
+            "depth": 19,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 102,
+              "translateY": -85
+            }
+          },
+          {
+            "type": "place",
+            "depth": 20,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 67,
+              "translateY": -23
+            }
+          },
+          {
+            "type": "place",
+            "depth": 21,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -40,
+              "translateY": -19
+            }
+          },
+          {
+            "type": "place",
+            "depth": 22,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -44,
+              "translateY": -75
+            }
+          },
+          {
+            "type": "place",
+            "depth": 23,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 11,
+              "translateY": 1
+            }
+          },
+          {
+            "type": "place",
+            "depth": 24,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 59,
+              "translateY": -80
+            }
+          },
+          {
+            "type": "place",
+            "depth": 25,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": -19,
+              "translateY": -53
+            }
+          },
+          {
+            "type": "place",
+            "depth": 26,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 38,
+              "translateY": -45
+            }
+          },
+          {
+            "type": "place",
+            "depth": 27,
+            "character_id": 67,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 3,
+              "translateY": -91
+            }
+          },
+          {
+            "type": "place",
+            "depth": 28,
+            "character_id": 65,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0036621,
+              "scaleY": 1.0,
+              "translateX": 3,
+              "translateY": -145
+            }
+          }
+        ],
+        "9": [],
+        "10": [
+          {
+            "type": "remove",
+            "depth": 2
+          },
+          {
+            "type": "remove",
+            "depth": 3
+          },
+          {
+            "type": "remove",
+            "depth": 4
+          },
+          {
+            "type": "remove",
+            "depth": 5
+          },
+          {
+            "type": "remove",
+            "depth": 6
+          },
+          {
+            "type": "remove",
+            "depth": 7
+          },
+          {
+            "type": "remove",
+            "depth": 8
+          },
+          {
+            "type": "remove",
+            "depth": 9
+          },
+          {
+            "type": "remove",
+            "depth": 10
+          },
+          {
+            "type": "remove",
+            "depth": 11
+          },
+          {
+            "type": "remove",
+            "depth": 12
+          },
+          {
+            "type": "remove",
+            "depth": 13
+          },
+          {
+            "type": "remove",
+            "depth": 14
+          },
+          {
+            "type": "remove",
+            "depth": 15
+          },
+          {
+            "type": "remove",
+            "depth": 16
+          },
+          {
+            "type": "remove",
+            "depth": 17
+          },
+          {
+            "type": "remove",
+            "depth": 18
+          },
+          {
+            "type": "remove",
+            "depth": 19
+          },
+          {
+            "type": "remove",
+            "depth": 20
+          },
+          {
+            "type": "remove",
+            "depth": 21
+          },
+          {
+            "type": "remove",
+            "depth": 22
+          },
+          {
+            "type": "remove",
+            "depth": 23
+          },
+          {
+            "type": "remove",
+            "depth": 24
+          },
+          {
+            "type": "remove",
+            "depth": 25
+          },
+          {
+            "type": "remove",
+            "depth": 26
+          },
+          {
+            "type": "remove",
+            "depth": 27
+          },
+          {
+            "type": "remove",
+            "depth": 28
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 68,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "11": [],
+        "12": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 69,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ],
+        "13": [],
+        "14": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 70,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ],
+        "15": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 23,
+            "instance_name": "F",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 76,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_76",
+      "frame_count": 11,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_76/1.svg",
+          "sha256": "6834f5fd8c5391adb19840c3033f702fe22d22f372037b860e388e4f7db7475f"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_76/2.svg",
+          "sha256": "11c62d6fdffe051057808084ec5b337716339725cd5bd98d8a8d6874a28c2644"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_76/3.svg",
+          "sha256": "b8c9b7463cc687ad268a773eeb4ad3e53846c54b5ea17181ae762d3c71c4e2fa"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_76/4.svg",
+          "sha256": "5837b06fdaf4343e77658c69cd6a752f6722c6a75dd1061a8c391616e56aa6a8"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_76/5.svg",
+          "sha256": "ae66ed2e21927c8aed15981d27462f3e7becb2ad617552663be1109e8072315a"
+        },
+        {
+          "frame": 6,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_76/6.svg",
+          "sha256": "9d37f32352a4028f7e9b0c9dda227711dd346927c65b655f824ad7e7bfb3be95"
+        },
+        {
+          "frame": 7,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_76/7.svg",
+          "sha256": "ae66ed2e21927c8aed15981d27462f3e7becb2ad617552663be1109e8072315a"
+        },
+        {
+          "frame": 8,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_76/8.svg",
+          "sha256": "5837b06fdaf4343e77658c69cd6a752f6722c6a75dd1061a8c391616e56aa6a8"
+        },
+        {
+          "frame": 9,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_76/9.svg",
+          "sha256": "b8c9b7463cc687ad268a773eeb4ad3e53846c54b5ea17181ae762d3c71c4e2fa"
+        },
+        {
+          "frame": 10,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_76/10.svg",
+          "sha256": "11c62d6fdffe051057808084ec5b337716339725cd5bd98d8a8d6874a28c2644"
+        },
+        {
+          "frame": 11,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_76/11.svg",
+          "sha256": "6834f5fd8c5391adb19840c3033f702fe22d22f372037b860e388e4f7db7475f"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 75,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0003662,
+              "scaleY": 1.0079956,
+              "translateX": -680,
+              "translateY": -248
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9943695,
+              "scaleY": 1.0079956,
+              "translateX": -676,
+              "translateY": -248
+            }
+          }
+        ],
+        "3": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9763489,
+              "scaleY": 1.0079956,
+              "translateX": -664,
+              "translateY": -248
+            }
+          }
+        ],
+        "4": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9463501,
+              "scaleY": 1.0079956,
+              "translateX": -643,
+              "translateY": -248
+            }
+          }
+        ],
+        "5": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9043274,
+              "scaleY": 1.0079956,
+              "translateX": -615,
+              "translateY": -248
+            }
+          }
+        ],
+        "6": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.850296,
+              "scaleY": 1.0079956,
+              "translateX": -578,
+              "translateY": -248
+            }
+          }
+        ],
+        "7": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9043274,
+              "scaleY": 1.0079956,
+              "translateX": -615,
+              "translateY": -248
+            }
+          }
+        ],
+        "8": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9463501,
+              "scaleY": 1.0079956,
+              "translateX": -643,
+              "translateY": -248
+            }
+          }
+        ],
+        "9": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9763489,
+              "scaleY": 1.0079956,
+              "translateX": -664,
+              "translateY": -248
+            }
+          }
+        ],
+        "10": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9943695,
+              "scaleY": 1.0079956,
+              "translateX": -676,
+              "translateY": -248
+            }
+          }
+        ],
+        "11": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0003662,
+              "scaleY": 1.0079956,
+              "translateX": -680,
+              "translateY": -248
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 80,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_80",
+      "frame_count": 33,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/1.svg",
+          "sha256": "1309baad6ceb0d65d243015d8ffa7f398796864869913fd3adc8086b3d85c457"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/2.svg",
+          "sha256": "03fb68730dff930eff6c3742f41ddaf42dc806b555e6a98d8b4118dd4457c877"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/3.svg",
+          "sha256": "b70deba39b1e313e254377a260b37eca1e79c3c78e3b5cebf9721e6a738f007c"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/4.svg",
+          "sha256": "412cf2139db5082de13d9e27330fd8faceed4e06fe5b9ee643d81f07a5d3391c"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/5.svg",
+          "sha256": "061f1a84ecd673c63a81d5fe4d205052e11f89d722d6f4f19289e328d446bd7f"
+        },
+        {
+          "frame": 6,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/6.svg",
+          "sha256": "37dbd13ea36ee34511c718e16320217bed76f615d37d48570db5e7961e27ccac"
+        },
+        {
+          "frame": 7,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/7.svg",
+          "sha256": "61054548904cd13fcfcb58b0ec90900e5bc441643a079c9f72e9f57ac3abdcdc"
+        },
+        {
+          "frame": 8,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/8.svg",
+          "sha256": "6950659d6a060af345a25736e3dce97f2541cd2d00a0a3ebf81d688a8b211f54"
+        },
+        {
+          "frame": 9,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/9.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 10,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/10.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 11,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/11.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 12,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/12.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 13,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/13.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 14,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/14.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 15,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/15.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 16,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/16.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 17,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/17.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 18,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/18.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 19,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/19.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 20,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/20.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 21,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/21.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 22,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/22.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 23,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/23.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 24,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/24.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 25,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/25.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 26,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/26.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 27,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/27.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 28,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/28.svg",
+          "sha256": "00bbccd371b1feb081848eef9df55f18586b025dc57dc26ba1836bc0a36936f4"
+        },
+        {
+          "frame": 29,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/29.svg",
+          "sha256": "a704710e5ebe97409565f762a3cf8b9e9df2b63afc9bd367884b407d12815b07"
+        },
+        {
+          "frame": 30,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/30.svg",
+          "sha256": "b69fdae6e7fdea3097cfb03094ea05d3d5e6736baa7fc3f309f1e4907a5d0bb8"
+        },
+        {
+          "frame": 31,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/31.svg",
+          "sha256": "8386bc08b53ced44ffd48a102a06c8cc21f89344aa955da1ca04b1a189a66d98"
+        },
+        {
+          "frame": 32,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/32.svg",
+          "sha256": "f6b7e3cd76a82d3df7e84c34bd2efbae50eba52be5a9be7ced6d66f85476d4c9"
+        },
+        {
+          "frame": 33,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_80/33.svg",
+          "sha256": "1fb471ba3d48506a3f0d0cac1044c4773c748805680b347d68c175a29a94c310"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 78,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0996246,
+              "scaleY": 1.0079956,
+              "translateX": 1974,
+              "translateY": -248
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 79,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0996246,
+              "scaleY": 1.0079956,
+              "translateX": -3837,
+              "translateY": -248
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0996246,
+              "scaleY": 1.0079956,
+              "translateX": 1484,
+              "translateY": -248
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0996246,
+              "scaleY": 1.0079956,
+              "translateX": -3212,
+              "translateY": -248
+            }
+          }
+        ],
+        "3": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0996246,
+              "scaleY": 1.0079956,
+              "translateX": 994,
+              "translateY": -248
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0996246,
+              "scaleY": 1.0079956,
+              "translateX": -2587,
+              "translateY": -248
+            }
+          }
+        ],
+        "4": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0996246,
+              "scaleY": 1.0079956,
+              "translateX": 504,
+              "translateY": -248
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0996246,
+              "scaleY": 1.0079956,
+              "translateX": -1962,
+              "translateY": -248
+            }
+          }
+        ],
+        "5": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0996246,
+              "scaleY": 1.0079956,
+              "translateX": 14,
+              "translateY": -248
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0996246,
+              "scaleY": 1.0079956,
+              "translateX": -1337,
+              "translateY": -248
+            }
+          }
+        ],
+        "6": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.91218567,
+              "scaleY": 1.0079956,
+              "translateX": -29,
+              "translateY": -248
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.91218567,
+              "scaleY": 1.0079956,
+              "translateX": -1139,
+              "translateY": -248
+            }
+          }
+        ],
+        "7": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.8497009,
+              "scaleY": 1.0079956,
+              "translateX": -44,
+              "translateY": -248
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.8497009,
+              "scaleY": 1.0079956,
+              "translateX": -1072,
+              "translateY": -248
+            }
+          }
+        ],
+        "8": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9059448,
+              "scaleY": 1.0079956,
+              "translateX": -8,
+              "translateY": -248
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9059448,
+              "scaleY": 1.0079956,
+              "translateX": -1142,
+              "translateY": -248
+            }
+          }
+        ],
+        "9": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9996643,
+              "scaleY": 1.0079956,
+              "translateX": 51,
+              "translateY": -248
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9996643,
+              "scaleY": 1.0079956,
+              "translateX": -1259,
+              "translateY": -248
+            }
+          }
+        ],
+        "10": [],
+        "11": [],
+        "12": [],
+        "13": [],
+        "14": [],
+        "15": [],
+        "16": [],
+        "17": [],
+        "18": [],
+        "19": [],
+        "20": [],
+        "21": [],
+        "22": [],
+        "23": [],
+        "24": [],
+        "25": [],
+        "26": [],
+        "27": [],
+        "28": [],
+        "29": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ],
+        "30": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ],
+        "31": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ],
+        "32": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ],
+        "33": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": null
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 82,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_82",
+      "frame_count": 26,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/1.svg",
+          "sha256": "518777d897a1e50a477585192fa77dab8598bfb4ce6872c69036d3406d6ba1d4"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/2.svg",
+          "sha256": "ec9280a06a293b2be14ba7ddf9bb7482f03e081c6f9c2c54d07bd65d5b367341"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/3.svg",
+          "sha256": "94dab2ae11805507ed4ea8fdec223b5ca1b1db76b538145e6407207e76193012"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/4.svg",
+          "sha256": "1db50b4e4110143af9215d95b4fedd324fb932674e735a3025c5f82be7f68f70"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/5.svg",
+          "sha256": "1d4d08e060949f0faa2aa10a84379f210202b79abd77cf7c2fb56d6daa176012"
+        },
+        {
+          "frame": 6,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/6.svg",
+          "sha256": "c5b8a3197ec9316026cfb0443be459b1bb72ddaea84d353f7148003e4c6ab41b"
+        },
+        {
+          "frame": 7,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/7.svg",
+          "sha256": "acd8bbecc7f973950cbf1c4baed120e72b334b3b7b4b911b74611f41066dd216"
+        },
+        {
+          "frame": 8,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/8.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 9,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/9.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 10,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/10.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 11,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/11.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 12,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/12.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 13,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/13.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 14,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/14.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 15,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/15.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 16,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/16.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 17,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/17.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 18,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/18.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 19,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/19.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 20,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/20.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 21,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/21.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 22,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/22.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 23,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/23.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 24,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/24.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 25,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/25.svg",
+          "sha256": "ed1161e2048ec2d6932d10154ca24cf2f9658a1252372b06c655227ed266e1f1"
+        },
+        {
+          "frame": 26,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_82/26.svg",
+          "sha256": "ef188d629eb30f3dd0d868cd689204eb9031b77e016e277ded77b2f2301c72b7"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 81,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.29953,
+              "scaleY": 1.0079956,
+              "translateX": -1446,
+              "translateY": -248
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.2199554,
+              "scaleY": 1.0079956,
+              "translateX": -1357,
+              "translateY": -248
+            }
+          }
+        ],
+        "3": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.1526489,
+              "scaleY": 1.0079956,
+              "translateX": -1282,
+              "translateY": -248
+            }
+          }
+        ],
+        "4": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.09758,
+              "scaleY": 1.0079956,
+              "translateX": -1221,
+              "translateY": -248
+            }
+          }
+        ],
+        "5": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0547485,
+              "scaleY": 1.0079956,
+              "translateX": -1173,
+              "translateY": -248
+            }
+          }
+        ],
+        "6": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0241394,
+              "scaleY": 1.0079956,
+              "translateX": -1139,
+              "translateY": -248
+            }
+          }
+        ],
+        "7": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 1.0057678,
+              "scaleY": 1.0079956,
+              "translateX": -1119,
+              "translateY": -248
+            }
+          }
+        ],
+        "8": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": null,
+            "instance_name": null,
+            "move": true,
+            "matrix": {
+              "scaleX": 0.9996643,
+              "scaleY": 1.0079956,
+              "translateX": -1112,
+              "translateY": -248
+            }
+          }
+        ],
+        "9": [],
+        "10": [],
+        "11": [],
+        "12": [],
+        "13": [],
+        "14": [],
+        "15": [],
+        "16": [],
+        "17": [],
+        "18": [],
+        "19": [],
+        "20": [],
+        "21": [],
+        "22": [],
+        "23": [],
+        "24": [],
+        "25": [],
+        "26": [
+          {
+            "type": "remove",
+            "depth": 1
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 83,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_83",
+      "frame_count": 5,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_83/1.svg",
+          "sha256": "d30377ab9978445a96674e6e5001072ab6ab8f6cf6395d274381b9fe254cf896"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_83/2.svg",
+          "sha256": "6dea3f23d8baf2b9a166fedc441ffc7050e1b3bb7b1782f13c50a4290800ffce"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_83/3.svg",
+          "sha256": "17ae65e9f7dc5ead2c00465b54dfc2d0deeb4db1fee8c8cc308cab712163030c"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_83/4.svg",
+          "sha256": "6dab2f7327a349bd0bcb83211ca2615a81e5d8b0bbaf68eaa43e6aa4af47f03f"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_83/5.svg",
+          "sha256": "7307d39098fb21e727a6d44ee5f2469dde51a89eee59dafa40cdcd5d92464e2e"
+        }
+      ],
+      "labels": {
+        "Paused": 2,
+        "Quit": 3,
+        "Level": 4,
+        "GameOver": 5
+      },
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 74,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": -1038,
+              "translateY": -246
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 8,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 31.666367,
+              "scaleY": 31.66687,
+              "translateX": 0,
+              "translateY": -440
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 76,
+            "instance_name": "Psd",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ],
+        "3": [
+          {
+            "type": "remove",
+            "depth": 2
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 77,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0004883,
+              "scaleY": 1.0,
+              "translateX": -978,
+              "translateY": -246
+            }
+          }
+        ],
+        "4": [
+          {
+            "type": "remove",
+            "depth": 2
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 80,
+            "instance_name": "LevMov",
+            "move": false,
+            "matrix": {
+              "translateX": 376,
+              "translateY": 0
+            }
+          }
+        ],
+        "5": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "remove",
+            "depth": 2
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 82,
+            "instance_name": "GO",
+            "move": false,
+            "matrix": {
+              "translateX": 0,
+              "translateY": 0
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 87,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_87",
+      "frame_count": 90,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/1.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/2.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/3.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/4.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/5.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 6,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/6.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 7,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/7.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 8,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/8.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 9,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/9.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 10,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/10.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 11,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/11.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 12,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/12.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 13,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/13.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 14,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/14.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 15,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/15.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 16,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/16.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 17,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/17.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 18,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/18.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 19,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/19.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 20,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/20.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 21,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/21.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 22,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/22.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 23,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/23.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 24,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/24.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 25,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/25.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 26,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/26.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 27,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/27.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 28,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/28.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 29,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/29.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 30,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/30.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 31,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/31.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 32,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/32.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 33,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/33.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 34,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/34.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 35,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/35.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 36,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/36.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 37,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/37.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 38,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/38.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 39,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/39.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 40,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/40.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 41,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/41.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 42,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/42.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 43,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/43.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 44,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/44.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 45,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/45.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 46,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/46.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 47,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/47.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 48,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/48.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 49,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/49.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 50,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/50.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 51,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/51.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 52,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/52.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 53,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/53.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 54,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/54.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 55,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/55.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 56,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/56.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 57,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/57.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 58,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/58.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 59,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/59.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 60,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/60.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 61,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/61.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 62,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/62.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 63,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/63.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 64,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/64.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 65,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/65.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 66,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/66.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 67,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/67.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 68,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/68.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 69,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/69.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 70,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/70.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 71,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/71.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 72,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/72.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 73,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/73.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 74,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/74.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 75,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/75.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 76,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/76.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 77,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/77.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 78,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/78.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 79,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/79.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 80,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/80.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 81,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/81.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 82,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/82.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 83,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/83.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 84,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/84.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 85,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/85.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 86,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/86.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 87,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/87.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 88,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/88.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 89,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/89.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 90,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_87/90.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        }
+      ],
+      "labels": {
+        "NewGame": 2,
+        "NewLev": 21,
+        "NewLife": 65,
+        "Killed": 88
+      },
+      "depth_events": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": [],
+        "10": [],
+        "11": [],
+        "12": [],
+        "13": [],
+        "14": [],
+        "15": [],
+        "16": [],
+        "17": [],
+        "18": [],
+        "19": [],
+        "20": [],
+        "21": [],
+        "22": [],
+        "23": [],
+        "24": [],
+        "25": [],
+        "26": [],
+        "27": [],
+        "28": [],
+        "29": [],
+        "30": [],
+        "31": [],
+        "32": [],
+        "33": [],
+        "34": [],
+        "35": [],
+        "36": [],
+        "37": [],
+        "38": [],
+        "39": [],
+        "40": [],
+        "41": [],
+        "42": [],
+        "43": [],
+        "44": [],
+        "45": [],
+        "46": [],
+        "47": [],
+        "48": [],
+        "49": [],
+        "50": [],
+        "51": [],
+        "52": [],
+        "53": [],
+        "54": [],
+        "55": [],
+        "56": [],
+        "57": [],
+        "58": [],
+        "59": [],
+        "60": [],
+        "61": [],
+        "62": [],
+        "63": [],
+        "64": [],
+        "65": [],
+        "66": [],
+        "67": [],
+        "68": [],
+        "69": [],
+        "70": [],
+        "71": [],
+        "72": [],
+        "73": [],
+        "74": [],
+        "75": [],
+        "76": [],
+        "77": [],
+        "78": [],
+        "79": [],
+        "80": [],
+        "81": [],
+        "82": [],
+        "83": [],
+        "84": [],
+        "85": [],
+        "86": [],
+        "87": [],
+        "88": [],
+        "89": [],
+        "90": []
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 92,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_92",
+      "frame_count": 20,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/1.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/2.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 3,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/3.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 4,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/4.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 5,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/5.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 6,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/6.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 7,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/7.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 8,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/8.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 9,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/9.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 10,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/10.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 11,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/11.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 12,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/12.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 13,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/13.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 14,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/14.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 15,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/15.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 16,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/16.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 17,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/17.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 18,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/18.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 19,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/19.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        },
+        {
+          "frame": 20,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_92/20.svg",
+          "sha256": "d5c545abe19619b10b3a1c8f673181c5c3420c3fae276645ba676699d5943c85"
+        }
+      ],
+      "labels": {
+        "Chomp1": 2,
+        "Chomp2": 4,
+        "EatGhost": 6,
+        "EatFruit": 19
+      },
+      "depth_events": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": [],
+        "10": [],
+        "11": [],
+        "12": [],
+        "13": [],
+        "14": [],
+        "15": [],
+        "16": [],
+        "17": [],
+        "18": [],
+        "19": [],
+        "20": []
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 103,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_103",
+      "frame_count": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_103/1.svg",
+          "sha256": "6317c781b9e1670601680bbf0619cc6131eca9237a88ee75741d6d914ac1d453"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 100,
+            "instance_name": "score_txt",
+            "move": false,
+            "matrix": {
+              "translateX": 568,
+              "translateY": -246
+            }
+          },
+          {
+            "type": "place",
+            "depth": 2,
+            "character_id": 101,
+            "instance_name": "name_txt",
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0000153,
+              "scaleY": 1.0,
+              "translateX": -2394,
+              "translateY": -246
+            }
+          },
+          {
+            "type": "place",
+            "depth": 3,
+            "character_id": 102,
+            "instance_name": "rank_txt",
+            "move": false,
+            "matrix": {
+              "scaleX": 0.99905396,
+              "scaleY": 1.0,
+              "translateX": -3372,
+              "translateY": -246
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    },
+    {
+      "id": 105,
+      "raw_dir": "res://games/pacman/decompiled/sprites/DefineSprite_105",
+      "frame_count": 2,
+      "frames": [
+        {
+          "frame": 1,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_105/1.svg",
+          "sha256": "9d8fc96830996a826099cc42a10b22d1f8c00dbe11a3ca87bcb71adf4ea6a9c3"
+        },
+        {
+          "frame": 2,
+          "raw_source": "res://games/pacman/decompiled/sprites/DefineSprite_105/2.svg",
+          "sha256": "956eae87cfe3deb7cd7f428561e03eed7794efb224ede9740d6ff05045027ea1"
+        }
+      ],
+      "labels": {},
+      "depth_events": {
+        "1": [
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 26,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "translateX": -1440,
+              "translateY": -246
+            }
+          }
+        ],
+        "2": [
+          {
+            "type": "remove",
+            "depth": 1
+          },
+          {
+            "type": "place",
+            "depth": 1,
+            "character_id": 104,
+            "instance_name": null,
+            "move": false,
+            "matrix": {
+              "scaleX": 1.0000153,
+              "scaleY": 1.0,
+              "translateX": -2960,
+              "translateY": -280
+            }
+          }
+        ]
+      },
+      "timeline_source": "res://games/pacman/TIMELINE_MAP.json"
+    }
+  ],
+  "sounds": [
+    {
+      "id": -1,
+      "raw_source": "res://games/pacman/decompiled/sounds/-1.wav",
+      "sha256": "ae8cd4d87061de84b556826a36ea6e209689ff2bb3632b9ac121aa34a5338a6c",
+      "export_names": [],
+      "triggers": [
+        {
+          "type": "stream_sound",
+          "name": "main_timeline_stream"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "raw_source": "res://games/pacman/decompiled/sounds/1_NewLev.mp3",
+      "sha256": "d7bbb9d9a1c22a2e92c3a9e74a49e21c93169f027f6003c9b8f2f20a7a1369b1",
+      "export_names": [
+        "NewLev"
+      ],
+      "triggers": [
+        {
+          "type": "export_name",
+          "name": "NewLev"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "raw_source": "res://games/pacman/decompiled/sounds/2_ExLife.mp3",
+      "sha256": "abcc89ea941aa6568036f3125b85da3af764f5ab624c97dd697db96a0780e67f",
+      "export_names": [
+        "ExLife"
+      ],
+      "triggers": [
+        {
+          "type": "export_name",
+          "name": "ExLife"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "raw_source": "res://games/pacman/decompiled/sounds/3_BGEyes.mp3",
+      "sha256": "93bafab3b7f95bcd6abd48a37a150eb4e3246ce291b0c2240b55a2c936de8b73",
+      "export_names": [
+        "BGEyes"
+      ],
+      "triggers": [
+        {
+          "type": "export_name",
+          "name": "BGEyes"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "raw_source": "res://games/pacman/decompiled/sounds/4_BGGhost.mp3",
+      "sha256": "ec7c62f810b1d370b2a1db333005be7b1c8addf7496bdacc65eaa33ef082215e",
+      "export_names": [
+        "BGGhost"
+      ],
+      "triggers": [
+        {
+          "type": "export_name",
+          "name": "BGGhost"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "raw_source": "res://games/pacman/decompiled/sounds/5_BG3.mp3",
+      "sha256": "3310ca2f28c4091baa9ae401716f15e3ba8b957e29db044469ff87ecdeb846b8",
+      "export_names": [
+        "BG3"
+      ],
+      "triggers": [
+        {
+          "type": "export_name",
+          "name": "BG3"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "raw_source": "res://games/pacman/decompiled/sounds/6_BG2.mp3",
+      "sha256": "2c74f8c96d552b56cb7e56771aabbc4d9c0011f61e59d53736de4703f6f8119a",
+      "export_names": [
+        "BG2"
+      ],
+      "triggers": [
+        {
+          "type": "export_name",
+          "name": "BG2"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "raw_source": "res://games/pacman/decompiled/sounds/7_BG1.mp3",
+      "sha256": "2da9d514b483c3620adae718d1105bc55973e7c833fc58f40b8bd0ea809751dc",
+      "export_names": [
+        "BG1"
+      ],
+      "triggers": [
+        {
+          "type": "export_name",
+          "name": "BG1"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "raw_source": "res://games/pacman/decompiled/sounds/85.mp3",
+      "sha256": "32c2169aae92a07f9e2a9a31929331eef66a72ca1f77db74c991e72a91abecf4",
+      "export_names": [],
+      "triggers": [
+        {
+          "type": "timeline_start_sound",
+          "sprite_id": 87,
+          "frame": 3,
+          "frame_labels": [],
+          "nearest_preceding_label": "NewGame"
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "raw_source": "res://games/pacman/decompiled/sounds/86.mp3",
+      "sha256": "886371468002f45d53d78ec9df44b9386e20b650e8e07c6da2daef6f44af266e",
+      "export_names": [],
+      "triggers": [
+        {
+          "type": "timeline_start_sound",
+          "sprite_id": 87,
+          "frame": 89,
+          "frame_labels": [],
+          "nearest_preceding_label": "Killed"
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "raw_source": "res://games/pacman/decompiled/sounds/88.mp3",
+      "sha256": "3edb6170f647a53bb612ad95508eafc6d705112b93551a9f4af4c5d81d933f64",
+      "export_names": [],
+      "triggers": [
+        {
+          "type": "timeline_start_sound",
+          "sprite_id": 92,
+          "frame": 2,
+          "frame_labels": [
+            "Chomp1"
+          ],
+          "nearest_preceding_label": "Chomp1"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "raw_source": "res://games/pacman/decompiled/sounds/89.mp3",
+      "sha256": "809e22479b7565817a6335e09186ea01c769fad0e5b17a8806d3a1ce25cae11b",
+      "export_names": [],
+      "triggers": [
+        {
+          "type": "timeline_start_sound",
+          "sprite_id": 92,
+          "frame": 4,
+          "frame_labels": [
+            "Chomp2"
+          ],
+          "nearest_preceding_label": "Chomp2"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "raw_source": "res://games/pacman/decompiled/sounds/90.mp3",
+      "sha256": "f40dbfbce9173bd28c6e00fb0ff0af38bca4b3a04f66b8e1d9f5046764263132",
+      "export_names": [],
+      "triggers": [
+        {
+          "type": "timeline_start_sound",
+          "sprite_id": 92,
+          "frame": 6,
+          "frame_labels": [
+            "EatGhost"
+          ],
+          "nearest_preceding_label": "EatGhost"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "raw_source": "res://games/pacman/decompiled/sounds/91.mp3",
+      "sha256": "b580c770d67a9e6dc4356cd27fa30b438dee2f08a0eab8aeb413671f5d34a3ce",
+      "export_names": [],
+      "triggers": [
+        {
+          "type": "timeline_start_sound",
+          "sprite_id": 92,
+          "frame": 19,
+          "frame_labels": [
+            "EatFruit"
+          ],
+          "nearest_preceding_label": "EatFruit"
+        }
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "id": 21,
+      "font_name": "Whimsy TT\\u0000",
+      "glyph_count": 50,
+      "raw_source": "res://games/pacman/decompiled/fonts/21_Whimsy TT.ttf",
+      "sha256": "c4da2111e0c6e34b901fc563d0f8a2078b75bde86c5360a06e56b56e82d5f0c2",
+      "fallback": false
+    },
+    {
+      "id": 43,
+      "font_name": "Verdana\\u0000",
+      "glyph_count": 15,
+      "raw_source": "res://games/pacman/decompiled/fonts/43_Verdana.ttf",
+      "sha256": "8a1724b06c68bb0c95668c1c7c3ad1f02097051e2a79117dcbee5e7dea3b932f",
+      "fallback": false
+    },
+    {
+      "id": 49,
+      "font_name": "Arial\\u0000",
+      "glyph_count": 0,
+      "raw_source": null,
+      "sha256": null,
+      "fallback": true,
+      "fallback_policy": "Godot ThemeDB fallback font; source embeds zero glyphs, so no glyphs are fabricated"
+    }
+  ],
+  "texts": [
+    {
+      "id": 100,
+      "raw_source": "res://games/pacman/decompiled/texts/100.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": "",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "SYMBOL_MAP explicit",
+      "placements": [
+        {
+          "timeline": 103,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": "score_txt",
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "raw_source": "res://games/pacman/decompiled/texts/101.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": "",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "SYMBOL_MAP explicit",
+      "placements": [
+        {
+          "timeline": 103,
+          "frame": 1,
+          "depth": 2,
+          "instance_name": "name_txt",
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "raw_source": "res://games/pacman/decompiled/texts/102.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": "",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "SYMBOL_MAP explicit",
+      "placements": [
+        {
+          "timeline": 103,
+          "frame": 1,
+          "depth": 3,
+          "instance_name": "rank_txt",
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "raw_source": "res://games/pacman/decompiled/texts/104.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": "",
+      "variable_name": "errorMsg",
+      "font_id": 21,
+      "font_resolution": "SYMBOL_MAP explicit",
+      "placements": [
+        {
+          "timeline": 105,
+          "frame": 2,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "raw_source": "res://games/pacman/decompiled/texts/106.txt",
+      "sha256": "226869afb13f56b6c0fa51089553821314593c729627f214c46613241c7cf212",
+      "text": "LAST 10",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": []
+    },
+    {
+      "id": 108,
+      "raw_source": "res://games/pacman/decompiled/texts/108.txt",
+      "sha256": "2e7bcfaa9e90cb14b4413b24d1716ca39ef501e873329f064e9b8894a655f461",
+      "text": "NEXT 10",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": []
+    },
+    {
+      "id": 22,
+      "raw_source": "res://games/pacman/decompiled/texts/22.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": "",
+      "variable_name": "kval",
+      "font_id": 21,
+      "font_resolution": "SYMBOL_MAP explicit",
+      "placements": [
+        {
+          "timeline": 23,
+          "frame": 2,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 46,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "raw_source": "res://games/pacman/decompiled/texts/26.txt",
+      "sha256": "b6dcb96448c66497eb4c33547598e500a15266bd3b49dfd887e06c568fb6bed6",
+      "text": "LOADING...",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 3,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 105,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "raw_source": "res://games/pacman/decompiled/texts/29.txt",
+      "sha256": "48656023c1ca386657bd4b792e6b640f137e6cad75bacc8f9dc4c74a86d7e210",
+      "text": "PLAY GAME",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": []
+    },
+    {
+      "id": 41,
+      "raw_source": "res://games/pacman/decompiled/texts/41.txt",
+      "sha256": "7ffe57aebb01465ba200e4dab7e88da5eb5e73e65429d4cc39a4f8c2000b539a",
+      "text": "PA  MAN",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 42,
+          "frame": 12,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "raw_source": "res://games/pacman/decompiled/texts/44.txt",
+      "sha256": "b282aff3f86710cad0ed6e250dea5f9f6896652e5b0667cf0cda29a20bb274e8",
+      "text": "www.freevideogamesonline.org",
+      "variable_name": "",
+      "font_id": 43,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": []
+    },
+    {
+      "id": 50,
+      "raw_source": "res://games/pacman/decompiled/texts/50.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": "",
+      "variable_name": "",
+      "font_id": 49,
+      "font_resolution": "SYMBOL_MAP explicit",
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 2,
+          "depth": 24,
+          "instance_name": "promo",
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "raw_source": "res://games/pacman/decompiled/texts/72.txt",
+      "sha256": "a60ffbb10dc4cf25ca492a4f7f05751e488c53719cbeccacaabe41c2db88c4a3",
+      "text": "SCORE",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 94,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "raw_source": "res://games/pacman/decompiled/texts/73.txt",
+      "sha256": "c5045fcd123dde9c6dcacdf08de555f6f3765dcb1bc0d322af174d736e9e472e",
+      "text": "LIVES",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 97,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "raw_source": "res://games/pacman/decompiled/texts/74.txt",
+      "sha256": "0589b404cdfd7e7fd41c78bed205421a424d961ca08fe3c52789c934105e51ab",
+      "text": "GET READY!",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 83,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "raw_source": "res://games/pacman/decompiled/texts/75.txt",
+      "sha256": "5b5f8d4f6743c1f4215bcd899b25dae31631fb4d68e0d78043f8aa84902546b5",
+      "text": "PAUSED",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 76,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "raw_source": "res://games/pacman/decompiled/texts/77.txt",
+      "sha256": "d66376083771471c59345a20a5a0174e87e5a54a7245859706a819422c3abb3a",
+      "text": "QUIT? Y/N ",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 83,
+          "frame": 3,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "raw_source": "res://games/pacman/decompiled/texts/78.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": "",
+      "variable_name": "lval",
+      "font_id": 21,
+      "font_resolution": "SYMBOL_MAP explicit",
+      "placements": [
+        {
+          "timeline": 80,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "raw_source": "res://games/pacman/decompiled/texts/79.txt",
+      "sha256": "d81674b2bdd5e6040532eea9bf30c4e1813f87db874078284dd00cfa198e47fc",
+      "text": "LEVEL",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 80,
+          "frame": 1,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "raw_source": "res://games/pacman/decompiled/texts/81.txt",
+      "sha256": "6f391555cf2297ac2470f187b5c1bb7b3f2d0a96e161ad6f2f67401a748005f3",
+      "text": "GAME OVER",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 82,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "raw_source": "res://games/pacman/decompiled/texts/84.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": "",
+      "variable_name": "score",
+      "font_id": 21,
+      "font_resolution": "SYMBOL_MAP explicit",
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 119,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "raw_source": "res://games/pacman/decompiled/texts/93.txt",
+      "sha256": "1e84bfe43d1f41a4928151585b62fa6877ca0d535ba2e898d1f224905d1e4682",
+      "text": "play again?",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": []
+    },
+    {
+      "id": 95,
+      "raw_source": "res://games/pacman/decompiled/texts/95.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": "",
+      "variable_name": "score",
+      "font_id": 21,
+      "font_resolution": "SYMBOL_MAP explicit",
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 4,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "raw_source": "res://games/pacman/decompiled/texts/96.txt",
+      "sha256": "961ecedef654431819aa6d9e659e06b41bad5c8aa04588f300bbbe6ce67e15dd",
+      "text": "YOUR SCORE",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 5,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "raw_source": "res://games/pacman/decompiled/texts/97.txt",
+      "sha256": "f3bb2a12375c92b2875c39ea1279ce443b7bfd8368604b9ca6c6ab5b17b05a32",
+      "text": "d\nd\nd",
+      "variable_name": "",
+      "font_id": 49,
+      "font_resolution": "SYMBOL_MAP explicit",
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 25,
+          "instance_name": "promo",
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "raw_source": "res://games/pacman/decompiled/texts/98.txt",
+      "sha256": "eaa589322731009980d99891b5c7850ac5172dda7cdf73a533ab403332d7e944",
+      "text": "NAME",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "raw_source": "res://games/pacman/decompiled/texts/99.txt",
+      "sha256": "a60ffbb10dc4cf25ca492a4f7f05751e488c53719cbeccacaabe41c2db88c4a3",
+      "text": "SCORE",
+      "variable_name": "",
+      "font_id": 21,
+      "font_resolution": "raw SVG glyph reference",
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 4,
+          "instance_name": null,
+          "move": false
+        }
+      ]
+    }
+  ],
+  "initial_visual_state": {
+    "source": "res://games/pacman/decompiled/scripts/frame_4/DoAction.as",
+    "offset_px": [
+      18,
+      18
+    ],
+    "pacman": {
+      "position": [
+        186,
+        294
+      ],
+      "sprite_id": 40,
+      "frame": 1
+    },
+    "ghosts": [
+      {
+        "index": 1,
+        "position": [
+          180,
+          150
+        ],
+        "body_sprite_id": 14,
+        "eyes_sprite_id": 16,
+        "rgb": 14483456
+      },
+      {
+        "index": 2,
+        "position": [
+          180,
+          192
+        ],
+        "body_sprite_id": 14,
+        "eyes_sprite_id": 16,
+        "rgb": 16751001
+      },
+      {
+        "index": 3,
+        "position": [
+          156,
+          192
+        ],
+        "body_sprite_id": 14,
+        "eyes_sprite_id": 16,
+        "rgb": 6750207
+      },
+      {
+        "index": 4,
+        "position": [
+          204,
+          192
+        ],
+        "body_sprite_id": 14,
+        "eyes_sprite_id": 16,
+        "rgb": 16750848
+      }
+    ],
+    "frightened": {
+      "body_rgb": 13311,
+      "eyes_sprite_id": 18
+    },
+    "note": "Only source-defined starting visual placement/color is reproduced in B4; no movement/state update logic."
+  },
+  "traceability_sources": [
+    "res://games/pacman/ASSET_MANIFEST.json",
+    "res://games/pacman/SYMBOL_MAP.json",
+    "res://games/pacman/TIMELINE_MAP.json"
+  ]
+}
