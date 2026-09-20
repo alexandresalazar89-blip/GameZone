@@ -85,6 +85,19 @@ jobs:
             timeout 30s godot --headless --verbose --path . --script "res://tests/pacman_b3/$TEST"
           done
 
+      - name: B4 source asset/timeline unit tests
+        shell: bash
+        run: |
+          set -euxo pipefail
+          for TEST in \
+            test_assets_and_timelines.gd \
+            test_visual_timeline.gd \
+            test_text_and_audio.gd \
+            test_module_visual.gd
+          do
+            timeout 90s godot --headless --verbose --path . --script "res://tests/pacman_b4/$TEST"
+          done
+
       - name: Verify single-threaded export configuration
         shell: bash
         run: |
