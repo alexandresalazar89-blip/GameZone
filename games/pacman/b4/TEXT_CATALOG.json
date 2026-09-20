@@ -1,0 +1,500 @@
+{
+  "schema": 1,
+  "fonts": [
+    {
+      "character_id": 21,
+      "name": "Whimsy TT\\u0000",
+      "glyph_count": 50,
+      "raw": "games/pacman/decompiled/fonts/21_Whimsy TT.ttf",
+      "godot_resource": "res://games/pacman/decompiled/fonts/21_Whimsy TT.ttf",
+      "sha256": "c4da2111e0c6e34b901fc563d0f8a2078b75bde86c5360a06e56b56e82d5f0c2",
+      "strategy": "imported_ttf"
+    },
+    {
+      "character_id": 43,
+      "name": "Verdana\\u0000",
+      "glyph_count": 15,
+      "raw": "games/pacman/decompiled/fonts/43_Verdana.ttf",
+      "godot_resource": "res://games/pacman/decompiled/fonts/43_Verdana.ttf",
+      "sha256": "8a1724b06c68bb0c95668c1c7c3ad1f02097051e2a79117dcbee5e7dea3b932f",
+      "strategy": "imported_ttf"
+    },
+    {
+      "character_id": 49,
+      "name": "Arial\\u0000",
+      "glyph_count": 0,
+      "raw": "",
+      "godot_resource": "",
+      "strategy": "godot_fallback_only_when_referenced"
+    }
+  ],
+  "texts": [
+    {
+      "character_id": 22,
+      "raw": "games/pacman/decompiled/texts/22.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "variable_name": "kval",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 23,
+          "frame": 2,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 46,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "Godot Label with imported/fallback font"
+    },
+    {
+      "character_id": 26,
+      "raw": "games/pacman/decompiled/texts/26.txt",
+      "sha256": "b6dcb96448c66497eb4c33547598e500a15266bd3b49dfd887e06c568fb6bed6",
+      "content": "LOADING...",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 0,
+          "frame": 3,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        },
+        {
+          "timeline": 105,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 29,
+      "raw": "games/pacman/decompiled/texts/29.txt",
+      "sha256": "48656023c1ca386657bd4b792e6b640f137e6cad75bacc8f9dc4c74a86d7e210",
+      "content": "PLAY GAME",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 41,
+      "raw": "games/pacman/decompiled/texts/41.txt",
+      "sha256": "7ffe57aebb01465ba200e4dab7e88da5eb5e73e65429d4cc39a4f8c2000b539a",
+      "content": "PA  MAN",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 42,
+          "frame": 12,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 44,
+      "raw": "games/pacman/decompiled/texts/44.txt",
+      "sha256": "b282aff3f86710cad0ed6e250dea5f9f6896652e5b0667cf0cda29a20bb274e8",
+      "content": "www.freevideogamesonline.org",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 50,
+      "raw": "games/pacman/decompiled/texts/50.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "variable_name": "",
+      "font_id": 49,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 2,
+          "depth": 24,
+          "instance_name": "promo",
+          "move": false
+        }
+      ],
+      "render_strategy": "Godot Label with imported/fallback font"
+    },
+    {
+      "character_id": 72,
+      "raw": "games/pacman/decompiled/texts/72.txt",
+      "sha256": "a60ffbb10dc4cf25ca492a4f7f05751e488c53719cbeccacaabe41c2db88c4a3",
+      "content": "SCORE",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 94,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 73,
+      "raw": "games/pacman/decompiled/texts/73.txt",
+      "sha256": "c5045fcd123dde9c6dcacdf08de555f6f3765dcb1bc0d322af174d736e9e472e",
+      "content": "LIVES",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 97,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 74,
+      "raw": "games/pacman/decompiled/texts/74.txt",
+      "sha256": "0589b404cdfd7e7fd41c78bed205421a424d961ca08fe3c52789c934105e51ab",
+      "content": "GET READY!",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 83,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 75,
+      "raw": "games/pacman/decompiled/texts/75.txt",
+      "sha256": "5b5f8d4f6743c1f4215bcd899b25dae31631fb4d68e0d78043f8aa84902546b5",
+      "content": "PAUSED",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 76,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 77,
+      "raw": "games/pacman/decompiled/texts/77.txt",
+      "sha256": "d66376083771471c59345a20a5a0174e87e5a54a7245859706a819422c3abb3a",
+      "content": "QUIT? Y/N ",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 83,
+          "frame": 3,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 78,
+      "raw": "games/pacman/decompiled/texts/78.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "variable_name": "lval",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 80,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "Godot Label with imported/fallback font"
+    },
+    {
+      "character_id": 79,
+      "raw": "games/pacman/decompiled/texts/79.txt",
+      "sha256": "d81674b2bdd5e6040532eea9bf30c4e1813f87db874078284dd00cfa198e47fc",
+      "content": "LEVEL",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 80,
+          "frame": 1,
+          "depth": 2,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 81,
+      "raw": "games/pacman/decompiled/texts/81.txt",
+      "sha256": "6f391555cf2297ac2470f187b5c1bb7b3f2d0a96e161ad6f2f67401a748005f3",
+      "content": "GAME OVER",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 82,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 84,
+      "raw": "games/pacman/decompiled/texts/84.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "variable_name": "score",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 4,
+          "depth": 119,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "Godot Label with imported/fallback font"
+    },
+    {
+      "character_id": 93,
+      "raw": "games/pacman/decompiled/texts/93.txt",
+      "sha256": "1e84bfe43d1f41a4928151585b62fa6877ca0d535ba2e898d1f224905d1e4682",
+      "content": "play again?",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 95,
+      "raw": "games/pacman/decompiled/texts/95.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "variable_name": "score",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 4,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "Godot Label with imported/fallback font"
+    },
+    {
+      "character_id": 96,
+      "raw": "games/pacman/decompiled/texts/96.txt",
+      "sha256": "961ecedef654431819aa6d9e659e06b41bad5c8aa04588f300bbbe6ce67e15dd",
+      "content": "YOUR SCORE",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 5,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 97,
+      "raw": "games/pacman/decompiled/texts/97.txt",
+      "sha256": "f3bb2a12375c92b2875c39ea1279ce443b7bfd8368604b9ca6c6ab5b17b05a32",
+      "content": "d\nd\nd",
+      "variable_name": "",
+      "font_id": 49,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 9,
+          "depth": 25,
+          "instance_name": "promo",
+          "move": false
+        }
+      ],
+      "render_strategy": "Godot Label with imported/fallback font"
+    },
+    {
+      "character_id": 98,
+      "raw": "games/pacman/decompiled/texts/98.txt",
+      "sha256": "eaa589322731009980d99891b5c7850ac5172dda7cdf73a533ab403332d7e944",
+      "content": "NAME",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 3,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 99,
+      "raw": "games/pacman/decompiled/texts/99.txt",
+      "sha256": "a60ffbb10dc4cf25ca492a4f7f05751e488c53719cbeccacaabe41c2db88c4a3",
+      "content": "SCORE",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [
+        {
+          "timeline": 0,
+          "frame": 10,
+          "depth": 4,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 100,
+      "raw": "games/pacman/decompiled/texts/100.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "variable_name": "",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 103,
+          "frame": 1,
+          "depth": 1,
+          "instance_name": "score_txt",
+          "move": false
+        }
+      ],
+      "render_strategy": "Godot Label with imported/fallback font"
+    },
+    {
+      "character_id": 101,
+      "raw": "games/pacman/decompiled/texts/101.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "variable_name": "",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 103,
+          "frame": 1,
+          "depth": 2,
+          "instance_name": "name_txt",
+          "move": false
+        }
+      ],
+      "render_strategy": "Godot Label with imported/fallback font"
+    },
+    {
+      "character_id": 102,
+      "raw": "games/pacman/decompiled/texts/102.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "variable_name": "",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 103,
+          "frame": 1,
+          "depth": 3,
+          "instance_name": "rank_txt",
+          "move": false
+        }
+      ],
+      "render_strategy": "Godot Label with imported/fallback font"
+    },
+    {
+      "character_id": 104,
+      "raw": "games/pacman/decompiled/texts/104.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "",
+      "variable_name": "errorMsg",
+      "font_id": 21,
+      "placements": [
+        {
+          "timeline": 105,
+          "frame": 2,
+          "depth": 1,
+          "instance_name": null,
+          "move": false
+        }
+      ],
+      "render_strategy": "Godot Label with imported/fallback font"
+    },
+    {
+      "character_id": 106,
+      "raw": "games/pacman/decompiled/texts/106.txt",
+      "sha256": "226869afb13f56b6c0fa51089553821314593c729627f214c46613241c7cf212",
+      "content": "LAST 10",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    },
+    {
+      "character_id": 108,
+      "raw": "games/pacman/decompiled/texts/108.txt",
+      "sha256": "2e7bcfaa9e90cb14b4413b24d1716ca39ef501e873329f064e9b8894a655f461",
+      "content": "NEXT 10",
+      "variable_name": "",
+      "font_id": null,
+      "placements": [],
+      "render_strategy": "static text preserved inside FFDec frame/sprite SVG texture"
+    }
+  ]
+}

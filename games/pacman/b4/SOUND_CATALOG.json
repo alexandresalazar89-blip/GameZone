@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "sounds": [
+    {
+      "character_id": 1,
+      "export_names": [
+        "NewLev"
+      ],
+      "raw": "games/pacman/decompiled/sounds/1_NewLev.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/1_NewLev.mp3",
+      "sha256": "d7bbb9d9a1c22a2e92c3a9e74a49e21c93169f027f6003c9b8f2f20a7a1369b1",
+      "timeline_triggers": []
+    },
+    {
+      "character_id": 2,
+      "export_names": [
+        "ExLife"
+      ],
+      "raw": "games/pacman/decompiled/sounds/2_ExLife.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/2_ExLife.mp3",
+      "sha256": "abcc89ea941aa6568036f3125b85da3af764f5ab624c97dd697db96a0780e67f",
+      "timeline_triggers": []
+    },
+    {
+      "character_id": 3,
+      "export_names": [
+        "BGEyes"
+      ],
+      "raw": "games/pacman/decompiled/sounds/3_BGEyes.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/3_BGEyes.mp3",
+      "sha256": "93bafab3b7f95bcd6abd48a37a150eb4e3246ce291b0c2240b55a2c936de8b73",
+      "timeline_triggers": []
+    },
+    {
+      "character_id": 4,
+      "export_names": [
+        "BGGhost"
+      ],
+      "raw": "games/pacman/decompiled/sounds/4_BGGhost.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/4_BGGhost.mp3",
+      "sha256": "ec7c62f810b1d370b2a1db333005be7b1c8addf7496bdacc65eaa33ef082215e",
+      "timeline_triggers": []
+    },
+    {
+      "character_id": 5,
+      "export_names": [
+        "BG3"
+      ],
+      "raw": "games/pacman/decompiled/sounds/5_BG3.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/5_BG3.mp3",
+      "sha256": "3310ca2f28c4091baa9ae401716f15e3ba8b957e29db044469ff87ecdeb846b8",
+      "timeline_triggers": []
+    },
+    {
+      "character_id": 6,
+      "export_names": [
+        "BG2"
+      ],
+      "raw": "games/pacman/decompiled/sounds/6_BG2.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/6_BG2.mp3",
+      "sha256": "2c74f8c96d552b56cb7e56771aabbc4d9c0011f61e59d53736de4703f6f8119a",
+      "timeline_triggers": []
+    },
+    {
+      "character_id": 7,
+      "export_names": [
+        "BG1"
+      ],
+      "raw": "games/pacman/decompiled/sounds/7_BG1.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/7_BG1.mp3",
+      "sha256": "2da9d514b483c3620adae718d1105bc55973e7c833fc58f40b8bd0ea809751dc",
+      "timeline_triggers": []
+    },
+    {
+      "character_id": 85,
+      "export_names": [],
+      "raw": "games/pacman/decompiled/sounds/85.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/85.mp3",
+      "sha256": "32c2169aae92a07f9e2a9a31929331eef66a72ca1f77db74c991e72a91abecf4",
+      "timeline_triggers": [
+        {
+          "timeline": 87,
+          "frame": 3,
+          "frame_labels": [],
+          "nearest_preceding_label": "NewGame"
+        }
+      ]
+    },
+    {
+      "character_id": 86,
+      "export_names": [],
+      "raw": "games/pacman/decompiled/sounds/86.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/86.mp3",
+      "sha256": "886371468002f45d53d78ec9df44b9386e20b650e8e07c6da2daef6f44af266e",
+      "timeline_triggers": [
+        {
+          "timeline": 87,
+          "frame": 89,
+          "frame_labels": [],
+          "nearest_preceding_label": "Killed"
+        }
+      ]
+    },
+    {
+      "character_id": 88,
+      "export_names": [],
+      "raw": "games/pacman/decompiled/sounds/88.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/88.mp3",
+      "sha256": "3edb6170f647a53bb612ad95508eafc6d705112b93551a9f4af4c5d81d933f64",
+      "timeline_triggers": [
+        {
+          "timeline": 92,
+          "frame": 2,
+          "frame_labels": [
+            "Chomp1"
+          ],
+          "nearest_preceding_label": "Chomp1"
+        }
+      ]
+    },
+    {
+      "character_id": 89,
+      "export_names": [],
+      "raw": "games/pacman/decompiled/sounds/89.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/89.mp3",
+      "sha256": "809e22479b7565817a6335e09186ea01c769fad0e5b17a8806d3a1ce25cae11b",
+      "timeline_triggers": [
+        {
+          "timeline": 92,
+          "frame": 4,
+          "frame_labels": [
+            "Chomp2"
+          ],
+          "nearest_preceding_label": "Chomp2"
+        }
+      ]
+    },
+    {
+      "character_id": 90,
+      "export_names": [],
+      "raw": "games/pacman/decompiled/sounds/90.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/90.mp3",
+      "sha256": "f40dbfbce9173bd28c6e00fb0ff0af38bca4b3a04f66b8e1d9f5046764263132",
+      "timeline_triggers": [
+        {
+          "timeline": 92,
+          "frame": 6,
+          "frame_labels": [
+            "EatGhost"
+          ],
+          "nearest_preceding_label": "EatGhost"
+        }
+      ]
+    },
+    {
+      "character_id": 91,
+      "export_names": [],
+      "raw": "games/pacman/decompiled/sounds/91.mp3",
+      "godot_resource": "res://games/pacman/decompiled/sounds/91.mp3",
+      "sha256": "b580c770d67a9e6dc4356cd27fa30b438dee2f08a0eab8aeb413671f5d34a3ce",
+      "timeline_triggers": [
+        {
+          "timeline": 92,
+          "frame": 19,
+          "frame_labels": [
+            "EatFruit"
+          ],
+          "nearest_preceding_label": "EatFruit"
+        }
+      ]
+    }
+  ],
+  "stream_files": [
+    {
+      "raw": "games/pacman/decompiled/sounds/-1.wav",
+      "godot_resource": "res://games/pacman/decompiled/sounds/-1.wav",
+      "sha256": "ae8cd4d87061de84b556826a36ea6e209689ff2bb3632b9ac121aa34a5338a6c"
+    }
+  ]
+}

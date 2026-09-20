@@ -103,7 +103,7 @@ Selection note: Highest B0 movement/character-logic score. The complete raw scri
 - **B1 — COMPLETE:** immutable FFDec export + ASSET_MANIFEST + SYMBOL_MAP + TIMELINE_MAP.
 - **B2 — COMPLETE WITH DOCUMENTED LIMITATIONS:** observable Ruffle oracle, fixed-frame replays, deterministic score/power/tunnel references and multi-run RNG evidence. No successful level-clear or isolated 10,000 extra-life visual oracle was fabricated.
 - **B3 — COMPLETE:** minimal game-specific Flash runtime shim: fixed 21 fps tick, MovieClip properties/labels, polygon hitTest, shared semantic input, scoped audio, seedable Flash random.
-- **B4 — PENDING:** SWF assets and timelines.
+- **B4 — COMPLETE:** source-traceable raw assets imported; 25 sprite timelines rebuilt from FFDec frames/labels/depths; opening visual compared against B2 oracle.
 - **B5 — PENDING:** 1:1 ActionScript port.
 - **B6 — PENDING:** A2 GameModule integration.
 - **B7 — PENDING:** oracle behavior/frame diff and VERIFICATION.md.
@@ -191,3 +191,12 @@ No maze, scoring, ghost AI, gameplay state, or SWF asset/timeline recreation is 
 Canonical evidence: `games/pacman/B3_ACCEPTANCE.md`.
 
 **B4 has not started.**
+
+
+## B4 asset/timeline result
+
+Canonical evidence: `games/pacman/B4_ACCEPTANCE.md`.
+
+B4 is visual/timeline-only. The logical Maze array and all gameplay behavior remain reserved for B5.
+
+**B5 has not started.**

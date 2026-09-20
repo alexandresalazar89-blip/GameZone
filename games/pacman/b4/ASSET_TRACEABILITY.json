@@ -1,0 +1,625 @@
+{
+  "schema": 1,
+  "policy": "Every imported/derived asset traces to immutable games/pacman/decompiled raw. No redraws.",
+  "stage": {
+    "size_px": [
+      360,
+      420
+    ],
+    "opening_visual_raw": "games/pacman/decompiled/frames/4.svg"
+  },
+  "shapes": [
+    {
+      "character_id": 10,
+      "raw": "games/pacman/decompiled/shapes/10.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/10.svg",
+      "sha256": "320b10042fde00728c865c5ea62fd3278fe1e80a69ce9c7ab20963cc1b5eb0c7",
+      "geometry": {
+        "width": 18.0,
+        "height": 4.0,
+        "origin": [
+          9.0,
+          2.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 11,
+      "raw": "games/pacman/decompiled/shapes/11.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/11.svg",
+      "sha256": "b1aa064713b2f5cd416276257e0edc7bf4e549ec97c96df1191f2f5c7bb37204",
+      "geometry": {
+        "width": 18.0,
+        "height": 4.0,
+        "origin": [
+          9.0,
+          2.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 13,
+      "raw": "games/pacman/decompiled/shapes/13.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/13.svg",
+      "sha256": "5390befd6877299b00e6ee63c6723c220cc374d553d31b6cd45f971bb4928082",
+      "geometry": {
+        "width": 18.0,
+        "height": 14.8,
+        "origin": [
+          9.0,
+          7.4
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 15,
+      "raw": "games/pacman/decompiled/shapes/15.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/15.svg",
+      "sha256": "caec014f883dbcb7e40a0aee3efdf36e61701d03f2e39f29372f883e8d9ce991",
+      "geometry": {
+        "width": 18.0,
+        "height": 18.0,
+        "origin": [
+          9.0,
+          9.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 17,
+      "raw": "games/pacman/decompiled/shapes/17.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/17.svg",
+      "sha256": "b6da8767d6a6beba60441fc4de0601b785c543ee313ea28ec09187536b747edb",
+      "geometry": {
+        "width": 15.0,
+        "height": 3.0,
+        "origin": [
+          7.5,
+          -1.75
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 27,
+      "raw": "games/pacman/decompiled/shapes/27.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/27.svg",
+      "sha256": "6ff6c6bdc7e3fe627e5a5374e0139b98e8ddf277c254728a373d6905b00586bc",
+      "geometry": {
+        "width": 101.0,
+        "height": 9.0,
+        "origin": [
+          -129.5,
+          -191.5
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 31,
+      "raw": "games/pacman/decompiled/shapes/31.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/31.svg",
+      "sha256": "86e6bee39b8ba4dda517345fb5486a787ca480922da6730e5cc5d1545fa85231",
+      "geometry": {
+        "width": 24.0,
+        "height": 24.0,
+        "origin": [
+          12.0,
+          12.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 32,
+      "raw": "games/pacman/decompiled/shapes/32.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/32.svg",
+      "sha256": "60a1aa1c14c9b0112ff5e27ee66ce98c3cfcec63574a769e63060a7045700f33",
+      "geometry": {
+        "width": 24.0,
+        "height": 24.0,
+        "origin": [
+          12.0,
+          12.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 33,
+      "raw": "games/pacman/decompiled/shapes/33.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/33.svg",
+      "sha256": "574d01756ba2b35078d4bb17c18f91a562a6d1910f7168a294e70efe80aebf75",
+      "geometry": {
+        "width": 24.0,
+        "height": 24.0,
+        "origin": [
+          12.0,
+          12.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 34,
+      "raw": "games/pacman/decompiled/shapes/34.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/34.svg",
+      "sha256": "ce6c7927885d5ee102edeb8a2beaf48eaf53297ed35d8b4dc8be888018949bfc",
+      "geometry": {
+        "width": 24.0,
+        "height": 24.0,
+        "origin": [
+          12.0,
+          12.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 35,
+      "raw": "games/pacman/decompiled/shapes/35.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/35.svg",
+      "sha256": "86890859b836c92607900e16762c74a722adadade84da247de7310500a233983",
+      "geometry": {
+        "width": 24.0,
+        "height": 18.0,
+        "origin": [
+          12.0,
+          6.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 36,
+      "raw": "games/pacman/decompiled/shapes/36.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/36.svg",
+      "sha256": "df1682065e8a14c1655abd649494238b8afc8b86f7cd16a166169f8095bfb6a9",
+      "geometry": {
+        "width": 24.0,
+        "height": 12.0,
+        "origin": [
+          12.0,
+          0.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 37,
+      "raw": "games/pacman/decompiled/shapes/37.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/37.svg",
+      "sha256": "230af5486274619e2183aa3d78b2d44d8f4c4ceb574802e76c6d47a1301b1b32",
+      "geometry": {
+        "width": 12.0,
+        "height": 12.0,
+        "origin": [
+          6.0,
+          0.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 38,
+      "raw": "games/pacman/decompiled/shapes/38.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/38.svg",
+      "sha256": "b2068d6c0541a1699dc063e2ffc24d81fd54d2a55682bd5bda7448609ad1b25d",
+      "geometry": {
+        "width": 18.0,
+        "height": 18.0,
+        "origin": [
+          9.0,
+          9.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 48,
+      "raw": "games/pacman/decompiled/shapes/48.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/48.svg",
+      "sha256": "2560c35f2d2e4e6ce025082497e9e41e9e912745314710ef2a9947dd13b28671",
+      "geometry": {
+        "width": 338.0,
+        "height": 65.0,
+        "origin": [
+          -11.0,
+          -252.95
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 51,
+      "raw": "games/pacman/decompiled/shapes/51.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/51.svg",
+      "sha256": "382350e76462723a7f2fbe21d498efe5768c87bdff33e61363deba6b7fcf0920",
+      "geometry": {
+        "width": 170.0,
+        "height": 188.0,
+        "origin": [
+          79.0,
+          94.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 52,
+      "raw": "games/pacman/decompiled/shapes/52.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/52.svg",
+      "sha256": "2871f8cda67f416426bf5ca17296e9080ed95d267f88cf533e1d33d951eeafb7",
+      "geometry": {
+        "width": 170.0,
+        "height": 164.0,
+        "origin": [
+          85.0,
+          82.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 53,
+      "raw": "games/pacman/decompiled/shapes/53.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/53.svg",
+      "sha256": "1bb098d5a1dab6e865e9af3959be0b2c618fa7fa7157460379873a04ab1eb9ee",
+      "geometry": {
+        "width": 86.0,
+        "height": 50.0,
+        "origin": [
+          43.0,
+          25.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 54,
+      "raw": "games/pacman/decompiled/shapes/54.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/54.svg",
+      "sha256": "fc4aa396cdfcfaa3d91f7fa65e6158ae338a4094df44f44d63063e0ae7b7623a",
+      "geometry": {
+        "width": 50.0,
+        "height": 14.0,
+        "origin": [
+          24.95,
+          7.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 55,
+      "raw": "games/pacman/decompiled/shapes/55.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/55.svg",
+      "sha256": "e3a9d4f24e53e3c24823307571c4a2f08895a95657a71774904bbc0929434243",
+      "geometry": {
+        "width": 86.0,
+        "height": 50.0,
+        "origin": [
+          43.0,
+          25.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 56,
+      "raw": "games/pacman/decompiled/shapes/56.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/56.svg",
+      "sha256": "17657f8e96ef73efc2eb39efcfad31f30f9ef54a3f728dd0f52c1b4a7274c9b5",
+      "geometry": {
+        "width": 38.05,
+        "height": 14.0,
+        "origin": [
+          19.0,
+          7.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 57,
+      "raw": "games/pacman/decompiled/shapes/57.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/57.svg",
+      "sha256": "79fc4482fb89abf74f747d31fbbfe4ae73166084adb434258f7544e280e2292b",
+      "geometry": {
+        "width": 38.0,
+        "height": 50.0,
+        "origin": [
+          19.0,
+          25.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 58,
+      "raw": "games/pacman/decompiled/shapes/58.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/58.svg",
+      "sha256": "415ab9b059f22cc94e08f14754657afb457299df154b337d434f059d324c6b75",
+      "geometry": {
+        "width": 110.0,
+        "height": 50.0,
+        "origin": [
+          55.0,
+          25.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 59,
+      "raw": "games/pacman/decompiled/shapes/59.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/59.svg",
+      "sha256": "825015c2c5a70c9753830a56b34c88e9b764248b90a9f424a70d496413236d2f",
+      "geometry": {
+        "width": 50.0,
+        "height": 26.0,
+        "origin": [
+          25.0,
+          13.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 60,
+      "raw": "games/pacman/decompiled/shapes/60.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/60.svg",
+      "sha256": "72b212f60a5fb657046c0aeedd53ac4dbf127825bd2d21671d415777b6e80eac",
+      "geometry": {
+        "width": 38.15,
+        "height": 26.0,
+        "origin": [
+          19.05,
+          13.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 61,
+      "raw": "games/pacman/decompiled/shapes/61.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/61.svg",
+      "sha256": "c58d5aa4dcb0afabfbce1d4cfff305df57808afa372fb295e629ccf396c7ad9f",
+      "geometry": {
+        "width": 6.0,
+        "height": 6.0,
+        "origin": [
+          3.0,
+          3.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 62,
+      "raw": "games/pacman/decompiled/shapes/62.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/62.svg",
+      "sha256": "8941721b3446ecf965070e08deb4c4eba0c7d2aa733a8244aec3d36bdaf24a15",
+      "geometry": {
+        "width": 9.65,
+        "height": 13.05,
+        "origin": [
+          3.8,
+          9.05
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 63,
+      "raw": "games/pacman/decompiled/shapes/63.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/63.svg",
+      "sha256": "e0cca809eaa7dc010d972ff508282075ccc88ed489134600de76e4401c13f3ff",
+      "geometry": {
+        "width": 14.9,
+        "height": 20.0,
+        "origin": [
+          7.35,
+          10.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 64,
+      "raw": "games/pacman/decompiled/shapes/64.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/64.svg",
+      "sha256": "d28366c34509f3a15dc98685d3b9b990efeb90ded6c39ced5d15277fd32899cc",
+      "geometry": {
+        "width": 18.0,
+        "height": 17.0,
+        "origin": [
+          9.0,
+          8.5
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 65,
+      "raw": "games/pacman/decompiled/shapes/65.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/65.svg",
+      "sha256": "d8e4099edd1b5aa0bd4e04fc7c1b84214ab08468f0f9977c354538775eb764c5",
+      "geometry": {
+        "width": 7.1,
+        "height": 4.85,
+        "origin": [
+          3.55,
+          2.4
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 66,
+      "raw": "games/pacman/decompiled/shapes/66.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/66.svg",
+      "sha256": "b551e1eda63078ef86f0c2fccfd1fc6affb95ea36c170b73e905232a1380bcf6",
+      "geometry": {
+        "width": 18.0,
+        "height": 18.9,
+        "origin": [
+          9.0,
+          9.95
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 67,
+      "raw": "games/pacman/decompiled/shapes/67.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/67.svg",
+      "sha256": "607778d6e32e41902ef64e240d7c2fd8eec5ab3600908543245ffa6ba23dac0e",
+      "geometry": {
+        "width": 3.5,
+        "height": 4.0,
+        "origin": [
+          1.75,
+          2.0
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 68,
+      "raw": "games/pacman/decompiled/shapes/68.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/68.svg",
+      "sha256": "777c51c6a87ed78546e69fe6fd4697e521696da3b0d1a145040d4d05026dbcd4",
+      "geometry": {
+        "width": 17.9,
+        "height": 19.0,
+        "origin": [
+          8.95,
+          9.5
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 69,
+      "raw": "games/pacman/decompiled/shapes/69.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/69.svg",
+      "sha256": "2df45f958bf47cb2348e4cc3927cfeabc2973f52df4c851a7ec162ee6ddc78ca",
+      "geometry": {
+        "width": 12.7,
+        "height": 19.2,
+        "origin": [
+          6.35,
+          10.1
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 70,
+      "raw": "games/pacman/decompiled/shapes/70.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/70.svg",
+      "sha256": "02d2254e6f12009a1a7d28caf084cb4da913e181cf760c62f3e3f5fa09f1216f",
+      "geometry": {
+        "width": 8.8,
+        "height": 19.2,
+        "origin": [
+          4.4,
+          9.6
+        ]
+      },
+      "import_as": "Texture2D"
+    },
+    {
+      "character_id": 8,
+      "raw": "games/pacman/decompiled/shapes/8.svg",
+      "godot_resource": "res://games/pacman/decompiled/shapes/8.svg",
+      "sha256": "415e62ea8b6df6ddb6486d348c2f55bbe1186f979333feb3979ac76b98f54a0b",
+      "geometry": {
+        "width": 16.6,
+        "height": 13.7,
+        "origin": [
+          8.2,
+          7.25
+        ]
+      },
+      "import_as": "Texture2D"
+    }
+  ],
+  "sprites": {
+    "count": 25,
+    "total_frame_svgs": 359
+  },
+  "sounds": {
+    "count": 13,
+    "stream_files": [
+      {
+        "raw": "games/pacman/decompiled/sounds/-1.wav",
+        "godot_resource": "res://games/pacman/decompiled/sounds/-1.wav",
+        "sha256": "ae8cd4d87061de84b556826a36ea6e209689ff2bb3632b9ac121aa34a5338a6c"
+      }
+    ]
+  },
+  "fonts": [
+    {
+      "character_id": 21,
+      "name": "Whimsy TT\\u0000",
+      "glyph_count": 50,
+      "raw": "games/pacman/decompiled/fonts/21_Whimsy TT.ttf",
+      "godot_resource": "res://games/pacman/decompiled/fonts/21_Whimsy TT.ttf",
+      "sha256": "c4da2111e0c6e34b901fc563d0f8a2078b75bde86c5360a06e56b56e82d5f0c2",
+      "strategy": "imported_ttf"
+    },
+    {
+      "character_id": 43,
+      "name": "Verdana\\u0000",
+      "glyph_count": 15,
+      "raw": "games/pacman/decompiled/fonts/43_Verdana.ttf",
+      "godot_resource": "res://games/pacman/decompiled/fonts/43_Verdana.ttf",
+      "sha256": "8a1724b06c68bb0c95668c1c7c3ad1f02097051e2a79117dcbee5e7dea3b932f",
+      "strategy": "imported_ttf"
+    },
+    {
+      "character_id": 49,
+      "name": "Arial\\u0000",
+      "glyph_count": 0,
+      "raw": "",
+      "godot_resource": "",
+      "strategy": "godot_fallback_only_when_referenced"
+    }
+  ],
+  "texts": {
+    "count": 27
+  },
+  "derived": [
+    {
+      "path": "games/pacman/b4/derived/ghost_red.svg",
+      "source": "games/pacman/decompiled/sprites/DefineSprite_19_Ghost/1.svg",
+      "transform": "replace ghost body+bottom #ffffff with cOrig #dd0000"
+    },
+    {
+      "path": "games/pacman/b4/derived/ghost_pink.svg",
+      "source": "games/pacman/decompiled/sprites/DefineSprite_19_Ghost/1.svg",
+      "transform": "replace ghost body+bottom #ffffff with cOrig #ff9999"
+    },
+    {
+      "path": "games/pacman/b4/derived/ghost_cyan.svg",
+      "source": "games/pacman/decompiled/sprites/DefineSprite_19_Ghost/1.svg",
+      "transform": "replace ghost body+bottom #ffffff with cOrig #66ffff"
+    },
+    {
+      "path": "games/pacman/b4/derived/ghost_orange.svg",
+      "source": "games/pacman/decompiled/sprites/DefineSprite_19_Ghost/1.svg",
+      "transform": "replace ghost body+bottom #ffffff with cOrig #ff9900"
+    },
+    {
+      "path": "games/pacman/b4/derived/ghost_frightened_blue.svg",
+      "source": "games/pacman/decompiled/sprites/DefineSprite_19_Ghost/2.svg",
+      "transform": "replace ghost body+bottom #ffffff with source frightened color #0033ff"
+    }
+  ]
+}
