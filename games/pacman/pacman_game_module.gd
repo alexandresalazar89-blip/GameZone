@@ -4,12 +4,14 @@ class_name PacmanGameModule
 const NATIVE_SIZE := Vector2i(360, 420)
 const FlashFixedClock = preload("res://games/pacman/runtime/flash_fixed_clock.gd")
 const InputReader = preload("res://games/pacman/runtime/pacman_input_reader.gd")
+const B4VisualScene = preload("res://games/pacman/b4/pacman_b4_visual_scene.gd")
 
 signal flash_enter_frame(tick_index: int)
 
 var flash_clock: PacmanFlashFixedClock
 var input_reader: PacmanInputReader
 var flash_tick_count := 0
+var b4_visual_scene: PacmanB4VisualScene
 
 
 func _ready() -> void:
@@ -22,6 +24,10 @@ func start(game_context: GameContext) -> void:
 	input_reader = InputReader.new()
 	input_reader.configure(context)
 	flash_tick_count = 0
+	if b4_visual_scene == null:
+		b4_visual_scene = B4VisualScene.new()
+		b4_visual_scene.name = "B4VisualScene"
+		add_child(b4_visual_scene)
 	set_process(true)
 
 
@@ -43,4 +49,7 @@ func teardown() -> void:
 	set_process(false)
 	flash_clock = null
 	input_reader = null
+	if b4_visual_scene != null:
+		b4_visual_scene.queue_free()
+		b4_visual_scene = null
 	super.teardown()
