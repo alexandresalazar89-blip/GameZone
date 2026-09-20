@@ -31,7 +31,8 @@ def svg_geometry(path):
 
 
 def find_sprite_dir(raw_root, sid):
-    matches = sorted((raw_root / "sprites").glob(f"DefineSprite_{sid}*"))
+    rx = re.compile(rf"^DefineSprite_{sid}(?:_|$)")
+    matches = sorted(p for p in (raw_root / "sprites").iterdir() if p.is_dir() and rx.match(p.name))
     if len(matches) != 1:
         raise RuntimeError(f"sprite {sid}: expected one raw directory, got {matches}")
     return matches[0]
