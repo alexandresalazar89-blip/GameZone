@@ -2,25 +2,76 @@
   "name": "tunnel_left",
   "classification": "DETERMINISTIC",
   "fps": 21,
-  "duration_seconds": 14,
-  "notes": "Fresh game. Exact fixed-frame schedule is simulated from frame_6 pacStep/pacPosMax/pauseCount semantics. Route: start -> O(1,23) -> U3,R5,U6,L6 -> tunnel L(0,14), then keep Left to cross. Expected observable wrap is left edge to right edge; source assignment is Pacman._x=OFFX+336, pacX=28,nextX=27.",
+  "duration_seconds": 10,
+  "notes": "Shortest source-derived route from start (14,23) to tunnel L at (0,14), then continue Left across wrap. Turn frames are simulated from frame_6 pacStep/pacPosMax/pauseCount semantics. Expected observable wrap is left edge -> right edge; source assignment Pacman._x=OFFX+336, pacX=28,nextX=27.",
   "events": [
-    {"frame":21,"order":0,"type":"mouse_click","x":180,"y":276,"button":1},
-    {"frame":112,"order":0,"type":"key_down","key":"Left"},
-    {"frame":113,"order":0,"type":"key_up","key":"Left"},
-    {"frame":117,"order":0,"type":"key_down","key":"Up"},
-    {"frame":118,"order":0,"type":"key_up","key":"Up"},
-    {"frame":126,"order":0,"type":"key_down","key":"Left"},
-    {"frame":127,"order":0,"type":"key_up","key":"Left"},
-    {"frame":159,"order":0,"type":"key_down","key":"Down"},
-    {"frame":160,"order":0,"type":"key_up","key":"Down"},
-    {"frame":168,"order":0,"type":"key_down","key":"Up"},
-    {"frame":169,"order":0,"type":"key_up","key":"Up"},
-    {"frame":176,"order":0,"type":"key_down","key":"Right"},
-    {"frame":177,"order":0,"type":"key_up","key":"Right"},
-    {"frame":189,"order":0,"type":"key_down","key":"Up"},
-    {"frame":190,"order":0,"type":"key_up","key":"Up"},
-    {"frame":206,"order":0,"type":"key_down","key":"Left"},
-    {"frame":207,"order":0,"type":"key_up","key":"Left"}
+    {
+      "frame": 21,
+      "order": 0,
+      "type": "mouse_click",
+      "x": 180,
+      "y": 276,
+      "button": 1
+    },
+    {
+      "frame": 112,
+      "order": 0,
+      "type": "key_down",
+      "key": "Left"
+    },
+    {
+      "frame": 113,
+      "order": 0,
+      "type": "key_up",
+      "key": "Left"
+    },
+    {
+      "frame": 117,
+      "order": 0,
+      "type": "key_down",
+      "key": "Up"
+    },
+    {
+      "frame": 118,
+      "order": 0,
+      "type": "key_up",
+      "key": "Up"
+    },
+    {
+      "frame": 126,
+      "order": 0,
+      "type": "key_down",
+      "key": "Left"
+    },
+    {
+      "frame": 127,
+      "order": 0,
+      "type": "key_up",
+      "key": "Left"
+    },
+    {
+      "frame": 135,
+      "order": 0,
+      "type": "key_down",
+      "key": "Up"
+    },
+    {
+      "frame": 136,
+      "order": 0,
+      "type": "key_up",
+      "key": "Up"
+    },
+    {
+      "frame": 151,
+      "order": 0,
+      "type": "key_down",
+      "key": "Left"
+    },
+    {
+      "frame": 152,
+      "order": 0,
+      "type": "key_up",
+      "key": "Left"
+    }
   ]
 }
