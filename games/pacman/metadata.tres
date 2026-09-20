@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://shared/modules/game_metadata.gd" id="1"]
+[ext_resource type="PackedScene" path="res://games/pacman/main.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"pacman"
+title = "Pac-Man"
+version = "0.3.0-b3"
+controls_text = "Directional input through shared GameZone semantic actions"
+entry_scene = ExtResource("2")
+native_size = Vector2i(360, 420)
