@@ -69,6 +69,22 @@ jobs:
       - name: A4 runtime PCK and platform smoke
         run: timeout 30s godot --headless --verbose --path . --script res://tests/a4_pack_smoke.gd
 
+      - name: B3 Flash shim primitive unit tests
+        shell: bash
+        run: |
+          set -euxo pipefail
+          for TEST in \
+            test_fixed_clock.gd \
+            test_movie_clip.gd \
+            test_hit_shape.gd \
+            test_input_reader.gd \
+            test_random.gd \
+            test_audio.gd \
+            test_module_contract.gd
+          do
+            timeout 30s godot --headless --verbose --path . --script "res://tests/pacman_b3/$TEST"
+          done
+
       - name: Verify single-threaded export configuration
         shell: bash
         run: |
