@@ -4,12 +4,16 @@ class_name PacmanGameModule
 const NATIVE_SIZE := Vector2i(360, 420)
 const FlashFixedClock = preload("res://games/pacman/runtime/flash_fixed_clock.gd")
 const InputReader = preload("res://games/pacman/runtime/pacman_input_reader.gd")
+const B4AssetCatalog = preload("res://games/pacman/runtime/b4_asset_catalog.gd")
+const B4InitialVisual = preload("res://games/pacman/runtime/b4_initial_visual.gd")
 const B4VisualScene = preload("res://games/pacman/b4/pacman_b4_visual_scene.gd")
 
 signal flash_enter_frame(tick_index: int)
 
 var flash_clock: PacmanFlashFixedClock
 var input_reader: PacmanInputReader
+var b4_catalog: PacmanB4AssetCatalog
+var b4_visual: PacmanB4InitialVisual
 var flash_tick_count := 0
 var b4_visual_scene: PacmanB4VisualScene
 
